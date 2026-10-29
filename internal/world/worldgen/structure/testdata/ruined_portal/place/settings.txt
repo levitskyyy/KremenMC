@@ -1,0 +1,61 @@
+piece minecraft:ruined_portal/portal_10
+  proc {"blocks":["minecraft:structure_block"],"processor_type":"minecraft:block_ignore"}
+  proc {"rules":[{"input_predicate":{"block":"minecraft:gold_block","probability":0.3,"predicate_type":"minecraft:random_block_match"},"location_predicate":{"predicate_type":"minecraft:always_true"},"output_state":"minecraft:air"},{"input_predicate":{"block":"minecraft:lava","probability":0.2,"predicate_type":"minecraft:random_block_match"},"location_predicate":{"predicate_type":"minecraft:always_true"},"output_state":"minecraft:magma_block"},{"input_predicate":{"block":"minecraft:netherrack","probability":0.07,"predicate_type":"minecraft:random_block_match"},"location_predicate":{"predicate_type":"minecraft:always_true"},"output_state":"minecraft:magma_block"}],"processor_type":"minecraft:rule"}
+  proc {"mossiness":0.2,"processor_type":"minecraft:block_age"}
+  proc {"value":"#minecraft:features_cannot_replace","processor_type":"minecraft:protected_blocks"}
+  proc {"processor_type":"minecraft:lava_submerged_block"}
+  field mirror=FRONT_BACK
+  field rotation=CLOCKWISE_180
+  field rotationPivot=BlockPos{x=6, y=0, z=5}
+  field ignoreEntities=false
+  field boundingBox=null
+  field liquidSettings=APPLY_WATERLOGGING
+  field random=null
+  field palette=0
+  field knownShape=false
+  field finalizeEntities=false
+  rand 0,0,0 -4962768465676381896 4437113781045784766
+  rand 1,2,3 -3774776766155813106 -6134000405759930888
+  rand 1612,12,-4383 -1111863572828818449 9144149812351892873
+  rand -5,70,9 1369555489413554608 8853432770866205895
+piece minecraft:ruined_portal/portal_6
+  proc {"blocks":["minecraft:air","minecraft:structure_block"],"processor_type":"minecraft:block_ignore"}
+  proc {"rules":[{"input_predicate":{"block":"minecraft:gold_block","probability":0.3,"predicate_type":"minecraft:random_block_match"},"location_predicate":{"predicate_type":"minecraft:always_true"},"output_state":"minecraft:air"},{"input_predicate":{"block":"minecraft:lava","predicate_type":"minecraft:block_match"},"location_predicate":{"predicate_type":"minecraft:always_true"},"output_state":"minecraft:magma_block"},{"input_predicate":{"block":"minecraft:netherrack","probability":0.07,"predicate_type":"minecraft:random_block_match"},"location_predicate":{"predicate_type":"minecraft:always_true"},"output_state":"minecraft:magma_block"}],"processor_type":"minecraft:rule"}
+  proc {"mossiness":0.8,"processor_type":"minecraft:block_age"}
+  proc {"value":"#minecraft:features_cannot_replace","processor_type":"minecraft:protected_blocks"}
+  proc {"processor_type":"minecraft:lava_submerged_block"}
+  field mirror=FRONT_BACK
+  field rotation=CLOCKWISE_90
+  field rotationPivot=BlockPos{x=2, y=0, z=3}
+  field ignoreEntities=false
+  field boundingBox=null
+  field liquidSettings=APPLY_WATERLOGGING
+  field random=null
+  field palette=0
+  field knownShape=false
+  field finalizeEntities=false
+  rand 0,0,0 -4962768465676381896 4437113781045784766
+  rand 1,2,3 -3774776766155813106 -6134000405759930888
+  rand 1612,12,-4383 -1111863572828818449 9144149812351892873
+  rand -5,70,9 1369555489413554608 8853432770866205895
+piece minecraft:ruined_portal/portal_6
+  proc {"blocks":["minecraft:air","minecraft:structure_block"],"processor_type":"minecraft:block_ignore"}
+  proc {"rules":[{"input_predicate":{"block":"minecraft:gold_block","probability":0.3,"predicate_type":"minecraft:random_block_match"},"location_predicate":{"predicate_type":"minecraft:always_true"},"output_state":"minecraft:air"},{"input_predicate":{"block":"minecraft:lava","predicate_type":"minecraft:block_match"},"location_predicate":{"predicate_type":"minecraft:always_true"},"output_state":"minecraft:netherrack"}],"processor_type":"minecraft:rule"}
+  proc {"mossiness":0.5,"processor_type":"minecraft:block_age"}
+  proc {"value":"#minecraft:features_cannot_replace","processor_type":"minecraft:protected_blocks"}
+  proc {"processor_type":"minecraft:lava_submerged_block"}
+  proc {"processor_type":"minecraft:blackstone_replace"}
+  field mirror=FRONT_BACK
+  field rotation=CLOCKWISE_90
+  field rotationPivot=BlockPos{x=2, y=0, z=3}
+  field ignoreEntities=false
+  field boundingBox=null
+  field liquidSettings=APPLY_WATERLOGGING
+  field random=null
+  field palette=0
+  field knownShape=false
+  field finalizeEntities=false
+  rand 0,0,0 -4962768465676381896 4437113781045784766
+  rand 1,2,3 -3774776766155813106 -6134000405759930888
+  rand 1612,12,-4383 -1111863572828818449 9144149812351892873
+  rand -5,70,9 1369555489413554608 8853432770866205895

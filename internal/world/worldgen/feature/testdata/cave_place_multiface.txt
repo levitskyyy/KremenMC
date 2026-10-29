@@ -1,0 +1,80 @@
+minecraft:glow_lichen 104742 -663 247 => true 0,0,-1=glow_lichen[down=false,east=false,north=true,south=false,up=false,waterlogged=false,west=false] 0,1,-2=glow_lichen[down=true,east=false,north=false,south=false,up=false,waterlogged=false,west=false] | 5213909788536075938
+minecraft:glow_lichen 209471 -626 194 => false | -8854759292092394676
+minecraft:glow_lichen 314200 -589 141 => true -1,0,1=glow_lichen[down=false,east=false,north=false,south=false,up=true,waterlogged=false,west=false] 0,0,1=glow_lichen[down=false,east=false,north=false,south=false,up=true,waterlogged=false,west=false] | -1931858778066767422
+minecraft:glow_lichen 418929 -552 88 => true -1,0,1=glow_lichen[down=false,east=false,north=true,south=false,up=false,waterlogged=false,west=false] 0,0,0=glow_lichen[down=false,east=false,north=false,south=false,up=false,waterlogged=false,west=true] | -5720133416244506762
+minecraft:glow_lichen 523658 -515 35 => true 0,0,0=glow_lichen[down=false,east=true,north=false,south=false,up=false,waterlogged=false,west=false] | 8974597801714711550
+minecraft:glow_lichen 628387 -478 -18 => true -1,0,1=glow_lichen[down=false,east=false,north=true,south=false,up=false,waterlogged=false,west=false] 0,0,0=glow_lichen[down=false,east=false,north=false,south=false,up=false,waterlogged=false,west=true] | -5345340357520435435
+minecraft:glow_lichen 733116 -441 -71 => true 0,0,1=glow_lichen[down=false,east=false,north=false,south=true,up=false,waterlogged=true,west=false] | 8776398939668232976
+minecraft:glow_lichen 837845 -404 -124 => false | 2430075262655248721
+minecraft:glow_lichen 942574 -367 -177 => true 0,0,0=glow_lichen[down=false,east=false,north=false,south=false,up=true,waterlogged=false,west=false] | -8340192324274010430
+minecraft:glow_lichen 1047303 -330 -230 => false | -3317377865603170562
+minecraft:glow_lichen 1152032 -293 -283 => false | 6186758569726616914
+minecraft:glow_lichen 1256761 -256 -336 => false | 2834755228907883513
+minecraft:glow_lichen 1361490 -219 -389 => true 0,0,0=glow_lichen[down=false,east=false,north=false,south=false,up=true,waterlogged=false,west=false] 0,1,1=glow_lichen[down=false,east=false,north=true,south=false,up=false,waterlogged=false,west=false] | 933668478242079060
+minecraft:glow_lichen 1466219 -182 -442 => false | -8503018526883073444
+minecraft:glow_lichen 1570948 -145 -495 => true 0,0,0=glow_lichen[down=false,east=false,north=false,south=false,up=true,waterlogged=false,west=false] | -1322426556235053792
+minecraft:glow_lichen 1675677 -108 -548 => true 0,0,0=glow_lichen[down=false,east=true,north=false,south=false,up=false,waterlogged=false,west=false] 1,0,1=glow_lichen[down=false,east=false,north=true,south=false,up=false,waterlogged=false,west=false] | 4949178159740146940
+minecraft:glow_lichen 1780406 -71 -601 => false | 4590510525983697301
+minecraft:glow_lichen 1885135 -34 -654 => true 0,0,0=glow_lichen[down=false,east=false,north=false,south=true,up=false,waterlogged=false,west=false] | 2658419397451299746
+minecraft:glow_lichen 1989864 3 -707 => true 0,0,-1=glow_lichen[down=false,east=false,north=true,south=false,up=false,waterlogged=false,west=true] | -2943624232138097244
+minecraft:glow_lichen 2094593 40 -760 => true 0,1,0=glow_lichen[down=false,east=true,north=false,south=false,up=true,waterlogged=true,west=false] | -4343719998624641092
+minecraft:glow_lichen 2199322 77 -813 => true 0,0,0=glow_lichen[down=false,east=false,north=false,south=false,up=true,waterlogged=false,west=false] | 5840289104493700620
+minecraft:glow_lichen 2304051 114 -866 => false | 3425511482140786699
+minecraft:glow_lichen 2408780 151 -919 => true 0,0,0=glow_lichen[down=false,east=false,north=false,south=false,up=true,waterlogged=false,west=false] | 4487621733115155615
+minecraft:glow_lichen 2513509 188 -972 => true 0,0,0=glow_lichen[down=false,east=true,north=false,south=false,up=false,waterlogged=false,west=false] | -8480020036890539710
+minecraft:glow_lichen 2618238 225 -1025 => true -1,-1,1=glow_lichen[down=false,east=false,north=false,south=false,up=true,waterlogged=false,west=false] 0,0,1=glow_lichen[down=false,east=false,north=false,south=false,up=false,waterlogged=false,west=true] | -8120634058615832396
+minecraft:glow_lichen 2722967 262 -1078 => true -1,0,1=glow_lichen[down=false,east=false,north=true,south=false,up=false,waterlogged=false,west=false] 0,0,0=glow_lichen[down=false,east=false,north=false,south=false,up=false,waterlogged=false,west=true] | -4157395331718735018
+minecraft:glow_lichen 2827696 299 -1131 => true 0,1,0=glow_lichen[down=false,east=false,north=true,south=false,up=false,waterlogged=false,west=false] | -6052222904894316276
+minecraft:glow_lichen 2932425 336 -1184 => true 1,-1,0=glow_lichen[down=false,east=false,north=false,south=false,up=true,waterlogged=false,west=false] 0,0,0=glow_lichen[down=false,east=true,north=false,south=false,up=false,waterlogged=false,west=false] | -5395518728522723402
+minecraft:glow_lichen 3037154 373 -1237 => true 0,1,0=glow_lichen[down=false,east=false,north=false,south=true,up=false,waterlogged=false,west=false] | -3335922123181098356
+minecraft:glow_lichen 3141883 410 -1290 => true 0,0,0=glow_lichen[down=false,east=false,north=false,south=false,up=true,waterlogged=false,west=false] | 2244420588595063459
+minecraft:glow_lichen 3246612 447 -1343 => false | -6973654287357783330
+minecraft:glow_lichen 3351341 484 -1396 => false | -3056159864458781906
+minecraft:glow_lichen 3456070 521 -1449 => true 0,0,0=glow_lichen[down=false,east=false,north=false,south=false,up=true,waterlogged=false,west=false] | -5708733557090716861
+minecraft:glow_lichen 3560799 558 -1502 => true 0,0,0=glow_lichen[down=false,east=false,north=true,south=false,up=false,waterlogged=false,west=false] | -2296928603940536366
+minecraft:glow_lichen 3665528 595 -1555 => true 0,0,0=glow_lichen[down=false,east=true,north=false,south=false,up=false,waterlogged=false,west=false] | 7132907220003088725
+minecraft:glow_lichen 3770257 632 -1608 => true 0,0,0=glow_lichen[down=false,east=true,north=false,south=false,up=false,waterlogged=false,west=false] | 5480423255737818621
+minecraft:glow_lichen 3874986 669 -1661 => false | 404996254683702538
+minecraft:glow_lichen 3979715 706 -1714 => true 0,0,0=glow_lichen[down=false,east=false,north=false,south=true,up=false,waterlogged=false,west=false] | -4831022327939275397
+minecraft:glow_lichen 4084444 743 -1767 => true 0,0,0=glow_lichen[down=false,east=false,north=true,south=false,up=false,waterlogged=false,west=false] 1,0,0=glow_lichen[down=false,east=false,north=true,south=false,up=false,waterlogged=false,west=false] | -8451164660694070089
+minecraft:glow_lichen 4189173 780 -1820 => false | 2720913085599534441
+minecraft:sculk_vein 104742 -663 247 => true 1,0,0=sculk_vein[down=false,east=false,north=false,south=false,up=true,waterlogged=false,west=false] 0,1,0=sculk_vein[down=false,east=true,north=false,south=false,up=false,waterlogged=false,west=false] | 8032816194184314356
+minecraft:sculk_vein 209471 -626 194 => false | -8854759292092394676
+minecraft:sculk_vein 314200 -589 141 => true 0,-2,-1=sculk_vein[down=false,east=false,north=false,south=false,up=true,waterlogged=false,west=false] 0,-1,0=sculk_vein[down=false,east=false,north=true,south=false,up=false,waterlogged=false,west=false] | 4849146573987248369
+minecraft:sculk_vein 418929 -552 88 => true 0,0,0=sculk_vein[down=false,east=false,north=false,south=false,up=false,waterlogged=false,west=true] -1,1,0=sculk_vein[down=true,east=false,north=false,south=false,up=false,waterlogged=false,west=false] | -1664203801994372000
+minecraft:sculk_vein 523658 -515 35 => true 0,-1,0=sculk_vein[down=false,east=true,north=false,south=false,up=false,waterlogged=false,west=false] 0,0,0=sculk_vein[down=false,east=true,north=false,south=false,up=false,waterlogged=false,west=false] | 2241592252555355078
+minecraft:sculk_vein 628387 -478 -18 => true -1,0,1=sculk_vein[down=false,east=false,north=true,south=false,up=false,waterlogged=false,west=false] 0,0,0=sculk_vein[down=false,east=false,north=false,south=false,up=false,waterlogged=false,west=true] | 175454659384356572
+minecraft:sculk_vein 733116 -441 -71 => true -1,-1,-1=sculk_vein[down=false,east=true,north=false,south=false,up=false,waterlogged=false,west=false] 0,0,-1=sculk_vein[down=true,east=false,north=false,south=false,up=false,waterlogged=false,west=false] | 5301475024531972809
+minecraft:sculk_vein 837845 -404 -124 => true 1,-2,0=sculk_vein[down=false,east=false,north=false,south=false,up=false,waterlogged=false,west=true] 0,-1,0=sculk_vein[down=true,east=false,north=false,south=false,up=false,waterlogged=false,west=false] | -5747862995214722248
+minecraft:sculk_vein 942574 -367 -177 => true 0,0,0=sculk_vein[down=false,east=false,north=false,south=false,up=true,waterlogged=false,west=false] -1,1,0=sculk_vein[down=false,east=true,north=false,south=false,up=false,waterlogged=false,west=false] | -5439461087556965487
+minecraft:sculk_vein 1047303 -330 -230 => false | -3317377865603170562
+minecraft:sculk_vein 1152032 -293 -283 => false | -1702797710558996112
+minecraft:sculk_vein 1256761 -256 -336 => false | 2834755228907883513
+minecraft:sculk_vein 1361490 -219 -389 => true 0,0,0=sculk_vein[down=false,east=false,north=false,south=false,up=true,waterlogged=false,west=false] 1,0,0=sculk_vein[down=false,east=false,north=false,south=false,up=true,waterlogged=false,west=false] | -4640606110172747318
+minecraft:sculk_vein 1466219 -182 -442 => false | -8503018526883073444
+minecraft:sculk_vein 1570948 -145 -495 => true 0,0,0=sculk_vein[down=false,east=false,north=false,south=false,up=true,waterlogged=false,west=false] -1,1,0=sculk_vein[down=false,east=true,north=false,south=false,up=false,waterlogged=false,west=false] | 2874707409345610030
+minecraft:sculk_vein 1675677 -108 -548 => true 0,0,0=sculk_vein[down=false,east=true,north=false,south=false,up=false,waterlogged=false,west=false] 1,0,-1=sculk_vein[down=false,east=false,north=false,south=true,up=false,waterlogged=false,west=false] | 9038395682632493178
+minecraft:sculk_vein 1780406 -71 -601 => false | 4590510525983697301
+minecraft:sculk_vein 1885135 -34 -654 => true 0,0,0=sculk_vein[down=false,east=true,north=false,south=false,up=false,waterlogged=false,west=false] 1,1,0=sculk_vein[down=true,east=false,north=false,south=false,up=false,waterlogged=false,west=false] | -3192425922344513745
+minecraft:sculk_vein 1989864 3 -707 => true 0,0,1=sculk_vein[down=false,east=true,north=false,south=false,up=false,waterlogged=false,west=false] 1,0,0=sculk_vein[down=false,east=false,north=false,south=true,up=false,waterlogged=false,west=false] | -1203775075190208715
+minecraft:sculk_vein 2094593 40 -760 => true 0,1,0=sculk_vein[down=false,east=true,north=false,south=false,up=true,waterlogged=true,west=false] | 7367334031822605829
+minecraft:sculk_vein 2199322 77 -813 => true 0,0,0=sculk_vein[down=false,east=false,north=false,south=false,up=true,waterlogged=false,west=false] 0,1,-1=sculk_vein[down=false,east=false,north=false,south=true,up=false,waterlogged=false,west=false] | 3422583801126004896
+minecraft:sculk_vein 2304051 114 -866 => false | 3425511482140786699
+minecraft:sculk_vein 2408780 151 -919 => true 0,0,0=sculk_vein[down=false,east=false,north=false,south=false,up=true,waterlogged=false,west=false] 0,1,-1=sculk_vein[down=false,east=false,north=false,south=true,up=false,waterlogged=false,west=false] | -992593326365856314
+minecraft:sculk_vein 2513509 188 -972 => true 0,0,0=sculk_vein[down=false,east=true,north=false,south=false,up=false,waterlogged=false,west=false] 1,0,-1=sculk_vein[down=false,east=false,north=false,south=true,up=false,waterlogged=false,west=false] | -7692983272714377024
+minecraft:sculk_vein 2618238 225 -1025 => true -1,0,0=sculk_vein[down=true,east=false,north=false,south=false,up=false,waterlogged=false,west=true] | -6829473916730642566
+minecraft:sculk_vein 2722967 262 -1078 => true 0,0,0=sculk_vein[down=false,east=false,north=false,south=false,up=false,waterlogged=false,west=true] 0,1,0=sculk_vein[down=false,east=false,north=false,south=false,up=false,waterlogged=false,west=true] | -141411121395629542
+minecraft:sculk_vein 2827696 299 -1131 => true 0,-1,0=sculk_vein[down=false,east=false,north=true,south=false,up=false,waterlogged=false,west=false] 1,-1,-1=sculk_vein[down=false,east=false,north=false,south=false,up=false,waterlogged=false,west=true] | -8898117322560355358
+minecraft:sculk_vein 2932425 336 -1184 => true 1,-1,0=sculk_vein[down=false,east=false,north=false,south=false,up=true,waterlogged=false,west=false] 0,0,0=sculk_vein[down=false,east=true,north=false,south=false,up=false,waterlogged=false,west=false] | -7534645637792079471
+minecraft:sculk_vein 3037154 373 -1237 => true 0,0,1=sculk_vein[down=false,east=false,north=false,south=false,up=true,waterlogged=false,west=false] 0,1,0=sculk_vein[down=false,east=false,north=false,south=true,up=false,waterlogged=false,west=false] | -8492734581174892867
+minecraft:sculk_vein 3141883 410 -1290 => true -1,0,0=sculk_vein[down=false,east=false,north=false,south=false,up=true,waterlogged=false,west=false] 0,0,0=sculk_vein[down=false,east=false,north=false,south=false,up=true,waterlogged=false,west=false] | -5162241703225673692
+minecraft:sculk_vein 3246612 447 -1343 => false | -6973654287357783330
+minecraft:sculk_vein 3351341 484 -1396 => false | -1547702983551530640
+minecraft:sculk_vein 3456070 521 -1449 => true 0,0,0=sculk_vein[down=false,east=false,north=false,south=true,up=true,waterlogged=false,west=false] | 8600816572528711060
+minecraft:sculk_vein 3560799 558 -1502 => true -1,0,0=sculk_vein[down=false,east=false,north=true,south=false,up=false,waterlogged=false,west=false] 0,0,0=sculk_vein[down=false,east=false,north=true,south=false,up=false,waterlogged=false,west=false] | 124511355905500127
+minecraft:sculk_vein 3665528 595 -1555 => true 0,0,0=sculk_vein[down=false,east=true,north=false,south=false,up=false,waterlogged=false,west=false] 1,0,-1=sculk_vein[down=false,east=false,north=false,south=true,up=false,waterlogged=false,west=false] | 9060845938200330113
+minecraft:sculk_vein 3770257 632 -1608 => true 0,0,0=sculk_vein[down=false,east=true,north=false,south=false,up=false,waterlogged=false,west=false] 1,0,1=sculk_vein[down=false,east=false,north=true,south=false,up=false,waterlogged=false,west=false] | -919734746016826829
+minecraft:sculk_vein 3874986 669 -1661 => false | 404996254683702538
+minecraft:sculk_vein 3979715 706 -1714 => true 0,0,0=sculk_vein[down=false,east=false,north=false,south=true,up=false,waterlogged=false,west=false] 1,0,1=sculk_vein[down=false,east=false,north=false,south=false,up=false,waterlogged=false,west=true] | 5975611668810941624
+minecraft:sculk_vein 4084444 743 -1767 => true 0,0,0=sculk_vein[down=false,east=false,north=true,south=false,up=false,waterlogged=false,west=false] 1,0,0=sculk_vein[down=false,east=false,north=true,south=false,up=false,waterlogged=false,west=false] | 7853939888515387738
+minecraft:sculk_vein 4189173 780 -1820 => false | 2720913085599534441

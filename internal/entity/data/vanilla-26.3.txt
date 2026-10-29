@@ -1,0 +1,421 @@
+attr 0 minecraft:air_drag_modifier 1.0 0.0 2048.0 true
+attr 1 minecraft:armor 0.0 0.0 30.0 true
+attr 2 minecraft:armor_toughness 0.0 0.0 20.0 true
+attr 3 minecraft:attack_damage 2.0 0.0 2048.0 false
+attr 4 minecraft:attack_knockback 0.0 0.0 5.0 false
+attr 5 minecraft:attack_speed 4.0 0.0 1024.0 true
+attr 6 minecraft:below_name_distance 10.0 0.0 512.0 true
+attr 7 minecraft:block_break_speed 1.0 0.0 1024.0 true
+attr 8 minecraft:block_interaction_range 4.5 0.0 64.0 true
+attr 9 minecraft:bounciness 0.0 0.0 1.0 true
+attr 10 minecraft:burning_time 1.0 0.0 1024.0 true
+attr 11 minecraft:camera_distance 4.0 0.0 32.0 true
+attr 12 minecraft:explosion_knockback_resistance 0.0 0.0 1.0 true
+attr 13 minecraft:entity_interaction_range 3.0 0.0 64.0 true
+attr 14 minecraft:fall_damage_multiplier 1.0 0.0 100.0 true
+attr 15 minecraft:flying_speed 0.4 0.0 1024.0 true
+attr 16 minecraft:follow_range 32.0 0.0 2048.0 false
+attr 17 minecraft:friction_modifier 1.0 0.0 2048.0 true
+attr 18 minecraft:gravity 0.08 -1.0 1.0 true
+attr 19 minecraft:jump_strength 0.41999998688697815 0.0 32.0 true
+attr 20 minecraft:knockback_resistance 0.0 -2.0 1.0 false
+attr 21 minecraft:luck 0.0 -1024.0 1024.0 true
+attr 22 minecraft:max_absorption 0.0 0.0 2048.0 true
+attr 23 minecraft:max_health 20.0 1.0 1024.0 true
+attr 24 minecraft:mining_efficiency 0.0 0.0 1024.0 true
+attr 25 minecraft:movement_efficiency 0.0 0.0 1.0 true
+attr 26 minecraft:movement_speed 0.7 0.0 1024.0 true
+attr 27 minecraft:name_tag_distance 64.0 0.0 512.0 true
+attr 28 minecraft:oxygen_bonus 0.0 0.0 1024.0 true
+attr 29 minecraft:safe_fall_distance 3.0 -1024.0 1024.0 true
+attr 30 minecraft:scale 1.0 0.0625 16.0 true
+attr 31 minecraft:sneaking_speed 0.3 0.0 1.0 true
+attr 32 minecraft:spawn_reinforcements 0.0 0.0 1.0 false
+attr 33 minecraft:step_height 0.6 0.0 10.0 true
+attr 34 minecraft:submerged_mining_speed 0.2 0.0 20.0 true
+attr 35 minecraft:sweeping_damage_ratio 0.0 0.0 1.0 true
+attr 36 minecraft:tempt_range 10.0 0.0 2048.0 false
+attr 37 minecraft:water_movement_efficiency 0.0 0.0 1.0 true
+attr 38 minecraft:waypoint_transmit_range 0.0 0.0 6.0E7 false
+attr 39 minecraft:waypoint_receive_range 0.0 0.0 6.0E7 false
+phys minecraft:acacia_boat gravity=0.04 drag=1.0 w=1.375 h=0.5625 eye=0.5625 class=Boat
+phys minecraft:acacia_chest_boat gravity=0.04 drag=1.0 w=1.375 h=0.5625 eye=0.5625 class=ChestBoat
+phys minecraft:allay gravity=0.08 drag=0.98 w=0.35 h=0.6 eye=0.36 class=Allay
+base minecraft:allay air_drag_modifier armor armor_toughness attack_damage attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier flying_speed=0.10000000149011612 follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health movement_efficiency movement_speed=0.10000000149011612 name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:allay health=20.0
+phys minecraft:area_effect_cloud gravity=0.0 drag=0.98 w=6.0 h=0.5 eye=0.425 class=AreaEffectCloud
+phys minecraft:armadillo gravity=0.08 drag=0.98 w=0.7 h=0.65 eye=0.26 class=Armadillo
+base minecraft:armadillo air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=12.0 movement_efficiency movement_speed=0.14 name_tag_distance oxygen_bonus safe_fall_distance scale step_height tempt_range water_movement_efficiency waypoint_transmit_range
+inst minecraft:armadillo health=12.0
+phys minecraft:armor_stand gravity=0.08 drag=0.98 w=0.5 h=1.975 eye=1.7775 class=ArmorStand
+base minecraft:armor_stand air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier friction_modifier gravity jump_strength knockback_resistance max_absorption max_health movement_efficiency movement_speed name_tag_distance oxygen_bonus safe_fall_distance scale step_height=0.0 water_movement_efficiency waypoint_transmit_range
+inst minecraft:armor_stand health=20.0
+phys minecraft:arrow gravity=0.05 drag=0.99 w=0.5 h=0.5 eye=0.13 class=Arrow
+phys minecraft:axolotl gravity=0.08 drag=0.98 w=0.75 h=0.42 eye=0.2751 class=Axolotl
+base minecraft:axolotl air_drag_modifier armor armor_toughness attack_damage attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=14.0 movement_efficiency movement_speed=1.0 name_tag_distance oxygen_bonus safe_fall_distance scale step_height=1.0 tempt_range water_movement_efficiency waypoint_transmit_range
+inst minecraft:axolotl health=14.0
+phys minecraft:bamboo_chest_raft gravity=0.04 drag=1.0 w=1.375 h=0.5625 eye=0.5625 class=ChestRaft
+phys minecraft:bamboo_raft gravity=0.04 drag=1.0 w=1.375 h=0.5625 eye=0.5625 class=Raft
+phys minecraft:bat gravity=0.08 drag=0.98 w=0.5 h=0.9 eye=0.45 class=Bat
+base minecraft:bat air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=6.0 movement_efficiency movement_speed name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:bat health=6.0
+phys minecraft:bee gravity=0.08 drag=0.91 w=0.55 h=0.5 eye=0.3 class=Bee
+base minecraft:bee air_drag_modifier armor armor_toughness attack_damage attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier flying_speed=0.6000000238418579 follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=10.0 movement_efficiency movement_speed=0.30000001192092896 name_tag_distance oxygen_bonus safe_fall_distance scale step_height tempt_range water_movement_efficiency waypoint_transmit_range
+inst minecraft:bee health=10.0
+phys minecraft:birch_boat gravity=0.04 drag=1.0 w=1.375 h=0.5625 eye=0.5625 class=Boat
+phys minecraft:birch_chest_boat gravity=0.04 drag=1.0 w=1.375 h=0.5625 eye=0.5625 class=ChestBoat
+phys minecraft:blaze gravity=0.08 drag=0.98 w=0.6 h=1.8 eye=1.53 class=Blaze
+base minecraft:blaze air_drag_modifier armor armor_toughness attack_damage=6.0 attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=48.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health movement_efficiency movement_speed=0.23000000417232513 name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:blaze health=20.0
+phys minecraft:block_display gravity=0.0 drag=0.98 w=0.0 h=0.0 eye=0.0 class=BlockDisplay
+phys minecraft:bogged gravity=0.08 drag=0.98 w=0.6 h=1.99 eye=1.74 class=Bogged
+base minecraft:bogged air_drag_modifier armor armor_toughness attack_damage attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=16.0 movement_efficiency movement_speed=0.25 name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:bogged health=16.0
+phys minecraft:breeze gravity=0.08 drag=0.98 w=0.6 h=1.77 eye=1.3452 class=Breeze
+base minecraft:breeze air_drag_modifier armor armor_toughness attack_damage=3.0 attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=24.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=30.0 movement_efficiency movement_speed=0.6299999952316284 name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:breeze health=30.0
+phys minecraft:breeze_wind_charge gravity=0.0 drag=0.98 w=0.3125 h=0.3125 eye=0.0 class=BreezeWindCharge
+phys minecraft:camel gravity=0.08 drag=0.98 w=1.7 h=2.375 eye=2.275 class=Camel
+base minecraft:camel air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier=0.5 follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=32.0 movement_efficiency movement_speed=0.09000000357627869 name_tag_distance oxygen_bonus safe_fall_distance=6.0 scale step_height=1.5 tempt_range water_movement_efficiency waypoint_transmit_range
+inst minecraft:camel health=32.0
+phys minecraft:camel_husk gravity=0.08 drag=0.98 w=1.7 h=2.375 eye=2.275 class=CamelHusk
+base minecraft:camel_husk air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier=0.5 follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=32.0 movement_efficiency movement_speed=0.09000000357627869 name_tag_distance oxygen_bonus safe_fall_distance=6.0 scale step_height=1.5 tempt_range water_movement_efficiency waypoint_transmit_range
+inst minecraft:camel_husk health=32.0
+phys minecraft:cat gravity=0.08 drag=0.98 w=0.6 h=0.7 eye=0.35 class=Cat
+base minecraft:cat air_drag_modifier armor armor_toughness attack_damage=3.0 attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=10.0 movement_efficiency movement_speed=0.30000001192092896 name_tag_distance oxygen_bonus safe_fall_distance scale step_height tempt_range water_movement_efficiency waypoint_transmit_range
+inst minecraft:cat health=10.0
+phys minecraft:cave_spider gravity=0.08 drag=0.98 w=0.7 h=0.5 eye=0.45 class=CaveSpider
+base minecraft:cave_spider air_drag_modifier armor armor_toughness attack_damage attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=12.0 movement_efficiency movement_speed=0.30000001192092896 name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:cave_spider health=12.0
+phys minecraft:cherry_boat gravity=0.04 drag=1.0 w=1.375 h=0.5625 eye=0.5625 class=Boat
+phys minecraft:cherry_chest_boat gravity=0.04 drag=1.0 w=1.375 h=0.5625 eye=0.5625 class=ChestBoat
+phys minecraft:chest_minecart gravity=0.04 drag=0.95 w=0.98 h=0.7 eye=0.595 class=MinecartChest
+phys minecraft:chicken gravity=0.08 drag=0.98 w=0.4 h=0.7 eye=0.644 class=Chicken
+base minecraft:chicken air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=4.0 movement_efficiency movement_speed=0.25 name_tag_distance oxygen_bonus safe_fall_distance scale step_height tempt_range water_movement_efficiency waypoint_transmit_range
+inst minecraft:chicken health=4.0
+phys minecraft:cod gravity=0.08 drag=0.98 w=0.5 h=0.3 eye=0.195 class=Cod
+base minecraft:cod air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=3.0 movement_efficiency movement_speed name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:cod health=3.0
+phys minecraft:copper_golem gravity=0.08 drag=0.98 w=0.49 h=0.98 eye=0.8125 class=CopperGolem
+base minecraft:copper_golem air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=12.0 movement_efficiency movement_speed=0.20000000298023224 name_tag_distance oxygen_bonus safe_fall_distance scale step_height=1.0 water_movement_efficiency waypoint_transmit_range
+inst minecraft:copper_golem health=12.0
+phys minecraft:command_block_minecart gravity=0.04 drag=0.95 w=0.98 h=0.7 eye=0.595 class=MinecartCommandBlock
+phys minecraft:cow gravity=0.08 drag=0.98 w=0.9 h=1.4 eye=1.3 class=Cow
+base minecraft:cow air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=10.0 movement_efficiency movement_speed=0.20000000298023224 name_tag_distance oxygen_bonus safe_fall_distance scale step_height tempt_range water_movement_efficiency waypoint_transmit_range
+inst minecraft:cow health=10.0
+phys minecraft:creaking gravity=0.08 drag=0.98 w=0.9 h=2.7 eye=2.3 class=Creaking
+base minecraft:creaking air_drag_modifier armor armor_toughness attack_damage=3.0 attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=1.0 movement_efficiency movement_speed=0.4000000059604645 name_tag_distance oxygen_bonus safe_fall_distance scale step_height=1.0625 water_movement_efficiency waypoint_transmit_range
+inst minecraft:creaking health=1.0
+phys minecraft:creeper gravity=0.08 drag=0.98 w=0.6 h=1.7 eye=1.445 class=Creeper
+base minecraft:creeper air_drag_modifier armor armor_toughness attack_damage attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health movement_efficiency movement_speed=0.25 name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:creeper health=20.0
+phys minecraft:cushion gravity=0.0 drag=0.98 w=1.0 h=0.25 eye=0.2125 class=Cushion
+phys minecraft:dark_oak_boat gravity=0.04 drag=1.0 w=1.375 h=0.5625 eye=0.5625 class=Boat
+phys minecraft:dark_oak_chest_boat gravity=0.04 drag=1.0 w=1.375 h=0.5625 eye=0.5625 class=ChestBoat
+phys minecraft:dolphin gravity=0.08 drag=0.98 w=0.9 h=0.6 eye=0.3 class=Dolphin
+base minecraft:dolphin air_drag_modifier armor armor_toughness attack_damage=3.0 attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=10.0 movement_efficiency movement_speed=1.2000000476837158 name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:dolphin health=10.0
+phys minecraft:donkey gravity=0.08 drag=0.98 w=1.3964844 h=1.5 eye=1.425 class=Donkey
+base minecraft:donkey air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier=0.5 follow_range=16.0 friction_modifier gravity jump_strength=0.5 knockback_resistance max_absorption max_health=53.0 movement_efficiency movement_speed=0.17499999701976776 name_tag_distance oxygen_bonus safe_fall_distance=6.0 scale step_height=1.0 tempt_range water_movement_efficiency waypoint_transmit_range
+inst minecraft:donkey health=53.0
+phys minecraft:dragon_fireball gravity=0.0 drag=0.98 w=1.0 h=1.0 eye=0.85 class=DragonFireball
+phys minecraft:drowned gravity=0.08 drag=0.98 w=0.6 h=1.95 eye=1.74 class=Drowned
+base minecraft:drowned air_drag_modifier armor=2.0 armor_toughness attack_damage=3.0 attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=35.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health movement_efficiency movement_speed=0.23000000417232513 name_tag_distance oxygen_bonus safe_fall_distance scale spawn_reinforcements step_height=1.0 water_movement_efficiency waypoint_transmit_range
+inst minecraft:drowned health=20.0
+phys minecraft:egg gravity=0.03 drag=0.99 w=0.25 h=0.25 eye=0.2125 class=ThrownEgg
+phys minecraft:elder_guardian gravity=0.08 drag=0.98 w=1.9975 h=1.9975 eye=0.99875 class=ElderGuardian
+base minecraft:elder_guardian air_drag_modifier armor armor_toughness attack_damage=8.0 attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=80.0 movement_efficiency movement_speed=0.30000001192092896 name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:elder_guardian health=80.0
+phys minecraft:enderman gravity=0.08 drag=0.98 w=0.6 h=2.9 eye=2.55 class=Enderman
+base minecraft:enderman air_drag_modifier armor armor_toughness attack_damage=7.0 attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=64.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=40.0 movement_efficiency movement_speed=0.30000001192092896 name_tag_distance oxygen_bonus safe_fall_distance scale step_height=1.0 water_movement_efficiency waypoint_transmit_range
+inst minecraft:enderman health=40.0
+phys minecraft:endermite gravity=0.08 drag=0.98 w=0.4 h=0.3 eye=0.13 class=Endermite
+base minecraft:endermite air_drag_modifier armor armor_toughness attack_damage attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=8.0 movement_efficiency movement_speed=0.25 name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:endermite health=8.0
+phys minecraft:ender_dragon gravity=0.08 drag=0.98 w=16.0 h=8.0 eye=6.8 class=EnderDragon
+base minecraft:ender_dragon air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance=16.0 explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=200.0 movement_efficiency movement_speed name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:ender_dragon health=200.0
+phys minecraft:ender_pearl gravity=0.03 drag=0.99 w=0.25 h=0.25 eye=0.2125 class=ThrownEnderpearl
+phys minecraft:end_crystal gravity=0.0 drag=0.98 w=2.0 h=2.0 eye=1.7 class=EndCrystal
+phys minecraft:evoker gravity=0.08 drag=0.98 w=0.6 h=1.95 eye=1.6575 class=Evoker
+base minecraft:evoker air_drag_modifier armor armor_toughness attack_damage attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=12.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=24.0 movement_efficiency movement_speed=0.5 name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:evoker health=24.0
+phys minecraft:evoker_fangs gravity=0.0 drag=0.98 w=0.5 h=0.8 eye=0.68 class=EvokerFangs
+phys minecraft:experience_bottle gravity=0.07 drag=0.99 w=0.25 h=0.25 eye=0.2125 class=ThrownExperienceBottle
+phys minecraft:experience_orb gravity=0.03 drag=0.98 w=0.5 h=0.5 eye=0.425 class=ExperienceOrb
+phys minecraft:eye_of_ender gravity=0.0 drag=0.98 w=0.25 h=0.25 eye=0.2125 class=EyeOfEnder
+phys minecraft:falling_block gravity=0.04 drag=0.98 w=0.98 h=0.98 eye=0.83300006 class=FallingBlockEntity
+phys minecraft:fireball gravity=0.0 drag=0.98 w=1.0 h=1.0 eye=0.85 class=LargeFireball
+phys minecraft:firework_rocket gravity=0.0 drag=0.98 w=0.25 h=0.25 eye=0.2125 class=FireworkRocketEntity
+phys minecraft:fox gravity=0.08 drag=0.98 w=0.6 h=0.7 eye=0.4 class=Fox
+base minecraft:fox air_drag_modifier armor armor_toughness attack_damage attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=10.0 movement_efficiency movement_speed=0.30000001192092896 name_tag_distance oxygen_bonus safe_fall_distance=5.0 scale step_height tempt_range water_movement_efficiency waypoint_transmit_range
+inst minecraft:fox health=10.0
+phys minecraft:frog gravity=0.08 drag=0.98 w=0.5 h=0.5 eye=0.425 class=Frog
+base minecraft:frog air_drag_modifier armor armor_toughness attack_damage=10.0 attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=10.0 movement_efficiency movement_speed=1.0 name_tag_distance oxygen_bonus safe_fall_distance scale step_height=1.0 tempt_range water_movement_efficiency waypoint_transmit_range
+inst minecraft:frog health=10.0
+phys minecraft:furnace_minecart gravity=0.04 drag=0.95 w=0.98 h=0.7 eye=0.595 class=MinecartFurnace
+phys minecraft:ghast gravity=0.08 drag=0.98 w=4.0 h=4.0 eye=2.6 class=Ghast
+base minecraft:ghast air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance=8.0 explosion_knockback_resistance entity_interaction_range fall_damage_multiplier flying_speed=0.06 follow_range=100.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=10.0 movement_efficiency movement_speed name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:ghast health=10.0
+phys minecraft:happy_ghast gravity=0.08 drag=0.98 w=4.0 h=4.0 eye=2.6 class=HappyGhast
+base minecraft:happy_ghast air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance=8.0 explosion_knockback_resistance entity_interaction_range fall_damage_multiplier flying_speed=0.05 follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health movement_efficiency movement_speed=0.05 name_tag_distance oxygen_bonus safe_fall_distance scale step_height tempt_range=16.0 water_movement_efficiency waypoint_transmit_range
+inst minecraft:happy_ghast health=20.0
+phys minecraft:giant gravity=0.08 drag=0.98 w=3.6 h=12.0 eye=10.44 class=Giant
+base minecraft:giant air_drag_modifier armor armor_toughness attack_damage=50.0 attack_knockback below_name_distance bounciness burning_time camera_distance=16.0 explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=100.0 movement_efficiency movement_speed=0.5 name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:giant health=100.0
+phys minecraft:glow_item_frame gravity=0.0 drag=0.98 w=0.5 h=0.5 eye=0.0 class=GlowItemFrame
+phys minecraft:glow_squid gravity=0.08 drag=0.98 w=0.8 h=0.8 eye=0.4 class=GlowSquid
+base minecraft:glow_squid air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=10.0 movement_efficiency movement_speed name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:glow_squid health=10.0
+phys minecraft:goat gravity=0.08 drag=0.98 w=0.9 h=1.3 eye=1.105 class=Goat
+base minecraft:goat air_drag_modifier armor armor_toughness attack_damage attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=10.0 movement_efficiency movement_speed=0.20000000298023224 name_tag_distance oxygen_bonus safe_fall_distance scale step_height tempt_range water_movement_efficiency waypoint_transmit_range
+inst minecraft:goat health=10.0
+phys minecraft:guardian gravity=0.08 drag=0.98 w=0.85 h=0.85 eye=0.425 class=Guardian
+base minecraft:guardian air_drag_modifier armor armor_toughness attack_damage=6.0 attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=30.0 movement_efficiency movement_speed=0.5 name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:guardian health=30.0
+phys minecraft:hoglin gravity=0.08 drag=0.98 w=1.3964844 h=1.4 eye=1.19 class=Hoglin
+base minecraft:hoglin air_drag_modifier armor armor_toughness attack_damage=6.0 attack_knockback=1.0 below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance=0.6000000238418579 max_absorption max_health=40.0 movement_efficiency movement_speed=0.30000001192092896 name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:hoglin health=40.0
+phys minecraft:hopper_minecart gravity=0.04 drag=0.95 w=0.98 h=0.7 eye=0.595 class=MinecartHopper
+phys minecraft:horse gravity=0.08 drag=0.98 w=1.3964844 h=1.6 eye=1.52 class=Horse
+base minecraft:horse air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier=0.5 follow_range=16.0 friction_modifier gravity jump_strength=0.7 knockback_resistance max_absorption max_health=53.0 movement_efficiency movement_speed=0.22499999403953552 name_tag_distance oxygen_bonus safe_fall_distance=6.0 scale step_height=1.0 tempt_range water_movement_efficiency waypoint_transmit_range
+inst minecraft:horse health=53.0
+phys minecraft:husk gravity=0.08 drag=0.98 w=0.6 h=1.95 eye=1.74 class=Husk
+base minecraft:husk air_drag_modifier armor=2.0 armor_toughness attack_damage=3.0 attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=35.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health movement_efficiency movement_speed=0.23000000417232513 name_tag_distance oxygen_bonus safe_fall_distance scale spawn_reinforcements step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:husk health=20.0
+phys minecraft:illusioner gravity=0.08 drag=0.98 w=0.6 h=1.95 eye=1.6575 class=Illusioner
+base minecraft:illusioner air_drag_modifier armor armor_toughness attack_damage attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=18.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=32.0 movement_efficiency movement_speed=0.5 name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:illusioner health=32.0
+phys minecraft:interaction gravity=0.0 drag=0.98 w=0.0 h=0.0 eye=0.0 class=Interaction
+phys minecraft:iron_golem gravity=0.08 drag=0.98 w=1.4 h=2.7 eye=2.295 class=IronGolem
+base minecraft:iron_golem air_drag_modifier armor armor_toughness attack_damage=15.0 attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance=1.0 max_absorption max_health=100.0 movement_efficiency movement_speed=0.25 name_tag_distance oxygen_bonus safe_fall_distance scale step_height=1.0 water_movement_efficiency waypoint_transmit_range
+inst minecraft:iron_golem health=100.0
+phys minecraft:item gravity=0.04 drag=0.98 w=0.25 h=0.25 eye=0.2125 class=ItemEntity
+phys minecraft:item_display gravity=0.0 drag=0.98 w=0.0 h=0.0 eye=0.0 class=ItemDisplay
+phys minecraft:item_frame gravity=0.0 drag=0.98 w=0.5 h=0.5 eye=0.0 class=ItemFrame
+phys minecraft:jungle_boat gravity=0.04 drag=1.0 w=1.375 h=0.5625 eye=0.5625 class=Boat
+phys minecraft:jungle_chest_boat gravity=0.04 drag=1.0 w=1.375 h=0.5625 eye=0.5625 class=ChestBoat
+phys minecraft:leash_knot gravity=0.0 drag=0.98 w=0.375 h=0.5 eye=0.0625 class=LeashFenceKnotEntity
+phys minecraft:lightning_bolt gravity=0.0 drag=0.98 w=0.0 h=0.0 eye=0.0 class=LightningBolt
+phys minecraft:llama gravity=0.08 drag=0.98 w=0.9 h=1.87 eye=1.7765 class=Llama
+base minecraft:llama air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier=0.5 follow_range=16.0 friction_modifier gravity jump_strength=0.5 knockback_resistance max_absorption max_health=53.0 movement_efficiency movement_speed=0.17499999701976776 name_tag_distance oxygen_bonus safe_fall_distance=6.0 scale step_height=1.0 tempt_range water_movement_efficiency waypoint_transmit_range
+inst minecraft:llama health=53.0
+phys minecraft:llama_spit gravity=0.06 drag=0.99 w=0.25 h=0.25 eye=0.2125 class=LlamaSpit
+phys minecraft:magma_cube gravity=0.08 drag=0.98 w=0.52 h=0.52 eye=0.325 class=MagmaCube
+base minecraft:magma_cube air_drag_modifier armor armor_toughness attack_damage attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health movement_efficiency movement_speed=0.20000000298023224 name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:magma_cube health=20.0
+phys minecraft:mangrove_boat gravity=0.04 drag=1.0 w=1.375 h=0.5625 eye=0.5625 class=Boat
+phys minecraft:mangrove_chest_boat gravity=0.04 drag=1.0 w=1.375 h=0.5625 eye=0.5625 class=ChestBoat
+phys minecraft:mannequin gravity=0.08 drag=0.98 w=0.6 h=1.8 eye=1.62 class=Mannequin
+base minecraft:mannequin air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier friction_modifier gravity jump_strength knockback_resistance max_absorption max_health movement_efficiency movement_speed name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:mannequin health=20.0
+phys minecraft:marker gravity=0.0 drag=0.98 w=0.0 h=0.0 eye=0.0 class=Marker
+phys minecraft:minecart gravity=0.04 drag=0.95 w=0.98 h=0.7 eye=0.595 class=Minecart
+phys minecraft:mooshroom gravity=0.08 drag=0.98 w=0.9 h=1.4 eye=1.3 class=MushroomCow
+base minecraft:mooshroom air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=10.0 movement_efficiency movement_speed=0.20000000298023224 name_tag_distance oxygen_bonus safe_fall_distance scale step_height tempt_range water_movement_efficiency waypoint_transmit_range
+inst minecraft:mooshroom health=10.0
+phys minecraft:mule gravity=0.08 drag=0.98 w=1.3964844 h=1.6 eye=1.52 class=Mule
+base minecraft:mule air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier=0.5 follow_range=16.0 friction_modifier gravity jump_strength=0.5 knockback_resistance max_absorption max_health=53.0 movement_efficiency movement_speed=0.17499999701976776 name_tag_distance oxygen_bonus safe_fall_distance=6.0 scale step_height=1.0 tempt_range water_movement_efficiency waypoint_transmit_range
+inst minecraft:mule health=53.0
+phys minecraft:nautilus gravity=0.08 drag=0.98 w=0.875 h=0.95 eye=0.2751 class=Nautilus
+base minecraft:nautilus air_drag_modifier armor armor_toughness attack_damage=3.0 attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance=0.30000001192092896 max_absorption max_health=15.0 movement_efficiency movement_speed=1.0 name_tag_distance oxygen_bonus safe_fall_distance scale step_height tempt_range water_movement_efficiency waypoint_transmit_range
+inst minecraft:nautilus health=15.0
+phys minecraft:oak_boat gravity=0.04 drag=1.0 w=1.375 h=0.5625 eye=0.5625 class=Boat
+phys minecraft:oak_chest_boat gravity=0.04 drag=1.0 w=1.375 h=0.5625 eye=0.5625 class=ChestBoat
+phys minecraft:ocelot gravity=0.08 drag=0.98 w=0.6 h=0.7 eye=0.595 class=Ocelot
+base minecraft:ocelot air_drag_modifier armor armor_toughness attack_damage=3.0 attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=10.0 movement_efficiency movement_speed=0.30000001192092896 name_tag_distance oxygen_bonus safe_fall_distance scale step_height tempt_range water_movement_efficiency waypoint_transmit_range
+inst minecraft:ocelot health=10.0
+phys minecraft:ominous_item_spawner gravity=0.0 drag=0.98 w=0.25 h=0.25 eye=0.2125 class=OminousItemSpawner
+phys minecraft:painting gravity=0.0 drag=0.98 w=0.5 h=0.5 eye=0.425 class=Painting
+phys minecraft:pale_oak_boat gravity=0.04 drag=1.0 w=1.375 h=0.5625 eye=0.5625 class=Boat
+phys minecraft:pale_oak_chest_boat gravity=0.04 drag=1.0 w=1.375 h=0.5625 eye=0.5625 class=ChestBoat
+phys minecraft:panda gravity=0.08 drag=0.98 w=1.3 h=1.25 eye=1.0625 class=Panda
+base minecraft:panda air_drag_modifier armor armor_toughness attack_damage=6.0 attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health movement_efficiency movement_speed=0.15000000596046448 name_tag_distance oxygen_bonus safe_fall_distance scale step_height tempt_range water_movement_efficiency waypoint_transmit_range
+inst minecraft:panda health=20.0
+phys minecraft:parched gravity=0.08 drag=0.98 w=0.6 h=1.99 eye=1.74 class=Parched
+base minecraft:parched air_drag_modifier armor armor_toughness attack_damage attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=16.0 movement_efficiency movement_speed=0.25 name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:parched health=16.0
+phys minecraft:parrot gravity=0.08 drag=0.91 w=0.5 h=0.9 eye=0.54 class=Parrot
+base minecraft:parrot air_drag_modifier armor armor_toughness attack_damage=3.0 attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier flying_speed=0.4000000059604645 follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=6.0 movement_efficiency movement_speed=0.20000000298023224 name_tag_distance oxygen_bonus safe_fall_distance scale step_height tempt_range water_movement_efficiency waypoint_transmit_range
+inst minecraft:parrot health=6.0
+phys minecraft:phantom gravity=0.08 drag=0.98 w=0.9 h=0.5 eye=0.175 class=Phantom
+base minecraft:phantom air_drag_modifier armor armor_toughness attack_damage attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health movement_efficiency movement_speed name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:phantom health=20.0
+phys minecraft:pig gravity=0.08 drag=0.98 w=0.9 h=0.9 eye=0.765 class=Pig
+base minecraft:pig air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=10.0 movement_efficiency movement_speed=0.25 name_tag_distance oxygen_bonus safe_fall_distance scale step_height tempt_range water_movement_efficiency waypoint_transmit_range
+inst minecraft:pig health=10.0
+phys minecraft:piglin gravity=0.08 drag=0.98 w=0.6 h=1.95 eye=1.79 class=Piglin
+base minecraft:piglin air_drag_modifier armor armor_toughness attack_damage=5.0 attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=16.0 movement_efficiency movement_speed=0.3499999940395355 name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:piglin health=16.0
+phys minecraft:piglin_brute gravity=0.08 drag=0.98 w=0.6 h=1.95 eye=1.79 class=PiglinBrute
+base minecraft:piglin_brute air_drag_modifier armor armor_toughness attack_damage=7.0 attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=12.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=50.0 movement_efficiency movement_speed=0.3499999940395355 name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:piglin_brute health=50.0
+phys minecraft:pillager gravity=0.08 drag=0.98 w=0.6 h=1.95 eye=1.6575 class=Pillager
+base minecraft:pillager air_drag_modifier armor armor_toughness attack_damage=5.0 attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=24.0 movement_efficiency movement_speed=0.3499999940395355 name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:pillager health=24.0
+phys minecraft:polar_bear gravity=0.08 drag=0.98 w=1.4 h=1.4 eye=1.19 class=PolarBear
+base minecraft:polar_bear air_drag_modifier armor armor_toughness attack_damage=6.0 attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=20.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=30.0 movement_efficiency movement_speed=0.25 name_tag_distance oxygen_bonus safe_fall_distance scale step_height tempt_range water_movement_efficiency waypoint_transmit_range
+inst minecraft:polar_bear health=30.0
+phys minecraft:poplar_boat gravity=0.04 drag=1.0 w=1.375 h=0.5625 eye=0.5625 class=Boat
+phys minecraft:poplar_chest_boat gravity=0.04 drag=1.0 w=1.375 h=0.5625 eye=0.5625 class=ChestBoat
+phys minecraft:splash_potion gravity=0.05 drag=0.99 w=0.25 h=0.25 eye=0.2125 class=ThrownSplashPotion
+phys minecraft:lingering_potion gravity=0.05 drag=0.99 w=0.25 h=0.25 eye=0.2125 class=ThrownLingeringPotion
+phys minecraft:pufferfish gravity=0.08 drag=0.98 w=0.7 h=0.7 eye=0.2275 class=Pufferfish
+base minecraft:pufferfish air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=3.0 movement_efficiency movement_speed name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:pufferfish health=3.0
+phys minecraft:rabbit gravity=0.08 drag=0.98 w=0.49 h=0.6 eye=0.59 class=Rabbit
+base minecraft:rabbit air_drag_modifier armor armor_toughness attack_damage=3.0 attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=3.0 movement_efficiency movement_speed=0.30000001192092896 name_tag_distance oxygen_bonus safe_fall_distance scale step_height tempt_range water_movement_efficiency waypoint_transmit_range
+inst minecraft:rabbit health=3.0
+phys minecraft:ravager gravity=0.08 drag=0.98 w=1.95 h=2.2 eye=1.8700001 class=Ravager
+base minecraft:ravager air_drag_modifier armor armor_toughness attack_damage=12.0 attack_knockback=1.5 below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range friction_modifier gravity jump_strength knockback_resistance=0.75 max_absorption max_health=100.0 movement_efficiency movement_speed=0.3 name_tag_distance oxygen_bonus safe_fall_distance scale step_height=1.0 water_movement_efficiency waypoint_transmit_range
+inst minecraft:ravager health=100.0
+phys minecraft:salmon gravity=0.08 drag=0.98 w=0.7 h=0.4 eye=0.26 class=Salmon
+base minecraft:salmon air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=3.0 movement_efficiency movement_speed name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:salmon health=3.0
+phys minecraft:sheep gravity=0.08 drag=0.98 w=0.9 h=1.3 eye=1.235 class=Sheep
+base minecraft:sheep air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=8.0 movement_efficiency movement_speed=0.23000000417232513 name_tag_distance oxygen_bonus safe_fall_distance scale step_height tempt_range water_movement_efficiency waypoint_transmit_range
+inst minecraft:sheep health=8.0
+phys minecraft:shulker gravity=0.08 drag=0.98 w=1.0 h=1.0 eye=0.5 class=Shulker
+base minecraft:shulker air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=30.0 movement_efficiency movement_speed name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:shulker health=30.0
+phys minecraft:shulker_bullet gravity=0.04 drag=0.98 w=0.3125 h=0.3125 eye=0.265625 class=ShulkerBullet
+phys minecraft:silverfish gravity=0.08 drag=0.98 w=0.4 h=0.3 eye=0.13 class=Silverfish
+base minecraft:silverfish air_drag_modifier armor armor_toughness attack_damage=1.0 attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=8.0 movement_efficiency movement_speed=0.25 name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:silverfish health=8.0
+phys minecraft:skeleton gravity=0.08 drag=0.98 w=0.6 h=1.99 eye=1.74 class=Skeleton
+base minecraft:skeleton air_drag_modifier armor armor_toughness attack_damage attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health movement_efficiency movement_speed=0.25 name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:skeleton health=20.0
+phys minecraft:skeleton_horse gravity=0.08 drag=0.98 w=1.3964844 h=1.6 eye=1.52 class=SkeletonHorse
+base minecraft:skeleton_horse air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier=0.5 follow_range=16.0 friction_modifier gravity jump_strength=0.7 knockback_resistance max_absorption max_health=15.0 movement_efficiency movement_speed=0.20000000298023224 name_tag_distance oxygen_bonus safe_fall_distance=6.0 scale step_height=1.0 tempt_range water_movement_efficiency waypoint_transmit_range
+inst minecraft:skeleton_horse health=15.0
+phys minecraft:slime gravity=0.08 drag=0.98 w=0.52 h=0.52 eye=0.325 class=Slime
+base minecraft:slime air_drag_modifier armor armor_toughness attack_damage attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health movement_efficiency movement_speed name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:slime health=20.0
+phys minecraft:small_fireball gravity=0.0 drag=0.98 w=0.3125 h=0.3125 eye=0.265625 class=SmallFireball
+phys minecraft:sniffer gravity=0.08 drag=0.98 w=1.9 h=1.75 eye=1.05 class=Sniffer
+base minecraft:sniffer air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=14.0 movement_efficiency movement_speed=0.10000000149011612 name_tag_distance oxygen_bonus safe_fall_distance scale step_height tempt_range water_movement_efficiency waypoint_transmit_range
+inst minecraft:sniffer health=14.0
+phys minecraft:snowball gravity=0.03 drag=0.99 w=0.25 h=0.25 eye=0.2125 class=Snowball
+phys minecraft:snow_golem gravity=0.08 drag=0.98 w=0.7 h=1.9 eye=1.7 class=SnowGolem
+base minecraft:snow_golem air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=4.0 movement_efficiency movement_speed=0.20000000298023224 name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:snow_golem health=4.0
+phys minecraft:spawner_minecart gravity=0.04 drag=0.95 w=0.98 h=0.7 eye=0.595 class=MinecartSpawner
+phys minecraft:spectral_arrow gravity=0.05 drag=0.99 w=0.5 h=0.5 eye=0.13 class=SpectralArrow
+phys minecraft:spider gravity=0.08 drag=0.98 w=1.4 h=0.9 eye=0.65 class=Spider
+base minecraft:spider air_drag_modifier armor armor_toughness attack_damage attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=16.0 movement_efficiency movement_speed=0.30000001192092896 name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:spider health=16.0
+phys minecraft:spruce_boat gravity=0.04 drag=1.0 w=1.375 h=0.5625 eye=0.5625 class=Boat
+phys minecraft:spruce_chest_boat gravity=0.04 drag=1.0 w=1.375 h=0.5625 eye=0.5625 class=ChestBoat
+phys minecraft:squid gravity=0.08 drag=0.98 w=0.8 h=0.8 eye=0.4 class=Squid
+base minecraft:squid air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=10.0 movement_efficiency movement_speed name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:squid health=10.0
+phys minecraft:stray gravity=0.08 drag=0.98 w=0.6 h=1.99 eye=1.74 class=Stray
+base minecraft:stray air_drag_modifier armor armor_toughness attack_damage attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health movement_efficiency movement_speed=0.25 name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:stray health=20.0
+phys minecraft:strider gravity=0.08 drag=0.98 w=0.9 h=1.7 eye=1.445 class=Strider
+base minecraft:strider air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health movement_efficiency movement_speed=0.17499999701976776 name_tag_distance oxygen_bonus safe_fall_distance scale step_height tempt_range water_movement_efficiency waypoint_transmit_range
+inst minecraft:strider health=20.0
+phys minecraft:sulfur_cube gravity=0.08 drag=0.98 w=0.49 h=0.49 eye=0.175 class=SulfurCube
+base minecraft:sulfur_cube air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health movement_efficiency movement_speed name_tag_distance oxygen_bonus safe_fall_distance scale step_height tempt_range=8.0 water_movement_efficiency waypoint_transmit_range
+inst minecraft:sulfur_cube health=20.0
+phys minecraft:tadpole gravity=0.08 drag=0.98 w=0.4 h=0.3 eye=0.19500001 class=Tadpole
+base minecraft:tadpole air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=6.0 movement_efficiency movement_speed=1.0 name_tag_distance oxygen_bonus safe_fall_distance scale step_height tempt_range water_movement_efficiency waypoint_transmit_range
+inst minecraft:tadpole health=6.0
+phys minecraft:text_display gravity=0.0 drag=0.98 w=0.0 h=0.0 eye=0.0 class=TextDisplay
+phys minecraft:tnt gravity=0.04 drag=0.98 w=0.98 h=0.98 eye=0.15 class=PrimedTnt
+phys minecraft:tnt_minecart gravity=0.04 drag=0.95 w=0.98 h=0.7 eye=0.595 class=MinecartTNT
+phys minecraft:trader_llama gravity=0.08 drag=0.98 w=0.9 h=1.87 eye=1.7765 class=TraderLlama
+base minecraft:trader_llama air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier=0.5 follow_range=16.0 friction_modifier gravity jump_strength=0.5 knockback_resistance max_absorption max_health=53.0 movement_efficiency movement_speed=0.17499999701976776 name_tag_distance oxygen_bonus safe_fall_distance=6.0 scale step_height=1.0 tempt_range water_movement_efficiency waypoint_transmit_range
+inst minecraft:trader_llama health=53.0
+phys minecraft:trident gravity=0.05 drag=0.99 w=0.5 h=0.5 eye=0.13 class=ThrownTrident
+phys minecraft:tropical_fish gravity=0.08 drag=0.98 w=0.5 h=0.4 eye=0.26 class=TropicalFish
+base minecraft:tropical_fish air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=3.0 movement_efficiency movement_speed name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:tropical_fish health=3.0
+phys minecraft:turtle gravity=0.08 drag=0.98 w=1.2 h=0.4 eye=0.34 class=Turtle
+base minecraft:turtle air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=30.0 movement_efficiency movement_speed=0.25 name_tag_distance oxygen_bonus safe_fall_distance scale step_height=1.0 tempt_range water_movement_efficiency waypoint_transmit_range
+inst minecraft:turtle health=30.0
+phys minecraft:vex gravity=0.08 drag=0.98 w=0.4 h=0.8 eye=0.51875 class=Vex
+base minecraft:vex air_drag_modifier armor armor_toughness attack_damage=4.0 attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=14.0 movement_efficiency movement_speed name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:vex health=14.0
+phys minecraft:villager gravity=0.08 drag=0.98 w=0.6 h=1.95 eye=1.62 class=Villager
+base minecraft:villager air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health movement_efficiency movement_speed=0.5 name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:villager health=20.0
+phys minecraft:vindicator gravity=0.08 drag=0.98 w=0.6 h=1.95 eye=1.6575 class=Vindicator
+base minecraft:vindicator air_drag_modifier armor armor_toughness attack_damage=5.0 attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=12.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=24.0 movement_efficiency movement_speed=0.3499999940395355 name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:vindicator health=24.0
+phys minecraft:wandering_trader gravity=0.08 drag=0.98 w=0.6 h=1.95 eye=1.62 class=WanderingTrader
+base minecraft:wandering_trader air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health movement_efficiency movement_speed name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:wandering_trader health=20.0
+phys minecraft:warden gravity=0.08 drag=0.98 w=0.9 h=2.9 eye=2.4650002 class=Warden
+base minecraft:warden air_drag_modifier armor armor_toughness attack_damage=30.0 attack_knockback=1.5 below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=24.0 friction_modifier gravity jump_strength knockback_resistance=1.0 max_absorption max_health=500.0 movement_efficiency movement_speed=0.30000001192092896 name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:warden health=500.0
+phys minecraft:wind_charge gravity=0.0 drag=0.98 w=0.3125 h=0.3125 eye=0.0 class=WindCharge
+phys minecraft:witch gravity=0.08 drag=0.98 w=0.6 h=1.95 eye=1.62 class=Witch
+base minecraft:witch air_drag_modifier armor armor_toughness attack_damage attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=26.0 movement_efficiency movement_speed=0.25 name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:witch health=26.0
+phys minecraft:wither gravity=0.08 drag=0.98 w=0.9 h=3.5 eye=2.9750001 class=WitherBoss
+base minecraft:wither air_drag_modifier armor=4.0 armor_toughness attack_damage attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier flying_speed=0.6000000238418579 follow_range=40.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=300.0 movement_efficiency movement_speed=0.6000000238418579 name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:wither health=300.0
+phys minecraft:wither_skeleton gravity=0.08 drag=0.98 w=0.7 h=2.4 eye=2.1 class=WitherSkeleton
+base minecraft:wither_skeleton air_drag_modifier armor armor_toughness attack_damage attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health movement_efficiency movement_speed=0.25 name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:wither_skeleton health=20.0
+phys minecraft:wither_skull gravity=0.0 drag=0.98 w=0.3125 h=0.3125 eye=0.265625 class=WitherSkull
+phys minecraft:wolf gravity=0.08 drag=0.98 w=0.6 h=0.85 eye=0.68 class=Wolf
+base minecraft:wolf air_drag_modifier armor armor_toughness attack_damage=4.0 attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health=8.0 movement_efficiency movement_speed=0.30000001192092896 name_tag_distance oxygen_bonus safe_fall_distance scale step_height tempt_range water_movement_efficiency waypoint_transmit_range
+inst minecraft:wolf health=8.0
+phys minecraft:zoglin gravity=0.08 drag=0.98 w=1.3964844 h=1.4 eye=1.19 class=Zoglin
+base minecraft:zoglin air_drag_modifier armor armor_toughness attack_damage=6.0 attack_knockback=1.0 below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance=0.6000000238418579 max_absorption max_health=40.0 movement_efficiency movement_speed=0.30000001192092896 name_tag_distance oxygen_bonus safe_fall_distance scale step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:zoglin health=40.0
+phys minecraft:zombie gravity=0.08 drag=0.98 w=0.6 h=1.95 eye=1.74 class=Zombie
+base minecraft:zombie air_drag_modifier armor=2.0 armor_toughness attack_damage=3.0 attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=35.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health movement_efficiency movement_speed=0.23000000417232513 name_tag_distance oxygen_bonus safe_fall_distance scale spawn_reinforcements step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:zombie health=20.0
+phys minecraft:zombie_horse gravity=0.08 drag=0.98 w=1.3964844 h=1.6 eye=1.52 class=ZombieHorse
+base minecraft:zombie_horse air_drag_modifier armor armor_toughness attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier=0.5 follow_range=16.0 friction_modifier gravity jump_strength=0.7 knockback_resistance max_absorption max_health=25.0 movement_efficiency movement_speed=0.22499999403953552 name_tag_distance oxygen_bonus safe_fall_distance=6.0 scale step_height=1.0 tempt_range water_movement_efficiency waypoint_transmit_range
+inst minecraft:zombie_horse health=25.0
+phys minecraft:zombie_nautilus gravity=0.08 drag=0.98 w=0.875 h=0.95 eye=0.2751 class=ZombieNautilus
+base minecraft:zombie_nautilus air_drag_modifier armor armor_toughness attack_damage=3.0 attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=16.0 friction_modifier gravity jump_strength knockback_resistance=0.30000001192092896 max_absorption max_health=15.0 movement_efficiency movement_speed=1.100000023841858 name_tag_distance oxygen_bonus safe_fall_distance scale step_height tempt_range water_movement_efficiency waypoint_transmit_range
+inst minecraft:zombie_nautilus health=15.0
+phys minecraft:zombie_villager gravity=0.08 drag=0.98 w=0.6 h=1.95 eye=1.74 class=ZombieVillager
+base minecraft:zombie_villager air_drag_modifier armor=2.0 armor_toughness attack_damage=3.0 attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=35.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health movement_efficiency movement_speed=0.23000000417232513 name_tag_distance oxygen_bonus safe_fall_distance scale spawn_reinforcements step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:zombie_villager health=20.0
+phys minecraft:zombified_piglin gravity=0.08 drag=0.98 w=0.6 h=1.95 eye=1.79 class=ZombifiedPiglin
+base minecraft:zombified_piglin air_drag_modifier armor=2.0 armor_toughness attack_damage=5.0 attack_knockback below_name_distance bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier follow_range=35.0 friction_modifier gravity jump_strength knockback_resistance max_absorption max_health movement_efficiency movement_speed=0.23000000417232513 name_tag_distance oxygen_bonus safe_fall_distance scale spawn_reinforcements step_height water_movement_efficiency waypoint_transmit_range
+inst minecraft:zombified_piglin health=20.0
+base minecraft:player air_drag_modifier armor armor_toughness attack_damage=1.0 attack_knockback attack_speed below_name_distance block_break_speed block_interaction_range bounciness burning_time camera_distance explosion_knockback_resistance entity_interaction_range fall_damage_multiplier friction_modifier gravity jump_strength knockback_resistance luck max_absorption max_health mining_efficiency movement_efficiency movement_speed=0.10000000149011612 name_tag_distance oxygen_bonus safe_fall_distance scale sneaking_speed step_height submerged_mining_speed sweeping_damage_ratio water_movement_efficiency waypoint_transmit_range=6.0E7 waypoint_receive_range=6.0E7
+phys minecraft:fishing_bobber gravity=0.029999999329447746 drag=0.98 w=0.25 h=0.25 eye=0.2125 class=FishingHook
+eff minecraft:speed 0 movement_speed minecraft:effect.speed 0.20000000298023224 add_multiplied_total
+eff minecraft:speed 1 movement_speed minecraft:effect.speed 0.4000000059604645 add_multiplied_total
+eff minecraft:speed 2 movement_speed minecraft:effect.speed 0.6000000089406967 add_multiplied_total
+eff minecraft:slowness 0 movement_speed minecraft:effect.slowness -0.15000000596046448 add_multiplied_total
+eff minecraft:slowness 1 movement_speed minecraft:effect.slowness -0.30000001192092896 add_multiplied_total
+eff minecraft:slowness 2 movement_speed minecraft:effect.slowness -0.45000001788139343 add_multiplied_total
+eff minecraft:haste 0 attack_speed minecraft:effect.haste 0.10000000149011612 add_multiplied_total
+eff minecraft:haste 1 attack_speed minecraft:effect.haste 0.20000000298023224 add_multiplied_total
+eff minecraft:haste 2 attack_speed minecraft:effect.haste 0.30000000447034836 add_multiplied_total
+eff minecraft:mining_fatigue 0 attack_speed minecraft:effect.mining_fatigue -0.10000000149011612 add_multiplied_total
+eff minecraft:mining_fatigue 1 attack_speed minecraft:effect.mining_fatigue -0.20000000298023224 add_multiplied_total
+eff minecraft:mining_fatigue 2 attack_speed minecraft:effect.mining_fatigue -0.30000000447034836 add_multiplied_total
+eff minecraft:strength 0 attack_damage minecraft:effect.strength 3.0 add_value
+eff minecraft:strength 1 attack_damage minecraft:effect.strength 6.0 add_value
+eff minecraft:strength 2 attack_damage minecraft:effect.strength 9.0 add_value
+eff minecraft:jump_boost 0 safe_fall_distance minecraft:effect.jump_boost 1.0 add_value
+eff minecraft:jump_boost 1 safe_fall_distance minecraft:effect.jump_boost 2.0 add_value
+eff minecraft:jump_boost 2 safe_fall_distance minecraft:effect.jump_boost 3.0 add_value
+eff minecraft:invisibility 0 waypoint_transmit_range minecraft:effect.waypoint_transmit_range_hide -1.0 add_multiplied_total
+eff minecraft:invisibility 1 waypoint_transmit_range minecraft:effect.waypoint_transmit_range_hide -2.0 add_multiplied_total
+eff minecraft:invisibility 2 waypoint_transmit_range minecraft:effect.waypoint_transmit_range_hide -3.0 add_multiplied_total
+eff minecraft:weakness 0 attack_damage minecraft:effect.weakness -4.0 add_value
+eff minecraft:weakness 1 attack_damage minecraft:effect.weakness -8.0 add_value
+eff minecraft:weakness 2 attack_damage minecraft:effect.weakness -12.0 add_value
+eff minecraft:health_boost 0 max_health minecraft:effect.health_boost 4.0 add_value
+eff minecraft:health_boost 1 max_health minecraft:effect.health_boost 8.0 add_value
+eff minecraft:health_boost 2 max_health minecraft:effect.health_boost 12.0 add_value
+eff minecraft:absorption 0 max_absorption minecraft:effect.absorption 4.0 add_value
+eff minecraft:absorption 1 max_absorption minecraft:effect.absorption 8.0 add_value
+eff minecraft:absorption 2 max_absorption minecraft:effect.absorption 12.0 add_value
+eff minecraft:luck 0 luck minecraft:effect.luck 1.0 add_value
+eff minecraft:luck 1 luck minecraft:effect.luck 2.0 add_value
+eff minecraft:luck 2 luck minecraft:effect.luck 3.0 add_value
+eff minecraft:unluck 0 luck minecraft:effect.unluck -1.0 add_value
+eff minecraft:unluck 1 luck minecraft:effect.unluck -2.0 add_value
+eff minecraft:unluck 2 luck minecraft:effect.unluck -3.0 add_value

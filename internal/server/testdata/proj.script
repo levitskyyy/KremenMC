@@ -1,0 +1,16 @@
+# Projectiles fired at a stripped zombie standing at 0.5,101,2.5.
+shot arrow1 arrow pos=0.5,102,0.5 vel=0,0,1 target=minecraft:zombie@0.5,101,2.5
+shot arrow3 arrow pos=0.5,102,0.5 vel=0,0,3 target=minecraft:zombie@0.5,101,4.5
+shot arrow2_5 arrow pos=0.5,102,0.5 vel=0,0.1,2.5 target=minecraft:zombie@0.5,101,4.5
+shot arrowcrit arrow pos=0.5,102,0.5 vel=0,0,3 crit n=40 target=minecraft:zombie@0.5,101,4.5
+shot arrowpow5 arrow pos=0.5,102,0.5 vel=0,0,3 weapon=minecraft:bow+minecraft:power@5 target=minecraft:zombie@0.5,101,4.5
+shot arrowpunch2 arrow pos=0.5,102,0.5 vel=0,0,3 weapon=minecraft:bow+minecraft:punch@2 target=minecraft:zombie@0.5,101,4.5
+shot arrowflame arrow pos=0.5,102,0.5 vel=0,0,3 weapon=minecraft:bow+minecraft:flame@1 target=minecraft:zombie@0.5,101,4.5
+shot arrowplayer arrow pos=0.5,102,0.5 vel=0,0,3 target=player@0.5,101,4.5
+shot arrowangle arrow pos=-1.5,102,0.5 vel=1,0,1 target=minecraft:zombie@0.5,101,2.5
+shot trident trident pos=0.5,102,0.5 vel=0,0,2.5 target=minecraft:zombie@0.5,101,4.5
+shot snowball snowball pos=0.5,102,0.5 vel=0,0,1.5 target=minecraft:zombie@0.5,101,3.5
+shot snowblaze snowball pos=0.5,102,0.5 vel=0,0,1.5 target=minecraft:blaze@0.5,101,3.5
+shot egg egg pos=0.5,102,0.5 vel=0,0,1.5 target=minecraft:zombie@0.5,101,3.5
+shot pearl ender_pearl pos=0.5,102,0.5 vel=0,0.2,1 owner=0.5,101,-3.5
+shot arrowground arrow pos=0.5,103,0.5 vel=0,-1,0.5 ticks=1300

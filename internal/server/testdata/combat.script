@@ -1,0 +1,82 @@
+# Damage pipeline (victim.hurtServer)
+run z_generic hurt=minecraft:generic/5
+run z_mob hurt=minecraft:mob_attack/5/zombie
+run z_iframes hurt=minecraft:mob_attack/5/zombie hurt=minecraft:mob_attack/3/zombie hurt=minecraft:mob_attack/8/zombie inv=11 hurt=minecraft:mob_attack/9/zombie inv=10 hurt=minecraft:mob_attack/2/zombie
+run z_kill vhealth=3 hurt=minecraft:player_attack/5/player
+run p_bare victim=player hurt=minecraft:mob_attack/6/zombie
+run p_iron victim=player armor=head/minecraft:iron_helmet,chest/minecraft:iron_chestplate,legs/minecraft:iron_leggings,feet/minecraft:iron_boots hurt=minecraft:mob_attack/10/zombie
+run p_iron40 victim=player armor=head/minecraft:iron_helmet,chest/minecraft:iron_chestplate,legs/minecraft:iron_leggings,feet/minecraft:iron_boots hurt=minecraft:generic/40
+run p_dia4 victim=player armor=head/minecraft:diamond_helmet,chest/minecraft:diamond_chestplate,legs/minecraft:diamond_leggings,feet/minecraft:diamond_boots hurt=minecraft:generic/4
+run p_dia30 victim=player armor=head/minecraft:diamond_helmet,chest/minecraft:diamond_chestplate,legs/minecraft:diamond_leggings,feet/minecraft:diamond_boots hurt=minecraft:generic/30
+run p_neth30 victim=player armor=head/minecraft:netherite_helmet,chest/minecraft:netherite_chestplate,legs/minecraft:netherite_leggings,feet/minecraft:netherite_boots hurt=minecraft:generic/30
+run p_prot victim=player armor=head/minecraft:diamond_helmet+minecraft:protection@4,chest/minecraft:diamond_chestplate+minecraft:protection@4,legs/minecraft:diamond_leggings+minecraft:protection@4,feet/minecraft:diamond_boots+minecraft:protection@4 hurt=minecraft:generic/30
+run p_prot2 victim=player armor=chest/minecraft:iron_chestplate+minecraft:protection@2 hurt=minecraft:generic/10
+run p_fireprot victim=player armor=chest/minecraft:iron_chestplate+minecraft:fire_protection@4,legs/minecraft:iron_leggings+minecraft:fire_protection@3 hurt=minecraft:in_fire/10
+run p_blastprot victim=player armor=chest/minecraft:iron_chestplate+minecraft:blast_protection@4 hurt=minecraft:explosion/20
+run p_projprot victim=player armor=chest/minecraft:iron_chestplate+minecraft:projectile_protection@4 hurt=minecraft:arrow/9
+run p_magic victim=player armor=chest/minecraft:diamond_chestplate+minecraft:protection@4 hurt=minecraft:magic/6
+run p_res1 victim=player veffect=minecraft:resistance@0 hurt=minecraft:generic/10
+run p_res2 victim=player veffect=minecraft:resistance@1 armor=chest/minecraft:iron_chestplate hurt=minecraft:generic/10
+run p_res5 victim=player veffect=minecraft:resistance@4 hurt=minecraft:generic/10
+run p_abs victim=player vabs=4 hurt=minecraft:generic/6
+run p_abs2 victim=player vabs=8 armor=chest/minecraft:iron_chestplate hurt=minecraft:generic/6
+run p_easy victim=player diff=easy hurt=minecraft:mob_attack/10/zombie
+run p_easy2 victim=player diff=easy hurt=minecraft:mob_attack/1/zombie
+run p_hard victim=player diff=hard hurt=minecraft:mob_attack/10/zombie
+run p_hard_env victim=player diff=hard hurt=minecraft:generic/10
+run p_fall3 victim=player fall=3
+run p_fall4 victim=player fall=4
+run p_fall105 victim=player fall=10.5
+run p_fallff victim=player armor=feet/minecraft:diamond_boots+minecraft:feather_falling@4 fall=20
+run p_falljump victim=player veffect=minecraft:jump_boost@1 fall=6
+run z_fall victim=minecraft:zombie fall=8
+run p_shield victim=player block hurt=minecraft:mob_attack/5/zombie
+run p_shield_back victim=player vyaw=0 block hurt=minecraft:mob_attack/5/zombie
+run p_totem victim=player armor=mainhand/minecraft:totem_of_undying hurt=minecraft:generic/100
+run p_thorns victim=player armor=chest/minecraft:iron_chestplate+minecraft:thorns@3 hurt=minecraft:mob_attack/4/zombie
+# Melee (attacker.attack(victim)); attacker at 0.5,101,0.5 facing +z.
+run m_fist attack
+run m_dsword weapon=minecraft:diamond_sword attack
+run m_dsword_cd5 weapon=minecraft:diamond_sword cooldown=5 attack
+run m_dsword_cd10 weapon=minecraft:diamond_sword cooldown=10 attack
+run m_daxe weapon=minecraft:diamond_axe attack
+run m_daxe_cd weapon=minecraft:diamond_axe cooldown=12 attack
+run m_crit weapon=minecraft:diamond_sword crit attack
+run m_crit_low weapon=minecraft:diamond_sword crit cooldown=10 attack
+run m_sprint weapon=minecraft:diamond_sword sprint attack
+run m_sprint_cd weapon=minecraft:diamond_sword sprint cooldown=4 attack
+run m_sharp weapon=minecraft:diamond_sword+minecraft:sharpness@5 attack
+run m_sharp_cd weapon=minecraft:diamond_sword+minecraft:sharpness@5 cooldown=6 attack
+run m_smite weapon=minecraft:iron_sword+minecraft:smite@5 attack
+run m_bane weapon=minecraft:iron_sword+minecraft:bane_of_arthropods@5 victim=minecraft:spider attack
+run m_kb2 weapon=minecraft:iron_sword+minecraft:knockback@2 attack
+run m_fire weapon=minecraft:iron_sword+minecraft:fire_aspect@2 attack
+run m_strength weapon=minecraft:iron_sword aeffect=minecraft:strength@1 attack
+run m_weak aeffect=minecraft:weakness@0 attack
+run m_sweep weapon=minecraft:diamond_sword extra=1.5,101,2.5;-0.5,101,2.5;0.5,101,5.5 attack
+run m_sweep3 weapon=minecraft:diamond_sword+minecraft:sweeping_edge@3 extra=1.5,101,2.5;-0.5,101,2.5 attack
+run m_angle weapon=minecraft:stone_sword ayaw=-45 vpos=2.5,101,2.5 attack
+run m_angle2 weapon=minecraft:stone_sword ayaw=-45 vpos=2.0,101,1.0 attack
+run m_pvp victim=player attack
+run m_pvp_neth weapon=minecraft:netherite_sword sprint victim=player armor=head/minecraft:netherite_helmet,chest/minecraft:netherite_chestplate,legs/minecraft:netherite_leggings,feet/minecraft:netherite_boots attack
+run m_pvp_shield weapon=minecraft:diamond_sword victim=player block attack
+run m_pvp_axe_shield weapon=minecraft:diamond_axe victim=player block attack
+run m_iframe weapon=minecraft:diamond_sword attack attack
+run m_trident weapon=minecraft:trident attack
+run m_mace_fall weapon=minecraft:mace crit attack
+run m_cow weapon=minecraft:wooden_sword victim=minecraft:cow attack
+# Extra pipeline checks
+run p_fall35 victim=player fall=3.5
+run p_fall49 victim=player fall=4.9
+run p_fall501 victim=player fall=5.01
+run p_fall_feather1 victim=player armor=feet/minecraft:iron_boots+minecraft:feather_falling@1 fall=7.3
+run p_absfx victim=player veffect=minecraft:absorption@1 hurt=minecraft:generic/6
+run p_absfx_big victim=player veffect=minecraft:absorption@0 armor=chest/minecraft:diamond_chestplate hurt=minecraft:mob_attack/9/zombie
+run p_boost victim=player veffect=minecraft:health_boost@1 hurt=minecraft:generic/22
+run z_armored armor=chest/minecraft:diamond_chestplate,head/minecraft:iron_helmet hurt=minecraft:player_attack/12/player
+run z_kbres victim=minecraft:zombie armor=chest/minecraft:netherite_chestplate,legs/minecraft:netherite_leggings attack
+run z_fire hurt=minecraft:on_fire/1 hurt=minecraft:in_fire/1
+run p_lava victim=player armor=legs/minecraft:iron_leggings+minecraft:fire_protection@4 hurt=minecraft:lava/4
+run p_wither victim=player armor=chest/minecraft:iron_chestplate hurt=minecraft:wither/1 inv=10 hurt=minecraft:starve/1
+run m_axe_crit_sharp weapon=minecraft:netherite_axe+minecraft:sharpness@3 crit attack
+run m_breach weapon=minecraft:mace+minecraft:breach@4 victim=player armor=chest/minecraft:diamond_chestplate,legs/minecraft:diamond_leggings attack

@@ -1,0 +1,21 @@
+area 4000 -64 4000 4031 -50 4015
+setup fill 4000 -63 4000 4031 8 4015 minecraft:air
+setup fill 4000 -64 4000 4031 -62 4015 minecraft:stone
+setup fill 4000 -61 4000 4031 -61 4015 minecraft:grass_block
+setup setblock 4004 -61 4004 minecraft:stone_slab[type=bottom]
+setup setblock 4008 -61 4004 minecraft:oak_stairs
+setup setblock 4012 -61 4004 minecraft:glass
+setup setblock 4016 -61 4004 minecraft:farmland
+setup setblock 4020 -60 4004 minecraft:stone_slab[type=bottom]
+setup setblock 4024 -61 4004 minecraft:soul_sand
+setup setblock 4028 -61 4004 minecraft:dirt_path
+setup time set 18000
+player 4016.5 -60 4014.5
+mobcheck minecraft:zombie 4004 -60 4004 1
+mobcheck minecraft:zombie 4008 -60 4004 2
+mobcheck minecraft:zombie 4012 -60 4004 3
+mobcheck minecraft:zombie 4016 -60 4004 4
+mobcheck minecraft:zombie 4020 -60 4004 5
+mobcheck minecraft:zombie 4024 -60 4004 6
+mobcheck minecraft:zombie 4028 -60 4004 7
+mobcheck minecraft:zombie 4002 -60 4002 8

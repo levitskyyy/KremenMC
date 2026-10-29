@@ -1,0 +1,897 @@
+category 0 monster max=70 friendly=false persistent=false despawn=128 nodespawn=32 abbr=MO
+category 1 creature max=10 friendly=true persistent=true despawn=128 nodespawn=32 abbr=C
+category 2 ambient max=15 friendly=true persistent=false despawn=128 nodespawn=32 abbr=AM
+category 3 axolotls max=5 friendly=true persistent=false despawn=128 nodespawn=32 abbr=AX
+category 4 underground_water_creature max=5 friendly=true persistent=false despawn=128 nodespawn=32 abbr=UWC
+category 5 water_creature max=5 friendly=true persistent=false despawn=128 nodespawn=32 abbr=WC
+category 6 water_ambient max=20 friendly=true persistent=false despawn=64 nodespawn=32 abbr=WA
+category 7 misc max=-1 friendly=true persistent=true despawn=128 nodespawn=32 abbr=MI
+const MIN_SPAWN_DISTANCE 24
+const SPAWN_DISTANCE_CHUNK 8
+const SPAWN_DISTANCE_BLOCK 128
+const INSCRIBED_SQUARE_SPAWN_DISTANCE_CHUNK 5
+const MAGIC_NUMBER 289
+spawning_categories monster creature ambient axolotls underground_water_creature water_creature water_ambient
+entity 0 minecraft:acacia_boat cat=misc summon=true far=true fireImmune=false w=f3fb00000 h=f3f100000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=1.375 height=0.5625
+entity 1 minecraft:acacia_chest_boat cat=misc summon=true far=true fireImmune=false w=f3fb00000 h=f3f100000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=1.375 height=0.5625
+entity 2 minecraft:allay cat=creature summon=true far=true fireImmune=false w=f3eb33333 h=f3f19999a peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.35 height=0.6
+entity 3 minecraft:area_effect_cloud cat=misc summon=true far=true fireImmune=true w=f40c00000 h=f3f000000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=6.0 height=0.5
+entity 4 minecraft:armadillo cat=creature summon=true far=true fireImmune=false w=f3f333333 h=f3f266666 peaceful=true registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.7 height=0.65
+entity 5 minecraft:armor_stand cat=misc summon=true far=true fireImmune=false w=f3f000000 h=f3ffccccd peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.5 height=1.975
+entity 6 minecraft:arrow cat=misc summon=true far=true fireImmune=false w=f3f000000 h=f3f000000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.5 height=0.5
+entity 7 minecraft:axolotl cat=axolotls summon=true far=false fireImmune=false w=f3f400000 h=f3ed70a3d peaceful=true registered=true placement=in_water heightmap=MOTION_BLOCKING_NO_LEAVES width=0.75 height=0.42
+entity 8 minecraft:bamboo_chest_raft cat=misc summon=true far=true fireImmune=false w=f3fb00000 h=f3f100000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=1.375 height=0.5625
+entity 9 minecraft:bamboo_raft cat=misc summon=true far=true fireImmune=false w=f3fb00000 h=f3f100000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=1.375 height=0.5625
+entity 10 minecraft:bat cat=ambient summon=true far=false fireImmune=false w=f3f000000 h=f3f666666 peaceful=true registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.5 height=0.9
+entity 11 minecraft:bee cat=creature summon=true far=true fireImmune=false w=f3f0ccccd h=f3f000000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.55 height=0.5
+entity 12 minecraft:birch_boat cat=misc summon=true far=true fireImmune=false w=f3fb00000 h=f3f100000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=1.375 height=0.5625
+entity 13 minecraft:birch_chest_boat cat=misc summon=true far=true fireImmune=false w=f3fb00000 h=f3f100000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=1.375 height=0.5625
+entity 14 minecraft:blaze cat=monster summon=true far=false fireImmune=true w=f3f19999a h=f3fe66666 peaceful=false registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.6 height=1.8
+entity 15 minecraft:block_display cat=misc summon=true far=true fireImmune=false w=f0 h=f0 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.0 height=0.0
+entity 16 minecraft:bogged cat=monster summon=true far=false fireImmune=false w=f3f19999a h=f3ffeb852 peaceful=false registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.6 height=1.99
+entity 17 minecraft:breeze cat=monster summon=true far=false fireImmune=false w=f3f19999a h=f3fe28f5c peaceful=false registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.6 height=1.77
+entity 18 minecraft:breeze_wind_charge cat=misc summon=true far=true fireImmune=false w=f3ea00000 h=f3ea00000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.3125 height=0.3125
+entity 19 minecraft:camel cat=creature summon=true far=true fireImmune=false w=f3fd9999a h=f40180000 peaceful=true registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=1.7 height=2.375
+entity 20 minecraft:camel_husk cat=monster summon=true far=false fireImmune=false w=f3fd9999a h=f40180000 peaceful=true registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=1.7 height=2.375
+entity 21 minecraft:cat cat=creature summon=true far=true fireImmune=false w=f3f19999a h=f3f333333 peaceful=true registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.6 height=0.7
+entity 22 minecraft:cave_spider cat=monster summon=true far=false fireImmune=false w=f3f333333 h=f3f000000 peaceful=false registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.7 height=0.5
+entity 23 minecraft:cherry_boat cat=misc summon=true far=true fireImmune=false w=f3fb00000 h=f3f100000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=1.375 height=0.5625
+entity 24 minecraft:cherry_chest_boat cat=misc summon=true far=true fireImmune=false w=f3fb00000 h=f3f100000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=1.375 height=0.5625
+entity 25 minecraft:chest_minecart cat=misc summon=true far=true fireImmune=false w=f3f7ae148 h=f3f333333 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.98 height=0.7
+entity 26 minecraft:chicken cat=creature summon=true far=true fireImmune=false w=f3ecccccd h=f3f333333 peaceful=true registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.4 height=0.7
+entity 27 minecraft:cod cat=water_ambient summon=true far=false fireImmune=false w=f3f000000 h=f3e99999a peaceful=true registered=true placement=in_water heightmap=MOTION_BLOCKING_NO_LEAVES width=0.5 height=0.3
+entity 28 minecraft:copper_golem cat=misc summon=true far=true fireImmune=false w=f3efae148 h=f3f7ae148 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.49 height=0.98
+entity 29 minecraft:command_block_minecart cat=misc summon=true far=true fireImmune=false w=f3f7ae148 h=f3f333333 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.98 height=0.7
+entity 30 minecraft:cow cat=creature summon=true far=true fireImmune=false w=f3f666666 h=f3fb33333 peaceful=true registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.9 height=1.4
+entity 31 minecraft:creaking cat=monster summon=true far=false fireImmune=false w=f3f666666 h=f402ccccd peaceful=false registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.9 height=2.7
+entity 32 minecraft:creeper cat=monster summon=true far=false fireImmune=false w=f3f19999a h=f3fd9999a peaceful=false registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.6 height=1.7
+entity 33 minecraft:cushion cat=misc summon=true far=true fireImmune=false w=f3f800000 h=f3e800000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=1.0 height=0.25
+entity 34 minecraft:dark_oak_boat cat=misc summon=true far=true fireImmune=false w=f3fb00000 h=f3f100000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=1.375 height=0.5625
+entity 35 minecraft:dark_oak_chest_boat cat=misc summon=true far=true fireImmune=false w=f3fb00000 h=f3f100000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=1.375 height=0.5625
+entity 36 minecraft:dolphin cat=water_creature summon=true far=false fireImmune=false w=f3f666666 h=f3f19999a peaceful=true registered=true placement=in_water heightmap=MOTION_BLOCKING_NO_LEAVES width=0.9 height=0.6
+entity 37 minecraft:donkey cat=creature summon=true far=true fireImmune=false w=f3fb2c000 h=f3fc00000 peaceful=true registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=1.3964844 height=1.5
+entity 38 minecraft:dragon_fireball cat=misc summon=true far=true fireImmune=false w=f3f800000 h=f3f800000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=1.0 height=1.0
+entity 39 minecraft:drowned cat=monster summon=true far=false fireImmune=false w=f3f19999a h=f3ff9999a peaceful=false registered=true placement=in_water heightmap=MOTION_BLOCKING_NO_LEAVES width=0.6 height=1.95
+entity 40 minecraft:egg cat=misc summon=true far=true fireImmune=false w=f3e800000 h=f3e800000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.25 height=0.25
+entity 41 minecraft:elder_guardian cat=monster summon=true far=false fireImmune=false w=f3fffae14 h=f3fffae14 peaceful=false registered=true placement=in_water heightmap=MOTION_BLOCKING_NO_LEAVES width=1.9975 height=1.9975
+entity 42 minecraft:enderman cat=monster summon=true far=false fireImmune=false w=f3f19999a h=f4039999a peaceful=false registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.6 height=2.9
+entity 43 minecraft:endermite cat=monster summon=true far=false fireImmune=false w=f3ecccccd h=f3e99999a peaceful=false registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.4 height=0.3
+entity 44 minecraft:ender_dragon cat=monster summon=true far=false fireImmune=true w=f41800000 h=f41000000 peaceful=true registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=16.0 height=8.0
+entity 45 minecraft:ender_pearl cat=misc summon=true far=true fireImmune=false w=f3e800000 h=f3e800000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.25 height=0.25
+entity 46 minecraft:end_crystal cat=misc summon=true far=true fireImmune=true w=f40000000 h=f40000000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=2.0 height=2.0
+entity 47 minecraft:evoker cat=monster summon=true far=false fireImmune=false w=f3f19999a h=f3ff9999a peaceful=false registered=true placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.6 height=1.95
+entity 48 minecraft:evoker_fangs cat=misc summon=true far=true fireImmune=false w=f3f000000 h=f3f4ccccd peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.5 height=0.8
+entity 49 minecraft:experience_bottle cat=misc summon=true far=true fireImmune=false w=f3e800000 h=f3e800000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.25 height=0.25
+entity 50 minecraft:experience_orb cat=misc summon=true far=true fireImmune=false w=f3f000000 h=f3f000000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.5 height=0.5
+entity 51 minecraft:eye_of_ender cat=misc summon=true far=true fireImmune=false w=f3e800000 h=f3e800000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.25 height=0.25
+entity 52 minecraft:falling_block cat=misc summon=true far=true fireImmune=false w=f3f7ae148 h=f3f7ae148 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.98 height=0.98
+entity 53 minecraft:fireball cat=misc summon=true far=true fireImmune=false w=f3f800000 h=f3f800000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=1.0 height=1.0
+entity 54 minecraft:firework_rocket cat=misc summon=true far=true fireImmune=false w=f3e800000 h=f3e800000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.25 height=0.25
+entity 55 minecraft:fox cat=creature summon=true far=true fireImmune=false w=f3f19999a h=f3f333333 peaceful=true registered=true placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.6 height=0.7
+entity 56 minecraft:frog cat=creature summon=true far=true fireImmune=false w=f3f000000 h=f3f000000 peaceful=true registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.5 height=0.5
+entity 57 minecraft:furnace_minecart cat=misc summon=true far=true fireImmune=false w=f3f7ae148 h=f3f333333 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.98 height=0.7
+entity 58 minecraft:ghast cat=monster summon=true far=false fireImmune=true w=f40800000 h=f40800000 peaceful=false registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=4.0 height=4.0
+entity 59 minecraft:happy_ghast cat=creature summon=true far=true fireImmune=false w=f40800000 h=f40800000 peaceful=true registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=4.0 height=4.0
+entity 60 minecraft:giant cat=monster summon=true far=false fireImmune=false w=f40666666 h=f41400000 peaceful=false registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=3.6 height=12.0
+entity 61 minecraft:glow_item_frame cat=misc summon=true far=true fireImmune=false w=f3f000000 h=f3f000000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.5 height=0.5
+entity 62 minecraft:glow_squid cat=underground_water_creature summon=true far=false fireImmune=false w=f3f4ccccd h=f3f4ccccd peaceful=true registered=true placement=in_water heightmap=MOTION_BLOCKING_NO_LEAVES width=0.8 height=0.8
+entity 63 minecraft:goat cat=creature summon=true far=true fireImmune=false w=f3f666666 h=f3fa66666 peaceful=true registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.9 height=1.3
+entity 64 minecraft:guardian cat=monster summon=true far=false fireImmune=false w=f3f59999a h=f3f59999a peaceful=false registered=true placement=in_water heightmap=MOTION_BLOCKING_NO_LEAVES width=0.85 height=0.85
+entity 65 minecraft:hoglin cat=monster summon=true far=false fireImmune=false w=f3fb2c000 h=f3fb33333 peaceful=false registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=1.3964844 height=1.4
+entity 66 minecraft:hopper_minecart cat=misc summon=true far=true fireImmune=false w=f3f7ae148 h=f3f333333 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.98 height=0.7
+entity 67 minecraft:horse cat=creature summon=true far=true fireImmune=false w=f3fb2c000 h=f3fcccccd peaceful=true registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=1.3964844 height=1.6
+entity 68 minecraft:husk cat=monster summon=true far=false fireImmune=false w=f3f19999a h=f3ff9999a peaceful=false registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.6 height=1.95
+entity 69 minecraft:illusioner cat=monster summon=true far=false fireImmune=false w=f3f19999a h=f3ff9999a peaceful=false registered=true placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.6 height=1.95
+entity 70 minecraft:interaction cat=misc summon=true far=true fireImmune=false w=f0 h=f0 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.0 height=0.0
+entity 71 minecraft:iron_golem cat=misc summon=true far=true fireImmune=false w=f3fb33333 h=f402ccccd peaceful=true registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=1.4 height=2.7
+entity 72 minecraft:item cat=misc summon=true far=true fireImmune=false w=f3e800000 h=f3e800000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.25 height=0.25
+entity 73 minecraft:item_display cat=misc summon=true far=true fireImmune=false w=f0 h=f0 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.0 height=0.0
+entity 74 minecraft:item_frame cat=misc summon=true far=true fireImmune=false w=f3f000000 h=f3f000000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.5 height=0.5
+entity 75 minecraft:jungle_boat cat=misc summon=true far=true fireImmune=false w=f3fb00000 h=f3f100000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=1.375 height=0.5625
+entity 76 minecraft:jungle_chest_boat cat=misc summon=true far=true fireImmune=false w=f3fb00000 h=f3f100000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=1.375 height=0.5625
+entity 77 minecraft:leash_knot cat=misc summon=true far=true fireImmune=false w=f3ec00000 h=f3f000000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.375 height=0.5
+entity 78 minecraft:lightning_bolt cat=misc summon=true far=true fireImmune=false w=f0 h=f0 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.0 height=0.0
+entity 79 minecraft:llama cat=creature summon=true far=true fireImmune=false w=f3f666666 h=f3fef5c29 peaceful=true registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.9 height=1.87
+entity 80 minecraft:llama_spit cat=misc summon=true far=true fireImmune=false w=f3e800000 h=f3e800000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.25 height=0.25
+entity 81 minecraft:magma_cube cat=monster summon=true far=false fireImmune=true w=f3f051eb8 h=f3f051eb8 peaceful=false registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.52 height=0.52
+entity 82 minecraft:mangrove_boat cat=misc summon=true far=true fireImmune=false w=f3fb00000 h=f3f100000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=1.375 height=0.5625
+entity 83 minecraft:mangrove_chest_boat cat=misc summon=true far=true fireImmune=false w=f3fb00000 h=f3f100000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=1.375 height=0.5625
+entity 84 minecraft:mannequin cat=misc summon=true far=true fireImmune=false w=f3f19999a h=f3fe66666 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.6 height=1.8
+entity 85 minecraft:marker cat=misc summon=true far=true fireImmune=false w=f0 h=f0 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.0 height=0.0
+entity 86 minecraft:minecart cat=misc summon=true far=true fireImmune=false w=f3f7ae148 h=f3f333333 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.98 height=0.7
+entity 87 minecraft:mooshroom cat=creature summon=true far=true fireImmune=false w=f3f666666 h=f3fb33333 peaceful=true registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.9 height=1.4
+entity 88 minecraft:mule cat=creature summon=true far=true fireImmune=false w=f3fb2c000 h=f3fcccccd peaceful=true registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=1.3964844 height=1.6
+entity 89 minecraft:nautilus cat=water_creature summon=true far=false fireImmune=false w=f3f600000 h=f3f733333 peaceful=true registered=true placement=in_water heightmap=MOTION_BLOCKING_NO_LEAVES width=0.875 height=0.95
+entity 90 minecraft:oak_boat cat=misc summon=true far=true fireImmune=false w=f3fb00000 h=f3f100000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=1.375 height=0.5625
+entity 91 minecraft:oak_chest_boat cat=misc summon=true far=true fireImmune=false w=f3fb00000 h=f3f100000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=1.375 height=0.5625
+entity 92 minecraft:ocelot cat=creature summon=true far=true fireImmune=false w=f3f19999a h=f3f333333 peaceful=true registered=true placement=on_ground heightmap=MOTION_BLOCKING width=0.6 height=0.7
+entity 93 minecraft:ominous_item_spawner cat=misc summon=true far=true fireImmune=false w=f3e800000 h=f3e800000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.25 height=0.25
+entity 94 minecraft:painting cat=misc summon=true far=true fireImmune=false w=f3f000000 h=f3f000000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.5 height=0.5
+entity 95 minecraft:pale_oak_boat cat=misc summon=true far=true fireImmune=false w=f3fb00000 h=f3f100000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=1.375 height=0.5625
+entity 96 minecraft:pale_oak_chest_boat cat=misc summon=true far=true fireImmune=false w=f3fb00000 h=f3f100000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=1.375 height=0.5625
+entity 97 minecraft:panda cat=creature summon=true far=true fireImmune=false w=f3fa66666 h=f3fa00000 peaceful=true registered=true placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=1.3 height=1.25
+entity 98 minecraft:parched cat=monster summon=true far=false fireImmune=false w=f3f19999a h=f3ffeb852 peaceful=false registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.6 height=1.99
+entity 99 minecraft:parrot cat=creature summon=true far=true fireImmune=false w=f3f000000 h=f3f666666 peaceful=true registered=true placement=on_ground heightmap=MOTION_BLOCKING width=0.5 height=0.9
+entity 100 minecraft:phantom cat=monster summon=true far=false fireImmune=false w=f3f666666 h=f3f000000 peaceful=false registered=true placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.9 height=0.5
+entity 101 minecraft:pig cat=creature summon=true far=true fireImmune=false w=f3f666666 h=f3f666666 peaceful=true registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.9 height=0.9
+entity 102 minecraft:piglin cat=monster summon=true far=false fireImmune=false w=f3f19999a h=f3ff9999a peaceful=true registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.6 height=1.95
+entity 103 minecraft:piglin_brute cat=monster summon=true far=false fireImmune=false w=f3f19999a h=f3ff9999a peaceful=false registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.6 height=1.95
+entity 104 minecraft:pillager cat=monster summon=true far=true fireImmune=false w=f3f19999a h=f3ff9999a peaceful=false registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.6 height=1.95
+entity 105 minecraft:polar_bear cat=creature summon=true far=true fireImmune=false w=f3fb33333 h=f3fb33333 peaceful=true registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=1.4 height=1.4
+entity 106 minecraft:poplar_boat cat=misc summon=true far=true fireImmune=false w=f3fb00000 h=f3f100000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=1.375 height=0.5625
+entity 107 minecraft:poplar_chest_boat cat=misc summon=true far=true fireImmune=false w=f3fb00000 h=f3f100000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=1.375 height=0.5625
+entity 108 minecraft:splash_potion cat=misc summon=true far=true fireImmune=false w=f3e800000 h=f3e800000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.25 height=0.25
+entity 109 minecraft:lingering_potion cat=misc summon=true far=true fireImmune=false w=f3e800000 h=f3e800000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.25 height=0.25
+entity 110 minecraft:pufferfish cat=water_ambient summon=true far=false fireImmune=false w=f3f333333 h=f3f333333 peaceful=true registered=true placement=in_water heightmap=MOTION_BLOCKING_NO_LEAVES width=0.7 height=0.7
+entity 111 minecraft:rabbit cat=creature summon=true far=true fireImmune=false w=f3efae148 h=f3f19999a peaceful=true registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.49 height=0.6
+entity 112 minecraft:ravager cat=monster summon=true far=false fireImmune=false w=f3ff9999a h=f400ccccd peaceful=false registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=1.95 height=2.2
+entity 113 minecraft:salmon cat=water_ambient summon=true far=false fireImmune=false w=f3f333333 h=f3ecccccd peaceful=true registered=true placement=in_water heightmap=MOTION_BLOCKING_NO_LEAVES width=0.7 height=0.4
+entity 114 minecraft:sheep cat=creature summon=true far=true fireImmune=false w=f3f666666 h=f3fa66666 peaceful=true registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.9 height=1.3
+entity 115 minecraft:shulker cat=monster summon=true far=true fireImmune=true w=f3f800000 h=f3f800000 peaceful=true registered=true placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=1.0 height=1.0
+entity 116 minecraft:shulker_bullet cat=misc summon=true far=true fireImmune=false w=f3ea00000 h=f3ea00000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.3125 height=0.3125
+entity 117 minecraft:silverfish cat=monster summon=true far=false fireImmune=false w=f3ecccccd h=f3e99999a peaceful=false registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.4 height=0.3
+entity 118 minecraft:skeleton cat=monster summon=true far=false fireImmune=false w=f3f19999a h=f3ffeb852 peaceful=false registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.6 height=1.99
+entity 119 minecraft:skeleton_horse cat=creature summon=true far=true fireImmune=false w=f3fb2c000 h=f3fcccccd peaceful=true registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=1.3964844 height=1.6
+entity 120 minecraft:slime cat=monster summon=true far=false fireImmune=false w=f3f051eb8 h=f3f051eb8 peaceful=false registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.52 height=0.52
+entity 121 minecraft:small_fireball cat=misc summon=true far=true fireImmune=false w=f3ea00000 h=f3ea00000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.3125 height=0.3125
+entity 122 minecraft:sniffer cat=creature summon=true far=true fireImmune=false w=f3ff33333 h=f3fe00000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=1.9 height=1.75
+entity 123 minecraft:snowball cat=misc summon=true far=true fireImmune=false w=f3e800000 h=f3e800000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.25 height=0.25
+entity 124 minecraft:snow_golem cat=misc summon=true far=true fireImmune=false w=f3f333333 h=f3ff33333 peaceful=true registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.7 height=1.9
+entity 125 minecraft:spawner_minecart cat=misc summon=true far=true fireImmune=false w=f3f7ae148 h=f3f333333 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.98 height=0.7
+entity 126 minecraft:spectral_arrow cat=misc summon=true far=true fireImmune=false w=f3f000000 h=f3f000000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.5 height=0.5
+entity 127 minecraft:spider cat=monster summon=true far=false fireImmune=false w=f3fb33333 h=f3f666666 peaceful=false registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=1.4 height=0.9
+entity 128 minecraft:spruce_boat cat=misc summon=true far=true fireImmune=false w=f3fb00000 h=f3f100000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=1.375 height=0.5625
+entity 129 minecraft:spruce_chest_boat cat=misc summon=true far=true fireImmune=false w=f3fb00000 h=f3f100000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=1.375 height=0.5625
+entity 130 minecraft:squid cat=water_creature summon=true far=false fireImmune=false w=f3f4ccccd h=f3f4ccccd peaceful=true registered=true placement=in_water heightmap=MOTION_BLOCKING_NO_LEAVES width=0.8 height=0.8
+entity 131 minecraft:stray cat=monster summon=true far=false fireImmune=false w=f3f19999a h=f3ffeb852 peaceful=false registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.6 height=1.99
+entity 132 minecraft:strider cat=creature summon=true far=true fireImmune=true w=f3f666666 h=f3fd9999a peaceful=true registered=true placement=in_lava heightmap=MOTION_BLOCKING_NO_LEAVES width=0.9 height=1.7
+entity 133 minecraft:sulfur_cube cat=monster summon=true far=false fireImmune=false w=f3efae148 h=f3efae148 peaceful=true registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.49 height=0.49
+entity 134 minecraft:tadpole cat=creature summon=true far=true fireImmune=false w=f3ecccccd h=f3e99999a peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.4 height=0.3
+entity 135 minecraft:text_display cat=misc summon=true far=true fireImmune=false w=f0 h=f0 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.0 height=0.0
+entity 136 minecraft:tnt cat=misc summon=true far=true fireImmune=true w=f3f7ae148 h=f3f7ae148 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.98 height=0.98
+entity 137 minecraft:tnt_minecart cat=misc summon=true far=true fireImmune=false w=f3f7ae148 h=f3f333333 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.98 height=0.7
+entity 138 minecraft:trader_llama cat=creature summon=true far=true fireImmune=false w=f3f666666 h=f3fef5c29 peaceful=true registered=true placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.9 height=1.87
+entity 139 minecraft:trident cat=misc summon=true far=true fireImmune=false w=f3f000000 h=f3f000000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.5 height=0.5
+entity 140 minecraft:tropical_fish cat=water_ambient summon=true far=false fireImmune=false w=f3f000000 h=f3ecccccd peaceful=true registered=true placement=in_water heightmap=MOTION_BLOCKING_NO_LEAVES width=0.5 height=0.4
+entity 141 minecraft:turtle cat=creature summon=true far=true fireImmune=false w=f3f99999a h=f3ecccccd peaceful=true registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=1.2 height=0.4
+entity 142 minecraft:vex cat=monster summon=true far=false fireImmune=true w=f3ecccccd h=f3f4ccccd peaceful=false registered=true placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.4 height=0.8
+entity 143 minecraft:villager cat=misc summon=true far=true fireImmune=false w=f3f19999a h=f3ff9999a peaceful=true registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.6 height=1.95
+entity 144 minecraft:vindicator cat=monster summon=true far=false fireImmune=false w=f3f19999a h=f3ff9999a peaceful=false registered=true placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.6 height=1.95
+entity 145 minecraft:wandering_trader cat=creature summon=true far=true fireImmune=false w=f3f19999a h=f3ff9999a peaceful=true registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.6 height=1.95
+entity 146 minecraft:warden cat=monster summon=true far=false fireImmune=true w=f3f666666 h=f4039999a peaceful=false registered=true placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.9 height=2.9
+entity 147 minecraft:wind_charge cat=misc summon=true far=true fireImmune=false w=f3ea00000 h=f3ea00000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.3125 height=0.3125
+entity 148 minecraft:witch cat=monster summon=true far=false fireImmune=false w=f3f19999a h=f3ff9999a peaceful=false registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.6 height=1.95
+entity 149 minecraft:wither cat=monster summon=true far=false fireImmune=true w=f3f666666 h=f40600000 peaceful=false registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.9 height=3.5
+entity 150 minecraft:wither_skeleton cat=monster summon=true far=false fireImmune=true w=f3f333333 h=f4019999a peaceful=false registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.7 height=2.4
+entity 151 minecraft:wither_skull cat=misc summon=true far=true fireImmune=false w=f3ea00000 h=f3ea00000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.3125 height=0.3125
+entity 152 minecraft:wolf cat=creature summon=true far=true fireImmune=false w=f3f19999a h=f3f59999a peaceful=true registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.6 height=0.85
+entity 153 minecraft:zoglin cat=monster summon=true far=false fireImmune=true w=f3fb2c000 h=f3fb33333 peaceful=false registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=1.3964844 height=1.4
+entity 154 minecraft:zombie cat=monster summon=true far=false fireImmune=false w=f3f19999a h=f3ff9999a peaceful=false registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.6 height=1.95
+entity 155 minecraft:zombie_horse cat=monster summon=true far=false fireImmune=false w=f3fb2c000 h=f3fcccccd peaceful=true registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=1.3964844 height=1.6
+entity 156 minecraft:zombie_nautilus cat=monster summon=true far=false fireImmune=false w=f3f600000 h=f3f733333 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.875 height=0.95
+entity 157 minecraft:zombie_villager cat=monster summon=true far=false fireImmune=false w=f3f19999a h=f3ff9999a peaceful=false registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.6 height=1.95
+entity 158 minecraft:zombified_piglin cat=monster summon=true far=false fireImmune=true w=f3f19999a h=f3ff9999a peaceful=false registered=true placement=on_ground heightmap=MOTION_BLOCKING_NO_LEAVES width=0.6 height=1.95
+entity 159 minecraft:player cat=misc summon=false far=true fireImmune=false w=f3f19999a h=f3fe66666 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.6 height=1.8
+entity 160 minecraft:fishing_bobber cat=misc summon=false far=true fireImmune=false w=f3e800000 h=f3e800000 peaceful=true registered=false placement=no_restrictions heightmap=MOTION_BLOCKING_NO_LEAVES width=0.25 height=0.25
+gamerule ADVANCE_TIME advance_time default=true
+gamerule IMMEDIATE_RESPAWN immediate_respawn default=false
+gamerule MOB_DROPS mob_drops default=true
+gamerule MOB_EXPLOSION_DROP_DECAY mob_explosion_drop_decay default=true
+gamerule MOB_GRIEFING mob_griefing default=true
+gamerule RAIDS raids default=true
+gamerule RESPAWN_RADIUS respawn_radius default=10
+gamerule SPAWNER_BLOCKS_WORK spawner_blocks_work default=true
+gamerule SPAWN_MOBS spawn_mobs default=true
+gamerule SPAWN_MONSTERS spawn_monsters default=true
+gamerule SPAWN_PATROLS spawn_patrols default=true
+gamerule SPAWN_PHANTOMS spawn_phantoms default=true
+gamerule SPAWN_WANDERING_TRADERS spawn_wandering_traders default=true
+gamerule SPAWN_WARDENS spawn_wardens default=true
+difficulty 0 0 0 f0 f0 f0
+difficulty 0 0 0 f3e800000 f0 f0
+difficulty 0 0 0 f3f000000 f0 f0
+difficulty 0 0 0 f3f400000 f0 f0
+difficulty 0 0 0 f3f800000 f0 f0
+difficulty 0 0 1000 f0 f0 f0
+difficulty 0 0 1000 f3e800000 f0 f0
+difficulty 0 0 1000 f3f000000 f0 f0
+difficulty 0 0 1000 f3f400000 f0 f0
+difficulty 0 0 1000 f3f800000 f0 f0
+difficulty 0 0 360000 f0 f0 f0
+difficulty 0 0 360000 f3e800000 f0 f0
+difficulty 0 0 360000 f3f000000 f0 f0
+difficulty 0 0 360000 f3f400000 f0 f0
+difficulty 0 0 360000 f3f800000 f0 f0
+difficulty 0 0 3600000 f0 f0 f0
+difficulty 0 0 3600000 f3e800000 f0 f0
+difficulty 0 0 3600000 f3f000000 f0 f0
+difficulty 0 0 3600000 f3f400000 f0 f0
+difficulty 0 0 3600000 f3f800000 f0 f0
+difficulty 0 0 9000000 f0 f0 f0
+difficulty 0 0 9000000 f3e800000 f0 f0
+difficulty 0 0 9000000 f3f000000 f0 f0
+difficulty 0 0 9000000 f3f400000 f0 f0
+difficulty 0 0 9000000 f3f800000 f0 f0
+difficulty 0 24000 0 f0 f0 f0
+difficulty 0 24000 0 f3e800000 f0 f0
+difficulty 0 24000 0 f3f000000 f0 f0
+difficulty 0 24000 0 f3f400000 f0 f0
+difficulty 0 24000 0 f3f800000 f0 f0
+difficulty 0 24000 1000 f0 f0 f0
+difficulty 0 24000 1000 f3e800000 f0 f0
+difficulty 0 24000 1000 f3f000000 f0 f0
+difficulty 0 24000 1000 f3f400000 f0 f0
+difficulty 0 24000 1000 f3f800000 f0 f0
+difficulty 0 24000 360000 f0 f0 f0
+difficulty 0 24000 360000 f3e800000 f0 f0
+difficulty 0 24000 360000 f3f000000 f0 f0
+difficulty 0 24000 360000 f3f400000 f0 f0
+difficulty 0 24000 360000 f3f800000 f0 f0
+difficulty 0 24000 3600000 f0 f0 f0
+difficulty 0 24000 3600000 f3e800000 f0 f0
+difficulty 0 24000 3600000 f3f000000 f0 f0
+difficulty 0 24000 3600000 f3f400000 f0 f0
+difficulty 0 24000 3600000 f3f800000 f0 f0
+difficulty 0 24000 9000000 f0 f0 f0
+difficulty 0 24000 9000000 f3e800000 f0 f0
+difficulty 0 24000 9000000 f3f000000 f0 f0
+difficulty 0 24000 9000000 f3f400000 f0 f0
+difficulty 0 24000 9000000 f3f800000 f0 f0
+difficulty 0 72000 0 f0 f0 f0
+difficulty 0 72000 0 f3e800000 f0 f0
+difficulty 0 72000 0 f3f000000 f0 f0
+difficulty 0 72000 0 f3f400000 f0 f0
+difficulty 0 72000 0 f3f800000 f0 f0
+difficulty 0 72000 1000 f0 f0 f0
+difficulty 0 72000 1000 f3e800000 f0 f0
+difficulty 0 72000 1000 f3f000000 f0 f0
+difficulty 0 72000 1000 f3f400000 f0 f0
+difficulty 0 72000 1000 f3f800000 f0 f0
+difficulty 0 72000 360000 f0 f0 f0
+difficulty 0 72000 360000 f3e800000 f0 f0
+difficulty 0 72000 360000 f3f000000 f0 f0
+difficulty 0 72000 360000 f3f400000 f0 f0
+difficulty 0 72000 360000 f3f800000 f0 f0
+difficulty 0 72000 3600000 f0 f0 f0
+difficulty 0 72000 3600000 f3e800000 f0 f0
+difficulty 0 72000 3600000 f3f000000 f0 f0
+difficulty 0 72000 3600000 f3f400000 f0 f0
+difficulty 0 72000 3600000 f3f800000 f0 f0
+difficulty 0 72000 9000000 f0 f0 f0
+difficulty 0 72000 9000000 f3e800000 f0 f0
+difficulty 0 72000 9000000 f3f000000 f0 f0
+difficulty 0 72000 9000000 f3f400000 f0 f0
+difficulty 0 72000 9000000 f3f800000 f0 f0
+difficulty 0 100000 0 f0 f0 f0
+difficulty 0 100000 0 f3e800000 f0 f0
+difficulty 0 100000 0 f3f000000 f0 f0
+difficulty 0 100000 0 f3f400000 f0 f0
+difficulty 0 100000 0 f3f800000 f0 f0
+difficulty 0 100000 1000 f0 f0 f0
+difficulty 0 100000 1000 f3e800000 f0 f0
+difficulty 0 100000 1000 f3f000000 f0 f0
+difficulty 0 100000 1000 f3f400000 f0 f0
+difficulty 0 100000 1000 f3f800000 f0 f0
+difficulty 0 100000 360000 f0 f0 f0
+difficulty 0 100000 360000 f3e800000 f0 f0
+difficulty 0 100000 360000 f3f000000 f0 f0
+difficulty 0 100000 360000 f3f400000 f0 f0
+difficulty 0 100000 360000 f3f800000 f0 f0
+difficulty 0 100000 3600000 f0 f0 f0
+difficulty 0 100000 3600000 f3e800000 f0 f0
+difficulty 0 100000 3600000 f3f000000 f0 f0
+difficulty 0 100000 3600000 f3f400000 f0 f0
+difficulty 0 100000 3600000 f3f800000 f0 f0
+difficulty 0 100000 9000000 f0 f0 f0
+difficulty 0 100000 9000000 f3e800000 f0 f0
+difficulty 0 100000 9000000 f3f000000 f0 f0
+difficulty 0 100000 9000000 f3f400000 f0 f0
+difficulty 0 100000 9000000 f3f800000 f0 f0
+difficulty 0 500000 0 f0 f0 f0
+difficulty 0 500000 0 f3e800000 f0 f0
+difficulty 0 500000 0 f3f000000 f0 f0
+difficulty 0 500000 0 f3f400000 f0 f0
+difficulty 0 500000 0 f3f800000 f0 f0
+difficulty 0 500000 1000 f0 f0 f0
+difficulty 0 500000 1000 f3e800000 f0 f0
+difficulty 0 500000 1000 f3f000000 f0 f0
+difficulty 0 500000 1000 f3f400000 f0 f0
+difficulty 0 500000 1000 f3f800000 f0 f0
+difficulty 0 500000 360000 f0 f0 f0
+difficulty 0 500000 360000 f3e800000 f0 f0
+difficulty 0 500000 360000 f3f000000 f0 f0
+difficulty 0 500000 360000 f3f400000 f0 f0
+difficulty 0 500000 360000 f3f800000 f0 f0
+difficulty 0 500000 3600000 f0 f0 f0
+difficulty 0 500000 3600000 f3e800000 f0 f0
+difficulty 0 500000 3600000 f3f000000 f0 f0
+difficulty 0 500000 3600000 f3f400000 f0 f0
+difficulty 0 500000 3600000 f3f800000 f0 f0
+difficulty 0 500000 9000000 f0 f0 f0
+difficulty 0 500000 9000000 f3e800000 f0 f0
+difficulty 0 500000 9000000 f3f000000 f0 f0
+difficulty 0 500000 9000000 f3f400000 f0 f0
+difficulty 0 500000 9000000 f3f800000 f0 f0
+difficulty 0 1512000 0 f0 f0 f0
+difficulty 0 1512000 0 f3e800000 f0 f0
+difficulty 0 1512000 0 f3f000000 f0 f0
+difficulty 0 1512000 0 f3f400000 f0 f0
+difficulty 0 1512000 0 f3f800000 f0 f0
+difficulty 0 1512000 1000 f0 f0 f0
+difficulty 0 1512000 1000 f3e800000 f0 f0
+difficulty 0 1512000 1000 f3f000000 f0 f0
+difficulty 0 1512000 1000 f3f400000 f0 f0
+difficulty 0 1512000 1000 f3f800000 f0 f0
+difficulty 0 1512000 360000 f0 f0 f0
+difficulty 0 1512000 360000 f3e800000 f0 f0
+difficulty 0 1512000 360000 f3f000000 f0 f0
+difficulty 0 1512000 360000 f3f400000 f0 f0
+difficulty 0 1512000 360000 f3f800000 f0 f0
+difficulty 0 1512000 3600000 f0 f0 f0
+difficulty 0 1512000 3600000 f3e800000 f0 f0
+difficulty 0 1512000 3600000 f3f000000 f0 f0
+difficulty 0 1512000 3600000 f3f400000 f0 f0
+difficulty 0 1512000 3600000 f3f800000 f0 f0
+difficulty 0 1512000 9000000 f0 f0 f0
+difficulty 0 1512000 9000000 f3e800000 f0 f0
+difficulty 0 1512000 9000000 f3f000000 f0 f0
+difficulty 0 1512000 9000000 f3f400000 f0 f0
+difficulty 0 1512000 9000000 f3f800000 f0 f0
+difficulty 0 3000000 0 f0 f0 f0
+difficulty 0 3000000 0 f3e800000 f0 f0
+difficulty 0 3000000 0 f3f000000 f0 f0
+difficulty 0 3000000 0 f3f400000 f0 f0
+difficulty 0 3000000 0 f3f800000 f0 f0
+difficulty 0 3000000 1000 f0 f0 f0
+difficulty 0 3000000 1000 f3e800000 f0 f0
+difficulty 0 3000000 1000 f3f000000 f0 f0
+difficulty 0 3000000 1000 f3f400000 f0 f0
+difficulty 0 3000000 1000 f3f800000 f0 f0
+difficulty 0 3000000 360000 f0 f0 f0
+difficulty 0 3000000 360000 f3e800000 f0 f0
+difficulty 0 3000000 360000 f3f000000 f0 f0
+difficulty 0 3000000 360000 f3f400000 f0 f0
+difficulty 0 3000000 360000 f3f800000 f0 f0
+difficulty 0 3000000 3600000 f0 f0 f0
+difficulty 0 3000000 3600000 f3e800000 f0 f0
+difficulty 0 3000000 3600000 f3f000000 f0 f0
+difficulty 0 3000000 3600000 f3f400000 f0 f0
+difficulty 0 3000000 3600000 f3f800000 f0 f0
+difficulty 0 3000000 9000000 f0 f0 f0
+difficulty 0 3000000 9000000 f3e800000 f0 f0
+difficulty 0 3000000 9000000 f3f000000 f0 f0
+difficulty 0 3000000 9000000 f3f400000 f0 f0
+difficulty 0 3000000 9000000 f3f800000 f0 f0
+difficulty 1 0 0 f0 f3f400000 f0
+difficulty 1 0 0 f3e800000 f3f400000 f0
+difficulty 1 0 0 f3f000000 f3f400000 f0
+difficulty 1 0 0 f3f400000 f3f400000 f0
+difficulty 1 0 0 f3f800000 f3f400000 f0
+difficulty 1 0 1000 f0 f3f4006d4 f0
+difficulty 1 0 1000 f3e800000 f3f4006d4 f0
+difficulty 1 0 1000 f3f000000 f3f4006d4 f0
+difficulty 1 0 1000 f3f400000 f3f4006d4 f0
+difficulty 1 0 1000 f3f800000 f3f4006d4 f0
+difficulty 1 0 360000 f0 f3f49999a f0
+difficulty 1 0 360000 f3e800000 f3f49999a f0
+difficulty 1 0 360000 f3f000000 f3f49999a f0
+difficulty 1 0 360000 f3f400000 f3f49999a f0
+difficulty 1 0 360000 f3f800000 f3f49999a f0
+difficulty 1 0 3600000 f0 f3f900000 f0
+difficulty 1 0 3600000 f3e800000 f3f900000 f0
+difficulty 1 0 3600000 f3f000000 f3f900000 f0
+difficulty 1 0 3600000 f3f400000 f3f900000 f0
+difficulty 1 0 3600000 f3f800000 f3f900000 f0
+difficulty 1 0 9000000 f0 f3f900000 f0
+difficulty 1 0 9000000 f3e800000 f3f900000 f0
+difficulty 1 0 9000000 f3f000000 f3f900000 f0
+difficulty 1 0 9000000 f3f400000 f3f900000 f0
+difficulty 1 0 9000000 f3f800000 f3f900000 f0
+difficulty 1 24000 0 f0 f3f400000 f0
+difficulty 1 24000 0 f3e800000 f3f400000 f0
+difficulty 1 24000 0 f3f000000 f3f400000 f0
+difficulty 1 24000 0 f3f400000 f3f400000 f0
+difficulty 1 24000 0 f3f800000 f3f400000 f0
+difficulty 1 24000 1000 f0 f3f4006d4 f0
+difficulty 1 24000 1000 f3e800000 f3f4006d4 f0
+difficulty 1 24000 1000 f3f000000 f3f4006d4 f0
+difficulty 1 24000 1000 f3f400000 f3f4006d4 f0
+difficulty 1 24000 1000 f3f800000 f3f4006d4 f0
+difficulty 1 24000 360000 f0 f3f49999a f0
+difficulty 1 24000 360000 f3e800000 f3f49999a f0
+difficulty 1 24000 360000 f3f000000 f3f49999a f0
+difficulty 1 24000 360000 f3f400000 f3f49999a f0
+difficulty 1 24000 360000 f3f800000 f3f49999a f0
+difficulty 1 24000 3600000 f0 f3f900000 f0
+difficulty 1 24000 3600000 f3e800000 f3f900000 f0
+difficulty 1 24000 3600000 f3f000000 f3f900000 f0
+difficulty 1 24000 3600000 f3f400000 f3f900000 f0
+difficulty 1 24000 3600000 f3f800000 f3f900000 f0
+difficulty 1 24000 9000000 f0 f3f900000 f0
+difficulty 1 24000 9000000 f3e800000 f3f900000 f0
+difficulty 1 24000 9000000 f3f000000 f3f900000 f0
+difficulty 1 24000 9000000 f3f400000 f3f900000 f0
+difficulty 1 24000 9000000 f3f800000 f3f900000 f0
+difficulty 1 72000 0 f0 f3f400000 f0
+difficulty 1 72000 0 f3e800000 f3f400000 f0
+difficulty 1 72000 0 f3f000000 f3f400000 f0
+difficulty 1 72000 0 f3f400000 f3f400000 f0
+difficulty 1 72000 0 f3f800000 f3f400000 f0
+difficulty 1 72000 1000 f0 f3f4006d4 f0
+difficulty 1 72000 1000 f3e800000 f3f4006d4 f0
+difficulty 1 72000 1000 f3f000000 f3f4006d4 f0
+difficulty 1 72000 1000 f3f400000 f3f4006d4 f0
+difficulty 1 72000 1000 f3f800000 f3f4006d4 f0
+difficulty 1 72000 360000 f0 f3f49999a f0
+difficulty 1 72000 360000 f3e800000 f3f49999a f0
+difficulty 1 72000 360000 f3f000000 f3f49999a f0
+difficulty 1 72000 360000 f3f400000 f3f49999a f0
+difficulty 1 72000 360000 f3f800000 f3f49999a f0
+difficulty 1 72000 3600000 f0 f3f900000 f0
+difficulty 1 72000 3600000 f3e800000 f3f900000 f0
+difficulty 1 72000 3600000 f3f000000 f3f900000 f0
+difficulty 1 72000 3600000 f3f400000 f3f900000 f0
+difficulty 1 72000 3600000 f3f800000 f3f900000 f0
+difficulty 1 72000 9000000 f0 f3f900000 f0
+difficulty 1 72000 9000000 f3e800000 f3f900000 f0
+difficulty 1 72000 9000000 f3f000000 f3f900000 f0
+difficulty 1 72000 9000000 f3f400000 f3f900000 f0
+difficulty 1 72000 9000000 f3f800000 f3f900000 f0
+difficulty 1 100000 0 f0 f3f413e94 f0
+difficulty 1 100000 0 f3e800000 f3f41ddde f0
+difficulty 1 100000 0 f3f000000 f3f41ddde f0
+difficulty 1 100000 0 f3f400000 f3f41ddde f0
+difficulty 1 100000 0 f3f800000 f3f41ddde f0
+difficulty 1 100000 1000 f0 f3f414568 f0
+difficulty 1 100000 1000 f3e800000 f3f41e4b2 f0
+difficulty 1 100000 1000 f3f000000 f3f41e4b2 f0
+difficulty 1 100000 1000 f3f400000 f3f41e4b2 f0
+difficulty 1 100000 1000 f3f800000 f3f41e4b2 f0
+difficulty 1 100000 360000 f0 f3f4ad82e f0
+difficulty 1 100000 360000 f3e800000 f3f4b7778 f0
+difficulty 1 100000 360000 f3f000000 f3f4b7778 f0
+difficulty 1 100000 360000 f3f400000 f3f4b7778 f0
+difficulty 1 100000 360000 f3f800000 f3f4b7778 f0
+difficulty 1 100000 3600000 f0 f3f909f4a f0
+difficulty 1 100000 3600000 f3e800000 f3f90eeef f0
+difficulty 1 100000 3600000 f3f000000 f3f90eeef f0
+difficulty 1 100000 3600000 f3f400000 f3f90eeef f0
+difficulty 1 100000 3600000 f3f800000 f3f90eeef f0
+difficulty 1 100000 9000000 f0 f3f909f4a f0
+difficulty 1 100000 9000000 f3e800000 f3f90eeef f0
+difficulty 1 100000 9000000 f3f000000 f3f90eeef f0
+difficulty 1 100000 9000000 f3f400000 f3f90eeef f0
+difficulty 1 100000 9000000 f3f800000 f3f90eeef f0
+difficulty 1 500000 0 f0 f3f5305b0 f0
+difficulty 1 500000 0 f3e800000 f3f5b05b0 f0
+difficulty 1 500000 0 f3f000000 f3f5c8888 f0
+difficulty 1 500000 0 f3f400000 f3f5c8888 f0
+difficulty 1 500000 0 f3f800000 f3f5c8888 f0
+difficulty 1 500000 1000 f0 f3f530c84 f0
+difficulty 1 500000 1000 f3e800000 f3f5b0c84 f0
+difficulty 1 500000 1000 f3f000000 f3f5c8f5c f0
+difficulty 1 500000 1000 f3f400000 f3f5c8f5c f0
+difficulty 1 500000 1000 f3f800000 f3f5c8f5c f0
+difficulty 1 500000 360000 f0 f3f5c9f4a f0
+difficulty 1 500000 360000 f3e800000 f3f649f4a f0
+difficulty 1 500000 360000 f3f000000 f3f662222 f0
+difficulty 1 500000 360000 f3f400000 f3f662222 f0
+difficulty 1 500000 360000 f3f800000 f3f662222 f0
+difficulty 1 500000 3600000 f0 f3f9982d8 f0
+difficulty 1 500000 3600000 f3e800000 f3f9d82d8 f0
+difficulty 1 500000 3600000 f3f000000 f3f9e4444 f0
+difficulty 1 500000 3600000 f3f400000 f3f9e4444 f0
+difficulty 1 500000 3600000 f3f800000 f3f9e4444 f0
+difficulty 1 500000 9000000 f0 f3f9982d8 f0
+difficulty 1 500000 9000000 f3e800000 f3f9d82d8 f0
+difficulty 1 500000 9000000 f3f000000 f3f9e4444 f0
+difficulty 1 500000 9000000 f3f400000 f3f9e4444 f0
+difficulty 1 500000 9000000 f3f800000 f3f9e4444 f0
+difficulty 1 1512000 0 f0 f3f800000 f0
+difficulty 1 1512000 0 f3e800000 f3f840000 f0
+difficulty 1 1512000 0 f3f000000 f3f880000 f0
+difficulty 1 1512000 0 f3f400000 f3f8c0000 f0
+difficulty 1 1512000 0 f3f800000 f3f900000 f0
+difficulty 1 1512000 1000 f0 f3f80036a f0
+difficulty 1 1512000 1000 f3e800000 f3f84036a f0
+difficulty 1 1512000 1000 f3f000000 f3f88036a f0
+difficulty 1 1512000 1000 f3f400000 f3f8c036a f0
+difficulty 1 1512000 1000 f3f800000 f3f90036a f0
+difficulty 1 1512000 360000 f0 f3f84cccd f0
+difficulty 1 1512000 360000 f3e800000 f3f88cccd f0
+difficulty 1 1512000 360000 f3f000000 f3f8ccccd f0
+difficulty 1 1512000 360000 f3f400000 f3f90cccd f0
+difficulty 1 1512000 360000 f3f800000 f3f94cccd f0
+difficulty 1 1512000 3600000 f0 f3fb00000 f0
+difficulty 1 1512000 3600000 f3e800000 f3fb40000 f0
+difficulty 1 1512000 3600000 f3f000000 f3fb80000 f0
+difficulty 1 1512000 3600000 f3f400000 f3fbc0000 f0
+difficulty 1 1512000 3600000 f3f800000 f3fc00000 f0
+difficulty 1 1512000 9000000 f0 f3fb00000 f0
+difficulty 1 1512000 9000000 f3e800000 f3fb40000 f0
+difficulty 1 1512000 9000000 f3f000000 f3fb80000 f0
+difficulty 1 1512000 9000000 f3f400000 f3fbc0000 f0
+difficulty 1 1512000 9000000 f3f800000 f3fc00000 f0
+difficulty 1 3000000 0 f0 f3f800000 f0
+difficulty 1 3000000 0 f3e800000 f3f840000 f0
+difficulty 1 3000000 0 f3f000000 f3f880000 f0
+difficulty 1 3000000 0 f3f400000 f3f8c0000 f0
+difficulty 1 3000000 0 f3f800000 f3f900000 f0
+difficulty 1 3000000 1000 f0 f3f80036a f0
+difficulty 1 3000000 1000 f3e800000 f3f84036a f0
+difficulty 1 3000000 1000 f3f000000 f3f88036a f0
+difficulty 1 3000000 1000 f3f400000 f3f8c036a f0
+difficulty 1 3000000 1000 f3f800000 f3f90036a f0
+difficulty 1 3000000 360000 f0 f3f84cccd f0
+difficulty 1 3000000 360000 f3e800000 f3f88cccd f0
+difficulty 1 3000000 360000 f3f000000 f3f8ccccd f0
+difficulty 1 3000000 360000 f3f400000 f3f90cccd f0
+difficulty 1 3000000 360000 f3f800000 f3f94cccd f0
+difficulty 1 3000000 3600000 f0 f3fb00000 f0
+difficulty 1 3000000 3600000 f3e800000 f3fb40000 f0
+difficulty 1 3000000 3600000 f3f000000 f3fb80000 f0
+difficulty 1 3000000 3600000 f3f400000 f3fbc0000 f0
+difficulty 1 3000000 3600000 f3f800000 f3fc00000 f0
+difficulty 1 3000000 9000000 f0 f3fb00000 f0
+difficulty 1 3000000 9000000 f3e800000 f3fb40000 f0
+difficulty 1 3000000 9000000 f3f000000 f3fb80000 f0
+difficulty 1 3000000 9000000 f3f400000 f3fbc0000 f0
+difficulty 1 3000000 9000000 f3f800000 f3fc00000 f0
+difficulty 2 0 0 f0 f3fc00000 f0
+difficulty 2 0 0 f3e800000 f3fc00000 f0
+difficulty 2 0 0 f3f000000 f3fc00000 f0
+difficulty 2 0 0 f3f400000 f3fc00000 f0
+difficulty 2 0 0 f3f800000 f3fc00000 f0
+difficulty 2 0 1000 f0 f3fc00da7 f0
+difficulty 2 0 1000 f3e800000 f3fc00da7 f0
+difficulty 2 0 1000 f3f000000 f3fc00da7 f0
+difficulty 2 0 1000 f3f400000 f3fc00da7 f0
+difficulty 2 0 1000 f3f800000 f3fc00da7 f0
+difficulty 2 0 360000 f0 f3fd33333 f0
+difficulty 2 0 360000 f3e800000 f3fd33333 f0
+difficulty 2 0 360000 f3f000000 f3fd33333 f0
+difficulty 2 0 360000 f3f400000 f3fd33333 f0
+difficulty 2 0 360000 f3f800000 f3fd33333 f0
+difficulty 2 0 3600000 f0 f40400000 f3f000000
+difficulty 2 0 3600000 f3e800000 f40400000 f3f000000
+difficulty 2 0 3600000 f3f000000 f40400000 f3f000000
+difficulty 2 0 3600000 f3f400000 f40400000 f3f000000
+difficulty 2 0 3600000 f3f800000 f40400000 f3f000000
+difficulty 2 0 9000000 f0 f40400000 f3f000000
+difficulty 2 0 9000000 f3e800000 f40400000 f3f000000
+difficulty 2 0 9000000 f3f000000 f40400000 f3f000000
+difficulty 2 0 9000000 f3f400000 f40400000 f3f000000
+difficulty 2 0 9000000 f3f800000 f40400000 f3f000000
+difficulty 2 24000 0 f0 f3fc00000 f0
+difficulty 2 24000 0 f3e800000 f3fc00000 f0
+difficulty 2 24000 0 f3f000000 f3fc00000 f0
+difficulty 2 24000 0 f3f400000 f3fc00000 f0
+difficulty 2 24000 0 f3f800000 f3fc00000 f0
+difficulty 2 24000 1000 f0 f3fc00da7 f0
+difficulty 2 24000 1000 f3e800000 f3fc00da7 f0
+difficulty 2 24000 1000 f3f000000 f3fc00da7 f0
+difficulty 2 24000 1000 f3f400000 f3fc00da7 f0
+difficulty 2 24000 1000 f3f800000 f3fc00da7 f0
+difficulty 2 24000 360000 f0 f3fd33333 f0
+difficulty 2 24000 360000 f3e800000 f3fd33333 f0
+difficulty 2 24000 360000 f3f000000 f3fd33333 f0
+difficulty 2 24000 360000 f3f400000 f3fd33333 f0
+difficulty 2 24000 360000 f3f800000 f3fd33333 f0
+difficulty 2 24000 3600000 f0 f40400000 f3f000000
+difficulty 2 24000 3600000 f3e800000 f40400000 f3f000000
+difficulty 2 24000 3600000 f3f000000 f40400000 f3f000000
+difficulty 2 24000 3600000 f3f400000 f40400000 f3f000000
+difficulty 2 24000 3600000 f3f800000 f40400000 f3f000000
+difficulty 2 24000 9000000 f0 f40400000 f3f000000
+difficulty 2 24000 9000000 f3e800000 f40400000 f3f000000
+difficulty 2 24000 9000000 f3f000000 f40400000 f3f000000
+difficulty 2 24000 9000000 f3f400000 f40400000 f3f000000
+difficulty 2 24000 9000000 f3f800000 f40400000 f3f000000
+difficulty 2 72000 0 f0 f3fc00000 f0
+difficulty 2 72000 0 f3e800000 f3fc00000 f0
+difficulty 2 72000 0 f3f000000 f3fc00000 f0
+difficulty 2 72000 0 f3f400000 f3fc00000 f0
+difficulty 2 72000 0 f3f800000 f3fc00000 f0
+difficulty 2 72000 1000 f0 f3fc00da7 f0
+difficulty 2 72000 1000 f3e800000 f3fc00da7 f0
+difficulty 2 72000 1000 f3f000000 f3fc00da7 f0
+difficulty 2 72000 1000 f3f400000 f3fc00da7 f0
+difficulty 2 72000 1000 f3f800000 f3fc00da7 f0
+difficulty 2 72000 360000 f0 f3fd33333 f0
+difficulty 2 72000 360000 f3e800000 f3fd33333 f0
+difficulty 2 72000 360000 f3f000000 f3fd33333 f0
+difficulty 2 72000 360000 f3f400000 f3fd33333 f0
+difficulty 2 72000 360000 f3f800000 f3fd33333 f0
+difficulty 2 72000 3600000 f0 f40400000 f3f000000
+difficulty 2 72000 3600000 f3e800000 f40400000 f3f000000
+difficulty 2 72000 3600000 f3f000000 f40400000 f3f000000
+difficulty 2 72000 3600000 f3f400000 f40400000 f3f000000
+difficulty 2 72000 3600000 f3f800000 f40400000 f3f000000
+difficulty 2 72000 9000000 f0 f40400000 f3f000000
+difficulty 2 72000 9000000 f3e800000 f40400000 f3f000000
+difficulty 2 72000 9000000 f3f000000 f40400000 f3f000000
+difficulty 2 72000 9000000 f3f400000 f40400000 f3f000000
+difficulty 2 72000 9000000 f3f800000 f40400000 f3f000000
+difficulty 2 100000 0 f0 f3fc13e94 f0
+difficulty 2 100000 0 f3e800000 f3fc27d28 f0
+difficulty 2 100000 0 f3f000000 f3fc27d28 f0
+difficulty 2 100000 0 f3f400000 f3fc27d28 f0
+difficulty 2 100000 0 f3f800000 f3fc27d28 f0
+difficulty 2 100000 1000 f0 f3fc14c3b f0
+difficulty 2 100000 1000 f3e800000 f3fc28acf f0
+difficulty 2 100000 1000 f3f000000 f3fc28acf f0
+difficulty 2 100000 1000 f3f400000 f3fc28acf f0
+difficulty 2 100000 1000 f3f800000 f3fc28acf f0
+difficulty 2 100000 360000 f0 f3fd471c7 f0
+difficulty 2 100000 360000 f3e800000 f3fd5b05b f0
+difficulty 2 100000 360000 f3f000000 f3fd5b05b f0
+difficulty 2 100000 360000 f3f400000 f3fd5b05b f0
+difficulty 2 100000 360000 f3f800000 f3fd5b05b f0
+difficulty 2 100000 3600000 f0 f40409f4a f3f013e94
+difficulty 2 100000 3600000 f3e800000 f40413e94 f3f027d28
+difficulty 2 100000 3600000 f3f000000 f40413e94 f3f027d28
+difficulty 2 100000 3600000 f3f400000 f40413e94 f3f027d28
+difficulty 2 100000 3600000 f3f800000 f40413e94 f3f027d28
+difficulty 2 100000 9000000 f0 f40409f4a f3f013e94
+difficulty 2 100000 9000000 f3e800000 f40413e94 f3f027d28
+difficulty 2 100000 9000000 f3f000000 f40413e94 f3f027d28
+difficulty 2 100000 9000000 f3f400000 f40413e94 f3f027d28
+difficulty 2 100000 9000000 f3f800000 f40413e94 f3f027d28
+difficulty 2 500000 0 f0 f3fd305b0 f0
+difficulty 2 500000 0 f3e800000 f3fe305b0 f0
+difficulty 2 500000 0 f3f000000 f3fe60b60 f0
+difficulty 2 500000 0 f3f400000 f3fe60b60 f0
+difficulty 2 500000 0 f3f800000 f3fe60b60 f0
+difficulty 2 500000 1000 f0 f3fd31357 f0
+difficulty 2 500000 1000 f3e800000 f3fe31357 f0
+difficulty 2 500000 1000 f3f000000 f3fe61908 f0
+difficulty 2 500000 1000 f3f400000 f3fe61908 f0
+difficulty 2 500000 1000 f3f800000 f3fe61908 f0
+difficulty 2 500000 360000 f0 f3fe638e3 f0
+difficulty 2 500000 360000 f3e800000 f3ff638e3 f0
+difficulty 2 500000 360000 f3f000000 f3ff93e94 f0
+difficulty 2 500000 360000 f3f400000 f3ff93e94 f0
+difficulty 2 500000 360000 f3f800000 f3ff93e94 f0
+difficulty 2 500000 3600000 f0 f404982d8 f3f1305b0
+difficulty 2 500000 3600000 f3e800000 f405182d8 f3f2305b0
+difficulty 2 500000 3600000 f3f000000 f405305b0 f3f260b60
+difficulty 2 500000 3600000 f3f400000 f405305b0 f3f260b60
+difficulty 2 500000 3600000 f3f800000 f405305b0 f3f260b60
+difficulty 2 500000 9000000 f0 f404982d8 f3f1305b0
+difficulty 2 500000 9000000 f3e800000 f405182d8 f3f2305b0
+difficulty 2 500000 9000000 f3f000000 f405305b0 f3f260b60
+difficulty 2 500000 9000000 f3f400000 f405305b0 f3f260b60
+difficulty 2 500000 9000000 f3f800000 f405305b0 f3f260b60
+difficulty 2 1512000 0 f0 f40000000 f0
+difficulty 2 1512000 0 f3e800000 f40080000 f3d800000
+difficulty 2 1512000 0 f3f000000 f40100000 f3e000000
+difficulty 2 1512000 0 f3f400000 f40180000 f3e400000
+difficulty 2 1512000 0 f3f800000 f40200000 f3e800000
+difficulty 2 1512000 1000 f0 f400006d4 f395a8000
+difficulty 2 1512000 1000 f3e800000 f400806d4 f3d806d40
+difficulty 2 1512000 1000 f3f000000 f401006d4 f3e0036a0
+difficulty 2 1512000 1000 f3f400000 f401806d4 f3e4036a0
+difficulty 2 1512000 1000 f3f800000 f402006d4 f3e801b50
+difficulty 2 1512000 360000 f0 f4009999a f3d9999a0
+difficulty 2 1512000 360000 f3e800000 f4011999a f3e0cccd0
+difficulty 2 1512000 360000 f3f000000 f4019999a f3e4cccd0
+difficulty 2 1512000 360000 f3f400000 f4021999a f3e866668
+difficulty 2 1512000 360000 f3f800000 f4029999a f3ea66668
+difficulty 2 1512000 3600000 f0 f40600000 f3f400000
+difficulty 2 1512000 3600000 f3e800000 f40680000 f3f500000
+difficulty 2 1512000 3600000 f3f000000 f40700000 f3f600000
+difficulty 2 1512000 3600000 f3f400000 f40780000 f3f700000
+difficulty 2 1512000 3600000 f3f800000 f40800000 f3f800000
+difficulty 2 1512000 9000000 f0 f40600000 f3f400000
+difficulty 2 1512000 9000000 f3e800000 f40680000 f3f500000
+difficulty 2 1512000 9000000 f3f000000 f40700000 f3f600000
+difficulty 2 1512000 9000000 f3f400000 f40780000 f3f700000
+difficulty 2 1512000 9000000 f3f800000 f40800000 f3f800000
+difficulty 2 3000000 0 f0 f40000000 f0
+difficulty 2 3000000 0 f3e800000 f40080000 f3d800000
+difficulty 2 3000000 0 f3f000000 f40100000 f3e000000
+difficulty 2 3000000 0 f3f400000 f40180000 f3e400000
+difficulty 2 3000000 0 f3f800000 f40200000 f3e800000
+difficulty 2 3000000 1000 f0 f400006d4 f395a8000
+difficulty 2 3000000 1000 f3e800000 f400806d4 f3d806d40
+difficulty 2 3000000 1000 f3f000000 f401006d4 f3e0036a0
+difficulty 2 3000000 1000 f3f400000 f401806d4 f3e4036a0
+difficulty 2 3000000 1000 f3f800000 f402006d4 f3e801b50
+difficulty 2 3000000 360000 f0 f4009999a f3d9999a0
+difficulty 2 3000000 360000 f3e800000 f4011999a f3e0cccd0
+difficulty 2 3000000 360000 f3f000000 f4019999a f3e4cccd0
+difficulty 2 3000000 360000 f3f400000 f4021999a f3e866668
+difficulty 2 3000000 360000 f3f800000 f4029999a f3ea66668
+difficulty 2 3000000 3600000 f0 f40600000 f3f400000
+difficulty 2 3000000 3600000 f3e800000 f40680000 f3f500000
+difficulty 2 3000000 3600000 f3f000000 f40700000 f3f600000
+difficulty 2 3000000 3600000 f3f400000 f40780000 f3f700000
+difficulty 2 3000000 3600000 f3f800000 f40800000 f3f800000
+difficulty 2 3000000 9000000 f0 f40600000 f3f400000
+difficulty 2 3000000 9000000 f3e800000 f40680000 f3f500000
+difficulty 2 3000000 9000000 f3f000000 f40700000 f3f600000
+difficulty 2 3000000 9000000 f3f400000 f40780000 f3f700000
+difficulty 2 3000000 9000000 f3f800000 f40800000 f3f800000
+difficulty 3 0 0 f0 f40100000 f3e000000
+difficulty 3 0 0 f3e800000 f40100000 f3e000000
+difficulty 3 0 0 f3f000000 f40100000 f3e000000
+difficulty 3 0 0 f3f400000 f40100000 f3e000000
+difficulty 3 0 0 f3f800000 f40100000 f3e000000
+difficulty 3 0 1000 f0 f40100da7 f3e006d38
+difficulty 3 0 1000 f3e800000 f40100da7 f3e006d38
+difficulty 3 0 1000 f3f000000 f40100da7 f3e006d38
+difficulty 3 0 1000 f3f400000 f40100da7 f3e006d38
+difficulty 3 0 1000 f3f800000 f40100da7 f3e006d38
+difficulty 3 0 360000 f0 f40233334 f3e8cccd0
+difficulty 3 0 360000 f3e800000 f40233334 f3e8cccd0
+difficulty 3 0 360000 f3f000000 f40233334 f3e8cccd0
+difficulty 3 0 360000 f3f400000 f40233334 f3e8cccd0
+difficulty 3 0 360000 f3f800000 f40233334 f3e8cccd0
+difficulty 3 0 3600000 f0 f40a80000 f3f800000
+difficulty 3 0 3600000 f3e800000 f40a80000 f3f800000
+difficulty 3 0 3600000 f3f000000 f40a80000 f3f800000
+difficulty 3 0 3600000 f3f400000 f40a80000 f3f800000
+difficulty 3 0 3600000 f3f800000 f40a80000 f3f800000
+difficulty 3 0 9000000 f0 f40a80000 f3f800000
+difficulty 3 0 9000000 f3e800000 f40a80000 f3f800000
+difficulty 3 0 9000000 f3f000000 f40a80000 f3f800000
+difficulty 3 0 9000000 f3f400000 f40a80000 f3f800000
+difficulty 3 0 9000000 f3f800000 f40a80000 f3f800000
+difficulty 3 24000 0 f0 f40100000 f3e000000
+difficulty 3 24000 0 f3e800000 f40100000 f3e000000
+difficulty 3 24000 0 f3f000000 f40100000 f3e000000
+difficulty 3 24000 0 f3f400000 f40100000 f3e000000
+difficulty 3 24000 0 f3f800000 f40100000 f3e000000
+difficulty 3 24000 1000 f0 f40100da7 f3e006d38
+difficulty 3 24000 1000 f3e800000 f40100da7 f3e006d38
+difficulty 3 24000 1000 f3f000000 f40100da7 f3e006d38
+difficulty 3 24000 1000 f3f400000 f40100da7 f3e006d38
+difficulty 3 24000 1000 f3f800000 f40100da7 f3e006d38
+difficulty 3 24000 360000 f0 f40233334 f3e8cccd0
+difficulty 3 24000 360000 f3e800000 f40233334 f3e8cccd0
+difficulty 3 24000 360000 f3f000000 f40233334 f3e8cccd0
+difficulty 3 24000 360000 f3f400000 f40233334 f3e8cccd0
+difficulty 3 24000 360000 f3f800000 f40233334 f3e8cccd0
+difficulty 3 24000 3600000 f0 f40a80000 f3f800000
+difficulty 3 24000 3600000 f3e800000 f40a80000 f3f800000
+difficulty 3 24000 3600000 f3f000000 f40a80000 f3f800000
+difficulty 3 24000 3600000 f3f400000 f40a80000 f3f800000
+difficulty 3 24000 3600000 f3f800000 f40a80000 f3f800000
+difficulty 3 24000 9000000 f0 f40a80000 f3f800000
+difficulty 3 24000 9000000 f3e800000 f40a80000 f3f800000
+difficulty 3 24000 9000000 f3f000000 f40a80000 f3f800000
+difficulty 3 24000 9000000 f3f400000 f40a80000 f3f800000
+difficulty 3 24000 9000000 f3f800000 f40a80000 f3f800000
+difficulty 3 72000 0 f0 f40100000 f3e000000
+difficulty 3 72000 0 f3e800000 f40100000 f3e000000
+difficulty 3 72000 0 f3f000000 f40100000 f3e000000
+difficulty 3 72000 0 f3f400000 f40100000 f3e000000
+difficulty 3 72000 0 f3f800000 f40100000 f3e000000
+difficulty 3 72000 1000 f0 f40100da7 f3e006d38
+difficulty 3 72000 1000 f3e800000 f40100da7 f3e006d38
+difficulty 3 72000 1000 f3f000000 f40100da7 f3e006d38
+difficulty 3 72000 1000 f3f400000 f40100da7 f3e006d38
+difficulty 3 72000 1000 f3f800000 f40100da7 f3e006d38
+difficulty 3 72000 360000 f0 f40233334 f3e8cccd0
+difficulty 3 72000 360000 f3e800000 f40233334 f3e8cccd0
+difficulty 3 72000 360000 f3f000000 f40233334 f3e8cccd0
+difficulty 3 72000 360000 f3f400000 f40233334 f3e8cccd0
+difficulty 3 72000 360000 f3f800000 f40233334 f3e8cccd0
+difficulty 3 72000 3600000 f0 f40a80000 f3f800000
+difficulty 3 72000 3600000 f3e800000 f40a80000 f3f800000
+difficulty 3 72000 3600000 f3f000000 f40a80000 f3f800000
+difficulty 3 72000 3600000 f3f400000 f40a80000 f3f800000
+difficulty 3 72000 3600000 f3f800000 f40a80000 f3f800000
+difficulty 3 72000 9000000 f0 f40a80000 f3f800000
+difficulty 3 72000 9000000 f3e800000 f40a80000 f3f800000
+difficulty 3 72000 9000000 f3f000000 f40a80000 f3f800000
+difficulty 3 72000 9000000 f3f400000 f40a80000 f3f800000
+difficulty 3 72000 9000000 f3f800000 f40a80000 f3f800000
+difficulty 3 100000 0 f0 f4010eeef f3e077778
+difficulty 3 100000 0 f3e800000 f4011ddde f3e0eeef0
+difficulty 3 100000 0 f3f000000 f4011ddde f3e0eeef0
+difficulty 3 100000 0 f3f400000 f4011ddde f3e0eeef0
+difficulty 3 100000 0 f3f800000 f4011ddde f3e0eeef0
+difficulty 3 100000 1000 f0 f4010fc96 f3e07e4b0
+difficulty 3 100000 1000 f3e800000 f4011eb85 f3e0f5c28
+difficulty 3 100000 1000 f3f000000 f4011eb85 f3e0f5c28
+difficulty 3 100000 1000 f3f400000 f4011eb85 f3e0f5c28
+difficulty 3 100000 1000 f3f800000 f4011eb85 f3e0f5c28
+difficulty 3 100000 360000 f0 f40242222 f3e908888
+difficulty 3 100000 360000 f3e800000 f40251112 f3e944448
+difficulty 3 100000 360000 f3f000000 f40251112 f3e944448
+difficulty 3 100000 360000 f3f400000 f40251112 f3e944448
+difficulty 3 100000 360000 f3f800000 f40251112 f3e944448
+difficulty 3 100000 3600000 f0 f40a87778 f3f800000
+difficulty 3 100000 3600000 f3e800000 f40a8eeef f3f800000
+difficulty 3 100000 3600000 f3f000000 f40a8eeef f3f800000
+difficulty 3 100000 3600000 f3f400000 f40a8eeef f3f800000
+difficulty 3 100000 3600000 f3f800000 f40a8eeef f3f800000
+difficulty 3 100000 9000000 f0 f40a87778 f3f800000
+difficulty 3 100000 9000000 f3e800000 f40a8eeef f3f800000
+difficulty 3 100000 9000000 f3f000000 f40a8eeef f3f800000
+difficulty 3 100000 9000000 f3f400000 f40a8eeef f3f800000
+difficulty 3 100000 9000000 f3f800000 f40a8eeef f3f800000
+difficulty 3 500000 0 f0 f401e4444 f3e722220
+difficulty 3 500000 0 f3e800000 f402a4444 f3ea91110
+difficulty 3 500000 0 f3f000000 f402c8888 f3eb22220
+difficulty 3 500000 0 f3f400000 f402c8888 f3eb22220
+difficulty 3 500000 0 f3f800000 f402c8888 f3eb22220
+difficulty 3 500000 1000 f0 f401e51eb f3e728f58
+difficulty 3 500000 1000 f3e800000 f402a51eb f3ea947ac
+difficulty 3 500000 1000 f3f000000 f402c9630 f3eb258c0
+difficulty 3 500000 1000 f3f400000 f402c9630 f3eb258c0
+difficulty 3 500000 1000 f3f800000 f402c9630 f3eb258c0
+difficulty 3 500000 360000 f0 f40317778 f3ec5dde0
+difficulty 3 500000 360000 f3e800000 f403d7778 f3ef5dde0
+difficulty 3 500000 360000 f3f000000 f403fbbbc f3efeeef0
+difficulty 3 500000 360000 f3f400000 f403fbbbc f3efeeef0
+difficulty 3 500000 360000 f3f800000 f403fbbbc f3efeeef0
+difficulty 3 500000 3600000 f0 f40af2222 f3f800000
+difficulty 3 500000 3600000 f3e800000 f40b52222 f3f800000
+difficulty 3 500000 3600000 f3f000000 f40b64444 f3f800000
+difficulty 3 500000 3600000 f3f400000 f40b64444 f3f800000
+difficulty 3 500000 3600000 f3f800000 f40b64444 f3f800000
+difficulty 3 500000 9000000 f0 f40af2222 f3f800000
+difficulty 3 500000 9000000 f3e800000 f40b52222 f3f800000
+difficulty 3 500000 9000000 f3f000000 f40b64444 f3f800000
+difficulty 3 500000 9000000 f3f400000 f40b64444 f3f800000
+difficulty 3 500000 9000000 f3f800000 f40b64444 f3f800000
+difficulty 3 1512000 0 f0 f40400000 f3f000000
+difficulty 3 1512000 0 f3e800000 f404c0000 f3f180000
+difficulty 3 1512000 0 f3f000000 f40580000 f3f300000
+difficulty 3 1512000 0 f3f400000 f40640000 f3f480000
+difficulty 3 1512000 0 f3f800000 f40700000 f3f600000
+difficulty 3 1512000 1000 f0 f40400da7 f3f001b4e
+difficulty 3 1512000 1000 f3e800000 f404c0da7 f3f181b4e
+difficulty 3 1512000 1000 f3f000000 f40580da7 f3f301b4e
+difficulty 3 1512000 1000 f3f400000 f40640da7 f3f481b4e
+difficulty 3 1512000 1000 f3f800000 f40700da7 f3f601b4e
+difficulty 3 1512000 360000 f0 f40533334 f3f266668
+difficulty 3 1512000 360000 f3e800000 f405f3334 f3f3e6668
+difficulty 3 1512000 360000 f3f000000 f406b3334 f3f566668
+difficulty 3 1512000 360000 f3f400000 f40773334 f3f6e6668
+difficulty 3 1512000 360000 f3f800000 f4081999a f3f800000
+difficulty 3 1512000 3600000 f0 f40c00000 f3f800000
+difficulty 3 1512000 3600000 f3e800000 f40c60000 f3f800000
+difficulty 3 1512000 3600000 f3f000000 f40cc0000 f3f800000
+difficulty 3 1512000 3600000 f3f400000 f40d20000 f3f800000
+difficulty 3 1512000 3600000 f3f800000 f40d80000 f3f800000
+difficulty 3 1512000 9000000 f0 f40c00000 f3f800000
+difficulty 3 1512000 9000000 f3e800000 f40c60000 f3f800000
+difficulty 3 1512000 9000000 f3f000000 f40cc0000 f3f800000
+difficulty 3 1512000 9000000 f3f400000 f40d20000 f3f800000
+difficulty 3 1512000 9000000 f3f800000 f40d80000 f3f800000
+difficulty 3 3000000 0 f0 f40400000 f3f000000
+difficulty 3 3000000 0 f3e800000 f404c0000 f3f180000
+difficulty 3 3000000 0 f3f000000 f40580000 f3f300000
+difficulty 3 3000000 0 f3f400000 f40640000 f3f480000
+difficulty 3 3000000 0 f3f800000 f40700000 f3f600000
+difficulty 3 3000000 1000 f0 f40400da7 f3f001b4e
+difficulty 3 3000000 1000 f3e800000 f404c0da7 f3f181b4e
+difficulty 3 3000000 1000 f3f000000 f40580da7 f3f301b4e
+difficulty 3 3000000 1000 f3f400000 f40640da7 f3f481b4e
+difficulty 3 3000000 1000 f3f800000 f40700da7 f3f601b4e
+difficulty 3 3000000 360000 f0 f40533334 f3f266668
+difficulty 3 3000000 360000 f3e800000 f405f3334 f3f3e6668
+difficulty 3 3000000 360000 f3f000000 f406b3334 f3f566668
+difficulty 3 3000000 360000 f3f400000 f40773334 f3f6e6668
+difficulty 3 3000000 360000 f3f800000 f4081999a f3f800000
+difficulty 3 3000000 3600000 f0 f40c00000 f3f800000
+difficulty 3 3000000 3600000 f3e800000 f40c60000 f3f800000
+difficulty 3 3000000 3600000 f3f000000 f40cc0000 f3f800000
+difficulty 3 3000000 3600000 f3f400000 f40d20000 f3f800000
+difficulty 3 3000000 3600000 f3f800000 f40d80000 f3f800000
+difficulty 3 3000000 9000000 f0 f40c00000 f3f800000
+difficulty 3 3000000 9000000 f3e800000 f40c60000 f3f800000
+difficulty 3 3000000 9000000 f3f000000 f40cc0000 f3f800000
+difficulty 3 3000000 9000000 f3f400000 f40d20000 f3f800000
+difficulty 3 3000000 9000000 f3f800000 f40d80000 f3f800000
+spawner DEFAULT_SPAWN_DELAY 20
+spawner DEFAULT_MIN_SPAWN_DELAY 200
+spawner DEFAULT_MAX_SPAWN_DELAY 800
+spawner DEFAULT_SPAWN_COUNT 4
+spawner DEFAULT_MAX_NEARBY_ENTITIES 6
+spawner DEFAULT_REQUIRED_PLAYER_RANGE 16
+spawner DEFAULT_SPAWN_RANGE 4
+halloween --10-31 today=--10-28 isHalloween=false

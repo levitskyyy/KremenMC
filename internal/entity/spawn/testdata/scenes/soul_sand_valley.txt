@@ -1,0 +1,131 @@
+# Spawn-cost potential in soul sand valley (charge 0.7, budget 0.15 for
+# skeleton/ghast/enderman/strider): pre-placed skeletons charge the field.
+area 3992 -64 3992 4071 -50 4071
+setup fill 4000 -63 4000 4063 8 4063 minecraft:air
+setup fill 4000 -64 4000 4063 -62 4063 minecraft:stone
+setup fill 4000 -61 4000 4063 -61 4063 minecraft:soul_sand
+setup fill 4000 -56 4000 4063 -56 4063 minecraft:stone
+setup fillbiome 3992 -64 3992 4071 8 4071 minecraft:soul_sand_valley
+setup summon minecraft:skeleton 4010.5 -60 4010.5 {NoAI:1b}
+setup summon minecraft:skeleton 4012.5 -60 4014.5 {NoAI:1b}
+setup summon minecraft:skeleton 4030.5 -60 4030.5 {NoAI:1b}
+setup summon minecraft:enderman 4040.5 -60 4020.5 {NoAI:1b}
+setup time set 18000
+setup difficulty hard
+player 4031.5 -60 4060.5
+potential monster 250 250 600001
+potential monster 250 250 600002
+potential monster 250 250 600003
+potential monster 250 250 600004
+potential monster 250 250 600005
+potential monster 250 250 600006
+potential monster 250 251 600007
+potential monster 250 251 600008
+potential monster 250 251 600009
+potential monster 250 251 600010
+potential monster 250 251 600011
+potential monster 250 251 600012
+potential monster 250 252 600013
+potential monster 250 252 600014
+potential monster 250 252 600015
+potential monster 250 252 600016
+potential monster 250 252 600017
+potential monster 250 252 600018
+potential monster 250 253 600019
+potential monster 250 253 600020
+potential monster 250 253 600021
+potential monster 250 253 600022
+potential monster 250 253 600023
+potential monster 250 253 600024
+potential monster 251 250 600025
+potential monster 251 250 600026
+potential monster 251 250 600027
+potential monster 251 250 600028
+potential monster 251 250 600029
+potential monster 251 250 600030
+potential monster 251 251 600031
+potential monster 251 251 600032
+potential monster 251 251 600033
+potential monster 251 251 600034
+potential monster 251 251 600035
+potential monster 251 251 600036
+potential monster 251 252 600037
+potential monster 251 252 600038
+potential monster 251 252 600039
+potential monster 251 252 600040
+potential monster 251 252 600041
+potential monster 251 252 600042
+potential monster 251 253 600043
+potential monster 251 253 600044
+potential monster 251 253 600045
+potential monster 251 253 600046
+potential monster 251 253 600047
+potential monster 251 253 600048
+potential monster 252 250 600049
+potential monster 252 250 600050
+potential monster 252 250 600051
+potential monster 252 250 600052
+potential monster 252 250 600053
+potential monster 252 250 600054
+potential monster 252 251 600055
+potential monster 252 251 600056
+potential monster 252 251 600057
+potential monster 252 251 600058
+potential monster 252 251 600059
+potential monster 252 251 600060
+potential monster 252 252 600061
+potential monster 252 252 600062
+potential monster 252 252 600063
+potential monster 252 252 600064
+potential monster 252 252 600065
+potential monster 252 252 600066
+potential monster 252 253 600067
+potential monster 252 253 600068
+potential monster 252 253 600069
+potential monster 252 253 600070
+potential monster 252 253 600071
+potential monster 252 253 600072
+potential monster 253 250 600073
+potential monster 253 250 600074
+potential monster 253 250 600075
+potential monster 253 250 600076
+potential monster 253 250 600077
+potential monster 253 250 600078
+potential monster 253 251 600079
+potential monster 253 251 600080
+potential monster 253 251 600081
+potential monster 253 251 600082
+potential monster 253 251 600083
+potential monster 253 251 600084
+potential monster 253 252 600085
+potential monster 253 252 600086
+potential monster 253 252 600087
+potential monster 253 252 600088
+potential monster 253 252 600089
+potential monster 253 252 600090
+potential monster 253 253 600091
+potential monster 253 253 600092
+potential monster 253 253 600093
+potential monster 253 253 600094
+potential monster 253 253 600095
+potential monster 253 253 600096
+natural monster 4004 -60 4004 600097
+natural monster 4011 -60 4015 600098
+natural monster 4018 -60 4026 600099
+natural monster 4025 -60 4037 600100
+natural monster 4032 -60 4008 600101
+natural monster 4039 -60 4019 600102
+natural monster 4046 -60 4030 600103
+natural monster 4053 -60 4041 600104
+natural monster 4004 -60 4012 600105
+natural monster 4011 -60 4023 600106
+natural monster 4018 -60 4034 600107
+natural monster 4025 -60 4005 600108
+natural monster 4032 -60 4016 600109
+natural monster 4039 -60 4027 600110
+natural monster 4046 -60 4038 600111
+natural monster 4053 -60 4009 600112
+natural monster 4004 -60 4020 600113
+natural monster 4011 -60 4031 600114
+natural monster 4018 -60 4042 600115
+natural monster 4025 -60 4013 600116

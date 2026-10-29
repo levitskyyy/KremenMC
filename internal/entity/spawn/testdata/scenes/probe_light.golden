@@ -1,0 +1,72 @@
+dump 4000 -64 4000 4031 -50 4015
+palette 0 minecraft:stone
+palette 1 minecraft:grass_block[snowy=false]
+palette 2 minecraft:stone_slab[type=bottom,waterlogged=false]
+palette 3 minecraft:oak_stairs[facing=north,half=bottom,shape=straight,waterlogged=false]
+palette 4 minecraft:glass
+palette 5 minecraft:farmland[moisture=0]
+palette 6 minecraft:soul_sand
+palette 7 minecraft:dirt_path
+palette 8 minecraft:air
+blocks 0*1536 1*132 2*1 1*3 3*1 1*3 4*1 1*3 5*1 1*7 6*1 1*3 7*1 1*355 8*148 2*1 8*5483
+sky 0*1668 15*1 0*3 15*1 0*3 15*1 0*3 15*1 0*11 15*1 0*355 15*5632
+blocklight 0*7680
+maxlocal 0*1668 4*1 0*3 4*1 0*3 4*1 0*3 4*1 0*11 4*1 0*355 4*5632
+biomepalette 0 minecraft:desert
+biomes 0*7680
+heightmap WORLD_SURFACE -60*148 -59*1 -60*363
+heightmap MOTION_BLOCKING -60*148 -59*1 -60*363
+heightmap MOTION_BLOCKING_NO_LEAVES -60*148 -59*1 -60*363
+heightmap OCEAN_FLOOR -60*148 -59*1 -60*363
+ticking 1 1
+env skyDarken=11 thundering=false raining=false difficulty=normal minY=-64 height=384 sea=-63 seed=0 moonBrightness=f3f800000 slimeChance=f3f000000 worldgenProb=f3dcccccd moonPhase=FULL_MOON spawn=0,0,0 dayTime=18000 effDifficulty=f3fc00000 special=f0
+player d40af610000000000 dc04e000000000000 d40af5d0000000000
+enddump
+op mobcheck minecraft:zombie 4004 -60 4004 1
+m light magic=f3daaaaac cost=fbed55555 maxlocal=4 effsky=4 raw0=15
+m walk f3ed55555
+m mobrules true
+m obstruction true
+endop
+op mobcheck minecraft:zombie 4008 -60 4004 2
+m light magic=f3daaaaac cost=fbed55555 maxlocal=4 effsky=4 raw0=15
+m walk f3ed55555
+m mobrules true
+m obstruction true
+endop
+op mobcheck minecraft:zombie 4012 -60 4004 3
+m light magic=f3daaaaac cost=fbed55555 maxlocal=4 effsky=4 raw0=15
+m walk f3ed55555
+m mobrules true
+m obstruction true
+endop
+op mobcheck minecraft:zombie 4016 -60 4004 4
+m light magic=f3daaaaac cost=fbed55555 maxlocal=4 effsky=4 raw0=15
+m walk f3ed55555
+m mobrules true
+m obstruction true
+endop
+op mobcheck minecraft:zombie 4020 -60 4004 5
+m light magic=f3daaaaac cost=fbed55555 maxlocal=4 effsky=4 raw0=15
+m walk f3ed55555
+m mobrules true
+m obstruction true
+endop
+op mobcheck minecraft:zombie 4024 -60 4004 6
+m light magic=f3daaaaac cost=fbed55555 maxlocal=4 effsky=4 raw0=15
+m walk f3ed55555
+m mobrules true
+m obstruction true
+endop
+op mobcheck minecraft:zombie 4028 -60 4004 7
+m light magic=f3daaaaac cost=fbed55555 maxlocal=4 effsky=4 raw0=15
+m walk f3ed55555
+m mobrules true
+m obstruction true
+endop
+op mobcheck minecraft:zombie 4002 -60 4002 8
+m light magic=f3daaaaac cost=fbed55555 maxlocal=4 effsky=4 raw0=15
+m walk f3ed55555
+m mobrules true
+m obstruction true
+endop

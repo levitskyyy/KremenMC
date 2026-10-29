@@ -1,0 +1,12 @@
+bsp 377971252 0 0 0 minecraft:cave_vines_head => Block{minecraft:cave_vines}[age=25,berries=true] | -4269641311500742768
+bsp 5707590226 0 0 0 minecraft:cave_vines_head => Block{minecraft:cave_vines}[age=23,berries=false] | 7368555149128866086
+bsp 4180474938 0 0 0 minecraft:cave_vines_head => Block{minecraft:cave_vines}[age=25,berries=false] | -4563503142371405763
+bsp 2741161210 0 0 0 minecraft:cave_vines_head => Block{minecraft:cave_vines}[age=25,berries=false] | 2112745832738327925
+bsp 265364384 0 0 0 minecraft:cave_vines_head => Block{minecraft:cave_vines}[age=23,berries=false] | 1907326205486147103
+bsp 2805542382 0 0 0 minecraft:cave_vines_head => Block{minecraft:cave_vines}[age=25,berries=true] | 6266640220790113065
+bsp 1482681109 0 0 0 minecraft:cave_vines_head => Block{minecraft:cave_vines}[age=24,berries=false] | 1747354198918109715
+bsp 60544058 0 0 0 minecraft:cave_vines_head => Block{minecraft:cave_vines}[age=23,berries=false] | 8930264607516146560
+bsp 598622565 0 0 0 minecraft:cave_vines_head => Block{minecraft:cave_vines}[age=23,berries=false] | 5562529904758022654
+bsp 2964686084 0 0 0 minecraft:cave_vines_head => Block{minecraft:cave_vines}[age=23,berries=false] | 8048775306293418357
+bsp 826200442 0 0 0 minecraft:cave_vines_head => Block{minecraft:cave_vines}[age=25,berries=false] | 6825353652849822431
+bsp 3902114732 0 0 0 minecraft:cave_vines_head => Block{minecraft:cave_vines}[age=24,berries=false] | -7655252650481578200

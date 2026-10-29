@@ -1,0 +1,20 @@
+# Build output
+/bin/
+/dist/
+/kremenmc
+/refbench
+*.test
+*.out
+
+# Local server and reference data
+/server/
+/.refcache/
+
+# Notes and docs kept out of the repository
+*.md
+!/README.md
+/docs/
+.claude/
+
+# OS
+.DS_Store

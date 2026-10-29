@@ -1,0 +1,32 @@
+# Platforms 8 blocks apart, top surface at y=101 (stone), ice at x 20..28.
+setup fill -8 100 -8 8 100 8 minecraft:stone
+setup fill 20 100 -8 28 100 8 minecraft:ice
+setup fill 40 100 -8 48 100 8 minecraft:blue_ice
+setup fill 60 96 -8 68 100 8 minecraft:water
+setup fill 60 95 -8 68 95 8 minecraft:stone
+setup fill -8 100 20 8 100 28 minecraft:slime_block
+setup fill 20 96 20 28 100 28 minecraft:lava
+setup fill 20 95 20 28 95 28 minecraft:stone
+case item_stone item:minecraft:stone 0.5 104 0.5 0.1 0.3 0.05 60
+case item_ice item:minecraft:diamond 22.5 101 0.5 0.3 0 0.1 80
+case item_water item:minecraft:stone 64.5 102 0.5 0.1 0 0 80
+case item_lava item:minecraft:netherrack 24.5 102 24.5 0.1 0 0 60
+case tnt minecraft:tnt 0.5 101 0.5 0.2 0.3 0 70
+case sand falling_block:minecraft:sand 0.5 106 3.5 0.05 0 0 40
+case arrow minecraft:arrow 0.5 103 0.5 1.2 0.4 0.3 60
+case arrow_down minecraft:arrow -6.5 108 0.5 0.5 -0.2 0.1 40
+case snowball minecraft:snowball 0.5 103 0.5 0.8 0.5 0.2 60
+case egg minecraft:egg 0.5 103 0.5 0.6 0.6 -0.2 60
+case pearl minecraft:ender_pearl 0.5 103 0.5 0.6 0.6 0 60
+case trident minecraft:trident 0.5 103 0.5 1.5 0.2 0 60
+case xp minecraft:experience_orb 0.5 103 0.5 0.1 0.2 0 40
+case zombie_fall minecraft:zombie 0.5 105 0.5 0 0 0 30 noai
+case zombie_kb minecraft:zombie 0.5 101 0.5 0.4 0.36 0.2 30 noai
+case zombie_ice minecraft:zombie 22.5 101 0.5 0.4 0.3 0 50 noai
+case zombie_blueice minecraft:zombie 42.5 101 0.5 0.4 0.3 0 60 noai
+case zombie_slime minecraft:zombie 0.5 104 24.5 0.2 0 0 60 noai
+case zombie_water minecraft:zombie 64.5 101 0.5 0.3 0 0 60 noai
+case zombie_lava minecraft:zombie 24.5 101 24.5 0.3 0 0 40 noai
+case cow_kb minecraft:cow 0.5 101 0.5 -0.3 0.4 0.3 30 noai
+case chicken_fall minecraft:chicken 0.5 110 0.5 0 0 0 40 noai
+case armor_stand minecraft:armor_stand 0.5 104 0.5 0.3 0.2 0 30

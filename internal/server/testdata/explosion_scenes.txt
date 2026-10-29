@@ -1,0 +1,181 @@
+# Explosion scenes for kremenmc.probe.explosion.Explode (see Explode.java).
+area -40 88 -40 40 112 40
+wait 40
+cmd gamerule block_drops false
+scene stone4
+area -10 90 -10 10 110 10
+fill -6 92 -6 6 99 6 stone
+explode 0.5 100 0.5 4 TNT 0 1
+scene mixed
+area -10 90 -10 10 110 10
+fill -7 92 -7 7 99 7 stone
+fill 2 100 -3 2 104 3 obsidian
+fill -3 100 -2 -3 102 2 glass
+fill -1 98 -5 1 99 -3 water
+fill -4 100 3 -1 100 5 oak_slab
+fill 0 100 3 0 101 5 oak_fence
+fill 3 96 3 5 99 5 end_stone
+set -2 99 -2 bedrock
+explode 0.3 100.2 -0.7 4 TNT 0 2
+scene underwater
+area -10 90 -10 10 110 10
+fill -5 92 -5 5 99 5 stone
+fill -3 97 -3 3 99 3 water
+explode 0.5 98 0.5 4 TNT 0 3
+scene keep
+area -10 90 -10 10 110 10
+fill -5 92 -5 5 99 5 stone
+explode 0.5 100 0.5 4 NONE 0 4
+scene small
+area -10 90 -10 10 110 10
+fill -5 92 -5 5 99 5 dirt
+player 3.5 100 0.5 survival
+explode 0.5 100 0.5 1 MOB 0 5
+scene fire
+area -10 90 -10 10 110 10
+fill -6 92 -6 6 99 6 stone
+fill -6 99 -6 0 99 6 soul_sand
+fill 1 100 1 3 100 3 oak_planks
+explode 0.5 101 0.5 3 BLOCK 1 6
+scene chain
+area -10 90 -10 10 110 10
+fill -2 98 -2 2 99 2 tnt
+explode 0.5 100.5 0.5 3 TNT 0 9
+scene chainbig
+area -10 90 -10 10 110 10
+fill -4 96 -4 4 99 4 tnt
+explode 0.2 100 0.7 4 TNT 0 10
+scene seen
+area -6 96 -6 6 104 6
+fill -6 96 -6 6 96 6 stone
+fill 0 97 -6 0 100 6 stone
+fill -3 97 -2 -3 99 2 glass
+fill 3 97 -4 3 98 4 oak_fence
+fill -5 97 3 -1 97 5 oak_slab
+fill 2 97 -6 4 99 -3 water
+set 1 97 1 oak_stairs
+set 2 98 2 chest
+seenrand 1 600
+scene ents
+area -12 90 -12 12 110 12
+fill -8 92 -8 8 99 8 stone
+fill 3 100 -2 3 102 2 glass
+mob pig 5.5 100 0.5 hp 1000
+mob pig -2.5 100 1.5 hp 1000
+mob cow 0.5 100.5 -4.2 hp 1000
+mob zombie -6.5 100 -6.5
+mob armor_stand 1.5 100 6.5
+player 0.5 100 -6.5 survival
+player -3.5 100 -3.5 creative
+seen 0.7 100.3 0.4
+explode 0.7 100.3 0.4 4 TNT 0 11
+scene enttnt
+area -12 90 -12 12 110 12
+fill -8 92 -8 8 99 8 stone
+mob tnt 2.5 100 0.5
+mob tnt 0.5 100 0.5
+mob item -2.5 100 0.5
+mob pig 0.5 100 3.5 hp 1000
+explode 0.5 100 0.5 4 TNT 0 12 tnt
+scene range
+area -40 90 -40 40 110 40
+player 43.9 100 0.5 survival
+player 44.1 100 0.5 survival
+player -20 100 40.5 survival
+explode -20 100 0.5 4 TNT 0 13
+cmd gamerule block_drops true
+scene drops
+area -10 90 -10 10 110 10
+fill -6 92 -6 6 99 6 stone
+fill -3 96 -3 3 99 3 dirt
+fill -3 99 -3 -1 99 -1 melon
+fill 1 99 1 3 99 3 gravel
+explode 0.5 100 0.5 4 TNT 0 14
+scene dropstnt
+area -10 90 -10 10 110 10
+fill -6 92 -6 6 99 6 stone
+fill -3 96 -3 3 99 3 dirt
+explode 0.5 100 0.5 4 TNT 0 15 tnt
+scene decay
+cmd gamerule tnt_explosion_drop_decay true
+area -10 90 -10 10 110 10
+fill -6 92 -6 6 99 6 dirt
+explode 0.5 100 0.5 4 TNT 0 16 tnt
+cmd gamerule tnt_explosion_drop_decay false
+scene mobdecay
+area -10 90 -10 10 110 10
+fill -6 92 -6 6 99 6 dirt
+explode 0.5 100 0.5 3 MOB 0 17
+cmd gamerule block_drops false
+scene prime
+area -10 90 -10 10 110 10
+set 0 100 0 tnt
+tntprime 0 100 0 18
+scene tick
+area -10 90 -10 10 110 10
+fill -3 99 -3 3 99 3 stone
+set 1 99 0 slime_block
+tnttick 20 0.5 101 0.5 0.01 0.2 -0.015 25 19
+scene tickwall
+area -10 90 -10 10 110 10
+fill -3 99 -3 3 99 3 stone
+fill 2 100 -3 2 101 3 stone
+tnttick 30 0.5 100 0.5 0.3 0.25 0.05 35 20
+scene norule
+cmd gamerule tnt_explodes false
+area -10 90 -10 10 110 10
+fill -3 99 -3 3 99 3 stone
+set 0 100 0 tnt
+tntprime 0 100 0 21
+tnttick 3 0.5 100 0.5 0 0 0 5 22
+explode 0.5 100 0.5 4 TNT 0 23
+cmd gamerule tnt_explodes true
+scene firestate
+area -10 90 -10 10 110 10
+fill -6 99 -6 6 99 6 stone
+set 1 99 0 soul_soil
+set 2 99 0 oak_planks
+set 3 100 1 oak_planks
+set -2 99 0 glass
+set -2 100 1 oak_leaves
+set -3 100 0 oak_log
+set -4 99 2 air
+set -4 100 3 white_wool
+set -5 99 -3 air
+set -6 98 -3 oak_planks
+set -5 100 -3 white_wool
+set -4 99 -3 hay_block
+firestate 0 100 0
+firestate 1 100 0
+firestate 2 100 0
+firestate 3 100 0
+firestate -2 100 0
+firestate -3 101 0
+firestate -4 99 2
+firestate -4 100 2
+firestate -5 99 -3
+firestate 0 99 0
+scene use
+area -10 90 -10 10 110 10
+fill -6 99 -6 6 99 6 stone
+set 0 100 0 tnt
+set 2 100 0 campfire[lit=false]
+set 4 100 0 candle[lit=false]
+set -2 100 0 tnt
+set 1 99 3 soul_sand
+set -4 100 4 candle_cake
+set -4 99 4 stone
+use flint_and_steel 0 100 0 up 0 0 30
+use flint_and_steel -2 100 0 up 1 0 31
+use flint_and_steel 2 100 0 north 0 0 32
+use flint_and_steel 4 100 0 up 0 0 33
+use flint_and_steel 1 99 3 up 0 0 34
+use flint_and_steel 3 99 3 east 0 90 35
+use fire_charge 3 99 -3 up 0 0 36
+use flint_and_steel -5 99 -5 down 0 0 37
+use fire_charge -4 100 4 up 0 0 38
+use fire_charge -2 99 -2 north 0 0 39
+scene meta
+tntmeta 80
+tntmeta 15
+tntmeta 0

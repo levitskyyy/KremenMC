@@ -1,0 +1,4 @@
+id = "testplug"
+version = "0.1.0"
+api-version = "1"
+main = "testplug.wasm"

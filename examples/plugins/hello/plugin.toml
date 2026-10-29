@@ -1,0 +1,17 @@
+id = "hello"
+name = "Hello"
+version = "1.0.0"
+api-version = "1"
+main = "hello.wasm"
+description = "Greets players and adds /hello"
+authors = ["kremenmc"]
+
+[permissions."hello.use"]
+description = "Use /hello"
+default = "true"
+
+[commands.hello]
+description = "Say hello"
+usage = "/hello [name]"
+aliases = ["hi"]
+permission = "hello.use"

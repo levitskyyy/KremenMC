@@ -1,0 +1,429 @@
+stackspec 01ef070000	1 minecraft:apple
+use 0 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=14/2.4 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02ef070000	2 minecraft:apple
+use 1 using=false remaining=0 after=false main=02ef070000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03ef070000	3 minecraft:apple
+use 2 using=true remaining=32 after=false main=03ef070000 off=00 head=00 chest=00 food=14/2.4 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01a5080000	1 minecraft:mushroom_stew
+use 3 using=true remaining=32 after=false main=01ee070000 off=00 head=00 chest=00 food=16/7.2000003 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02a5080000	2 minecraft:mushroom_stew
+use 4 using=false remaining=0 after=false main=02a5080000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03a5080000	3 minecraft:mushroom_stew
+use 5 using=true remaining=32 after=false main=03a5080000 off=00 head=00 chest=00 food=16/7.2000003 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01ab080000	1 minecraft:bread
+use 6 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=15/6.0 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02ab080000	2 minecraft:bread
+use 7 using=false remaining=0 after=false main=02ab080000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03ab080000	3 minecraft:bread
+use 8 using=true remaining=32 after=false main=03ab080000 off=00 head=00 chest=00 food=15/6.0 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01c9080000	1 minecraft:porkchop
+use 9 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=13/1.8000001 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02c9080000	2 minecraft:porkchop
+use 10 using=false remaining=0 after=false main=02c9080000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03c9080000	3 minecraft:porkchop
+use 11 using=true remaining=32 after=false main=03c9080000 off=00 head=00 chest=00 food=13/1.8000001 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01ca080000	1 minecraft:cooked_porkchop
+use 12 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=18/12.8 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02ca080000	2 minecraft:cooked_porkchop
+use 13 using=false remaining=0 after=false main=02ca080000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03ca080000	3 minecraft:cooked_porkchop
+use 14 using=true remaining=32 after=false main=03ca080000 off=00 head=00 chest=00 food=18/12.8 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01cc080000	1 minecraft:golden_apple
+use 15 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=14/9.6 health=10.0 effects=minecraft:absorption:0:2400,minecraft:regeneration:1:100 inv=- drops=- packets=-
+stackspec 02cc080000	2 minecraft:golden_apple
+use 16 using=true remaining=32 after=false main=01cc080000 off=00 head=00 chest=00 food=20/14.6 health=20.0 effects=minecraft:absorption:0:2400,minecraft:regeneration:1:100 inv=- drops=- packets=-
+stackspec 03cc080000	3 minecraft:golden_apple
+use 17 using=true remaining=32 after=false main=03cc080000 off=00 head=00 chest=00 food=14/9.6 health=10.0 effects=minecraft:absorption:0:2400,minecraft:regeneration:1:100 inv=- drops=- packets=-
+stackspec 01cd080000	1 minecraft:enchanted_golden_apple
+use 18 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=14/9.6 health=10.0 effects=minecraft:absorption:3:2400,minecraft:fire_resistance:0:6000,minecraft:regeneration:1:400,minecraft:resistance:0:6000 inv=- drops=- packets=-
+stackspec 02cd080000	2 minecraft:enchanted_golden_apple
+use 19 using=true remaining=32 after=false main=01cd080000 off=00 head=00 chest=00 food=20/14.6 health=20.0 effects=minecraft:absorption:3:2400,minecraft:fire_resistance:0:6000,minecraft:regeneration:1:400,minecraft:resistance:0:6000 inv=- drops=- packets=-
+stackspec 03cd080000	3 minecraft:enchanted_golden_apple
+use 20 using=true remaining=32 after=false main=03cd080000 off=00 head=00 chest=00 food=14/9.6 health=10.0 effects=minecraft:absorption:3:2400,minecraft:fire_resistance:0:6000,minecraft:regeneration:1:400,minecraft:resistance:0:6000 inv=- drops=- packets=-
+stackspec 01ee080000	1 minecraft:milk_bucket
+use 21 using=true remaining=32 after=false main=01e8080000 off=00 head=00 chest=00 food=10/0.0 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02ee080000	2 minecraft:milk_bucket
+use 22 using=true remaining=32 after=false main=01ee080000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=1:01e8080000 drops=- packets=-
+stackspec 03ee080000	3 minecraft:milk_bucket
+use 23 using=true remaining=32 after=false main=03ee080000 off=00 head=00 chest=00 food=10/0.0 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01a6090000	1 minecraft:cod
+use 24 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=12/0.4 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02a6090000	2 minecraft:cod
+use 25 using=false remaining=0 after=false main=02a6090000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03a6090000	3 minecraft:cod
+use 26 using=true remaining=32 after=false main=03a6090000 off=00 head=00 chest=00 food=12/0.4 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01a7090000	1 minecraft:salmon
+use 27 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=12/0.4 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02a7090000	2 minecraft:salmon
+use 28 using=false remaining=0 after=false main=02a7090000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03a7090000	3 minecraft:salmon
+use 29 using=true remaining=32 after=false main=03a7090000 off=00 head=00 chest=00 food=12/0.4 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01a8090000	1 minecraft:tropical_fish
+use 30 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=11/0.2 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02a8090000	2 minecraft:tropical_fish
+use 31 using=false remaining=0 after=false main=02a8090000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03a8090000	3 minecraft:tropical_fish
+use 32 using=true remaining=32 after=false main=03a8090000 off=00 head=00 chest=00 food=11/0.2 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01a9090000	1 minecraft:pufferfish
+use 33 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=11/0.2 health=10.0 effects=minecraft:hunger:2:300,minecraft:nausea:0:300,minecraft:poison:1:1200 inv=- drops=- packets=-
+stackspec 02a9090000	2 minecraft:pufferfish
+use 34 using=false remaining=0 after=false main=02a9090000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03a9090000	3 minecraft:pufferfish
+use 35 using=true remaining=32 after=false main=03a9090000 off=00 head=00 chest=00 food=11/0.2 health=10.0 effects=minecraft:hunger:2:300,minecraft:nausea:0:300,minecraft:poison:1:1200 inv=- drops=- packets=-
+stackspec 01aa090000	1 minecraft:cooked_cod
+use 36 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=15/6.0 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02aa090000	2 minecraft:cooked_cod
+use 37 using=false remaining=0 after=false main=02aa090000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03aa090000	3 minecraft:cooked_cod
+use 38 using=true remaining=32 after=false main=03aa090000 off=00 head=00 chest=00 food=15/6.0 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01ab090000	1 minecraft:cooked_salmon
+use 39 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=16/9.6 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02ab090000	2 minecraft:cooked_salmon
+use 40 using=false remaining=0 after=false main=02ab090000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03ab090000	3 minecraft:cooked_salmon
+use 41 using=true remaining=32 after=false main=03ab090000 off=00 head=00 chest=00 food=16/9.6 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01d4090000	1 minecraft:cookie
+use 42 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=12/0.4 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02d4090000	2 minecraft:cookie
+use 43 using=false remaining=0 after=false main=02d4090000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03d4090000	3 minecraft:cookie
+use 44 using=true remaining=32 after=false main=03d4090000 off=00 head=00 chest=00 food=12/0.4 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01e8090000	1 minecraft:melon_slice
+use 45 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=12/1.2 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02e8090000	2 minecraft:melon_slice
+use 46 using=false remaining=0 after=false main=02e8090000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03e8090000	3 minecraft:melon_slice
+use 47 using=true remaining=32 after=false main=03e8090000 off=00 head=00 chest=00 food=12/1.2 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01e9090000	1 minecraft:dried_kelp
+use 48 using=true remaining=16 after=false main=00 off=00 head=00 chest=00 food=11/0.6 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02e9090000	2 minecraft:dried_kelp
+use 49 using=false remaining=0 after=false main=02e9090000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03e9090000	3 minecraft:dried_kelp
+use 50 using=true remaining=16 after=false main=03e9090000 off=00 head=00 chest=00 food=11/0.6 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01ec090000	1 minecraft:beef
+use 51 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=13/1.8000001 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02ec090000	2 minecraft:beef
+use 52 using=false remaining=0 after=false main=02ec090000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03ec090000	3 minecraft:beef
+use 53 using=true remaining=32 after=false main=03ec090000 off=00 head=00 chest=00 food=13/1.8000001 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01ed090000	1 minecraft:cooked_beef
+use 54 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=18/12.8 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02ed090000	2 minecraft:cooked_beef
+use 55 using=false remaining=0 after=false main=02ed090000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03ed090000	3 minecraft:cooked_beef
+use 56 using=true remaining=32 after=false main=03ed090000 off=00 head=00 chest=00 food=18/12.8 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01ee090000	1 minecraft:chicken
+use 57 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=12/1.2 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02ee090000	2 minecraft:chicken
+use 58 using=false remaining=0 after=false main=02ee090000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03ee090000	3 minecraft:chicken
+use 59 using=true remaining=32 after=false main=03ee090000 off=00 head=00 chest=00 food=12/1.2 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01ef090000	1 minecraft:cooked_chicken
+use 60 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=16/7.2000003 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02ef090000	2 minecraft:cooked_chicken
+use 61 using=false remaining=0 after=false main=02ef090000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03ef090000	3 minecraft:cooked_chicken
+use 62 using=true remaining=32 after=false main=03ef090000 off=00 head=00 chest=00 food=16/7.2000003 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01f0090000	1 minecraft:rotten_flesh
+use 63 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=14/0.8 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02f0090000	2 minecraft:rotten_flesh
+use 64 using=false remaining=0 after=false main=02f0090000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03f0090000	3 minecraft:rotten_flesh
+use 65 using=true remaining=32 after=false main=03f0090000 off=00 head=00 chest=00 food=14/0.8 health=10.0 effects=minecraft:hunger:0:600 inv=- drops=- packets=-
+stackspec 01f7090000	1 minecraft:potion
+use 66 using=true remaining=32 after=false main=01f6090000 off=00 head=00 chest=00 food=10/0.0 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02f7090000	2 minecraft:potion
+use 67 using=true remaining=32 after=false main=01f7090000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=1:01f6090000 drops=- packets=-
+stackspec 03f7090000	3 minecraft:potion
+use 68 using=true remaining=32 after=false main=03f7090000 off=00 head=00 chest=00 food=10/0.0 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01f8090000	1 minecraft:spider_eye
+use 69 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=12/3.2 health=10.0 effects=minecraft:poison:0:100 inv=- drops=- packets=-
+stackspec 02f8090000	2 minecraft:spider_eye
+use 70 using=false remaining=0 after=false main=02f8090000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03f8090000	3 minecraft:spider_eye
+use 71 using=true remaining=32 after=false main=03f8090000 off=00 head=00 chest=00 food=12/3.2 health=10.0 effects=minecraft:poison:0:100 inv=- drops=- packets=-
+stackspec 01e20a0000	1 minecraft:carrot
+use 72 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=13/3.6000001 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02e20a0000	2 minecraft:carrot
+use 73 using=false remaining=0 after=false main=02e20a0000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03e20a0000	3 minecraft:carrot
+use 74 using=true remaining=32 after=false main=03e20a0000 off=00 head=00 chest=00 food=13/3.6000001 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01e30a0000	1 minecraft:potato
+use 75 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=11/0.6 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02e30a0000	2 minecraft:potato
+use 76 using=false remaining=0 after=false main=02e30a0000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03e30a0000	3 minecraft:potato
+use 77 using=true remaining=32 after=false main=03e30a0000 off=00 head=00 chest=00 food=11/0.6 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01e40a0000	1 minecraft:baked_potato
+use 78 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=15/6.0 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02e40a0000	2 minecraft:baked_potato
+use 79 using=false remaining=0 after=false main=02e40a0000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03e40a0000	3 minecraft:baked_potato
+use 80 using=true remaining=32 after=false main=03e40a0000 off=00 head=00 chest=00 food=15/6.0 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01e50a0000	1 minecraft:poisonous_potato
+use 81 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=12/1.2 health=10.0 effects=minecraft:poison:0:100 inv=- drops=- packets=-
+stackspec 02e50a0000	2 minecraft:poisonous_potato
+use 82 using=false remaining=0 after=false main=02e50a0000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03e50a0000	3 minecraft:poisonous_potato
+use 83 using=true remaining=32 after=false main=03e50a0000 off=00 head=00 chest=00 food=12/1.2 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01e70a0000	1 minecraft:golden_carrot
+use 84 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=16/14.400001 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02e70a0000	2 minecraft:golden_carrot
+use 85 using=false remaining=0 after=false main=02e70a0000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03e70a0000	3 minecraft:golden_carrot
+use 86 using=true remaining=32 after=false main=03e70a0000 off=00 head=00 chest=00 food=16/14.400001 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01f00a0000	1 minecraft:pumpkin_pie
+use 87 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=18/4.8 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02f00a0000	2 minecraft:pumpkin_pie
+use 88 using=false remaining=0 after=false main=02f00a0000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03f00a0000	3 minecraft:pumpkin_pie
+use 89 using=true remaining=32 after=false main=03f00a0000 off=00 head=00 chest=00 food=18/4.8 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01f80a0000	1 minecraft:rabbit
+use 90 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=13/1.8000001 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02f80a0000	2 minecraft:rabbit
+use 91 using=false remaining=0 after=false main=02f80a0000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03f80a0000	3 minecraft:rabbit
+use 92 using=true remaining=32 after=false main=03f80a0000 off=00 head=00 chest=00 food=13/1.8000001 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01f90a0000	1 minecraft:cooked_rabbit
+use 93 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=15/6.0 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02f90a0000	2 minecraft:cooked_rabbit
+use 94 using=false remaining=0 after=false main=02f90a0000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03f90a0000	3 minecraft:cooked_rabbit
+use 95 using=true remaining=32 after=false main=03f90a0000 off=00 head=00 chest=00 food=15/6.0 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01fa0a0000	1 minecraft:rabbit_stew
+use 96 using=true remaining=32 after=false main=01ee070000 off=00 head=00 chest=00 food=20/12.0 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02fa0a0000	2 minecraft:rabbit_stew
+use 97 using=false remaining=0 after=false main=02fa0a0000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03fa0a0000	3 minecraft:rabbit_stew
+use 98 using=true remaining=32 after=false main=03fa0a0000 off=00 head=00 chest=00 food=20/12.0 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01870b0000	1 minecraft:mutton
+use 99 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=12/1.2 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02870b0000	2 minecraft:mutton
+use 100 using=false remaining=0 after=false main=02870b0000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03870b0000	3 minecraft:mutton
+use 101 using=true remaining=32 after=false main=03870b0000 off=00 head=00 chest=00 food=12/1.2 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01880b0000	1 minecraft:cooked_mutton
+use 102 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=16/9.6 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02880b0000	2 minecraft:cooked_mutton
+use 103 using=false remaining=0 after=false main=02880b0000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03880b0000	3 minecraft:cooked_mutton
+use 104 using=true remaining=32 after=false main=03880b0000 off=00 head=00 chest=00 food=16/9.6 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 019a0b0000	1 minecraft:chorus_fruit
+use 105 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=14/2.4 health=10.0 effects=- inv=- drops=- packets=cooldown:minecraft:chorus_fruit:20
+stackspec 029a0b0000	2 minecraft:chorus_fruit
+use 106 using=true remaining=32 after=false main=019a0b0000 off=00 head=00 chest=00 food=20/7.4 health=20.0 effects=- inv=- drops=- packets=cooldown:minecraft:chorus_fruit:20
+stackspec 039a0b0000	3 minecraft:chorus_fruit
+use 107 using=true remaining=32 after=false main=039a0b0000 off=00 head=00 chest=00 food=14/2.4 health=10.0 effects=- inv=- drops=- packets=cooldown:minecraft:chorus_fruit:20
+stackspec 019e0b0000	1 minecraft:beetroot
+use 108 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=11/1.2 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 029e0b0000	2 minecraft:beetroot
+use 109 using=false remaining=0 after=false main=029e0b0000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 039e0b0000	3 minecraft:beetroot
+use 110 using=true remaining=32 after=false main=039e0b0000 off=00 head=00 chest=00 food=11/1.2 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01a00b0000	1 minecraft:beetroot_soup
+use 111 using=true remaining=32 after=false main=01ee070000 off=00 head=00 chest=00 food=16/7.2000003 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02a00b0000	2 minecraft:beetroot_soup
+use 112 using=false remaining=0 after=false main=02a00b0000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03a00b0000	3 minecraft:beetroot_soup
+use 113 using=true remaining=32 after=false main=03a00b0000 off=00 head=00 chest=00 food=16/7.2000003 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01d40b0000	1 minecraft:suspicious_stew
+use 114 using=true remaining=32 after=false main=01ee070000 off=00 head=00 chest=00 food=16/7.2000003 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02d40b0000	2 minecraft:suspicious_stew
+use 115 using=true remaining=32 after=false main=01d40b0000 off=00 head=00 chest=00 food=20/12.200001 health=20.0 effects=- inv=1:01ee070000 drops=- packets=-
+stackspec 03d40b0000	3 minecraft:suspicious_stew
+use 116 using=true remaining=32 after=false main=03d40b0000 off=00 head=00 chest=00 food=16/7.2000003 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01f50b0000	1 minecraft:sweet_berries
+use 117 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=12/0.4 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02f50b0000	2 minecraft:sweet_berries
+use 118 using=false remaining=0 after=false main=02f50b0000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03f50b0000	3 minecraft:sweet_berries
+use 119 using=true remaining=32 after=false main=03f50b0000 off=00 head=00 chest=00 food=12/0.4 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01f60b0000	1 minecraft:glow_berries
+use 120 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=12/0.4 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02f60b0000	2 minecraft:glow_berries
+use 121 using=false remaining=0 after=false main=02f60b0000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 03f60b0000	3 minecraft:glow_berries
+use 122 using=true remaining=32 after=false main=03f60b0000 off=00 head=00 chest=00 food=12/0.4 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01fd0b0000	1 minecraft:honey_bottle
+use 123 using=true remaining=40 after=false main=01f6090000 off=00 head=00 chest=00 food=16/1.2 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 02fd0b0000	2 minecraft:honey_bottle
+use 124 using=true remaining=40 after=false main=01fd0b0000 off=00 head=00 chest=00 food=20/6.2 health=20.0 effects=- inv=1:01f6090000 drops=- packets=-
+stackspec 03fd0b0000	3 minecraft:honey_bottle
+use 125 using=true remaining=40 after=false main=03fd0b0000 off=00 head=00 chest=00 food=16/1.2 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01f90c0000	1 minecraft:ominous_bottle
+use 126 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=10/0.0 health=10.0 effects=minecraft:bad_omen:0:120000 inv=- drops=- packets=-
+stackspec 02f90c0000	2 minecraft:ominous_bottle
+use 127 using=true remaining=32 after=false main=01f90c0000 off=00 head=00 chest=00 food=20/5.0 health=20.0 effects=minecraft:bad_omen:0:120000 inv=- drops=- packets=-
+stackspec 03f90c0000	3 minecraft:ominous_bottle
+use 128 using=true remaining=32 after=false main=03f90c0000 off=00 head=00 chest=00 food=10/0.0 health=10.0 effects=minecraft:bad_omen:0:120000 inv=- drops=- packets=-
+stackspec 01f7090100350118000000	1 minecraft:potion[potion_contents={potion:"minecraft:healing"}]
+use 129 using=true remaining=32 after=false main=01f6090000 off=00 head=00 chest=00 food=10/0.0 health=14.0 effects=- inv=- drops=- packets=-
+stackspec 01f7090100350121000000	1 minecraft:potion[potion_contents={potion:"minecraft:strong_regeneration"}]
+use 130 using=true remaining=32 after=false main=01f6090000 off=00 head=00 chest=00 food=10/0.0 health=10.0 effects=minecraft:regeneration:1:450 inv=- drops=- packets=-
+stackspec 01f709010035010e00010201ac020001010000	1 minecraft:potion[potion_contents={potion:"minecraft:long_swiftness",custom_effects:[{id:"minecraft:haste",amplifier:1,duration:300}]}]
+use 131 using=true remaining=32 after=false main=01f6090000 off=00 head=00 chest=00 food=10/0.0 health=10.0 effects=minecraft:haste:1:300,minecraft:speed:0:9600 inv=- drops=- packets=-
+stackspec 01d40b010037010f64	1 minecraft:suspicious_stew[suspicious_stew_effects=[{id:"minecraft:night_vision",duration:100}]]
+use 132 using=true remaining=32 after=false main=01ee070000 off=00 head=00 chest=00 food=16/7.2000003 health=10.0 effects=minecraft:night_vision:0:100 inv=- drops=- packets=-
+stackspec 04d40901001a40200000010a676f6d633a736e61636b	4 minecraft:cookie[use_cooldown={seconds:2.5,cooldown_group:"kremenmc:snack"}]
+use 133 using=true remaining=32 after=false main=03d40901001a40200000010a676f6d633a736e61636b off=00 head=00 chest=00 food=12/0.4 health=10.0 effects=- inv=- drops=- packets=cooldown:kremenmc:snack:50
+stackspec 02010100180000000001bf050100	2 minecraft:stone[consumable={consume_seconds:0}]
+use 134 using=false remaining=0 after=false main=01010100180000000001bf050100 off=00 head=00 chest=00 food=10/0.0 health=10.0 effects=- inv=- drops=- packets=content
+use 135 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=14/2.4 health=10.0 effects=- inv=- drops=- packets=-
+stackspec 01ce070000	1 minecraft:elytra
+stackspec 01ad080000	1 minecraft:leather_chestplate
+use 136 using=false remaining=0 after=false main=01ad080000 off=00 head=00 chest=01ce070000 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+stackspec 02ce070000	2 minecraft:elytra
+use 137 using=false remaining=0 after=false main=01ce070000 off=00 head=00 chest=01ce070000 food=20/0.0 health=20.0 effects=- inv=1:01ad080000 drops=- packets=content
+use 138 using=false remaining=0 after=false main=02ce070000 off=00 head=00 chest=01ce070000 food=20/0.0 health=20.0 effects=- inv=1:01ad080000 drops=- packets=-
+stackspec 01e9070000	1 minecraft:turtle_helmet
+use 139 using=false remaining=0 after=false main=00 off=00 head=01e9070000 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+stackspec 02e9070000	2 minecraft:turtle_helmet
+use 140 using=false remaining=0 after=false main=01e9070000 off=00 head=01e9070000 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+use 141 using=false remaining=0 after=false main=02e9070000 off=00 head=01e9070000 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 01ac080000	1 minecraft:leather_helmet
+use 142 using=false remaining=0 after=false main=01ac080000 off=00 head=01ac080000 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 02ac080000	2 minecraft:leather_helmet
+use 143 using=false remaining=0 after=false main=02ac080000 off=00 head=01ac080000 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=-
+use 144 using=false remaining=0 after=false main=02ac080000 off=00 head=01ac080000 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=-
+use 145 using=false remaining=0 after=false main=00 off=00 head=00 chest=01ad080000 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+stackspec 02ad080000	2 minecraft:leather_chestplate
+use 146 using=false remaining=0 after=false main=01ad080000 off=00 head=00 chest=01ad080000 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+use 147 using=false remaining=0 after=false main=02ad080000 off=00 head=00 chest=01ad080000 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 01ae080000	1 minecraft:leather_leggings
+use 148 using=false remaining=0 after=false main=00 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+stackspec 02ae080000	2 minecraft:leather_leggings
+use 149 using=false remaining=0 after=false main=01ae080000 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+use 150 using=false remaining=0 after=false main=02ae080000 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 01af080000	1 minecraft:leather_boots
+use 151 using=false remaining=0 after=false main=00 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+stackspec 02af080000	2 minecraft:leather_boots
+use 152 using=false remaining=0 after=false main=01af080000 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+use 153 using=false remaining=0 after=false main=02af080000 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 01b0080000	1 minecraft:copper_helmet
+use 154 using=false remaining=0 after=false main=01ac080000 off=00 head=01b0080000 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+stackspec 02b0080000	2 minecraft:copper_helmet
+use 155 using=false remaining=0 after=false main=01b0080000 off=00 head=01b0080000 chest=00 food=20/0.0 health=20.0 effects=- inv=1:01ac080000 drops=- packets=content
+use 156 using=false remaining=0 after=false main=02b0080000 off=00 head=01b0080000 chest=00 food=20/0.0 health=20.0 effects=- inv=1:01ac080000 drops=- packets=-
+stackspec 01b1080000	1 minecraft:copper_chestplate
+use 157 using=false remaining=0 after=false main=00 off=00 head=00 chest=01b1080000 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+stackspec 02b1080000	2 minecraft:copper_chestplate
+use 158 using=false remaining=0 after=false main=01b1080000 off=00 head=00 chest=01b1080000 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+use 159 using=false remaining=0 after=false main=02b1080000 off=00 head=00 chest=01b1080000 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 01b2080000	1 minecraft:copper_leggings
+use 160 using=false remaining=0 after=false main=00 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+stackspec 02b2080000	2 minecraft:copper_leggings
+use 161 using=false remaining=0 after=false main=01b2080000 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+use 162 using=false remaining=0 after=false main=02b2080000 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 01b3080000	1 minecraft:copper_boots
+use 163 using=false remaining=0 after=false main=00 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+stackspec 02b3080000	2 minecraft:copper_boots
+use 164 using=false remaining=0 after=false main=01b3080000 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+use 165 using=false remaining=0 after=false main=02b3080000 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 01b4080000	1 minecraft:chainmail_helmet
+use 166 using=false remaining=0 after=false main=01ac080000 off=00 head=01b4080000 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+stackspec 02b4080000	2 minecraft:chainmail_helmet
+use 167 using=false remaining=0 after=false main=01b4080000 off=00 head=01b4080000 chest=00 food=20/0.0 health=20.0 effects=- inv=1:01ac080000 drops=- packets=content
+use 168 using=false remaining=0 after=false main=02b4080000 off=00 head=01b4080000 chest=00 food=20/0.0 health=20.0 effects=- inv=1:01ac080000 drops=- packets=-
+stackspec 01b5080000	1 minecraft:chainmail_chestplate
+use 169 using=false remaining=0 after=false main=00 off=00 head=00 chest=01b5080000 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+stackspec 02b5080000	2 minecraft:chainmail_chestplate
+use 170 using=false remaining=0 after=false main=01b5080000 off=00 head=00 chest=01b5080000 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+use 171 using=false remaining=0 after=false main=02b5080000 off=00 head=00 chest=01b5080000 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 01b6080000	1 minecraft:chainmail_leggings
+use 172 using=false remaining=0 after=false main=00 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+stackspec 02b6080000	2 minecraft:chainmail_leggings
+use 173 using=false remaining=0 after=false main=01b6080000 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+use 174 using=false remaining=0 after=false main=02b6080000 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 01b7080000	1 minecraft:chainmail_boots
+use 175 using=false remaining=0 after=false main=00 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+stackspec 02b7080000	2 minecraft:chainmail_boots
+use 176 using=false remaining=0 after=false main=01b7080000 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+use 177 using=false remaining=0 after=false main=02b7080000 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 01b8080000	1 minecraft:iron_helmet
+use 178 using=false remaining=0 after=false main=01ac080000 off=00 head=01b8080000 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+stackspec 02b8080000	2 minecraft:iron_helmet
+use 179 using=false remaining=0 after=false main=01b8080000 off=00 head=01b8080000 chest=00 food=20/0.0 health=20.0 effects=- inv=1:01ac080000 drops=- packets=content
+use 180 using=false remaining=0 after=false main=02b8080000 off=00 head=01b8080000 chest=00 food=20/0.0 health=20.0 effects=- inv=1:01ac080000 drops=- packets=-
+stackspec 01b9080000	1 minecraft:iron_chestplate
+use 181 using=false remaining=0 after=false main=00 off=00 head=00 chest=01b9080000 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+stackspec 02b9080000	2 minecraft:iron_chestplate
+use 182 using=false remaining=0 after=false main=01b9080000 off=00 head=00 chest=01b9080000 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+use 183 using=false remaining=0 after=false main=02b9080000 off=00 head=00 chest=01b9080000 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 01ba080000	1 minecraft:iron_leggings
+use 184 using=false remaining=0 after=false main=00 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+stackspec 02ba080000	2 minecraft:iron_leggings
+use 185 using=false remaining=0 after=false main=01ba080000 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+use 186 using=false remaining=0 after=false main=02ba080000 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 01bb080000	1 minecraft:iron_boots
+use 187 using=false remaining=0 after=false main=00 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+stackspec 02bb080000	2 minecraft:iron_boots
+use 188 using=false remaining=0 after=false main=01bb080000 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+use 189 using=false remaining=0 after=false main=02bb080000 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 01bc080000	1 minecraft:diamond_helmet
+use 190 using=false remaining=0 after=false main=01ac080000 off=00 head=01bc080000 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+stackspec 02bc080000	2 minecraft:diamond_helmet
+use 191 using=false remaining=0 after=false main=01bc080000 off=00 head=01bc080000 chest=00 food=20/0.0 health=20.0 effects=- inv=1:01ac080000 drops=- packets=content
+use 192 using=false remaining=0 after=false main=02bc080000 off=00 head=01bc080000 chest=00 food=20/0.0 health=20.0 effects=- inv=1:01ac080000 drops=- packets=-
+stackspec 01bd080000	1 minecraft:diamond_chestplate
+use 193 using=false remaining=0 after=false main=00 off=00 head=00 chest=01bd080000 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+stackspec 02bd080000	2 minecraft:diamond_chestplate
+use 194 using=false remaining=0 after=false main=01bd080000 off=00 head=00 chest=01bd080000 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+use 195 using=false remaining=0 after=false main=02bd080000 off=00 head=00 chest=01bd080000 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 01be080000	1 minecraft:diamond_leggings
+use 196 using=false remaining=0 after=false main=00 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+stackspec 02be080000	2 minecraft:diamond_leggings
+use 197 using=false remaining=0 after=false main=01be080000 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+use 198 using=false remaining=0 after=false main=02be080000 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 01bf080000	1 minecraft:diamond_boots
+use 199 using=false remaining=0 after=false main=00 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+stackspec 02bf080000	2 minecraft:diamond_boots
+use 200 using=false remaining=0 after=false main=01bf080000 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+use 201 using=false remaining=0 after=false main=02bf080000 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 01c0080000	1 minecraft:golden_helmet
+use 202 using=false remaining=0 after=false main=01ac080000 off=00 head=01c0080000 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+stackspec 02c0080000	2 minecraft:golden_helmet
+use 203 using=false remaining=0 after=false main=01c0080000 off=00 head=01c0080000 chest=00 food=20/0.0 health=20.0 effects=- inv=1:01ac080000 drops=- packets=content
+use 204 using=false remaining=0 after=false main=02c0080000 off=00 head=01c0080000 chest=00 food=20/0.0 health=20.0 effects=- inv=1:01ac080000 drops=- packets=-
+stackspec 01c1080000	1 minecraft:golden_chestplate
+use 205 using=false remaining=0 after=false main=00 off=00 head=00 chest=01c1080000 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+stackspec 02c1080000	2 minecraft:golden_chestplate
+use 206 using=false remaining=0 after=false main=01c1080000 off=00 head=00 chest=01c1080000 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+use 207 using=false remaining=0 after=false main=02c1080000 off=00 head=00 chest=01c1080000 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 01c2080000	1 minecraft:golden_leggings
+use 208 using=false remaining=0 after=false main=00 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+stackspec 02c2080000	2 minecraft:golden_leggings
+use 209 using=false remaining=0 after=false main=01c2080000 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+use 210 using=false remaining=0 after=false main=02c2080000 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 01c3080000	1 minecraft:golden_boots
+use 211 using=false remaining=0 after=false main=00 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+stackspec 02c3080000	2 minecraft:golden_boots
+use 212 using=false remaining=0 after=false main=01c3080000 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+use 213 using=false remaining=0 after=false main=02c3080000 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 01c4080000	1 minecraft:netherite_helmet
+use 214 using=false remaining=0 after=false main=01ac080000 off=00 head=01c4080000 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+stackspec 02c4080000	2 minecraft:netherite_helmet
+use 215 using=false remaining=0 after=false main=01c4080000 off=00 head=01c4080000 chest=00 food=20/0.0 health=20.0 effects=- inv=1:01ac080000 drops=- packets=content
+use 216 using=false remaining=0 after=false main=02c4080000 off=00 head=01c4080000 chest=00 food=20/0.0 health=20.0 effects=- inv=1:01ac080000 drops=- packets=-
+stackspec 01c5080000	1 minecraft:netherite_chestplate
+use 217 using=false remaining=0 after=false main=00 off=00 head=00 chest=01c5080000 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+stackspec 02c5080000	2 minecraft:netherite_chestplate
+use 218 using=false remaining=0 after=false main=01c5080000 off=00 head=00 chest=01c5080000 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+use 219 using=false remaining=0 after=false main=02c5080000 off=00 head=00 chest=01c5080000 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 01c6080000	1 minecraft:netherite_leggings
+use 220 using=false remaining=0 after=false main=00 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+stackspec 02c6080000	2 minecraft:netherite_leggings
+use 221 using=false remaining=0 after=false main=01c6080000 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+use 222 using=false remaining=0 after=false main=02c6080000 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 01c7080000	1 minecraft:netherite_boots
+use 223 using=false remaining=0 after=false main=00 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+stackspec 02c7080000	2 minecraft:netherite_boots
+use 224 using=false remaining=0 after=false main=01c7080000 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+use 225 using=false remaining=0 after=false main=02c7080000 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 01b80801000d010201	1 minecraft:iron_helmet[enchantments={"minecraft:binding_curse":1}]
+use 226 using=false remaining=0 after=false main=01bc080000 off=00 head=01b80801000d010201 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=-
+use 227 using=false remaining=0 after=false main=01b80801000d010201 off=00 head=01bc080000 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=content
+use 228 using=false remaining=0 after=false main=01bc080000 off=00 head=01bc080000 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 01a60b0000	1 minecraft:shield
+use 229 using=true remaining=72000 after=true main=01a60b0000 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=-
+stackspec 01010000	1 minecraft:stone
+use 230 using=false remaining=0 after=false main=01010000 off=00 head=00 chest=00 food=20/0.0 health=20.0 effects=- inv=- drops=- packets=-

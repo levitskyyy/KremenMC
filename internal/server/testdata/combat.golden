@@ -1,0 +1,173 @@
+res z_generic start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res z_generic hurt=minecraft:generic/5 ret=true hp=15.0 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=5.0 dead=false
+res z_mob start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res z_mob hurt=minecraft:mob_attack/5/zombie ret=true hp=15.08 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=5.0 dead=false
+res z_iframes start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res z_iframes hurt=minecraft:mob_attack/5/zombie ret=true hp=15.08 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=5.0 dead=false
+res z_iframes hurt=minecraft:mob_attack/3/zombie ret=false hp=15.08 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=5.0 dead=false
+res z_iframes hurt=minecraft:mob_attack/8/zombie ret=true hp=12.139999 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=8.0 dead=false
+res z_iframes inv=11 hp=12.139999 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=11 hurt=10 last=8.0 dead=false
+res z_iframes hurt=minecraft:mob_attack/9/zombie ret=true hp=11.2 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=11 hurt=10 last=9.0 dead=false
+res z_iframes inv=10 hp=11.2 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=10 hurt=10 last=9.0 dead=false
+res z_iframes hurt=minecraft:mob_attack/2/zombie ret=true hp=9.28 abs=0.0 vel=0.0,0.4,0.6000000089406967 inv=20 hurt=10 last=2.0 dead=false
+res z_kill start hp=3.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res z_kill hurt=minecraft:player_attack/5/player ret=true hp=0.0 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=5.0 dead=true
+res p_bare start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res p_bare hurt=minecraft:mob_attack/6/zombie ret=true hp=14.0 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=6.0 dead=false
+res p_iron start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false dur=head:0,chest:0,legs:0,feet:0
+res p_iron hurt=minecraft:mob_attack/10/zombie ret=true hp=14.0 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=10.0 dead=false dur=head:2,chest:2,legs:2,feet:2
+res p_iron40 start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false dur=head:0,chest:0,legs:0,feet:0
+res p_iron40 hurt=minecraft:generic/40 ret=true hp=0.0 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=40.0 dead=true
+res p_dia4 start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false dur=head:0,chest:0,legs:0,feet:0
+res p_dia4 hurt=minecraft:generic/4 ret=true hp=16.0 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=4.0 dead=false dur=head:0,chest:0,legs:0,feet:0
+res p_dia30 start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false dur=head:0,chest:0,legs:0,feet:0
+res p_dia30 hurt=minecraft:generic/30 ret=true hp=0.0 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=30.0 dead=true
+res p_neth30 start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false dur=head:0,chest:0,legs:0,feet:0
+res p_neth30 hurt=minecraft:generic/30 ret=true hp=0.0 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=30.0 dead=true
+res p_prot start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false dur=head:0,chest:0,legs:0,feet:0
+res p_prot hurt=minecraft:generic/30 ret=true hp=9.2 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=30.0 dead=false dur=head:0,chest:0,legs:0,feet:0
+res p_prot2 start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false dur=chest:0
+res p_prot2 hurt=minecraft:generic/10 ret=true hp=10.8 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=10.0 dead=false dur=chest:0
+res p_fireprot start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false dur=chest:0,legs:0
+res p_fireprot hurt=minecraft:in_fire/10 ret=true hp=16.656 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=10.0 dead=false dur=chest:2,legs:2
+res p_blastprot start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false dur=chest:0
+res p_blastprot hurt=minecraft:explosion/20 ret=true hp=7.052799 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=20.0 dead=false dur=chest:5
+res p_projprot start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false dur=chest:0
+res p_projprot hurt=minecraft:arrow/9 ret=true hp=14.2472 abs=0.0 vel=-0.2426806521692868,0.4,0.3179718632694743 inv=20 hurt=10 last=9.0 dead=false dur=chest:2
+res p_magic start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false dur=chest:0
+res p_magic hurt=minecraft:magic/6 ret=true hp=14.96 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=6.0 dead=false dur=chest:0
+res p_res1 start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res p_res1 hurt=minecraft:generic/10 ret=true hp=12.0 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=10.0 dead=false
+res p_res2 start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false dur=chest:0
+res p_res2 hurt=minecraft:generic/10 ret=true hp=14.0 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=10.0 dead=false dur=chest:0
+res p_res5 start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res p_res5 hurt=minecraft:generic/10 ret=true hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=10.0 dead=false
+res p_abs start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res p_abs hurt=minecraft:generic/6 ret=true hp=14.0 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=6.0 dead=false
+res p_abs2 start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false dur=chest:0
+res p_abs2 hurt=minecraft:generic/6 ret=true hp=14.0 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=6.0 dead=false dur=chest:0
+res p_easy start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res p_easy hurt=minecraft:mob_attack/10/zombie ret=true hp=14.0 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=6.0 dead=false
+res p_easy2 start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res p_easy2 hurt=minecraft:mob_attack/1/zombie ret=true hp=19.0 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=1.0 dead=false
+res p_hard start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res p_hard hurt=minecraft:mob_attack/10/zombie ret=true hp=5.0 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=15.0 dead=false
+res p_hard_env start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res p_hard_env hurt=minecraft:generic/10 ret=true hp=10.0 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=10.0 dead=false
+res p_fall3 start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res p_fall3 fall=3 ret=false hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res p_fall4 start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res p_fall4 fall=4 ret=true hp=19.0 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=1.0 dead=false
+res p_fall105 start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res p_fall105 fall=10.5 ret=true hp=13.0 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=7.0 dead=false
+res p_fallff start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false dur=feet:0
+res p_fallff fall=20 ret=true hp=11.16 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=17.0 dead=false dur=feet:0
+res p_falljump start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res p_falljump fall=6 ret=true hp=19.0 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=1.0 dead=false
+res z_fall start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res z_fall fall=8 ret=true hp=15.0 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=5.0 dead=false
+res p_shield start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false dur=offhand:0
+res p_shield hurt=minecraft:mob_attack/5/zombie ret=false hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=0.0 dead=false dur=offhand:6
+res p_shield_back start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false dur=offhand:0
+res p_shield_back hurt=minecraft:mob_attack/5/zombie ret=true hp=15.0 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=5.0 dead=false dur=offhand:0
+res p_totem start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res p_totem hurt=minecraft:generic/100 ret=true hp=1.0 abs=8.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=100.0 dead=false
+res p_thorns start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false dur=chest:0
+res p_thorns hurt=minecraft:mob_attack/4/zombie ret=true hp=16.64 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=4.0 dead=false dur=chest:1
+res m_fist start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res m_fist attack avel=0.0,0.0,0.0 asprint=false hp=19.06 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=1.0 dead=false
+res m_dsword start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res m_dsword attack avel=0.0,0.0,0.0 asprint=false hp=13.1119995 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=7.0 dead=false
+res m_dsword_cd5 start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res m_dsword_cd5 attack avel=0.0,0.0,0.0 asprint=false hp=17.591152 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=2.48416 dead=false
+res m_dsword_cd10 start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res m_dsword_cd10 attack avel=0.0,0.0,0.0 asprint=false hp=14.734262 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=5.3513594 dead=false
+res m_daxe start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res m_daxe attack avel=0.0,0.0,0.0 asprint=false hp=11.144 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=9.0 dead=false
+res m_daxe_cd start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res m_daxe_cd attack avel=0.0,0.0,0.0 asprint=false hp=15.4613 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=4.6124997 dead=false
+res m_crit start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res m_crit attack avel=0.0,-0.1,0.0 asprint=false hp=9.667999 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=10.5 dead=false
+res m_crit_low start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res m_crit_low attack avel=0.0,-0.1,0.0 asprint=false hp=14.734262 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=5.3513594 dead=false
+res m_sprint start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res m_sprint attack avel=0.0,0.0,0.0 asprint=false hp=13.1119995 abs=0.0 vel=0.0,0.4,0.7000000029802322 inv=20 hurt=10 last=7.0 dead=false
+res m_sprint_cd start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res m_sprint_cd attack avel=0.0,0.0,0.0 asprint=true hp=17.953924 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=2.12576 dead=false
+res m_sharp start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res m_sharp attack avel=0.0,0.0,0.0 asprint=false hp=10.16 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=10.0 dead=false
+res m_sharp_cd start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res m_sharp_cd attack avel=0.0,0.0,0.0 asprint=false hp=15.597347 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=4.47424 dead=false
+res m_smite start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res m_smite attack avel=0.0,0.0,0.0 asprint=false hp=1.7959995 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=18.5 dead=false
+res m_bane start hp=16.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res m_bane attack avel=0.0,0.0,0.0 asprint=false hp=0.0 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=18.5 dead=true
+res m_kb2 start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res m_kb2 attack avel=0.0,0.0,0.0 asprint=false hp=14.096 abs=0.0 vel=0.0,0.4,1.2000000029802322 inv=20 hurt=10 last=6.0 dead=false
+res m_fire start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res m_fire attack avel=0.0,0.0,0.0 asprint=false hp=14.096 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=6.0 dead=false
+res m_strength start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res m_strength attack avel=0.0,0.0,0.0 asprint=false hp=8.191999 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=12.0 dead=false
+res m_weak start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res m_weak attack avel=0.0,0.0,0.0 asprint=false hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res m_sweep start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res m_sweep attack avel=0.0,0.0,0.0 asprint=false hp=13.1119995 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=7.0 dead=false
+res m_sweep extra0 hp=19.06 abs=0.0 vel=0.08944272043279196,0.4,0.5788854468260484 inv=20 hurt=10 last=1.0 dead=false
+res m_sweep extra1 hp=19.06 abs=0.0 vel=-0.08944272043279196,0.4,0.5788854468260484 inv=20 hurt=10 last=1.0 dead=false
+res m_sweep extra2 hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res m_sweep3 start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res m_sweep3 attack avel=0.0,0.0,0.0 asprint=false hp=13.1119995 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=7.0 dead=false
+res m_sweep3 extra0 hp=13.85 abs=0.0 vel=0.08944272043279196,0.4,0.5788854468260484 inv=20 hurt=10 last=6.25 dead=false
+res m_sweep3 extra1 hp=13.85 abs=0.0 vel=-0.08944272043279196,0.4,0.5788854468260484 inv=20 hurt=10 last=6.25 dead=false
+res m_angle start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res m_angle attack avel=0.0,0.0,0.0 asprint=false hp=15.08 abs=0.0 vel=0.28284271668930383,0.4,0.28284271668930383 inv=20 hurt=10 last=5.0 dead=false
+res m_angle2 start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res m_angle2 attack avel=0.0,0.0,0.0 asprint=false hp=15.08 abs=0.0 vel=0.3794733248747986,0.4,0.12649110829159954 inv=20 hurt=10 last=5.0 dead=false
+res m_pvp start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res m_pvp attack avel=0.0,0.0,0.0 asprint=false hp=19.0 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=1.0 dead=false
+res m_pvp_neth start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false dur=head:0,chest:0,legs:0,feet:0
+res m_pvp_neth attack avel=0.0,0.0,0.0 asprint=false hp=17.888 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=8.0 dead=false dur=head:2,chest:2,legs:2,feet:2
+res m_pvp_shield start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false dur=offhand:0
+res m_pvp_shield attack avel=0.0,0.0,0.0 asprint=false hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=0.0 dead=false dur=offhand:8
+res m_pvp_axe_shield start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false dur=offhand:0
+res m_pvp_axe_shield attack avel=0.0,0.0,0.0 asprint=false hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=0.0 dead=false dur=offhand:10
+res m_iframe start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res m_iframe attack avel=0.0,0.0,0.0 asprint=false hp=13.1119995 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=7.0 dead=false
+res m_iframe attack avel=0.0,0.0,0.0 asprint=false hp=13.1119995 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=7.0 dead=false
+res m_trident start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res m_trident attack avel=0.0,0.0,0.0 asprint=false hp=11.144 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=9.0 dead=false
+res m_mace_fall start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res m_mace_fall attack avel=0.0,-0.1,0.0 asprint=false hp=11.144 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=9.0 dead=false
+res m_cow start hp=10.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res m_cow attack avel=0.0,0.0,0.0 asprint=false hp=6.0 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=4.0 dead=false
+res p_fall35 start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res p_fall35 fall=3.5 ret=false hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res p_fall49 start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res p_fall49 fall=4.9 ret=true hp=19.0 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=1.0 dead=false
+res p_fall501 start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res p_fall501 fall=5.01 ret=true hp=18.0 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=2.0 dead=false
+res p_fall_feather1 start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false dur=feet:0
+res p_fall_feather1 fall=7.3 ret=true hp=16.48 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=4.0 dead=false dur=feet:0
+res p_absfx start hp=20.0 abs=8.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res p_absfx hurt=minecraft:generic/6 ret=true hp=20.0 abs=2.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=6.0 dead=false
+res p_absfx_big start hp=20.0 abs=4.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false dur=chest:0
+res p_absfx_big hurt=minecraft:mob_attack/9/zombie ret=true hp=16.584 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=9.0 dead=false dur=chest:2
+res p_boost start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res p_boost hurt=minecraft:generic/22 ret=true hp=0.0 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=22.0 dead=true
+res z_armored start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false dur=head:0,chest:0
+res z_armored hurt=minecraft:player_attack/12/player ret=true hp=11.455999 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=12.0 dead=false dur=head:0,chest:0
+res z_kbres start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false dur=chest:0,legs:0
+res z_kbres attack avel=0.0,0.0,0.0 asprint=false hp=19.62857 abs=0.0 vel=0.0,0.32000000357627867,0.32000000357627867 inv=20 hurt=10 last=1.0 dead=false dur=chest:0,legs:0
+res z_fire start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res z_fire hurt=minecraft:on_fire/1 ret=true hp=19.0 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=1.0 dead=false
+res z_fire hurt=minecraft:in_fire/1 ret=false hp=19.0 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=1.0 dead=false
+res p_lava start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false dur=legs:0
+res p_lava hurt=minecraft:lava/4 ret=true hp=17.6064 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=4.0 dead=false dur=legs:1
+res p_wither start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false dur=chest:0
+res p_wither hurt=minecraft:wither/1 ret=true hp=19.0 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=1.0 dead=false dur=chest:0
+res p_wither inv=10 hp=19.0 abs=0.0 vel=0.0,0.0,0.0 inv=10 hurt=10 last=1.0 dead=false dur=chest:0
+res p_wither hurt=minecraft:starve/1 ret=true hp=18.0 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=1.0 dead=false dur=chest:0
+res m_axe_crit_sharp start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false
+res m_axe_crit_sharp attack avel=0.0,-0.1,0.0 asprint=false hp=3.2719994 abs=0.0 vel=0.0,0.4,0.4000000059604645 inv=20 hurt=10 last=17.0 dead=false
+res m_breach start hp=20.0 abs=0.0 vel=0.0,0.0,0.0 inv=0 hurt=0 last=0.0 dead=false dur=chest:0,legs:0
+res m_breach attack avel=0.0,0.0,0.0 asprint=false hp=14.0 abs=0.0 vel=0.0,0.0,0.0 inv=20 hurt=10 last=6.0 dead=false dur=chest:1,legs:1

@@ -1,0 +1,69 @@
+air 0,0,0 =>
+chest[facing=east,type=single,waterlogged=false] 0,0,0 =>
+chest[facing=south,type=single,waterlogged=false] 0,0,0 =>
+chest[facing=west,type=single,waterlogged=false] 0,0,0 =>
+chiseled_stone_bricks 0,0,0 => 0=chiseled_polished_blackstone
+cracked_stone_bricks 0,0,0 => 0=cracked_polished_blackstone_bricks
+gold_block 0,0,0 =>
+iron_bars[east=false,north=false,south=false,waterlogged=false,west=false] 0,0,0 => 0=iron_chain[axis=y,waterlogged=false]
+iron_bars[east=false,north=false,south=true,waterlogged=false,west=false] 0,0,0 => 0=iron_chain[axis=y,waterlogged=false]
+iron_bars[east=false,north=false,south=true,waterlogged=false,west=true] 0,0,0 => 0=iron_chain[axis=y,waterlogged=false]
+iron_bars[east=false,north=true,south=false,waterlogged=false,west=false] 0,0,0 => 0=iron_chain[axis=y,waterlogged=false]
+iron_bars[east=false,north=true,south=false,waterlogged=false,west=true] 0,0,0 => 0=iron_chain[axis=y,waterlogged=false]
+iron_bars[east=false,north=true,south=true,waterlogged=false,west=false] 0,0,0 => 0=iron_chain[axis=y,waterlogged=false]
+iron_bars[east=true,north=true,south=false,waterlogged=false,west=true] 0,0,0 => 0=iron_chain[axis=y,waterlogged=false]
+jigsaw[orientation=north_up] 0,0,0 =>
+lava[level=0] 0,0,0 =>
+lava[level=2] 0,0,0 =>
+lava[level=8] 0,0,0 =>
+magma_block 0,0,0 =>
+mossy_stone_bricks 0,0,0 => 0=polished_blackstone_bricks
+netherrack 0,0,0 =>
+obsidian 0,0,0 =>
+smooth_stone_slab[type=bottom,waterlogged=false] 0,0,0 => 0=polished_blackstone_slab[type=bottom,waterlogged=false]
+smooth_stone_slab[type=double,waterlogged=false] 0,0,0 => 0=polished_blackstone_slab[type=double,waterlogged=false]
+smooth_stone_slab[type=top,waterlogged=false] 0,0,0 => 0=polished_blackstone_slab[type=top,waterlogged=false]
+stone 0,0,0 => 0=polished_blackstone
+stone_brick_slab[type=bottom,waterlogged=false] 0,0,0 => 0=polished_blackstone_brick_slab[type=bottom,waterlogged=false]
+stone_brick_slab[type=double,waterlogged=false] 0,0,0 => 0=polished_blackstone_brick_slab[type=double,waterlogged=false]
+stone_brick_slab[type=top,waterlogged=false] 0,0,0 => 0=polished_blackstone_brick_slab[type=top,waterlogged=false]
+stone_brick_stairs[facing=east,half=bottom,shape=straight,waterlogged=false] 0,0,0 => 0=polished_blackstone_brick_stairs[facing=east,half=bottom,shape=straight,waterlogged=false]
+stone_brick_stairs[facing=east,half=top,shape=straight,waterlogged=false] 0,0,0 => 0=polished_blackstone_brick_stairs[facing=east,half=top,shape=straight,waterlogged=false]
+stone_brick_stairs[facing=north,half=bottom,shape=outer_left,waterlogged=false] 0,0,0 => 0=polished_blackstone_brick_stairs[facing=north,half=bottom,shape=straight,waterlogged=false]
+stone_brick_stairs[facing=north,half=bottom,shape=outer_right,waterlogged=false] 0,0,0 => 0=polished_blackstone_brick_stairs[facing=north,half=bottom,shape=straight,waterlogged=false]
+stone_brick_stairs[facing=north,half=bottom,shape=straight,waterlogged=false] 0,0,0 => 0=polished_blackstone_brick_stairs[facing=north,half=bottom,shape=straight,waterlogged=false]
+stone_brick_stairs[facing=south,half=bottom,shape=outer_left,waterlogged=false] 0,0,0 => 0=polished_blackstone_brick_stairs[facing=south,half=bottom,shape=straight,waterlogged=false]
+stone_brick_stairs[facing=south,half=bottom,shape=outer_right,waterlogged=false] 0,0,0 => 0=polished_blackstone_brick_stairs[facing=south,half=bottom,shape=straight,waterlogged=false]
+stone_brick_stairs[facing=south,half=bottom,shape=straight,waterlogged=false] 0,0,0 => 0=polished_blackstone_brick_stairs[facing=south,half=bottom,shape=straight,waterlogged=false]
+stone_brick_stairs[facing=west,half=bottom,shape=inner_left,waterlogged=false] 0,0,0 => 0=polished_blackstone_brick_stairs[facing=west,half=bottom,shape=straight,waterlogged=false]
+stone_brick_stairs[facing=west,half=bottom,shape=outer_left,waterlogged=false] 0,0,0 => 0=polished_blackstone_brick_stairs[facing=west,half=bottom,shape=straight,waterlogged=false]
+stone_brick_stairs[facing=west,half=bottom,shape=outer_right,waterlogged=false] 0,0,0 => 0=polished_blackstone_brick_stairs[facing=west,half=bottom,shape=straight,waterlogged=false]
+stone_brick_stairs[facing=west,half=bottom,shape=straight,waterlogged=false] 0,0,0 => 0=polished_blackstone_brick_stairs[facing=west,half=bottom,shape=straight,waterlogged=false]
+stone_brick_wall[east=none,north=none,south=low,up=true,waterlogged=false,west=none] 0,0,0 => 0=polished_blackstone_brick_wall[east=none,north=none,south=none,up=true,waterlogged=false,west=none]
+stone_brick_wall[east=none,north=none,south=none,up=true,waterlogged=false,west=none] 0,0,0 => 0=polished_blackstone_brick_wall[east=none,north=none,south=none,up=true,waterlogged=false,west=none]
+stone_brick_wall[east=none,north=tall,south=none,up=true,waterlogged=false,west=none] 0,0,0 => 0=polished_blackstone_brick_wall[east=none,north=none,south=none,up=true,waterlogged=false,west=none]
+stone_bricks 0,0,0 => 0=polished_blackstone_bricks
+stone_slab[type=bottom,waterlogged=false] 0,0,0 => 0=polished_blackstone_slab[type=bottom,waterlogged=false]
+stone_slab[type=double,waterlogged=false] 0,0,0 => 0=polished_blackstone_slab[type=double,waterlogged=false]
+mossy_stone_brick_stairs[facing=north,half=top,shape=straight,waterlogged=false] 0,0,0 => 0=polished_blackstone_brick_stairs[facing=north,half=top,shape=straight,waterlogged=false]
+stone_brick_stairs[facing=north,half=top,shape=straight,waterlogged=false] 0,0,0 => 0=polished_blackstone_brick_stairs[facing=north,half=top,shape=straight,waterlogged=false]
+mossy_stone_brick_stairs[facing=north,half=bottom,shape=straight,waterlogged=false] 0,0,0 => 0=polished_blackstone_brick_stairs[facing=north,half=bottom,shape=straight,waterlogged=false]
+stone_brick_stairs[facing=north,half=bottom,shape=straight,waterlogged=false] 0,0,0 => 0=polished_blackstone_brick_stairs[facing=north,half=bottom,shape=straight,waterlogged=false]
+mossy_stone_brick_stairs[facing=east,half=top,shape=straight,waterlogged=false] 0,0,0 => 0=polished_blackstone_brick_stairs[facing=east,half=top,shape=straight,waterlogged=false]
+stone_brick_stairs[facing=east,half=top,shape=straight,waterlogged=false] 0,0,0 => 0=polished_blackstone_brick_stairs[facing=east,half=top,shape=straight,waterlogged=false]
+mossy_stone_brick_stairs[facing=east,half=bottom,shape=straight,waterlogged=false] 0,0,0 => 0=polished_blackstone_brick_stairs[facing=east,half=bottom,shape=straight,waterlogged=false]
+stone_brick_stairs[facing=east,half=bottom,shape=straight,waterlogged=false] 0,0,0 => 0=polished_blackstone_brick_stairs[facing=east,half=bottom,shape=straight,waterlogged=false]
+mossy_stone_brick_stairs[facing=south,half=top,shape=straight,waterlogged=false] 0,0,0 => 0=polished_blackstone_brick_stairs[facing=south,half=top,shape=straight,waterlogged=false]
+stone_brick_stairs[facing=south,half=top,shape=straight,waterlogged=false] 0,0,0 => 0=polished_blackstone_brick_stairs[facing=south,half=top,shape=straight,waterlogged=false]
+mossy_stone_brick_stairs[facing=south,half=bottom,shape=straight,waterlogged=false] 0,0,0 => 0=polished_blackstone_brick_stairs[facing=south,half=bottom,shape=straight,waterlogged=false]
+stone_brick_stairs[facing=south,half=bottom,shape=straight,waterlogged=false] 0,0,0 => 0=polished_blackstone_brick_stairs[facing=south,half=bottom,shape=straight,waterlogged=false]
+mossy_stone_brick_stairs[facing=west,half=top,shape=straight,waterlogged=false] 0,0,0 => 0=polished_blackstone_brick_stairs[facing=west,half=top,shape=straight,waterlogged=false]
+stone_brick_stairs[facing=west,half=top,shape=straight,waterlogged=false] 0,0,0 => 0=polished_blackstone_brick_stairs[facing=west,half=top,shape=straight,waterlogged=false]
+mossy_stone_brick_stairs[facing=west,half=bottom,shape=straight,waterlogged=false] 0,0,0 => 0=polished_blackstone_brick_stairs[facing=west,half=bottom,shape=straight,waterlogged=false]
+stone_brick_stairs[facing=west,half=bottom,shape=straight,waterlogged=false] 0,0,0 => 0=polished_blackstone_brick_stairs[facing=west,half=bottom,shape=straight,waterlogged=false]
+mossy_stone_brick_slab 0,0,0 => 0=polished_blackstone_brick_slab[type=bottom,waterlogged=false]
+stone_slab 0,0,0 => 0=polished_blackstone_slab[type=bottom,waterlogged=false]
+cracked_stone_bricks 0,0,0 => 0=cracked_polished_blackstone_bricks
+mossy_stone_brick_wall 0,0,0 => 0=polished_blackstone_brick_wall[east=none,north=none,south=none,up=true,waterlogged=false,west=none]
+crying_obsidian 0,0,0 =>
+polished_blackstone_bricks 0,0,0 =>

@@ -1,0 +1,559 @@
+NONE 36 -19
+START -87 -9 pieces 9 stub -1384, 78, -136
+  BB -1392 77 -144 -1377 106 -129 pos -1392, 77, -144 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB -1408 71 -144 -1393 76 -113 pos -1408, 71, -144 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -1376 78 -160 -1361 83 -129 pos -1361, 78, -129 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -1392 77 -144 -1378 99 -130 pos -1392, 77, -144 rot NONE el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB -1392 80 -128 -1361 85 -113 pos -1392, 80, -113 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -1375 80 -154 -1369 83 -149 pos -1375, 80, -149 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_tent1]]
+  BB -1367 80 -160 -1361 83 -154 pos -1361, 80, -160 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage1]]
+  BB -1374 82 -126 -1369 84 -120 pos -1374, 82, -126 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_logs]]
+  BB -1377 82 -119 -1371 85 -113 pos -1377, 82, -119 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_cage2]]
+NONE 77 72
+NONE 98 -63
+NONE -122 19
+NONE 68 -117
+NONE -121 -81
+NONE -147 65
+START 164 13 pieces 13 stub 2631, 88, 200
+  BB 2624 87 193 2639 116 208 pos 2624, 87, 208 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB 2624 87 193 2638 109 207 pos 2624, 87, 207 rot COUNTERCLOCKWISE_90 el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB 2608 87 177 2639 92 192 pos 2639, 87, 177 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 2640 88 177 2655 93 208 pos 2655, 88, 208 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 2624 88 209 2655 93 224 pos 2624, 88, 224 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 2614 87 186 2620 90 192 pos 2620, 87, 192 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage_with_allays]]
+  BB 2621 87 185 2627 90 190 pos 2627, 87, 185 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_tent1]]
+  BB 2611 87 179 2617 90 185 pos 2617, 87, 185 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage2]]
+  BB 2622 87 178 2628 90 184 pos 2628, 87, 184 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage_with_allays]]
+  BB 2648 88 184 2654 91 190 pos 2654, 88, 184 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage_with_allays]]
+  BB 2641 88 190 2647 91 196 pos 2641, 88, 190 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_cage2]]
+  BB 2644 88 181 2650 90 183 pos 2650, 88, 181 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB 2636 88 210 2641 91 216 pos 2636, 88, 210 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_tent1]]
+NONE -160 48
+START 167 68 pieces 12 stub 2679, 112, 1080
+  BB 2672 111 1073 2687 140 1088 pos 2672, 111, 1088 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB 2688 112 1057 2703 117 1088 pos 2703, 112, 1088 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 2672 111 1074 2686 133 1088 pos 2672, 111, 1088 rot COUNTERCLOCKWISE_90 el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB 2672 112 1089 2703 117 1104 pos 2672, 112, 1104 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 2656 112 1057 2687 117 1072 pos 2687, 112, 1057 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 2694 114 1060 2700 116 1065 pos 2700, 114, 1060 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_logs]]
+  BB 2691 115 1058 2693 117 1064 pos 2693, 115, 1064 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB 2694 113 1093 2699 115 1099 pos 2694, 113, 1093 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_logs]]
+  BB 2685 115 1096 2691 117 1101 pos 2685, 115, 1101 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_logs]]
+  BB 2687 113 1093 2693 115 1095 pos 2687, 113, 1095 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB 2667 112 1069 2673 114 1071 pos 2673, 112, 1069 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB 2660 112 1062 2665 114 1068 pos 2665, 112, 1068 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_logs]]
+NONE -147 -109
+NONE 163 -113
+NONE 35 -203
+START -153 139 pieces 10 stub -2455, 119, 2231
+  BB -2463 118 2224 -2448 147 2239 pos -2448, 118, 2224 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB -2463 118 2240 -2432 123 2255 pos -2463, 118, 2255 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -2479 118 2208 -2448 123 2223 pos -2448, 118, 2208 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -2462 118 2225 -2448 140 2239 pos -2448, 118, 2225 rot CLOCKWISE_90 el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB -2479 120 2224 -2464 125 2255 pos -2479, 120, 2224 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -2465 120 2216 -2459 123 2222 pos -2459, 120, 2222 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage1]]
+  BB -2466 120 2209 -2460 123 2215 pos -2466, 120, 2215 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage1]]
+  BB -2477 121 2246 -2471 124 2252 pos -2471, 121, 2246 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage_with_allays]]
+  BB -2473 122 2238 -2468 125 2244 pos -2468, 122, 2244 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_tent1]]
+  BB -2470 120 2249 -2464 123 2255 pos -2464, 120, 2255 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage1]]
+NONE 205 43
+NONE 136 166
+NONE 71 205
+NONE -224 22
+START 203 111 pieces 11 stub 3255, 72, 1768
+  BB 3248 71 1761 3263 100 1776 pos 3248, 71, 1776 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB 3232 69 1745 3263 74 1760 pos 3263, 69, 1745 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 3248 71 1761 3262 93 1775 pos 3248, 71, 1775 rot COUNTERCLOCKWISE_90 el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB 3248 72 1777 3279 77 1792 pos 3248, 72, 1792 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 3264 71 1745 3279 76 1776 pos 3279, 71, 1776 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 3262 72 1780 3267 75 1786 pos 3262, 72, 1780 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_tent1]]
+  BB 3268 72 1778 3274 75 1784 pos 3268, 72, 1784 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage2]]
+  BB 3269 72 1786 3275 75 1792 pos 3275, 72, 1786 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage1]]
+  BB 3272 71 1758 3278 74 1764 pos 3272, 71, 1758 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_cage_with_allays]]
+  BB 3271 71 1752 3277 74 1757 pos 3277, 71, 1752 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_tent1]]
+  BB 3264 71 1754 3270 74 1760 pos 3264, 71, 1754 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_cage1]]
+START -233 22 pieces 9 stub -3735, 64, 344
+  BB -3743 63 337 -3728 92 352 pos -3728, 63, 352 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB -3727 72 321 -3712 77 352 pos -3712, 72, 352 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -3743 63 338 -3729 85 352 pos -3729, 63, 352 rot CLOCKWISE_180 el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB -3759 63 337 -3744 68 368 pos -3759, 63, 337 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -3759 63 321 -3728 68 336 pos -3728, 63, 321 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -3756 63 323 -3751 66 329 pos -3751, 63, 329 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_tent2]]
+  BB -3749 63 329 -3743 66 335 pos -3743, 63, 329 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage_with_allays]]
+  BB -3749 63 321 -3743 66 327 pos -3743, 63, 327 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage1]]
+  BB -3759 64 330 -3753 66 332 pos -3753, 64, 330 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+NONE 4 -235
+START 238 23 pieces 15 stub 3815, 72, 375
+  BB 3808 71 368 3823 100 383 pos 3808, 71, 368 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB 3824 73 352 3839 78 383 pos 3839, 73, 383 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 3808 73 384 3839 78 399 pos 3808, 73, 399 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 3809 71 368 3823 93 382 pos 3809, 71, 368 rot NONE el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB 3792 70 368 3807 75 399 pos 3792, 70, 368 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 3832 76 366 3838 78 371 pos 3838, 76, 366 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_logs]]
+  BB 3833 74 352 3839 77 358 pos 3839, 74, 352 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage1]]
+  BB 3832 73 359 3838 76 365 pos 3838, 73, 365 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage1]]
+  BB 3830 73 391 3836 76 397 pos 3830, 73, 397 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage2]]
+  BB 3823 75 393 3829 78 399 pos 3823, 75, 393 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_cage1]]
+  BB 3824 74 384 3830 77 390 pos 3830, 74, 384 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage_with_allays]]
+  BB 3831 75 385 3837 77 387 pos 3837, 75, 385 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB 3795 70 388 3801 73 394 pos 3795, 70, 388 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_cage1]]
+  BB 3795 72 381 3801 75 387 pos 3801, 72, 381 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage_with_allays]]
+  BB 3792 71 391 3794 73 397 pos 3794, 71, 397 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+NONE -151 -187
+NONE -234 -96
+START 258 21 pieces 12 stub 4120, 64, 343
+  BB 4113 63 336 4128 92 351 pos 4128, 63, 336 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB 4114 63 337 4128 85 351 pos 4128, 63, 337 rot CLOCKWISE_90 el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB 4113 63 352 4144 68 367 pos 4113, 63, 367 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 4097 64 320 4128 69 335 pos 4128, 64, 320 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 4097 64 336 4112 69 367 pos 4097, 64, 336 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 4129 63 363 4135 65 365 pos 4129, 63, 365 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB 4138 63 361 4143 66 367 pos 4138, 63, 361 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_tent2]]
+  BB 4137 63 353 4143 66 358 pos 4137, 63, 358 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_tent2]]
+  BB 4102 64 325 4108 66 330 pos 4108, 64, 325 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_logs]]
+  BB 4109 64 322 4115 67 328 pos 4115, 64, 322 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage2]]
+  BB 4104 67 359 4109 69 365 pos 4104, 67, 359 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_logs]]
+  BB 4110 65 359 4112 67 365 pos 4110, 65, 359 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+START -142 224 pieces 11 stub -2264, 70, 3591
+  BB -2272 69 3584 -2257 98 3599 pos -2272, 69, 3584 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB -2272 70 3600 -2241 75 3615 pos -2272, 70, 3615 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -2272 69 3584 -2258 91 3598 pos -2272, 69, 3584 rot NONE el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB -2288 69 3584 -2273 74 3615 pos -2288, 69, 3584 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -2256 67 3568 -2241 72 3599 pos -2241, 67, 3599 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -2280 69 3605 -2274 72 3611 pos -2280, 69, 3611 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage_with_allays]]
+  BB -2288 70 3605 -2282 73 3611 pos -2282, 70, 3611 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage2]]
+  BB -2279 69 3598 -2273 72 3604 pos -2279, 69, 3598 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_cage1]]
+  BB -2285 70 3612 -2279 72 3614 pos -2279, 70, 3612 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB -2249 67 3570 -2243 70 3576 pos -2249, 67, 3570 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_cage2]]
+  BB -2256 68 3569 -2250 71 3575 pos -2256, 68, 3569 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_cage2]]
+NONE -26 -266
+NONE -108 246
+START -139 -251 pieces 9 stub -2231, 64, -4008
+  BB -2239 63 -4016 -2224 92 -4001 pos -2224, 63, -4016 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB -2255 82 -4016 -2240 87 -3985 pos -2255, 82, -4016 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -2238 63 -4015 -2224 85 -4001 pos -2224, 63, -4015 rot CLOCKWISE_90 el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB -2255 84 -4032 -2224 89 -4017 pos -2224, 84, -4032 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -2239 66 -4000 -2208 71 -3985 pos -2239, 66, -3985 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -2250 83 -3999 -2244 85 -3997 pos -2244, 83, -3999 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB -2248 83 -3993 -2242 86 -3988 pos -2248, 83, -3988 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_tent2]]
+  BB -2241 84 -4024 -2236 87 -4018 pos -2241, 84, -4024 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_tent2]]
+  BB -2215 66 -3992 -2209 69 -3986 pos -2215, 66, -3992 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_cage2]]
+NONE -214 195
+NONE -26 293
+NONE 85 -283
+NONE 226 202
+START 12 308 pieces 11 stub 199, 70, 4935
+  BB 192 69 4928 207 98 4943 pos 192, 69, 4928 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB 208 72 4912 223 77 4943 pos 223, 72, 4943 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 192 70 4944 223 75 4959 pos 192, 70, 4959 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 176 70 4928 191 75 4959 pos 176, 70, 4928 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 193 69 4928 207 91 4942 pos 193, 69, 4928 rot NONE el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB 209 72 4920 215 75 4926 pos 209, 72, 4920 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_cage1]]
+  BB 204 71 4952 210 74 4958 pos 210, 71, 4952 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage1]]
+  BB 213 72 4945 219 75 4951 pos 219, 72, 4951 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage_with_allays]]
+  BB 204 72 4946 210 75 4951 pos 210, 72, 4946 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_tent1]]
+  BB 212 71 4953 218 74 4959 pos 212, 71, 4953 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_cage1]]
+  BB 183 70 4952 189 73 4958 pos 183, 70, 4952 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_cage_with_allays]]
+NONE 6 -319
+NONE 10 320
+START 307 -108 pieces 8 stub 4904, 72, -1720
+  BB 4897 71 -1728 4912 100 -1713 pos 4912, 71, -1728 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB 4881 88 -1744 4912 93 -1729 pos 4912, 88, -1744 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 4897 71 -1712 4928 76 -1697 pos 4897, 71, -1697 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 4881 72 -1728 4896 77 -1697 pos 4881, 72, -1728 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 4898 71 -1728 4912 93 -1714 pos 4912, 71, -1728 rot CLOCKWISE_90 el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB 4892 88 -1735 4898 91 -1729 pos 4898, 88, -1735 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage2]]
+  BB 4922 71 -1705 4924 73 -1699 pos 4924, 71, -1699 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB 4916 72 -1712 4922 75 -1706 pos 4916, 72, -1712 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_cage2]]
+NONE 243 226
+NONE -176 -286
+NONE -312 -127
+NONE -146 304
+NONE -242 237
+NONE -220 258
+NONE 329 87
+NONE 45 -341
+NONE -275 -215
+NONE -118 339
+NONE 292 -215
+START 45 363 pieces 7 stub 727, 72, 5815
+  BB 720 71 5808 735 100 5823 pos 720, 71, 5808 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB 704 70 5808 719 75 5839 pos 704, 70, 5808 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 720 71 5808 734 93 5822 pos 720, 71, 5808 rot NONE el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB 720 74 5824 751 79 5839 pos 720, 74, 5839 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 736 74 5792 751 79 5823 pos 751, 74, 5823 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 705 71 5832 710 73 5838 pos 710, 71, 5838 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_logs]]
+  BB 712 72 5828 718 75 5833 pos 712, 72, 5833 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_tent1]]
+NONE -249 -269
+NONE 366 -22
+START 342 -152 pieces 10 stub 5464, 63, -2439
+  BB 5457 62 -2447 5472 91 -2432 pos 5472, 62, -2432 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB 5441 63 -2447 5456 68 -2416 pos 5441, 63, -2447 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 5458 62 -2446 5472 84 -2432 pos 5472, 62, -2432 rot CLOCKWISE_180 el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB 5473 68 -2463 5488 73 -2432 pos 5488, 68, -2432 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 5441 67 -2463 5472 72 -2448 pos 5472, 67, -2463 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 5444 64 -2434 5450 67 -2428 pos 5450, 64, -2434 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage_with_allays]]
+  BB 5447 64 -2425 5452 67 -2419 pos 5447, 64, -2425 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_tent2]]
+  BB 5441 64 -2433 5443 66 -2427 pos 5441, 64, -2433 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB 5480 71 -2460 5486 73 -2455 pos 5480, 71, -2455 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_logs]]
+  BB 5479 71 -2453 5485 73 -2448 pos 5479, 71, -2448 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_logs]]
+NONE -299 -235
+START 326 197 pieces 12 stub 5223, 72, 3144
+  BB 5216 71 3137 5231 100 3152 pos 5216, 71, 3152 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB 5200 70 3121 5231 75 3136 pos 5231, 70, 3121 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 5216 71 3153 5247 76 3168 pos 5216, 71, 3168 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 5216 71 3137 5230 93 3151 pos 5216, 71, 3151 rot COUNTERCLOCKWISE_90 el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB 5232 72 3121 5247 77 3152 pos 5247, 72, 3152 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 5208 70 3122 5214 73 3128 pos 5214, 70, 3122 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage2]]
+  BB 5200 70 3123 5206 72 3125 pos 5206, 70, 3123 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB 5202 70 3129 5207 73 3135 pos 5207, 70, 3135 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_tent1]]
+  BB 5209 70 3129 5215 73 3135 pos 5215, 70, 3135 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage2]]
+  BB 5233 72 3132 5239 74 3134 pos 5233, 72, 3134 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB 5233 72 3135 5239 75 3141 pos 5233, 72, 3141 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage1]]
+  BB 5240 72 3135 5246 75 3141 pos 5240, 72, 3141 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage1]]
+START 304 -238 pieces 10 stub 4871, 69, -3815
+  BB 4864 68 -3823 4879 97 -3808 pos 4864, 68, -3808 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB 4864 68 -3822 4878 90 -3808 pos 4864, 68, -3808 rot COUNTERCLOCKWISE_90 el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB 4848 69 -3839 4879 74 -3824 pos 4879, 69, -3839 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 4864 69 -3807 4895 74 -3792 pos 4864, 69, -3792 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 4880 69 -3839 4895 74 -3808 pos 4895, 69, -3808 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 4853 70 -3835 4858 73 -3829 pos 4853, 70, -3835 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_tent1]]
+  BB 4860 70 -3834 4866 73 -3828 pos 4866, 70, -3834 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage2]]
+  BB 4859 69 -3827 4865 71 -3825 pos 4859, 69, -3825 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB 4884 69 -3836 4889 72 -3830 pos 4889, 69, -3830 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_tent1]]
+  BB 4880 69 -3829 4886 72 -3823 pos 4880, 69, -3823 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage2]]
+NONE -333 -202
+NONE -283 -278
+NONE 359 170
+START 288 -279 pieces 16 stub 4600, 63, -4456
+  BB 4593 62 -4464 4608 91 -4449 pos 4608, 62, -4464 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB 4577 63 -4464 4592 68 -4433 pos 4577, 63, -4464 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 4593 63 -4448 4624 68 -4433 pos 4593, 63, -4433 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 4594 62 -4464 4608 84 -4450 pos 4608, 62, -4464 rot CLOCKWISE_90 el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB 4577 66 -4480 4608 71 -4465 pos 4608, 66, -4480 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 4578 64 -4440 4584 67 -4434 pos 4584, 64, -4440 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage1]]
+  BB 4585 63 -4452 4590 66 -4446 pos 4590, 63, -4446 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_tent1]]
+  BB 4586 64 -4445 4588 66 -4439 pos 4588, 64, -4439 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB 4577 64 -4449 4583 67 -4443 pos 4583, 64, -4449 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage2]]
+  BB 4611 63 -4447 4613 65 -4441 pos 4611, 63, -4447 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB 4618 63 -4439 4624 66 -4434 pos 4618, 63, -4434 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_tent1]]
+  BB 4609 63 -4438 4615 66 -4433 pos 4609, 63, -4433 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_tent1]]
+  BB 4616 63 -4446 4622 66 -4440 pos 4622, 63, -4446 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage1]]
+  BB 4604 63 -4446 4610 66 -4440 pos 4604, 63, -4440 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage2]]
+  BB 4580 67 -4477 4585 69 -4471 pos 4580, 67, -4477 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_logs]]
+  BB 4586 67 -4480 4592 70 -4474 pos 4586, 67, -4474 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage_with_allays]]
+NONE -13 -404
+NONE 263 -307
+START -221 340 pieces 7 stub -3528, 67, 5447
+  BB -3536 66 5440 -3521 95 5455 pos -3536, 66, 5440 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB -3536 66 5456 -3505 71 5471 pos -3536, 66, 5471 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -3520 68 5424 -3505 73 5455 pos -3505, 68, 5455 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -3535 66 5440 -3521 88 5454 pos -3535, 66, 5440 rot NONE el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB -3552 68 5440 -3537 73 5471 pos -3552, 68, 5440 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -3516 66 5464 -3510 68 5466 pos -3516, 66, 5466 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB -3512 66 5468 -3506 68 5470 pos -3512, 66, 5470 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+NONE -407 47
+START 370 -183 pieces 9 stub 5927, 65, -2920
+  BB 5920 64 -2928 5935 93 -2913 pos 5920, 64, -2928 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB 5936 64 -2944 5951 69 -2913 pos 5951, 64, -2913 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 5921 64 -2928 5935 86 -2914 pos 5921, 64, -2928 rot NONE el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB 5904 66 -2928 5919 71 -2897 pos 5904, 66, -2928 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 5920 65 -2912 5951 70 -2897 pos 5920, 65, -2897 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 5909 68 -2908 5914 71 -2902 pos 5914, 68, -2902 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_tent2]]
+  BB 5905 69 -2911 5911 71 -2909 pos 5905, 69, -2909 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB 5912 68 -2917 5917 70 -2911 pos 5912, 68, -2917 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_logs]]
+  BB 5943 65 -2905 5949 68 -2899 pos 5949, 65, -2905 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage2]]
+NONE -347 224
+NONE 238 342
+NONE -125 402
+NONE -407 -124
+START 267 340 pieces 9 stub 4279, 71, 5447
+  BB 4272 70 5440 4287 99 5455 pos 4272, 70, 5440 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB 4272 70 5440 4286 92 5454 pos 4272, 70, 5440 rot NONE el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB 4288 72 5424 4303 77 5455 pos 4303, 72, 5455 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 4256 71 5440 4271 76 5471 pos 4256, 71, 5440 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 4272 72 5456 4303 77 5471 pos 4272, 72, 5471 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 4265 73 5465 4267 75 5471 pos 4267, 73, 5471 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB 4263 73 5452 4269 75 5457 pos 4269, 73, 5452 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_logs]]
+  BB 4284 72 5457 4289 75 5463 pos 4284, 72, 5457 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_tent2]]
+  BB 4292 72 5462 4298 75 5468 pos 4292, 72, 5468 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage2]]
+NONE 370 225
+START -404 -172 pieces 12 stub -6456, 65, -2744
+  BB -6464 64 -2752 -6449 93 -2737 pos -6464, 64, -2752 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB -6463 64 -2752 -6449 86 -2738 pos -6463, 64, -2752 rot NONE el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB -6464 64 -2736 -6433 69 -2721 pos -6464, 64, -2721 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -6480 64 -2752 -6465 69 -2721 pos -6480, 64, -2752 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -6448 67 -2768 -6433 72 -2737 pos -6433, 67, -2737 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -6472 65 -2728 -6467 68 -2722 pos -6472, 65, -2728 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_tent1]]
+  BB -6480 64 -2732 -6474 67 -2726 pos -6474, 64, -2732 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage2]]
+  BB -6443 69 -2761 -6437 71 -2759 pos -6443, 69, -2759 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB -6447 69 -2768 -6441 72 -2762 pos -6441, 69, -2768 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage1]]
+  BB -6447 67 -2758 -6441 70 -2752 pos -6447, 67, -2752 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage2]]
+  BB -6439 69 -2758 -6433 72 -2752 pos -6439, 69, -2752 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage1]]
+  BB -6439 70 -2766 -6433 72 -2764 pos -6433, 70, -2766 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+NONE -431 130
+NONE -59 448
+NONE -342 -301
+NONE 172 -426
+NONE 457 48
+NONE 453 -95
+NONE 352 -302
+NONE -190 424
+NONE -468 5
+NONE 375 292
+NONE 463 114
+NONE 439 193
+START 272 -395 pieces 8 stub 4344, 71, -6327
+  BB 4337 70 -6335 4352 99 -6320 pos 4352, 70, -6320 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB 4337 70 -6334 4351 92 -6320 pos 4351, 70, -6320 rot CLOCKWISE_180 el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB 4353 71 -6351 4368 76 -6320 pos 4368, 71, -6320 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 4321 68 -6351 4352 73 -6336 pos 4352, 68, -6351 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 4321 70 -6335 4336 75 -6304 pos 4321, 70, -6335 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 4328 70 -6318 4334 73 -6312 pos 4328, 70, -6312 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage2]]
+  BB 4322 70 -6310 4327 73 -6304 pos 4322, 70, -6310 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_tent2]]
+  BB 4330 70 -6310 4336 72 -6305 pos 4330, 70, -6305 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_logs]]
+START 436 -202 pieces 11 stub 6983, 70, -3224
+  BB 6976 69 -3232 6991 98 -3217 pos 6976, 69, -3232 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB 6976 70 -3216 7007 75 -3201 pos 6976, 70, -3201 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 6976 69 -3232 6990 91 -3218 pos 6976, 69, -3232 rot NONE el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB 6992 72 -3248 7007 77 -3217 pos 7007, 72, -3217 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 6960 64 -3232 6975 69 -3201 pos 6960, 64, -3232 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 6994 72 -3210 7000 75 -3204 pos 7000, 72, -3210 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage2]]
+  BB 7001 72 -3208 7007 75 -3202 pos 7007, 72, -3208 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage1]]
+  BB 6987 72 -3214 6993 75 -3208 pos 6987, 72, -3208 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage2]]
+  BB 6999 73 -3213 7005 75 -3211 pos 6999, 73, -3211 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB 6966 64 -3213 6971 66 -3207 pos 6971, 64, -3207 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_logs]]
+  BB 6967 64 -3221 6973 67 -3215 pos 6967, 64, -3221 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_cage2]]
+NONE 454 -159
+START 143 465 pieces 6 stub 2295, 68, 7432
+  BB 2288 67 7425 2303 96 7440 pos 2288, 67, 7440 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB 2272 68 7409 2303 73 7424 pos 2303, 68, 7409 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 2288 67 7441 2319 72 7456 pos 2288, 67, 7456 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 2288 67 7425 2302 89 7439 pos 2288, 67, 7439 rot COUNTERCLOCKWISE_90 el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB 2304 67 7409 2319 72 7440 pos 2319, 67, 7440 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 2308 67 7443 2314 69 7445 pos 2308, 67, 7445 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+NONE -395 -285
+START -466 -144 pieces 7 stub -7463, 67, -2296
+  BB -7471 66 -2304 -7456 95 -2289 pos -7456, 66, -2304 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB -7471 61 -2288 -7440 66 -2273 pos -7471, 61, -2273 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -7470 66 -2303 -7456 88 -2289 pos -7456, 66, -2303 rot CLOCKWISE_90 el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB -7487 67 -2304 -7472 72 -2273 pos -7487, 67, -2304 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -7487 70 -2320 -7456 75 -2305 pos -7456, 70, -2320 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -7480 70 -2314 -7475 73 -2308 pos -7480, 70, -2314 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_tent2]]
+  BB -7474 70 -2312 -7468 73 -2307 pos -7468, 70, -2312 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_tent1]]
+NONE -308 -379
+NONE 453 194
+NONE -489 -76
+START 495 11 pieces 11 stub 7927, 69, 183
+  BB 7920 68 176 7935 97 191 pos 7920, 68, 176 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB 7921 68 176 7935 90 190 pos 7921, 68, 176 rot NONE el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB 7936 68 160 7951 73 191 pos 7951, 68, 191 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 7920 65 192 7951 70 207 pos 7920, 65, 207 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 7904 69 176 7919 74 207 pos 7904, 69, 176 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 7936 70 170 7942 72 175 pos 7936, 70, 175 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_logs]]
+  BB 7942 71 160 7947 73 166 pos 7942, 71, 160 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_logs]]
+  BB 7936 71 162 7938 73 168 pos 7938, 71, 168 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB 7938 67 199 7944 70 204 pos 7938, 67, 204 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_tent2]]
+  BB 7943 67 205 7949 69 207 pos 7943, 67, 207 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB 7931 65 200 7937 68 206 pos 7931, 65, 200 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_cage2]]
+START -60 -495 pieces 8 stub -952, 94, -7912
+  BB -960 93 -7920 -945 122 -7905 pos -960, 93, -7920 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB -960 106 -7904 -929 111 -7889 pos -960, 106, -7889 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -959 93 -7920 -945 115 -7906 pos -959, 93, -7920 rot NONE el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB -976 96 -7920 -961 101 -7889 pos -976, 96, -7920 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -944 97 -7936 -929 102 -7905 pos -929, 97, -7905 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -947 109 -7900 -941 111 -7895 pos -941, 109, -7900 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_logs]]
+  BB -937 109 -7901 -931 111 -7896 pos -931, 109, -7901 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_logs]]
+  BB -936 98 -7929 -930 101 -7923 pos -930, 98, -7929 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage_with_allays]]
+START -381 323 pieces 6 stub -6103, 74, 5160
+  BB -6111 73 5153 -6096 102 5168 pos -6096, 73, 5168 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB -6127 76 5153 -6112 81 5184 pos -6127, 76, 5153 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -6127 71 5137 -6096 76 5152 pos -6096, 71, 5137 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -6095 74 5137 -6080 79 5168 pos -6080, 74, 5168 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -6111 73 5154 -6097 95 5168 pos -6097, 73, 5168 rot CLOCKWISE_180 el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB -6119 76 5165 -6114 79 5171 pos -6119, 76, 5165 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_tent2]]
+NONE -397 308
+START -373 -338 pieces 8 stub -5960, 72, -5400
+  BB -5968 71 -5408 -5953 100 -5393 pos -5968, 71, -5408 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB -5984 72 -5408 -5969 77 -5377 pos -5984, 72, -5408 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -5952 71 -5424 -5937 76 -5393 pos -5937, 71, -5393 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -5967 71 -5408 -5953 93 -5394 pos -5967, 71, -5408 rot NONE el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB -5968 72 -5392 -5937 77 -5377 pos -5968, 72, -5377 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -5952 73 -5389 -5946 75 -5387 pos -5952, 73, -5387 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB -5942 75 -5388 -5937 77 -5382 pos -5942, 75, -5388 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_logs]]
+  BB -5944 75 -5380 -5938 77 -5378 pos -5938, 75, -5380 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+START 374 341 pieces 5 stub 5976, 103, 5463
+  BB 5969 102 5456 5984 131 5471 pos 5984, 102, 5456 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB 5970 102 5457 5984 124 5471 pos 5984, 102, 5457 rot CLOCKWISE_90 el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB 5969 97 5472 6000 102 5487 pos 5969, 97, 5487 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 5953 104 5440 5984 109 5455 pos 5984, 104, 5440 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 5953 89 5456 5968 94 5487 pos 5953, 89, 5456 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+NONE -78 -506
+NONE 466 228
+START 489 -186 pieces 10 stub 7816, 92, -2968
+  BB 7809 91 -2976 7824 120 -2961 pos 7824, 91, -2976 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB 7810 91 -2975 7824 113 -2961 pos 7824, 91, -2975 rot CLOCKWISE_90 el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB 7809 94 -2960 7840 99 -2945 pos 7809, 94, -2945 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 7793 91 -2992 7824 96 -2977 pos 7824, 91, -2992 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 7793 92 -2976 7808 97 -2945 pos 7793, 92, -2976 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 7827 95 -2958 7833 98 -2952 pos 7833, 95, -2958 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage_with_allays]]
+  BB 7827 96 -2951 7829 98 -2945 pos 7827, 96, -2951 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB 7820 95 -2951 7826 98 -2945 pos 7820, 95, -2945 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage1]]
+  BB 7801 93 -2953 7806 95 -2947 pos 7806, 93, -2947 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_logs]]
+  BB 7794 95 -2951 7800 97 -2946 pos 7800, 95, -2951 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_logs]]
+START 170 496 pieces 13 stub 2727, 63, 7943
+  BB 2720 62 7936 2735 91 7951 pos 2720, 62, 7936 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB 2704 63 7936 2719 68 7967 pos 2704, 63, 7936 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 2721 62 7936 2735 84 7950 pos 2721, 62, 7936 rot NONE el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB 2736 63 7920 2751 68 7951 pos 2751, 63, 7951 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 2720 64 7952 2751 69 7967 pos 2720, 64, 7967 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 2711 64 7959 2717 67 7965 pos 2717, 64, 7965 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage_with_allays]]
+  BB 2704 64 7960 2710 67 7966 pos 2710, 64, 7960 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage_with_allays]]
+  BB 2705 63 7948 2710 66 7954 pos 2705, 63, 7948 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_tent1]]
+  BB 2745 63 7925 2751 66 7930 pos 2745, 63, 7930 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_tent2]]
+  BB 2736 63 7924 2742 65 7926 pos 2742, 63, 7924 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB 2740 63 7932 2746 65 7934 pos 2746, 63, 7932 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB 2742 64 7957 2744 66 7963 pos 2742, 64, 7957 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB 2735 64 7957 2741 67 7963 pos 2735, 64, 7957 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_cage_with_allays]]
+START -235 -470 pieces 8 stub -3767, 96, -7527
+  BB -3775 95 -7535 -3760 124 -7520 pos -3760, 95, -7520 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB -3791 96 -7551 -3760 101 -7536 pos -3760, 96, -7551 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -3775 95 -7534 -3761 117 -7520 pos -3761, 95, -7520 rot CLOCKWISE_180 el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB -3759 96 -7551 -3744 101 -7520 pos -3744, 96, -7520 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -3791 98 -7535 -3776 103 -7504 pos -3791, 98, -7535 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -3785 99 -7542 -3783 101 -7536 pos -3783, 99, -7536 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB -3781 99 -7542 -3776 101 -7536 pos -3781, 99, -7542 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_logs]]
+  BB -3784 98 -7549 -3778 101 -7544 pos -3784, 98, -7544 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_tent2]]
+NONE -280 449
+NONE -58 527
+NONE 406 -342
+NONE -521 -115
+START 503 183 pieces 8 stub 8055, 78, 2920
+  BB 8048 77 2913 8063 106 2928 pos 8048, 77, 2928 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB 8048 79 2929 8079 84 2944 pos 8048, 79, 2944 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 8048 77 2913 8062 99 2927 pos 8048, 77, 2927 rot COUNTERCLOCKWISE_90 el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB 8064 77 2897 8079 82 2928 pos 8079, 77, 2928 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 8032 77 2897 8063 82 2912 pos 8063, 77, 2897 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 8066 79 2935 8072 82 2941 pos 8066, 79, 2935 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_cage1]]
+  BB 8044 77 2903 8049 80 2909 pos 8044, 77, 2903 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_tent1]]
+  BB 8037 77 2901 8043 80 2907 pos 8043, 77, 2907 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage_with_allays]]
+NONE -310 -445
+START 209 -501 pieces 15 stub 3336, 68, -8023
+  BB 3329 67 -8031 3344 96 -8016 pos 3344, 67, -8016 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB 3329 67 -8030 3343 89 -8016 pos 3343, 67, -8016 rot CLOCKWISE_180 el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB 3313 67 -8031 3328 72 -8000 pos 3313, 67, -8031 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 3313 68 -8047 3344 73 -8032 pos 3344, 68, -8047 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 3345 68 -8047 3360 73 -8016 pos 3360, 68, -8016 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 3318 69 -8009 3324 72 -8003 pos 3318, 69, -8003 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage1]]
+  BB 3318 67 -8012 3324 69 -8010 pos 3324, 67, -8012 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB 3315 67 -8014 3317 69 -8008 pos 3317, 67, -8008 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB 3318 68 -8047 3323 71 -8041 pos 3323, 68, -8041 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_tent2]]
+  BB 3317 68 -8039 3323 71 -8033 pos 3317, 68, -8039 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_cage2]]
+  BB 3325 68 -8041 3330 71 -8035 pos 3330, 68, -8035 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_tent1]]
+  BB 3346 68 -8036 3352 70 -8034 pos 3352, 68, -8036 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB 3353 68 -8045 3358 70 -8039 pos 3358, 68, -8039 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_logs]]
+  BB 3345 68 -8033 3347 70 -8027 pos 3347, 68, -8027 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB 3349 68 -8043 3351 70 -8037 pos 3349, 68, -8043 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+NONE 111 549
+NONE 35 -562
+NONE -556 -91
+NONE -31 -565
+NONE -560 100
+NONE 364 438
+NONE -505 -273
+NONE -53 -588
+NONE -159 -570
+NONE 464 -368
+START -415 426 pieces 6 stub -6647, 105, 6808
+  BB -6655 104 6801 -6640 133 6816 pos -6640, 104, 6816 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB -6655 104 6802 -6641 126 6816 pos -6641, 104, 6816 rot CLOCKWISE_180 el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB -6671 110 6785 -6640 115 6800 pos -6640, 110, 6785 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -6639 107 6785 -6624 112 6816 pos -6624, 107, 6816 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -6671 104 6801 -6656 109 6832 pos -6671, 104, 6801 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -6658 110 6786 -6652 113 6791 pos -6658, 110, 6791 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_tent1]]
+NONE 589 -90
+NONE 166 -576
+NONE -402 -445
+NONE 215 561
+NONE 260 547
+NONE 430 429
+NONE 611 -42
+NONE 596 141
+NONE 608 77
+NONE 567 -234
+NONE -479 -384
+START -608 -109 pieces 11 stub -9735, 73, -1751
+  BB -9743 72 -1759 -9728 101 -1744 pos -9728, 72, -1744 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB -9759 73 -1775 -9728 78 -1760 pos -9728, 73, -1775 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -9743 72 -1758 -9729 94 -1744 pos -9729, 72, -1744 rot CLOCKWISE_180 el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB -9759 73 -1759 -9744 78 -1728 pos -9759, 73, -1759 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -9727 71 -1775 -9712 76 -1744 pos -9712, 71, -1744 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -9756 74 -1773 -9750 77 -1767 pos -9750, 74, -1773 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage2]]
+  BB -9758 73 -1766 -9752 76 -1760 pos -9758, 73, -1760 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage_with_allays]]
+  BB -9751 74 -1743 -9746 77 -1737 pos -9746, 74, -1737 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_tent1]]
+  BB -9759 75 -1743 -9753 78 -1737 pos -9753, 75, -1737 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage1]]
+  BB -9753 73 -1736 -9747 76 -1731 pos -9747, 73, -1736 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_tent2]]
+  BB -9719 73 -1766 -9713 76 -1760 pos -9719, 73, -1760 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage_with_allays]]
+NONE -506 355
+NONE 176 -596
+NONE -605 144
+NONE -211 587
+NONE -186 596
+NONE 578 238
+NONE 627 -28
+NONE 197 597
+START 290 -558 pieces 7 stub 4632, 71, -8920
+  BB 4625 70 -8928 4640 99 -8913 pos 4640, 70, -8928 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB 4625 69 -8912 4656 74 -8897 pos 4625, 69, -8897 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 4626 70 -8927 4640 92 -8913 pos 4640, 70, -8927 rot CLOCKWISE_90 el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB 4609 72 -8928 4624 77 -8897 pos 4609, 72, -8928 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 4609 70 -8944 4640 75 -8929 pos 4640, 70, -8944 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 4620 71 -8941 4626 74 -8935 pos 4620, 71, -8935 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage1]]
+  BB 4612 70 -8942 4618 73 -8936 pos 4618, 70, -8936 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage2]]
+NONE 262 -572
+START 621 -105 pieces 12 stub 9943, 63, -1672
+  BB 9936 62 -1680 9951 91 -1665 pos 9936, 62, -1680 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB 9936 68 -1664 9967 73 -1649 pos 9936, 68, -1649 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 9937 62 -1680 9951 84 -1666 pos 9937, 62, -1680 rot NONE el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB 9952 63 -1696 9967 68 -1665 pos 9967, 63, -1665 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 9920 63 -1680 9935 68 -1649 pos 9920, 63, -1680 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 9954 69 -1656 9959 72 -1650 pos 9959, 69, -1650 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_tent2]]
+  BB 9956 63 -1693 9962 66 -1687 pos 9962, 63, -1693 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage2]]
+  BB 9956 65 -1684 9962 68 -1678 pos 9962, 65, -1678 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage_with_allays]]
+  BB 9927 63 -1657 9933 66 -1652 pos 9927, 63, -1652 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_tent1]]
+  BB 9927 63 -1651 9933 65 -1649 pos 9927, 63, -1649 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB 9920 63 -1655 9926 66 -1649 pos 9920, 63, -1649 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage1]]
+  BB 9927 63 -1665 9933 65 -1663 pos 9933, 63, -1665 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+START -329 -538 pieces 7 stub -5256, 74, -8615
+  BB -5264 73 -8623 -5249 102 -8608 pos -5264, 73, -8608 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB -5280 70 -8639 -5249 75 -8624 pos -5249, 70, -8639 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -5264 72 -8607 -5233 77 -8592 pos -5264, 72, -8592 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -5264 73 -8623 -5250 95 -8609 pos -5264, 73, -8609 rot COUNTERCLOCKWISE_90 el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB -5248 72 -8639 -5233 77 -8608 pos -5233, 72, -8608 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -5273 72 -8634 -5268 74 -8628 pos -5273, 72, -8634 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_logs]]
+  BB -5253 73 -8598 -5247 76 -8592 pos -5253, 73, -8592 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage1]]
+NONE 145 615
+NONE 459 435
+START -112 -623 pieces 8 stub -1784, 90, -9960
+  BB -1792 89 -9968 -1777 118 -9953 pos -1792, 89, -9968 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB -1792 104 -9952 -1761 109 -9937 pos -1792, 104, -9937 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -1792 89 -9968 -1778 111 -9954 pos -1792, 89, -9968 rot NONE el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB -1776 100 -9984 -1761 105 -9953 pos -1761, 100, -9953 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -1808 82 -9968 -1793 87 -9937 pos -1808, 82, -9968 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB -1770 103 -9981 -1764 105 -9976 pos -1764, 103, -9981 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_logs]]
+  BB -1801 84 -9947 -1799 86 -9941 pos -1799, 84, -9941 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]
+  BB -1802 85 -9955 -1797 87 -9949 pos -1797, 85, -9949 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_logs]]
+START 464 -431 pieces 12 stub 7416, 65, -6888
+  BB 7409 64 -6896 7424 93 -6881 pos 7424, 64, -6896 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/base_plate]]
+  BB 7393 65 -6896 7408 70 -6865 pos 7393, 65, -6896 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 7410 64 -6896 7424 86 -6882 pos 7424, 64, -6896 rot CLOCKWISE_90 el List[LegacySingle[Left[minecraft:pillager_outpost/watchtower]], LegacySingle[Left[minecraft:pillager_outpost/watchtower_overgrown]]]
+  BB 7409 69 -6880 7440 74 -6865 pos 7409, 69, -6865 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 7393 68 -6912 7424 73 -6897 pos 7424, 68, -6912 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_plate]]
+  BB 7401 65 -6871 7407 68 -6866 pos 7401, 65, -6866 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_tent2]]
+  BB 7393 66 -6876 7398 68 -6870 pos 7398, 66, -6870 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_logs]]
+  BB 7399 65 -6879 7405 68 -6873 pos 7399, 65, -6879 rot NONE el LegacySingle[Left[minecraft:pillager_outpost/feature_cage_with_allays]]
+  BB 7395 69 -6904 7401 71 -6899 pos 7395, 69, -6899 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_logs]]
+  BB 7405 68 -6906 7411 71 -6900 pos 7411, 68, -6900 rot CLOCKWISE_180 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage1]]
+  BB 7397 70 -6912 7403 73 -6906 pos 7397, 70, -6906 rot COUNTERCLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_cage_with_allays]]
+  BB 7405 70 -6911 7411 72 -6909 pos 7411, 70, -6911 rot CLOCKWISE_90 el LegacySingle[Left[minecraft:pillager_outpost/feature_targets]]

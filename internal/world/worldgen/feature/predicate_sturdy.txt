@@ -1,0 +1,1286 @@
+air 1 0
+stone 1 63
+granite 1 63
+polished_granite 1 63
+diorite 1 63
+polished_diorite 1 63
+andesite 1 63
+polished_andesite 1 63
+grass_block 2 63
+dirt 1 63
+coarse_dirt 1 63
+podzol 2 63
+cobblestone 1 63
+oak_planks 1 63
+spruce_planks 1 63
+birch_planks 1 63
+jungle_planks 1 63
+acacia_planks 1 63
+cherry_planks 1 63
+dark_oak_planks 1 63
+pale_oak_wood 3 63
+pale_oak_planks 1 63
+mangrove_planks 1 63
+poplar_planks 1 63
+bamboo_planks 1 63
+bamboo_mosaic 1 63
+oak_sapling 2 0
+spruce_sapling 2 0
+birch_sapling 2 0
+jungle_sapling 2 0
+acacia_sapling 2 0
+cherry_sapling 2 0
+dark_oak_sapling 2 0
+pale_oak_sapling 2 0
+mangrove_propagule 40 0
+poplar_sapling 2 0
+bedrock 1 63
+water 16 0
+lava 16 0
+sand 1 63
+suspicious_sand 4 63
+red_sand 1 63
+gravel 1 63
+suspicious_gravel 4 63
+gold_ore 1 63
+deepslate_gold_ore 1 63
+iron_ore 1 63
+deepslate_iron_ore 1 63
+coal_ore 1 63
+deepslate_coal_ore 1 63
+nether_gold_ore 1 63
+oak_log 3 63
+spruce_log 3 63
+birch_log 3 63
+jungle_log 3 63
+acacia_log 3 63
+cherry_log 3 63
+dark_oak_log 3 63
+pale_oak_log 3 63
+mangrove_log 3 63
+poplar_log 3 63
+mangrove_roots 2 63
+muddy_mangrove_roots 3 63
+bamboo_block 3 63
+stripped_spruce_log 3 63
+stripped_birch_log 3 63
+stripped_jungle_log 3 63
+stripped_acacia_log 3 63
+stripped_cherry_log 3 63
+stripped_dark_oak_log 3 63
+stripped_pale_oak_log 3 63
+stripped_oak_log 3 63
+stripped_mangrove_log 3 63
+stripped_poplar_log 3 63
+stripped_bamboo_block 3 63
+oak_wood 3 63
+spruce_wood 3 63
+birch_wood 3 63
+jungle_wood 3 63
+acacia_wood 3 63
+cherry_wood 3 63
+dark_oak_wood 3 63
+mangrove_wood 3 63
+poplar_wood 3 63
+stripped_oak_wood 3 63
+stripped_spruce_wood 3 63
+stripped_birch_wood 3 63
+stripped_jungle_wood 3 63
+stripped_acacia_wood 3 63
+stripped_cherry_wood 3 63
+stripped_dark_oak_wood 3 63
+stripped_pale_oak_wood 3 63
+stripped_mangrove_wood 3 63
+stripped_poplar_wood 3 63
+oak_leaves 28 0
+spruce_leaves 28 0
+birch_leaves 28 0
+jungle_leaves 28 0
+acacia_leaves 28 0
+cherry_leaves 28 0
+dark_oak_leaves 28 0
+pale_oak_leaves 28 0
+mangrove_leaves 28 0
+red_poplar_leaves 28 0
+orange_poplar_leaves 28 0
+yellow_poplar_leaves 28 0
+azalea_leaves 28 0
+flowering_azalea_leaves 28 0
+sponge 1 63
+wet_sponge 1 63
+glass 1 63
+lapis_ore 1 63
+deepslate_lapis_ore 1 63
+lapis_block 1 63
+dispenser 12 63
+sandstone 1 63
+chiseled_sandstone 1 63
+cut_sandstone 1 63
+note_block 1350 63
+white_bed 16 0
+orange_bed 16 0
+magenta_bed 16 0
+light_blue_bed 16 0
+yellow_bed 16 0
+lime_bed 16 0
+pink_bed 16 0
+gray_bed 16 0
+light_gray_bed 16 0
+cyan_bed 16 0
+purple_bed 16 0
+blue_bed 16 0
+brown_bed 16 0
+green_bed 16 0
+red_bed 16 0
+black_bed 16 0
+straw_bed 16 1
+powered_rail 24 0
+detector_rail 24 0
+sticky_piston 12 8 16 4 32 1 2 63 63 63 63 63 63
+cobweb 1 0
+short_grass 1 0
+fern 1 0
+dead_bush 1 0
+bush 1 0
+red_shrub 1 0
+short_dry_grass 1 0
+tall_dry_grass 1 0
+seagrass 1 0
+tall_seagrass 2 0
+piston 12 8 16 4 32 1 2 63 63 63 63 63 63
+piston_head 24 4 4 4 4 32 32 32 32 8 8 8 8 16 16 16 16 2 2 2 2 1 1 1 1
+white_wool 1 63
+orange_wool 1 63
+magenta_wool 1 63
+light_blue_wool 1 63
+yellow_wool 1 63
+lime_wool 1 63
+pink_wool 1 63
+gray_wool 1 63
+light_gray_wool 1 63
+cyan_wool 1 63
+purple_wool 1 63
+blue_wool 1 63
+brown_wool 1 63
+green_wool 1 63
+red_wool 1 63
+black_wool 1 63
+white_wool_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+orange_wool_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+magenta_wool_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+light_blue_wool_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+yellow_wool_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+lime_wool_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+pink_wool_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+gray_wool_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+light_gray_wool_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+cyan_wool_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+purple_wool_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+blue_wool_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+brown_wool_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+green_wool_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+red_wool_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+black_wool_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+white_wool_slab 6 2 2 1 1 63 63
+orange_wool_slab 6 2 2 1 1 63 63
+magenta_wool_slab 6 2 2 1 1 63 63
+light_blue_wool_slab 6 2 2 1 1 63 63
+yellow_wool_slab 6 2 2 1 1 63 63
+lime_wool_slab 6 2 2 1 1 63 63
+pink_wool_slab 6 2 2 1 1 63 63
+gray_wool_slab 6 2 2 1 1 63 63
+light_gray_wool_slab 6 2 2 1 1 63 63
+cyan_wool_slab 6 2 2 1 1 63 63
+purple_wool_slab 6 2 2 1 1 63 63
+blue_wool_slab 6 2 2 1 1 63 63
+brown_wool_slab 6 2 2 1 1 63 63
+green_wool_slab 6 2 2 1 1 63 63
+red_wool_slab 6 2 2 1 1 63 63
+black_wool_slab 6 2 2 1 1 63 63
+moving_piston 12 0
+dandelion 1 0
+golden_dandelion 1 0
+torchflower 1 0
+poppy 1 0
+blue_orchid 1 0
+allium 1 0
+azure_bluet 1 0
+red_tulip 1 0
+orange_tulip 1 0
+white_tulip 1 0
+pink_tulip 1 0
+oxeye_daisy 1 0
+cornflower 1 0
+wither_rose 1 0
+lily_of_the_valley 1 0
+brown_mushroom 1 0
+red_mushroom 1 0
+gold_block 1 63
+iron_block 1 63
+bricks 1 63
+tnt 2 63
+bookshelf 1 63
+chiseled_bookshelf 256 63
+acacia_shelf 64 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16
+bamboo_shelf 64 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16
+birch_shelf 64 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16
+cherry_shelf 64 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16
+crimson_shelf 64 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16
+dark_oak_shelf 64 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16
+jungle_shelf 64 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16
+mangrove_shelf 64 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16
+oak_shelf 64 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16
+pale_oak_shelf 64 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16
+poplar_shelf 64 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16
+spruce_shelf 64 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16
+warped_shelf 64 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16
+mossy_cobblestone 1 63
+obsidian 1 63
+torch 1 0
+wall_torch 4 0
+fire 512 0
+soul_fire 1 0
+spawner 1 63
+creaking_heart 18 63
+oak_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+chest 24 0
+redstone_wire 1296 0
+diamond_ore 1 63
+deepslate_diamond_ore 1 63
+diamond_block 1 63
+crafting_table 1 63
+wheat 8 0
+farmland 8 1
+furnace 8 63
+oak_sign 32 0
+spruce_sign 32 0
+birch_sign 32 0
+acacia_sign 32 0
+cherry_sign 32 0
+jungle_sign 32 0
+dark_oak_sign 32 0
+pale_oak_sign 32 0
+mangrove_sign 32 0
+poplar_sign 32 0
+bamboo_sign 32 0
+oak_door 64 16 16 8 8 32 32 8 8 16 16 8 8 32 32 8 8 32 32 4 4 16 16 4 4 32 32 4 4 16 16 4 4 8 8 32 32 4 4 32 32 8 8 32 32 4 4 32 32 4 4 16 16 8 8 16 16 4 4 16 16 8 8 16 16
+ladder 8 8 8 4 4 32 32 16 16
+rail 20 0
+cobblestone_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+oak_wall_sign 8 0
+spruce_wall_sign 8 0
+birch_wall_sign 8 0
+acacia_wall_sign 8 0
+cherry_wall_sign 8 0
+jungle_wall_sign 8 0
+dark_oak_wall_sign 8 0
+pale_oak_wall_sign 8 0
+mangrove_wall_sign 8 0
+poplar_wall_sign 8 0
+bamboo_wall_sign 8 0
+oak_hanging_sign 64 0
+spruce_hanging_sign 64 0
+birch_hanging_sign 64 0
+acacia_hanging_sign 64 0
+cherry_hanging_sign 64 0
+jungle_hanging_sign 64 0
+dark_oak_hanging_sign 64 0
+pale_oak_hanging_sign 64 0
+crimson_hanging_sign 64 0
+warped_hanging_sign 64 0
+mangrove_hanging_sign 64 0
+poplar_hanging_sign 64 0
+bamboo_hanging_sign 64 0
+oak_wall_hanging_sign 8 0
+spruce_wall_hanging_sign 8 0
+birch_wall_hanging_sign 8 0
+acacia_wall_hanging_sign 8 0
+cherry_wall_hanging_sign 8 0
+jungle_wall_hanging_sign 8 0
+dark_oak_wall_hanging_sign 8 0
+pale_oak_wall_hanging_sign 8 0
+mangrove_wall_hanging_sign 8 0
+poplar_wall_hanging_sign 8 0
+crimson_wall_hanging_sign 8 0
+warped_wall_hanging_sign 8 0
+bamboo_wall_hanging_sign 8 0
+lever 24 0
+stone_pressure_plate 2 0
+iron_door 64 16 16 8 8 32 32 8 8 16 16 8 8 32 32 8 8 32 32 4 4 16 16 4 4 32 32 4 4 16 16 4 4 8 8 32 32 4 4 32 32 8 8 32 32 4 4 32 32 4 4 16 16 8 8 16 16 4 4 16 16 8 8 16 16
+oak_pressure_plate 2 0
+spruce_pressure_plate 2 0
+birch_pressure_plate 2 0
+jungle_pressure_plate 2 0
+acacia_pressure_plate 2 0
+cherry_pressure_plate 2 0
+dark_oak_pressure_plate 2 0
+pale_oak_pressure_plate 2 0
+mangrove_pressure_plate 2 0
+poplar_pressure_plate 2 0
+bamboo_pressure_plate 2 0
+redstone_ore 2 63
+deepslate_redstone_ore 2 63
+redstone_torch 2 0
+redstone_wall_torch 8 0
+stone_button 24 0
+snow 8 1 1 1 1 1 1 1 63
+ice 1 63
+snow_block 1 63
+cactus 16 0
+cactus_flower 1 0
+clay 1 63
+sugar_cane 16 0
+jukebox 2 63
+oak_fence 32 0
+netherrack 1 63
+soul_sand 1 63
+soul_soil 1 63
+basalt 3 63
+polished_basalt 3 63
+soul_torch 1 0
+soul_wall_torch 4 0
+copper_torch 1 0
+copper_wall_torch 4 0
+glowstone 1 63
+nether_portal 2 0
+carved_pumpkin 4 63
+jack_o_lantern 4 63
+cake 7 0
+repeater 64 1
+white_stained_glass 1 63
+orange_stained_glass 1 63
+magenta_stained_glass 1 63
+light_blue_stained_glass 1 63
+yellow_stained_glass 1 63
+lime_stained_glass 1 63
+pink_stained_glass 1 63
+gray_stained_glass 1 63
+light_gray_stained_glass 1 63
+cyan_stained_glass 1 63
+purple_stained_glass 1 63
+blue_stained_glass 1 63
+brown_stained_glass 1 63
+green_stained_glass 1 63
+red_stained_glass 1 63
+black_stained_glass 1 63
+oak_trapdoor 64 8 8 8 8 2 2 2 2 8 8 8 8 1 1 1 1 4 4 4 4 2 2 2 2 4 4 4 4 1 1 1 1 32 32 32 32 2 2 2 2 32 32 32 32 1 1 1 1 16 16 16 16 2 2 2 2 16 16 16 16 1 1 1 1
+spruce_trapdoor 64 8 8 8 8 2 2 2 2 8 8 8 8 1 1 1 1 4 4 4 4 2 2 2 2 4 4 4 4 1 1 1 1 32 32 32 32 2 2 2 2 32 32 32 32 1 1 1 1 16 16 16 16 2 2 2 2 16 16 16 16 1 1 1 1
+birch_trapdoor 64 8 8 8 8 2 2 2 2 8 8 8 8 1 1 1 1 4 4 4 4 2 2 2 2 4 4 4 4 1 1 1 1 32 32 32 32 2 2 2 2 32 32 32 32 1 1 1 1 16 16 16 16 2 2 2 2 16 16 16 16 1 1 1 1
+jungle_trapdoor 64 8 8 8 8 2 2 2 2 8 8 8 8 1 1 1 1 4 4 4 4 2 2 2 2 4 4 4 4 1 1 1 1 32 32 32 32 2 2 2 2 32 32 32 32 1 1 1 1 16 16 16 16 2 2 2 2 16 16 16 16 1 1 1 1
+acacia_trapdoor 64 8 8 8 8 2 2 2 2 8 8 8 8 1 1 1 1 4 4 4 4 2 2 2 2 4 4 4 4 1 1 1 1 32 32 32 32 2 2 2 2 32 32 32 32 1 1 1 1 16 16 16 16 2 2 2 2 16 16 16 16 1 1 1 1
+cherry_trapdoor 64 8 8 8 8 2 2 2 2 8 8 8 8 1 1 1 1 4 4 4 4 2 2 2 2 4 4 4 4 1 1 1 1 32 32 32 32 2 2 2 2 32 32 32 32 1 1 1 1 16 16 16 16 2 2 2 2 16 16 16 16 1 1 1 1
+dark_oak_trapdoor 64 8 8 8 8 2 2 2 2 8 8 8 8 1 1 1 1 4 4 4 4 2 2 2 2 4 4 4 4 1 1 1 1 32 32 32 32 2 2 2 2 32 32 32 32 1 1 1 1 16 16 16 16 2 2 2 2 16 16 16 16 1 1 1 1
+pale_oak_trapdoor 64 8 8 8 8 2 2 2 2 8 8 8 8 1 1 1 1 4 4 4 4 2 2 2 2 4 4 4 4 1 1 1 1 32 32 32 32 2 2 2 2 32 32 32 32 1 1 1 1 16 16 16 16 2 2 2 2 16 16 16 16 1 1 1 1
+mangrove_trapdoor 64 8 8 8 8 2 2 2 2 8 8 8 8 1 1 1 1 4 4 4 4 2 2 2 2 4 4 4 4 1 1 1 1 32 32 32 32 2 2 2 2 32 32 32 32 1 1 1 1 16 16 16 16 2 2 2 2 16 16 16 16 1 1 1 1
+poplar_trapdoor 64 8 8 8 8 2 2 2 2 8 8 8 8 1 1 1 1 4 4 4 4 2 2 2 2 4 4 4 4 1 1 1 1 32 32 32 32 2 2 2 2 32 32 32 32 1 1 1 1 16 16 16 16 2 2 2 2 16 16 16 16 1 1 1 1
+bamboo_trapdoor 64 8 8 8 8 2 2 2 2 8 8 8 8 1 1 1 1 4 4 4 4 2 2 2 2 4 4 4 4 1 1 1 1 32 32 32 32 2 2 2 2 32 32 32 32 1 1 1 1 16 16 16 16 2 2 2 2 16 16 16 16 1 1 1 1
+stone_bricks 1 63
+mossy_stone_bricks 1 63
+cracked_stone_bricks 1 63
+chiseled_stone_bricks 1 63
+packed_mud 1 63
+mud_bricks 1 63
+infested_stone 1 63
+infested_cobblestone 1 63
+infested_stone_bricks 1 63
+infested_mossy_stone_bricks 1 63
+infested_cracked_stone_bricks 1 63
+infested_chiseled_stone_bricks 1 63
+brown_mushroom_block 64 63
+red_mushroom_block 64 63
+mushroom_stem 64 63
+iron_bars 32 0
+copper_bars 32 0
+exposed_copper_bars 32 0
+weathered_copper_bars 32 0
+oxidized_copper_bars 32 0
+waxed_copper_bars 32 0
+waxed_exposed_copper_bars 32 0
+waxed_weathered_copper_bars 32 0
+waxed_oxidized_copper_bars 32 0
+iron_chain 6 0
+copper_chain 6 0
+exposed_copper_chain 6 0
+weathered_copper_chain 6 0
+oxidized_copper_chain 6 0
+waxed_copper_chain 6 0
+waxed_exposed_copper_chain 6 0
+waxed_weathered_copper_chain 6 0
+waxed_oxidized_copper_chain 6 0
+glass_pane 32 0
+pumpkin 1 63
+melon 1 63
+attached_pumpkin_stem 4 0
+attached_melon_stem 4 0
+pumpkin_stem 8 0
+melon_stem 8 0
+vine 32 0
+glow_lichen 128 0
+resin_clump 128 0
+oak_fence_gate 32 0
+brick_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+stone_brick_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+mud_brick_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+mycelium 2 63
+lily_pad 1 0
+resin_block 1 63
+resin_bricks 1 63
+resin_brick_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+resin_brick_slab 6 2 2 1 1 63 63
+resin_brick_wall 324 0
+chiseled_resin_bricks 1 63
+nether_bricks 1 63
+nether_brick_fence 32 0
+nether_brick_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+nether_wart 4 0
+enchanting_table 1 1
+brewing_stand 8 0
+cauldron 1 0
+water_cauldron 3 0
+lava_cauldron 1 0
+powder_snow_cauldron 3 0
+end_portal 1 0
+end_portal_frame 8 1
+end_stone 1 63
+dragon_egg 1 0
+redstone_lamp 2 63
+cocoa 12 0
+shelf_mushroom 8 0
+sandstone_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+emerald_ore 1 63
+deepslate_emerald_ore 1 63
+ender_chest 8 0
+tripwire_hook 16 0
+tripwire 128 0
+emerald_block 1 63
+spruce_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+birch_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+jungle_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+command_block 12 63
+beacon 1 63
+cobblestone_wall 324 0
+mossy_cobblestone_wall 324 0
+flower_pot 1 0
+potted_torchflower 1 0
+potted_oak_sapling 1 0
+potted_spruce_sapling 1 0
+potted_birch_sapling 1 0
+potted_jungle_sapling 1 0
+potted_acacia_sapling 1 0
+potted_cherry_sapling 1 0
+potted_dark_oak_sapling 1 0
+potted_pale_oak_sapling 1 0
+potted_poplar_sapling 1 0
+potted_mangrove_propagule 1 0
+potted_fern 1 0
+potted_dandelion 1 0
+potted_golden_dandelion 1 0
+potted_poppy 1 0
+potted_blue_orchid 1 0
+potted_allium 1 0
+potted_azure_bluet 1 0
+potted_red_tulip 1 0
+potted_orange_tulip 1 0
+potted_white_tulip 1 0
+potted_pink_tulip 1 0
+potted_oxeye_daisy 1 0
+potted_cornflower 1 0
+potted_lily_of_the_valley 1 0
+potted_wither_rose 1 0
+potted_red_mushroom 1 0
+potted_brown_mushroom 1 0
+potted_dead_bush 1 0
+potted_cactus 1 0
+carrots 8 0
+potatoes 8 0
+oak_button 24 0
+spruce_button 24 0
+birch_button 24 0
+jungle_button 24 0
+acacia_button 24 0
+cherry_button 24 0
+dark_oak_button 24 0
+pale_oak_button 24 0
+mangrove_button 24 0
+poplar_button 24 0
+bamboo_button 24 0
+skeleton_skull 32 0
+skeleton_wall_skull 8 0
+wither_skeleton_skull 32 0
+wither_skeleton_wall_skull 8 0
+zombie_head 32 0
+zombie_wall_head 8 0
+player_head 32 0
+player_wall_head 8 0
+creeper_head 32 0
+creeper_wall_head 8 0
+dragon_head 32 0
+dragon_wall_head 8 0
+piglin_head 32 0
+piglin_wall_head 8 0
+anvil 4 0
+chipped_anvil 4 0
+damaged_anvil 4 0
+trapped_chest 24 0
+light_weighted_pressure_plate 16 0
+heavy_weighted_pressure_plate 16 0
+comparator 16 1
+daylight_detector 32 1
+redstone_block 1 63
+nether_quartz_ore 1 63
+hopper 10 0
+quartz_block 1 63
+chiseled_quartz_block 1 63
+quartz_pillar 3 63
+quartz_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+activator_rail 24 0
+dropper 12 63
+white_terracotta 1 63
+orange_terracotta 1 63
+magenta_terracotta 1 63
+light_blue_terracotta 1 63
+yellow_terracotta 1 63
+lime_terracotta 1 63
+pink_terracotta 1 63
+gray_terracotta 1 63
+light_gray_terracotta 1 63
+cyan_terracotta 1 63
+purple_terracotta 1 63
+blue_terracotta 1 63
+brown_terracotta 1 63
+green_terracotta 1 63
+red_terracotta 1 63
+black_terracotta 1 63
+white_stained_glass_pane 32 0
+orange_stained_glass_pane 32 0
+magenta_stained_glass_pane 32 0
+light_blue_stained_glass_pane 32 0
+yellow_stained_glass_pane 32 0
+lime_stained_glass_pane 32 0
+pink_stained_glass_pane 32 0
+gray_stained_glass_pane 32 0
+light_gray_stained_glass_pane 32 0
+cyan_stained_glass_pane 32 0
+purple_stained_glass_pane 32 0
+blue_stained_glass_pane 32 0
+brown_stained_glass_pane 32 0
+green_stained_glass_pane 32 0
+red_stained_glass_pane 32 0
+black_stained_glass_pane 32 0
+acacia_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+cherry_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+dark_oak_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+pale_oak_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+mangrove_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+poplar_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+bamboo_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+bamboo_mosaic_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+slime_block 1 63
+barrier 2 63
+light 32 0
+iron_trapdoor 64 8 8 8 8 2 2 2 2 8 8 8 8 1 1 1 1 4 4 4 4 2 2 2 2 4 4 4 4 1 1 1 1 32 32 32 32 2 2 2 2 32 32 32 32 1 1 1 1 16 16 16 16 2 2 2 2 16 16 16 16 1 1 1 1
+prismarine 1 63
+prismarine_bricks 1 63
+dark_prismarine 1 63
+prismarine_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+prismarine_brick_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+dark_prismarine_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+prismarine_slab 6 2 2 1 1 63 63
+prismarine_brick_slab 6 2 2 1 1 63 63
+dark_prismarine_slab 6 2 2 1 1 63 63
+sea_lantern 1 63
+hay_block 3 63
+white_carpet 1 1
+orange_carpet 1 1
+magenta_carpet 1 1
+light_blue_carpet 1 1
+yellow_carpet 1 1
+lime_carpet 1 1
+pink_carpet 1 1
+gray_carpet 1 1
+light_gray_carpet 1 1
+cyan_carpet 1 1
+purple_carpet 1 1
+blue_carpet 1 1
+brown_carpet 1 1
+green_carpet 1 1
+red_carpet 1 1
+black_carpet 1 1
+terracotta 1 63
+coal_block 1 63
+packed_ice 1 63
+sunflower 2 0
+lilac 2 0
+rose_bush 2 0
+peony 2 0
+tall_grass 2 0
+large_fern 2 0
+white_banner 16 0
+orange_banner 16 0
+magenta_banner 16 0
+light_blue_banner 16 0
+yellow_banner 16 0
+lime_banner 16 0
+pink_banner 16 0
+gray_banner 16 0
+light_gray_banner 16 0
+cyan_banner 16 0
+purple_banner 16 0
+blue_banner 16 0
+brown_banner 16 0
+green_banner 16 0
+red_banner 16 0
+black_banner 16 0
+white_wall_banner 4 0
+orange_wall_banner 4 0
+magenta_wall_banner 4 0
+light_blue_wall_banner 4 0
+yellow_wall_banner 4 0
+lime_wall_banner 4 0
+pink_wall_banner 4 0
+gray_wall_banner 4 0
+light_gray_wall_banner 4 0
+cyan_wall_banner 4 0
+purple_wall_banner 4 0
+blue_wall_banner 4 0
+brown_wall_banner 4 0
+green_wall_banner 4 0
+red_wall_banner 4 0
+black_wall_banner 4 0
+red_sandstone 1 63
+chiseled_red_sandstone 1 63
+cut_red_sandstone 1 63
+red_sandstone_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+oak_slab 6 2 2 1 1 63 63
+spruce_slab 6 2 2 1 1 63 63
+birch_slab 6 2 2 1 1 63 63
+jungle_slab 6 2 2 1 1 63 63
+acacia_slab 6 2 2 1 1 63 63
+cherry_slab 6 2 2 1 1 63 63
+dark_oak_slab 6 2 2 1 1 63 63
+pale_oak_slab 6 2 2 1 1 63 63
+mangrove_slab 6 2 2 1 1 63 63
+poplar_slab 6 2 2 1 1 63 63
+bamboo_slab 6 2 2 1 1 63 63
+bamboo_mosaic_slab 6 2 2 1 1 63 63
+stone_slab 6 2 2 1 1 63 63
+sandstone_slab 6 2 2 1 1 63 63
+cut_sandstone_slab 6 2 2 1 1 63 63
+petrified_oak_slab 6 2 2 1 1 63 63
+cobblestone_slab 6 2 2 1 1 63 63
+brick_slab 6 2 2 1 1 63 63
+stone_brick_slab 6 2 2 1 1 63 63
+mud_brick_slab 6 2 2 1 1 63 63
+nether_brick_slab 6 2 2 1 1 63 63
+quartz_slab 6 2 2 1 1 63 63
+red_sandstone_slab 6 2 2 1 1 63 63
+cut_red_sandstone_slab 6 2 2 1 1 63 63
+smooth_stone 1 63
+smooth_stone_slab 6 2 2 1 1 63 63
+smooth_sandstone 1 63
+smooth_quartz 1 63
+smooth_red_sandstone 1 63
+spruce_fence_gate 32 0
+birch_fence_gate 32 0
+jungle_fence_gate 32 0
+acacia_fence_gate 32 0
+cherry_fence_gate 32 0
+dark_oak_fence_gate 32 0
+pale_oak_fence_gate 32 0
+mangrove_fence_gate 32 0
+poplar_fence_gate 32 0
+bamboo_fence_gate 32 0
+spruce_fence 32 0
+birch_fence 32 0
+jungle_fence 32 0
+acacia_fence 32 0
+cherry_fence 32 0
+dark_oak_fence 32 0
+pale_oak_fence 32 0
+mangrove_fence 32 0
+poplar_fence 32 0
+bamboo_fence 32 0
+spruce_door 64 16 16 8 8 32 32 8 8 16 16 8 8 32 32 8 8 32 32 4 4 16 16 4 4 32 32 4 4 16 16 4 4 8 8 32 32 4 4 32 32 8 8 32 32 4 4 32 32 4 4 16 16 8 8 16 16 4 4 16 16 8 8 16 16
+birch_door 64 16 16 8 8 32 32 8 8 16 16 8 8 32 32 8 8 32 32 4 4 16 16 4 4 32 32 4 4 16 16 4 4 8 8 32 32 4 4 32 32 8 8 32 32 4 4 32 32 4 4 16 16 8 8 16 16 4 4 16 16 8 8 16 16
+jungle_door 64 16 16 8 8 32 32 8 8 16 16 8 8 32 32 8 8 32 32 4 4 16 16 4 4 32 32 4 4 16 16 4 4 8 8 32 32 4 4 32 32 8 8 32 32 4 4 32 32 4 4 16 16 8 8 16 16 4 4 16 16 8 8 16 16
+acacia_door 64 16 16 8 8 32 32 8 8 16 16 8 8 32 32 8 8 32 32 4 4 16 16 4 4 32 32 4 4 16 16 4 4 8 8 32 32 4 4 32 32 8 8 32 32 4 4 32 32 4 4 16 16 8 8 16 16 4 4 16 16 8 8 16 16
+cherry_door 64 16 16 8 8 32 32 8 8 16 16 8 8 32 32 8 8 32 32 4 4 16 16 4 4 32 32 4 4 16 16 4 4 8 8 32 32 4 4 32 32 8 8 32 32 4 4 32 32 4 4 16 16 8 8 16 16 4 4 16 16 8 8 16 16
+dark_oak_door 64 16 16 8 8 32 32 8 8 16 16 8 8 32 32 8 8 32 32 4 4 16 16 4 4 32 32 4 4 16 16 4 4 8 8 32 32 4 4 32 32 8 8 32 32 4 4 32 32 4 4 16 16 8 8 16 16 4 4 16 16 8 8 16 16
+pale_oak_door 64 16 16 8 8 32 32 8 8 16 16 8 8 32 32 8 8 32 32 4 4 16 16 4 4 32 32 4 4 16 16 4 4 8 8 32 32 4 4 32 32 8 8 32 32 4 4 32 32 4 4 16 16 8 8 16 16 4 4 16 16 8 8 16 16
+mangrove_door 64 16 16 8 8 32 32 8 8 16 16 8 8 32 32 8 8 32 32 4 4 16 16 4 4 32 32 4 4 16 16 4 4 8 8 32 32 4 4 32 32 8 8 32 32 4 4 32 32 4 4 16 16 8 8 16 16 4 4 16 16 8 8 16 16
+poplar_door 64 16 16 8 8 32 32 8 8 16 16 8 8 32 32 8 8 32 32 4 4 16 16 4 4 32 32 4 4 16 16 4 4 8 8 32 32 4 4 32 32 8 8 32 32 4 4 32 32 4 4 16 16 8 8 16 16 4 4 16 16 8 8 16 16
+bamboo_door 64 16 16 8 8 32 32 8 8 16 16 8 8 32 32 8 8 32 32 4 4 16 16 4 4 32 32 4 4 16 16 4 4 8 8 32 32 4 4 32 32 8 8 32 32 4 4 32 32 4 4 16 16 8 8 16 16 4 4 16 16 8 8 16 16
+end_rod 6 0
+chorus_plant 64 0
+chorus_flower 6 0
+purpur_block 1 63
+purpur_slab 6 2 2 1 1 63 63
+purpur_pillar 3 63
+purpur_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+end_stone_bricks 1 63
+torchflower_crop 2 0
+pitcher_crop 10 0
+pitcher_plant 2 0
+beetroots 4 0
+dirt_path 1 1
+end_gateway 1 0
+repeating_command_block 12 63
+chain_command_block 12 63
+frosted_ice 4 63
+magma_block 1 63
+nether_wart_block 1 63
+red_nether_bricks 1 63
+bone_block 3 63
+structure_void 1 0
+observer 12 63
+shulker_box 6 63
+white_shulker_box 6 63
+orange_shulker_box 6 63
+magenta_shulker_box 6 63
+light_blue_shulker_box 6 63
+yellow_shulker_box 6 63
+lime_shulker_box 6 63
+pink_shulker_box 6 63
+gray_shulker_box 6 63
+light_gray_shulker_box 6 63
+cyan_shulker_box 6 63
+purple_shulker_box 6 63
+blue_shulker_box 6 63
+brown_shulker_box 6 63
+green_shulker_box 6 63
+red_shulker_box 6 63
+black_shulker_box 6 63
+white_glazed_terracotta 4 63
+orange_glazed_terracotta 4 63
+magenta_glazed_terracotta 4 63
+light_blue_glazed_terracotta 4 63
+yellow_glazed_terracotta 4 63
+lime_glazed_terracotta 4 63
+pink_glazed_terracotta 4 63
+gray_glazed_terracotta 4 63
+light_gray_glazed_terracotta 4 63
+cyan_glazed_terracotta 4 63
+purple_glazed_terracotta 4 63
+blue_glazed_terracotta 4 63
+brown_glazed_terracotta 4 63
+green_glazed_terracotta 4 63
+red_glazed_terracotta 4 63
+black_glazed_terracotta 4 63
+white_concrete 1 63
+orange_concrete 1 63
+magenta_concrete 1 63
+light_blue_concrete 1 63
+yellow_concrete 1 63
+lime_concrete 1 63
+pink_concrete 1 63
+gray_concrete 1 63
+light_gray_concrete 1 63
+cyan_concrete 1 63
+purple_concrete 1 63
+blue_concrete 1 63
+brown_concrete 1 63
+green_concrete 1 63
+red_concrete 1 63
+black_concrete 1 63
+white_concrete_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+orange_concrete_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+magenta_concrete_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+light_blue_concrete_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+yellow_concrete_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+lime_concrete_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+pink_concrete_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+gray_concrete_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+light_gray_concrete_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+cyan_concrete_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+purple_concrete_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+blue_concrete_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+brown_concrete_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+green_concrete_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+red_concrete_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+black_concrete_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+white_concrete_slab 6 2 2 1 1 63 63
+orange_concrete_slab 6 2 2 1 1 63 63
+magenta_concrete_slab 6 2 2 1 1 63 63
+light_blue_concrete_slab 6 2 2 1 1 63 63
+yellow_concrete_slab 6 2 2 1 1 63 63
+lime_concrete_slab 6 2 2 1 1 63 63
+pink_concrete_slab 6 2 2 1 1 63 63
+gray_concrete_slab 6 2 2 1 1 63 63
+light_gray_concrete_slab 6 2 2 1 1 63 63
+cyan_concrete_slab 6 2 2 1 1 63 63
+purple_concrete_slab 6 2 2 1 1 63 63
+blue_concrete_slab 6 2 2 1 1 63 63
+brown_concrete_slab 6 2 2 1 1 63 63
+green_concrete_slab 6 2 2 1 1 63 63
+red_concrete_slab 6 2 2 1 1 63 63
+black_concrete_slab 6 2 2 1 1 63 63
+white_concrete_powder 1 63
+orange_concrete_powder 1 63
+magenta_concrete_powder 1 63
+light_blue_concrete_powder 1 63
+yellow_concrete_powder 1 63
+lime_concrete_powder 1 63
+pink_concrete_powder 1 63
+gray_concrete_powder 1 63
+light_gray_concrete_powder 1 63
+cyan_concrete_powder 1 63
+purple_concrete_powder 1 63
+blue_concrete_powder 1 63
+brown_concrete_powder 1 63
+green_concrete_powder 1 63
+red_concrete_powder 1 63
+black_concrete_powder 1 63
+kelp 26 0
+kelp_plant 1 0
+dried_kelp_block 1 63
+turtle_egg 12 0
+sniffer_egg 3 0
+dried_ghast 32 0
+dead_tube_coral_block 1 63
+dead_brain_coral_block 1 63
+dead_bubble_coral_block 1 63
+dead_fire_coral_block 1 63
+dead_horn_coral_block 1 63
+tube_coral_block 1 63
+brain_coral_block 1 63
+bubble_coral_block 1 63
+fire_coral_block 1 63
+horn_coral_block 1 63
+dead_tube_coral 2 0
+dead_brain_coral 2 0
+dead_bubble_coral 2 0
+dead_fire_coral 2 0
+dead_horn_coral 2 0
+tube_coral 2 0
+brain_coral 2 0
+bubble_coral 2 0
+fire_coral 2 0
+horn_coral 2 0
+dead_tube_coral_fan 2 0
+dead_brain_coral_fan 2 0
+dead_bubble_coral_fan 2 0
+dead_fire_coral_fan 2 0
+dead_horn_coral_fan 2 0
+tube_coral_fan 2 0
+brain_coral_fan 2 0
+bubble_coral_fan 2 0
+fire_coral_fan 2 0
+horn_coral_fan 2 0
+dead_tube_coral_wall_fan 8 0
+dead_brain_coral_wall_fan 8 0
+dead_bubble_coral_wall_fan 8 0
+dead_fire_coral_wall_fan 8 0
+dead_horn_coral_wall_fan 8 0
+tube_coral_wall_fan 8 0
+brain_coral_wall_fan 8 0
+bubble_coral_wall_fan 8 0
+fire_coral_wall_fan 8 0
+horn_coral_wall_fan 8 0
+sea_pickle 8 0
+blue_ice 1 63
+conduit 2 0
+bamboo_sapling 1 0
+bamboo 12 0
+potted_bamboo 1 0
+void_air 1 0
+cave_air 1 0
+bubble_column 2 0
+polished_granite_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+smooth_red_sandstone_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+mossy_stone_brick_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+polished_diorite_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+mossy_cobblestone_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+end_stone_brick_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+stone_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+smooth_sandstone_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+smooth_quartz_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+granite_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+andesite_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+red_nether_brick_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+polished_andesite_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+diorite_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+polished_granite_slab 6 2 2 1 1 63 63
+smooth_red_sandstone_slab 6 2 2 1 1 63 63
+mossy_stone_brick_slab 6 2 2 1 1 63 63
+polished_diorite_slab 6 2 2 1 1 63 63
+mossy_cobblestone_slab 6 2 2 1 1 63 63
+end_stone_brick_slab 6 2 2 1 1 63 63
+smooth_sandstone_slab 6 2 2 1 1 63 63
+smooth_quartz_slab 6 2 2 1 1 63 63
+granite_slab 6 2 2 1 1 63 63
+andesite_slab 6 2 2 1 1 63 63
+red_nether_brick_slab 6 2 2 1 1 63 63
+polished_andesite_slab 6 2 2 1 1 63 63
+diorite_slab 6 2 2 1 1 63 63
+brick_wall 324 0
+prismarine_wall 324 0
+red_sandstone_wall 324 0
+mossy_stone_brick_wall 324 0
+granite_wall 324 0
+stone_brick_wall 324 0
+mud_brick_wall 324 0
+nether_brick_wall 324 0
+andesite_wall 324 0
+red_nether_brick_wall 324 0
+sandstone_wall 324 0
+end_stone_brick_wall 324 0
+diorite_wall 324 0
+scaffolding 32 2
+loom 4 63
+barrel 12 63
+smoker 8 63
+blast_furnace 8 63
+cartography_table 1 63
+fletching_table 1 63
+grindstone 12 0
+lectern 16 1
+smithing_table 1 63
+stonecutter 4 1
+bell 32 0
+lantern 4 0
+soul_lantern 4 0
+copper_lantern 4 0
+exposed_copper_lantern 4 0
+weathered_copper_lantern 4 0
+oxidized_copper_lantern 4 0
+waxed_copper_lantern 4 0
+waxed_exposed_copper_lantern 4 0
+waxed_weathered_copper_lantern 4 0
+waxed_oxidized_copper_lantern 4 0
+campfire 32 1
+soul_campfire 32 1
+sweet_berry_bush 4 0
+warped_stem 3 63
+stripped_warped_stem 3 63
+warped_hyphae 3 63
+stripped_warped_hyphae 3 63
+warped_nylium 1 63
+warped_fungus 1 0
+warped_wart_block 1 63
+warped_roots 1 0
+nether_sprouts 1 0
+crimson_stem 3 63
+stripped_crimson_stem 3 63
+crimson_hyphae 3 63
+stripped_crimson_hyphae 3 63
+crimson_nylium 1 63
+crimson_fungus 1 0
+shroomlight 1 63
+weeping_vines 26 0
+weeping_vines_plant 1 0
+twisting_vines 26 0
+twisting_vines_plant 1 0
+crimson_roots 1 0
+crimson_planks 1 63
+warped_planks 1 63
+crimson_slab 6 2 2 1 1 63 63
+warped_slab 6 2 2 1 1 63 63
+crimson_pressure_plate 2 0
+warped_pressure_plate 2 0
+crimson_fence 32 0
+warped_fence 32 0
+crimson_trapdoor 64 8 8 8 8 2 2 2 2 8 8 8 8 1 1 1 1 4 4 4 4 2 2 2 2 4 4 4 4 1 1 1 1 32 32 32 32 2 2 2 2 32 32 32 32 1 1 1 1 16 16 16 16 2 2 2 2 16 16 16 16 1 1 1 1
+warped_trapdoor 64 8 8 8 8 2 2 2 2 8 8 8 8 1 1 1 1 4 4 4 4 2 2 2 2 4 4 4 4 1 1 1 1 32 32 32 32 2 2 2 2 32 32 32 32 1 1 1 1 16 16 16 16 2 2 2 2 16 16 16 16 1 1 1 1
+crimson_fence_gate 32 0
+warped_fence_gate 32 0
+crimson_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+warped_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+crimson_button 24 0
+warped_button 24 0
+crimson_door 64 16 16 8 8 32 32 8 8 16 16 8 8 32 32 8 8 32 32 4 4 16 16 4 4 32 32 4 4 16 16 4 4 8 8 32 32 4 4 32 32 8 8 32 32 4 4 32 32 4 4 16 16 8 8 16 16 4 4 16 16 8 8 16 16
+warped_door 64 16 16 8 8 32 32 8 8 16 16 8 8 32 32 8 8 32 32 4 4 16 16 4 4 32 32 4 4 16 16 4 4 8 8 32 32 4 4 32 32 8 8 32 32 4 4 32 32 4 4 16 16 8 8 16 16 4 4 16 16 8 8 16 16
+crimson_sign 32 0
+warped_sign 32 0
+crimson_wall_sign 8 0
+warped_wall_sign 8 0
+structure_block 4 63
+jigsaw 12 63
+test_block 4 63
+test_instance_block 1 63
+composter 9 61
+target 16 63
+bee_nest 24 63
+beehive 24 63
+honey_block 1 0
+honeycomb_block 1 63
+netherite_block 1 63
+ancient_debris 1 63
+crying_obsidian 1 63
+respawn_anchor 5 63
+potted_crimson_fungus 1 0
+potted_warped_fungus 1 0
+potted_crimson_roots 1 0
+potted_warped_roots 1 0
+lodestone 1 63
+blackstone 1 63
+blackstone_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+blackstone_wall 324 0
+blackstone_slab 6 2 2 1 1 63 63
+polished_blackstone 1 63
+polished_blackstone_bricks 1 63
+cracked_polished_blackstone_bricks 1 63
+chiseled_polished_blackstone 1 63
+polished_blackstone_brick_slab 6 2 2 1 1 63 63
+polished_blackstone_brick_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+polished_blackstone_brick_wall 324 0
+gilded_blackstone 1 63
+polished_blackstone_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+polished_blackstone_slab 6 2 2 1 1 63 63
+polished_blackstone_pressure_plate 2 0
+polished_blackstone_button 24 0
+polished_blackstone_wall 324 0
+chiseled_nether_bricks 1 63
+cracked_nether_bricks 1 63
+quartz_bricks 1 63
+candle 16 0
+white_candle 16 0
+orange_candle 16 0
+magenta_candle 16 0
+light_blue_candle 16 0
+yellow_candle 16 0
+lime_candle 16 0
+pink_candle 16 0
+gray_candle 16 0
+light_gray_candle 16 0
+cyan_candle 16 0
+purple_candle 16 0
+blue_candle 16 0
+brown_candle 16 0
+green_candle 16 0
+red_candle 16 0
+black_candle 16 0
+candle_cake 2 0
+white_candle_cake 2 0
+orange_candle_cake 2 0
+magenta_candle_cake 2 0
+light_blue_candle_cake 2 0
+yellow_candle_cake 2 0
+lime_candle_cake 2 0
+pink_candle_cake 2 0
+gray_candle_cake 2 0
+light_gray_candle_cake 2 0
+cyan_candle_cake 2 0
+purple_candle_cake 2 0
+blue_candle_cake 2 0
+brown_candle_cake 2 0
+green_candle_cake 2 0
+red_candle_cake 2 0
+black_candle_cake 2 0
+amethyst_block 1 63
+budding_amethyst 1 63
+amethyst_cluster 12 0
+large_amethyst_bud 12 0
+medium_amethyst_bud 12 0
+small_amethyst_bud 12 0
+tuff 1 63
+tuff_slab 6 2 2 1 1 63 63
+tuff_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+tuff_wall 324 0
+polished_tuff 1 63
+polished_tuff_slab 6 2 2 1 1 63 63
+polished_tuff_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+polished_tuff_wall 324 0
+chiseled_tuff 1 63
+tuff_bricks 1 63
+tuff_brick_slab 6 2 2 1 1 63 63
+tuff_brick_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+tuff_brick_wall 324 0
+chiseled_tuff_bricks 1 63
+sulfur 1 63
+potent_sulfur 5 63
+sulfur_slab 6 2 2 1 1 63 63
+sulfur_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+sulfur_wall 324 0
+polished_sulfur 1 63
+polished_sulfur_slab 6 2 2 1 1 63 63
+polished_sulfur_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+polished_sulfur_wall 324 0
+sulfur_bricks 1 63
+sulfur_brick_slab 6 2 2 1 1 63 63
+sulfur_brick_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+sulfur_brick_wall 324 0
+chiseled_sulfur 1 63
+cinnabar 1 63
+cinnabar_slab 6 2 2 1 1 63 63
+cinnabar_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+cinnabar_wall 324 0
+polished_cinnabar 1 63
+polished_cinnabar_slab 6 2 2 1 1 63 63
+polished_cinnabar_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+polished_cinnabar_wall 324 0
+cinnabar_bricks 1 63
+cinnabar_brick_slab 6 2 2 1 1 63 63
+cinnabar_brick_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+cinnabar_brick_wall 324 0
+chiseled_cinnabar 1 63
+calcite 1 63
+tinted_glass 1 63
+powder_snow 1 0
+sculk_sensor 96 1
+calibrated_sculk_sensor 384 1
+sculk 1 63
+sculk_vein 128 0
+sculk_catalyst 2 63
+sculk_shrieker 8 1
+copper_block 1 63
+exposed_copper 1 63
+weathered_copper 1 63
+oxidized_copper 1 63
+waxed_copper_block 1 63
+waxed_exposed_copper 1 63
+waxed_weathered_copper 1 63
+waxed_oxidized_copper 1 63
+copper_ore 1 63
+deepslate_copper_ore 1 63
+cut_copper 1 63
+exposed_cut_copper 1 63
+weathered_cut_copper 1 63
+oxidized_cut_copper 1 63
+waxed_cut_copper 1 63
+waxed_exposed_cut_copper 1 63
+waxed_weathered_cut_copper 1 63
+waxed_oxidized_cut_copper 1 63
+chiseled_copper 1 63
+exposed_chiseled_copper 1 63
+weathered_chiseled_copper 1 63
+oxidized_chiseled_copper 1 63
+waxed_chiseled_copper 1 63
+waxed_exposed_chiseled_copper 1 63
+waxed_weathered_chiseled_copper 1 63
+waxed_oxidized_chiseled_copper 1 63
+cut_copper_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+exposed_cut_copper_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+weathered_cut_copper_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+oxidized_cut_copper_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+waxed_cut_copper_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+waxed_exposed_cut_copper_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+waxed_weathered_cut_copper_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+waxed_oxidized_cut_copper_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+cut_copper_slab 6 2 2 1 1 63 63
+exposed_cut_copper_slab 6 2 2 1 1 63 63
+weathered_cut_copper_slab 6 2 2 1 1 63 63
+oxidized_cut_copper_slab 6 2 2 1 1 63 63
+waxed_cut_copper_slab 6 2 2 1 1 63 63
+waxed_exposed_cut_copper_slab 6 2 2 1 1 63 63
+waxed_weathered_cut_copper_slab 6 2 2 1 1 63 63
+waxed_oxidized_cut_copper_slab 6 2 2 1 1 63 63
+copper_door 64 16 16 8 8 32 32 8 8 16 16 8 8 32 32 8 8 32 32 4 4 16 16 4 4 32 32 4 4 16 16 4 4 8 8 32 32 4 4 32 32 8 8 32 32 4 4 32 32 4 4 16 16 8 8 16 16 4 4 16 16 8 8 16 16
+exposed_copper_door 64 16 16 8 8 32 32 8 8 16 16 8 8 32 32 8 8 32 32 4 4 16 16 4 4 32 32 4 4 16 16 4 4 8 8 32 32 4 4 32 32 8 8 32 32 4 4 32 32 4 4 16 16 8 8 16 16 4 4 16 16 8 8 16 16
+weathered_copper_door 64 16 16 8 8 32 32 8 8 16 16 8 8 32 32 8 8 32 32 4 4 16 16 4 4 32 32 4 4 16 16 4 4 8 8 32 32 4 4 32 32 8 8 32 32 4 4 32 32 4 4 16 16 8 8 16 16 4 4 16 16 8 8 16 16
+oxidized_copper_door 64 16 16 8 8 32 32 8 8 16 16 8 8 32 32 8 8 32 32 4 4 16 16 4 4 32 32 4 4 16 16 4 4 8 8 32 32 4 4 32 32 8 8 32 32 4 4 32 32 4 4 16 16 8 8 16 16 4 4 16 16 8 8 16 16
+waxed_copper_door 64 16 16 8 8 32 32 8 8 16 16 8 8 32 32 8 8 32 32 4 4 16 16 4 4 32 32 4 4 16 16 4 4 8 8 32 32 4 4 32 32 8 8 32 32 4 4 32 32 4 4 16 16 8 8 16 16 4 4 16 16 8 8 16 16
+waxed_exposed_copper_door 64 16 16 8 8 32 32 8 8 16 16 8 8 32 32 8 8 32 32 4 4 16 16 4 4 32 32 4 4 16 16 4 4 8 8 32 32 4 4 32 32 8 8 32 32 4 4 32 32 4 4 16 16 8 8 16 16 4 4 16 16 8 8 16 16
+waxed_weathered_copper_door 64 16 16 8 8 32 32 8 8 16 16 8 8 32 32 8 8 32 32 4 4 16 16 4 4 32 32 4 4 16 16 4 4 8 8 32 32 4 4 32 32 8 8 32 32 4 4 32 32 4 4 16 16 8 8 16 16 4 4 16 16 8 8 16 16
+waxed_oxidized_copper_door 64 16 16 8 8 32 32 8 8 16 16 8 8 32 32 8 8 32 32 4 4 16 16 4 4 32 32 4 4 16 16 4 4 8 8 32 32 4 4 32 32 8 8 32 32 4 4 32 32 4 4 16 16 8 8 16 16 4 4 16 16 8 8 16 16
+copper_trapdoor 64 8 8 8 8 2 2 2 2 8 8 8 8 1 1 1 1 4 4 4 4 2 2 2 2 4 4 4 4 1 1 1 1 32 32 32 32 2 2 2 2 32 32 32 32 1 1 1 1 16 16 16 16 2 2 2 2 16 16 16 16 1 1 1 1
+exposed_copper_trapdoor 64 8 8 8 8 2 2 2 2 8 8 8 8 1 1 1 1 4 4 4 4 2 2 2 2 4 4 4 4 1 1 1 1 32 32 32 32 2 2 2 2 32 32 32 32 1 1 1 1 16 16 16 16 2 2 2 2 16 16 16 16 1 1 1 1
+weathered_copper_trapdoor 64 8 8 8 8 2 2 2 2 8 8 8 8 1 1 1 1 4 4 4 4 2 2 2 2 4 4 4 4 1 1 1 1 32 32 32 32 2 2 2 2 32 32 32 32 1 1 1 1 16 16 16 16 2 2 2 2 16 16 16 16 1 1 1 1
+oxidized_copper_trapdoor 64 8 8 8 8 2 2 2 2 8 8 8 8 1 1 1 1 4 4 4 4 2 2 2 2 4 4 4 4 1 1 1 1 32 32 32 32 2 2 2 2 32 32 32 32 1 1 1 1 16 16 16 16 2 2 2 2 16 16 16 16 1 1 1 1
+waxed_copper_trapdoor 64 8 8 8 8 2 2 2 2 8 8 8 8 1 1 1 1 4 4 4 4 2 2 2 2 4 4 4 4 1 1 1 1 32 32 32 32 2 2 2 2 32 32 32 32 1 1 1 1 16 16 16 16 2 2 2 2 16 16 16 16 1 1 1 1
+waxed_exposed_copper_trapdoor 64 8 8 8 8 2 2 2 2 8 8 8 8 1 1 1 1 4 4 4 4 2 2 2 2 4 4 4 4 1 1 1 1 32 32 32 32 2 2 2 2 32 32 32 32 1 1 1 1 16 16 16 16 2 2 2 2 16 16 16 16 1 1 1 1
+waxed_weathered_copper_trapdoor 64 8 8 8 8 2 2 2 2 8 8 8 8 1 1 1 1 4 4 4 4 2 2 2 2 4 4 4 4 1 1 1 1 32 32 32 32 2 2 2 2 32 32 32 32 1 1 1 1 16 16 16 16 2 2 2 2 16 16 16 16 1 1 1 1
+waxed_oxidized_copper_trapdoor 64 8 8 8 8 2 2 2 2 8 8 8 8 1 1 1 1 4 4 4 4 2 2 2 2 4 4 4 4 1 1 1 1 32 32 32 32 2 2 2 2 32 32 32 32 1 1 1 1 16 16 16 16 2 2 2 2 16 16 16 16 1 1 1 1
+copper_grate 2 63
+exposed_copper_grate 2 63
+weathered_copper_grate 2 63
+oxidized_copper_grate 2 63
+waxed_copper_grate 2 63
+waxed_exposed_copper_grate 2 63
+waxed_weathered_copper_grate 2 63
+waxed_oxidized_copper_grate 2 63
+copper_bulb 4 63
+exposed_copper_bulb 4 63
+weathered_copper_bulb 4 63
+oxidized_copper_bulb 4 63
+waxed_copper_bulb 4 63
+waxed_exposed_copper_bulb 4 63
+waxed_weathered_copper_bulb 4 63
+waxed_oxidized_copper_bulb 4 63
+copper_chest 24 0
+exposed_copper_chest 24 0
+weathered_copper_chest 24 0
+oxidized_copper_chest 24 0
+waxed_copper_chest 24 0
+waxed_exposed_copper_chest 24 0
+waxed_weathered_copper_chest 24 0
+waxed_oxidized_copper_chest 24 0
+copper_golem_statue 32 0
+exposed_copper_golem_statue 32 0
+weathered_copper_golem_statue 32 0
+oxidized_copper_golem_statue 32 0
+waxed_copper_golem_statue 32 0
+waxed_exposed_copper_golem_statue 32 0
+waxed_weathered_copper_golem_statue 32 0
+waxed_oxidized_copper_golem_statue 32 0
+lightning_rod 24 0
+exposed_lightning_rod 24 0
+weathered_lightning_rod 24 0
+oxidized_lightning_rod 24 0
+waxed_lightning_rod 24 0
+waxed_exposed_lightning_rod 24 0
+waxed_weathered_lightning_rod 24 0
+waxed_oxidized_lightning_rod 24 0
+dripstone_block 1 63
+pointed_dripstone 20 0
+sulfur_spike 20 0
+cave_vines 52 0
+cave_vines_plant 2 0
+spore_blossom 1 0
+azalea 1 2
+flowering_azalea 1 2
+moss_carpet 1 1
+pink_petals 16 0
+wildflowers 16 0
+leaf_litter 16 0
+moss_block 1 63
+big_dripleaf 32 0
+big_dripleaf_stem 8 0
+small_dripleaf 16 0
+hanging_roots 2 0
+rooted_dirt 1 63
+mud 1 63
+deepslate 3 63
+cobbled_deepslate 1 63
+cobbled_deepslate_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+cobbled_deepslate_slab 6 2 2 1 1 63 63
+cobbled_deepslate_wall 324 0
+polished_deepslate 1 63
+polished_deepslate_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+polished_deepslate_slab 6 2 2 1 1 63 63
+polished_deepslate_wall 324 0
+deepslate_tiles 1 63
+deepslate_tile_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+deepslate_tile_slab 6 2 2 1 1 63 63
+deepslate_tile_wall 324 0
+deepslate_bricks 1 63
+deepslate_brick_stairs 80 6 6 22 22 38 38 2 2 2 2 5 5 21 21 37 37 1 1 1 1 10 10 42 42 26 26 2 2 2 2 9 9 41 41 25 25 1 1 1 1 18 18 26 26 22 22 2 2 2 2 17 17 25 25 21 21 1 1 1 1 34 34 38 38 42 42 2 2 2 2 33 33 37 37 41 41 1 1 1 1
+deepslate_brick_slab 6 2 2 1 1 63 63
+deepslate_brick_wall 324 0
+chiseled_deepslate 1 63
+cracked_deepslate_bricks 1 63
+cracked_deepslate_tiles 1 63
+infested_deepslate 3 63
+smooth_basalt 1 63
+raw_iron_block 1 63
+raw_copper_block 1 63
+raw_gold_block 1 63
+potted_azalea_bush 1 0
+potted_flowering_azalea_bush 1 0
+ochre_froglight 3 63
+verdant_froglight 3 63
+pearlescent_froglight 3 63
+frogspawn 1 0
+reinforced_deepslate 1 63
+decorated_pot 16 0
+crafter 48 63
+trial_spawner 12 63
+vault 32 63
+heavy_core 2 0
+pale_moss_block 1 63
+pale_moss_carpet 162 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+pale_hanging_moss 2 0
+open_eyeblossom 1 0
+closed_eyeblossom 1 0
+potted_open_eyeblossom 1 0
+potted_closed_eyeblossom 1 0
+firefly_bush 1 0
