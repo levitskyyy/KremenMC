@@ -20,7 +20,7 @@ func (s *Server) BridgeHost() bridge.Host { return BridgeHost{s} }
 func (h BridgeHost) ServerInfo() bridge.ServerInfo {
 	s := h.s
 	return bridge.ServerInfo{
-		Name: "kremenmc", Version: EngineVersion, MinecraftVersion: packets.Version, Protocol: packets.Protocol,
+		Name: "KremenMC", Version: EngineVersion, MinecraftVersion: packets.Version, Protocol: packets.Protocol,
 		DataVersion: int(data.Canonical().DataVersion), Motd: textJSON(fromText(s.status().Description)),
 		MaxPlayers: s.props.MaxPlayers, Port: s.props.ServerPort, OnlineMode: s.props.OnlineMode,
 	}

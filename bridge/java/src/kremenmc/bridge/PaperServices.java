@@ -131,7 +131,7 @@ final class PaperServices {
 
         @Override public Key brandId() { return Key.key("kremenmc", "kremenmc"); }
         @Override public boolean isBrandCompatible(Key brand) { return brand.equals(brandId()) || brand.equals(BRAND_PAPER_ID); }
-        @Override public String brandName() { return "kremenmc"; }
+        @Override public String brandName() { return "KremenMC"; }
         @Override public String minecraftVersionId() { return mc(); }
         @Override public String minecraftVersionName() { return mc(); }
         @Override public java.util.OptionalInt buildNumber() { return java.util.OptionalInt.empty(); }
@@ -141,7 +141,7 @@ final class PaperServices {
 
         @Override
         public String asString(StringRepresentation r) {
-            return r == StringRepresentation.VERSION_SIMPLE ? mc() + "-kremenmc" : "kremenmc " + version() + " (Paper API " + mc() + ", Java plugin bridge)";
+            return r == StringRepresentation.VERSION_SIMPLE ? mc() + "-kremenmc" : "KremenMC " + version() + " (Paper API " + mc() + ", Java plugin bridge)";
         }
     }
 

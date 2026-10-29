@@ -287,7 +287,7 @@ func (s *Server) ConsoleCommand(line string) {
 	}
 }
 
-func (s *Server) Name() string        { return "kremenmc" }
+func (s *Server) Name() string        { return "KremenMC" }
 func (s *Server) Version() string     { return EngineVersion }
 func (s *Server) GameVersion() string { return packets.Version }
 func (s *Server) Protocol() int32     { return packets.Protocol }

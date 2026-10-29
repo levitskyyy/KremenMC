@@ -80,7 +80,7 @@ func (c *Config) defaults() {
 		c.KeepAliveTimeout = 30 * time.Second
 	}
 	if c.Brand == "" {
-		c.Brand = "kremenmc"
+		c.Brand = "KremenMC"
 	}
 	if c.SessionServer == "" {
 		c.SessionServer = "https://sessionserver.mojang.com"

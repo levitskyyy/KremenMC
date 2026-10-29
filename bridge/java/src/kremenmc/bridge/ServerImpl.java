@@ -40,7 +40,7 @@ public final class ServerImpl {
 
     ServerImpl(Bridge b) { this.b = b; }
 
-    public String getName() { return b.infoString("name", "kremenmc"); }
+    public String getName() { return b.infoString("name", "KremenMC"); }
     public String getVersion() { return b.infoString("version", "dev") + " (MC: " + getMinecraftVersion() + ")"; }
     public String getBukkitVersion() { return b.infoString("minecraftVersion", "26.3") + "-R0.1-SNAPSHOT"; }
     public String getMinecraftVersion() { return b.infoString("minecraftVersion", "26.3"); }
