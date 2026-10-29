@@ -89,3 +89,11 @@ The server directory holds `server.properties`, `kremenmc.toml`, worlds and plug
 ## Contributing
 
 Issues and pull requests are welcome. Run `go vet ./...` and the tests of the packages you changed before opening a pull request.
+
+## License
+
+KremenMC is licensed under the [GNU General Public License v3.0](LICENSE).
+
+The plugin API (`api`), the plugin SDK (`sdk`) and the examples (`examples`) are licensed under the MIT License, so plugins can use any license.
+
+KremenMC is not an official Minecraft product and is not affiliated with Mojang or Microsoft.
