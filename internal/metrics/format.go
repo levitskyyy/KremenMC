@@ -68,7 +68,7 @@ func line(accent, label string, parts ...api.Component) api.Component {
 
 // Title is the sidebar heading.
 func Title() api.Component {
-	return api.Component{Extra: []api.Component{api.Colored("kremenmc", "gold").WithBold(true), api.Colored(" admin", "yellow")}}
+	return api.Component{Extra: []api.Component{api.Colored("KremenMC", "gold").WithBold(true), api.Colored(" admin", "yellow")}}
 }
 
 // Lines renders st as at most MaxLines lines, grouped by section accent.
@@ -102,7 +102,7 @@ func Lines(st *api.ServerStats) []api.Component {
 		line(accentNet, "Net", unit("↓"), white(kb(st.NetIn)), unit(" ↑"), white(kb(st.NetOut)), unit(" KB/s")),
 		line(accentNet, "Pkts", unit("↓"), white(count(st.PacketsIn)), unit(" ↑"), white(count(st.PacketsOut)), unit(" /s")),
 		line(accentMeta, "Up", white(uptime(st.Uptime)), unit(" · "), white(st.GameVersion), unit(" ("+strconv.Itoa(int(st.Protocol))+") · "),
-			white("kremenmc "+st.Version)),
+			white("KremenMC "+st.Version)),
 	}
 }
 

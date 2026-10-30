@@ -100,6 +100,9 @@ type Bridge struct {
 	conn      atomic.Pointer[Conn]
 	listeners atomic.Pointer[map[string]bool]
 	slowWarn  atomic.Int64
+
+	pipelineActive atomic.Bool
+	pipes          pipes
 }
 
 func New(cfg Config, host Host) *Bridge {
@@ -328,6 +331,44 @@ func (b *Bridge) TabComplete(ctx context.Context, sender UUID, line string) ([]s
 	return ArgStrings(res, 0), nil
 }
 
+// Suggestion is one tab completion from a Java command.
+type Suggestion struct {
+	Text        string
+	TooltipJSON string
+}
+
+// Suggest completes a Java command line (no leading slash); the suggestions
+// replace line[start:start+length], counted in UTF-16 units.
+func (b *Bridge) Suggest(ctx context.Context, sender UUID, line string) (start, length int, out []Suggestion, err error) {
+	c := b.conn.Load()
+	if c == nil {
+		return 0, 0, nil, ErrClosed
+	}
+	ctx, cancel := context.WithTimeout(ctx, b.cfg.CallTimeout)
+	defer cancel()
+	res, err := c.Call(ctx, OpSuggest, uuidOrNil(sender), line)
+	if err != nil {
+		return 0, 0, nil, err
+	}
+	for _, v := range ArgList(res, 2) {
+		m := Fields(ArgMap([]any{v}, 0))
+		out = append(out, Suggestion{Text: m.String("text"), TooltipJSON: m.String("tooltip")})
+	}
+	return int(ArgInt(res, 0)), int(ArgInt(res, 1)), out, nil
+}
+
+// CanUse reports whether sender passes the requirement of a Java command.
+func (b *Bridge) CanUse(ctx context.Context, sender UUID, label string) bool {
+	c := b.conn.Load()
+	if c == nil {
+		return false
+	}
+	ctx, cancel := context.WithTimeout(ctx, b.cfg.CallTimeout)
+	defer cancel()
+	res, err := c.Call(ctx, OpCanUse, uuidOrNil(sender), label)
+	return err == nil && ArgBool(res, 0)
+}
+
 // Close disables plugins and stops the JVM, killing it if ctx expires first.
 func (b *Bridge) Close(ctx context.Context) error {
 	b.mu.Lock()
@@ -355,6 +396,10 @@ func (b *Bridge) setState(name, state string) {
 
 func (b *Bridge) onNotify(op uint16, args []any) {
 	h := b.host
+	if isInvOp(op) {
+		b.invNotify(op, args)
+		return
+	}
 	switch op {
 	case OpListeners:
 		m := map[string]bool{}
@@ -371,12 +416,28 @@ func (b *Bridge) onNotify(op uint16, args []any) {
 		if u, ok := ArgUUID(args, 0); ok {
 			h.Kick(u, ArgString(args, 1))
 		}
+	case OpSendPacket:
+		if u, ok := ArgUUID(args, 0); ok {
+			h.SendPacket(u, ArgString(args, 1), Fields(ArgMap(args, 2)))
+		}
 	case OpSetBlock:
 		h.SetBlock(ArgString(args, 0), int(ArgInt(args, 1)), int(ArgInt(args, 2)), int(ArgInt(args, 3)), ArgString(args, 4), ArgBool(args, 5))
+	case OpPipeline:
+		on := ArgBool(args, 0)
+		if b.pipelineActive.Swap(on) != on {
+			b.log.Info("java plugin pipeline hooks changed; players joining from now on get their packets routed through java", "active", on)
+		}
+	case OpPipeSend:
+		b.onPipeSend(args)
+	case OpPipeRecv:
+		b.onPipeRecv(args)
+	case OpAction:
+		h.Action(ArgString(args, 0), Fields(ArgMap(args, 1)))
 	case OpRegisterCommand:
 		h.RegisterCommand(CommandSpec{
 			Plugin: ArgString(args, 0), Name: ArgString(args, 1), Aliases: ArgStrings(args, 2),
 			Description: ArgString(args, 3), Usage: ArgString(args, 4), Permission: ArgString(args, 5),
+			Tree: Fields(ArgMap(args, 6)),
 		})
 	default:
 		b.log.Debug("unknown notify from jvm", "op", op)
@@ -385,6 +446,9 @@ func (b *Bridge) onNotify(op uint16, args []any) {
 
 func (b *Bridge) onCall(_ context.Context, op uint16, args []any) ([]any, error) {
 	h := b.host
+	if isInvOp(op) {
+		return b.invCall(op, args)
+	}
 	switch op {
 	case OpPlayers:
 		ps := h.Players()
@@ -412,7 +476,7 @@ func (b *Bridge) onCall(_ context.Context, op uint16, args []any) ([]any, error)
 		return []any{h.Teleport(u, LocationFromMap(ArgMap(args, 1)))}, nil
 	case OpHasPermission:
 		u, _ := ArgUUID(args, 0)
-		return []any{h.HasPermission(u, ArgString(args, 1))}, nil
+		return []any{h.HasPermission(u, ArgString(args, 1), ArgString(args, 2))}, nil
 	case OpWorlds:
 		ws := h.Worlds()
 		out := make([]any, len(ws))
@@ -429,6 +493,12 @@ func (b *Bridge) onCall(_ context.Context, op uint16, args []any) ([]any, error)
 	case OpDispatchCommand:
 		u, _ := ArgUUID(args, 0)
 		return []any{h.DispatchCommand(u, ArgString(args, 1))}, nil
+	case OpQuery:
+		v, err := h.Query(ArgString(args, 0), Fields(ArgMap(args, 1)))
+		if err != nil {
+			return nil, err
+		}
+		return []any{v}, nil
 	}
 	return nil, fmt.Errorf("unknown op %d", op)
 }

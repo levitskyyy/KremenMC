@@ -18,6 +18,7 @@ type damageType struct {
 	deathMsg   string // death_message_type
 	scaling    string // never, always, when_caused_by_living_non_player
 	exhaustion float32
+	effects    string // hurt, thorns, drowning, burning, poking, freezing
 	tags       map[string]bool
 }
 
@@ -52,13 +53,14 @@ func loadDamageTypes() {
 			Death      string  `json:"death_message_type"`
 			Scaling    string  `json:"scaling"`
 			Exhaustion float32 `json:"exhaustion"`
+			Effects    string  `json:"effects"`
 		}
 		if json.Unmarshal(raw, &j) != nil {
 			continue
 		}
 		key := ns(k)
 		id, _ := regsync.Index("minecraft:damage_type", key)
-		dmgTypes[key] = &damageType{key: key, id: id, message: j.Message, deathMsg: j.Death, scaling: j.Scaling, exhaustion: j.Exhaustion, tags: map[string]bool{}}
+		dmgTypes[key] = &damageType{key: key, id: id, message: j.Message, deathMsg: j.Death, scaling: j.Scaling, exhaustion: j.Exhaustion, effects: j.Effects, tags: map[string]bool{}}
 	}
 	for _, t := range p.TagKeys("damage_type") {
 		ids, ok := p.Tag("damage_type", t)

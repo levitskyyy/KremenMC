@@ -233,6 +233,7 @@ func (e *Entity) tickLiving(src BlockSource) float64 {
 	if e.SlowFalling && e.Vel.Y <= 0 {
 		g = min(g, 0.01)
 	}
+	e.applyInput(src)
 	switch {
 	case e.InWater:
 		dy := e.Vel.Y

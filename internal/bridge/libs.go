@@ -71,12 +71,20 @@ var Libs = []Lib{
 	{"org.joml", "joml", "1.10.9", RepoCentral, "feca4db853371704338621c120acc5cc32300d8af635fa42414b6213301e216b"},
 	{"it.unimi.dsi", "fastutil", "8.5.18", RepoCentral, "9094ae67d01d0ad246f886f11ad557fc2e79c72cbf3feed83e1512a8ae90a74a"},
 	{"org.apache.logging.log4j", "log4j-api", "2.26.0", RepoCentral, "820de7bbaf430eaf2e3e5ccb92f23e2085797c5ac4d4f7fc6c8b660fbefa1dbc"},
+	// Bundled by Paper; plugins install log filters on its loggers.
+	{"org.apache.logging.log4j", "log4j-core", "2.26.0", RepoCentral, "406bb3132c47a5d322e5c571feb0787ca84496469f346eb51f1ef2ee45499902"},
 	{"org.slf4j", "slf4j-api", "2.0.17", RepoCentral, "7b751d952061954d5abfed7181c1f645d336091b679891591d63329c622eb832"},
 	{"org.jspecify", "jspecify", "1.0.0", RepoCentral, "1fad6e6be7557781e4d33729d49ae1cdc8fdda6fe477bb0cc68ce351eafdfbab"},
 	{"org.checkerframework", "checker-qual", "4.2.3", RepoCentral, "f868f731f6e37db3e1c2140d06016477989959a2d13fc5bed9c46760cffd5ba0"},
 	{"org.jetbrains", "annotations", "26.1.0", RepoCentral, "ebc7aec252ed0c7d2d04c039d7f00e69f7b86b1f493c741d67b3ef31b986b054"},
 	// Not an API dependency, but bundled by Paper; SimpleCommandMap and many plugins use it.
 	{"org.apache.commons", "commons-lang3", "3.17.0", RepoCentral, "6ee731df5c8e5a2976a1ca023b6bb320ea8d3539fbe64c8a1d5cb765127c33b4"},
+	// Bundled by Paper; the NMS compatibility layer gives each player a Netty channel.
+	{"io.netty", "netty-common", "4.2.18.Final", RepoCentral, "5d97cae5669685872339698efe13f74fe3cdb2dccdb36963b2352bd95acf7070"},
+	{"io.netty", "netty-buffer", "4.2.18.Final", RepoCentral, "fdf236d2b76aa9710684401fdad7dff9dec56e43da5d39172c9a55ba5f14b360"},
+	{"io.netty", "netty-resolver", "4.2.18.Final", RepoCentral, "68373ec544cf769ba17bf2ef455166d98f2c260dff536edf35ef57067a9c155f"},
+	{"io.netty", "netty-transport", "4.2.18.Final", RepoCentral, "eac4f12068db4489e60c6520fad663e5d872f0436a7c641aa9e08db649947863"},
+	{"io.netty", "netty-codec-base", "4.2.18.Final", RepoCentral, "7e4612bead7ba88ac6f7908fa722f90ad6835ea96505c9e40b2f93686c1f61f3"},
 }
 
 const maxLibSize = 64 << 20

@@ -27,6 +27,9 @@ func (e *Engine) FinalizeSpawn(l Level, r rng.Source, m *Mob, d DifficultyInstan
 	if f := finalizers[m.Type.Name]; f != nil {
 		return f(ctx, m, group)
 	}
+	if f := approxFinalizers[m.Type.Name]; f != nil {
+		return f(ctx, m, group)
+	}
 	ctx.Base(m)
 	return group
 }

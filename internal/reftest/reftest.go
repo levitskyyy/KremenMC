@@ -123,7 +123,11 @@ func (r *Ref) Run(w io.Writer, class string, args ...string) error {
 	}
 	defer os.RemoveAll(classes)
 	cp := classes + string(os.PathListSeparator) + r.Classpath()
-	cmd := exec.Command("java", append([]string{"-Xmx4g", "-cp", cp, class}, args...)...)
+	heap := os.Getenv("KREMENMC_REF_HEAP")
+	if heap == "" {
+		heap = "4g"
+	}
+	cmd := exec.Command("java", append([]string{"-Xmx" + heap, "-cp", cp, class}, args...)...)
 	cmd.Dir = r.Dir
 	var stderr bytes.Buffer
 	cmd.Stdout, cmd.Stderr = w, &stderr

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Log4j output in the "LEVEL|logger|message" form the Go supervisor parses (see LogSetup). -->
+<Configuration status="OFF">
+  <Appenders>
+    <Console name="Out" target="SYSTEM_OUT">
+      <PatternLayout pattern="%level{WARN=WARNING, ERROR=SEVERE, FATAL=SEVERE, DEBUG=FINE, TRACE=FINEST}|%c|%m%n%ex"/>
+    </Console>
+  </Appenders>
+  <Loggers>
+    <Root level="info">
+      <AppenderRef ref="Out"/>
+    </Root>
+  </Loggers>
+</Configuration>

@@ -545,6 +545,7 @@ func onLanded(t combatant, dist float64) {
 		sneak = p.Sneaking()
 	}
 	if d := fallDamage(t, dist, landingMultiplier(below, sneak)); d > 0 {
+		fallSounds(t, d)
 		hurt(t, NewDamage("minecraft:fall"), d)
 	}
 }
@@ -818,6 +819,7 @@ func die(t combatant, src DamageSource) {
 		if entityLoot != nil {
 			drops = entityLoot(v, src, killer)
 		}
+		drops = append(drops, v.dropEquipment(killer, lootingOf(killer))...)
 		if w.s.bus.HasHandlers(api.KindEntityDeath) {
 			ev := &api.EntityDeathEvent{Entity: v, Source: src.api()}
 			for _, d := range drops {
@@ -834,7 +836,11 @@ func die(t combatant, src DamageSource) {
 			for _, d := range drops {
 				w.spawnAtLocation(pos, d)
 			}
+			if killer != nil {
+				w.dropXP(pos, v.deathXP())
+			}
 		}
+		mobDied(v)
 	case *Player:
 		v.playerDied(src, killer)
 	}

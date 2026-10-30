@@ -122,17 +122,24 @@ func (g *Generator) Fill(ctx *density.Ctx, c *world.Chunk) {
 	fd := g.Router.Fields["final_density"]
 	s := g.Router.Settings
 	lo, hi := max(s.MinY, int32(c.Dim.MinY)), min(s.MinY+s.Height, int32(c.Dim.MinY+c.Dim.Height))
-	for x := range int32(16) {
-		for z := range int32(16) {
-			bx, bz := c.X<<4|x, c.Z<<4|z
+	// Visit blocks in 4x4 columns, y-major inside, so interpolated
+	// functions reuse their memoized cell corners instead of re-looking
+	// them up every block. Results do not depend on visit order.
+	for cx := int32(0); cx < 16; cx += 4 {
+		for cz := int32(0); cz < 16; cz += 4 {
 			for y := lo; y < hi; y++ {
-				d := fd.Value(ctx, bx, y, bz)
-				st, ok := aq.ComputeSubstance(ctx, bx, y, bz, d)
-				if !ok {
-					st = g.DefaultBlock
-				}
-				if st != g.Air {
-					c.SetBlock(int(x), int(y), int(z), st)
+				for x := cx; x < cx+4; x++ {
+					for z := cz; z < cz+4; z++ {
+						bx, bz := c.X<<4|x, c.Z<<4|z
+						d := fd.Value(ctx, bx, y, bz)
+						st, ok := aq.ComputeSubstance(ctx, bx, y, bz, d)
+						if !ok {
+							st = g.DefaultBlock
+						}
+						if st != g.Air {
+							c.SetBlock(int(x), int(y), int(z), st)
+						}
+					}
 				}
 			}
 		}

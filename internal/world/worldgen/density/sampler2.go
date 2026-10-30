@@ -55,18 +55,30 @@ type interpS struct {
 	in          Sampler
 	cxz, cy     int32
 	invXz, invY float32
+	// mXz, mY are -size when both cell sizes are powers of two (cell
+	// origin = coordinate & mask), 0 otherwise.
+	mXz, mY int32
+}
+
+func newInterp(id int, in Sampler, cxz, cy int32) *interpS {
+	s := &interpS{id: id, in: in, cxz: cxz, cy: cy, invXz: 1 / float32(cxz), invY: 1 / float32(cy)}
+	if cxz > 0 && cy > 0 && cxz&(cxz-1) == 0 && cy&(cy-1) == 0 {
+		s.mXz, s.mY = -cxz, -cy
+	}
+	return s
 }
 
 // Value interpolates trilinearly between the input at the corners of the
 // cell containing the position (cells aligned to multiples of the size).
-func (s interpS) Value(c *Ctx, x, y, z int32) float32 {
-	x0 := mth.FloorDiv(x, s.cxz) * s.cxz
-	y0 := mth.FloorDiv(y, s.cy) * s.cy
-	z0 := mth.FloorDiv(z, s.cxz) * s.cxz
-	x1, y1, z1 := x0+s.cxz, y0+s.cy, z0+s.cxz
-	tx := float32(x-x0) * s.invXz
-	ty := float32(y-y0) * s.invY
-	tz := float32(z-z0) * s.invXz
+func (s *interpS) Value(c *Ctx, x, y, z int32) float32 {
+	var x0, y0, z0 int32
+	if s.mXz != 0 {
+		x0, y0, z0 = x&s.mXz, y&s.mY, z&s.mXz
+	} else {
+		x0 = mth.FloorDiv(x, s.cxz) * s.cxz
+		y0 = mth.FloorDiv(y, s.cy) * s.cy
+		z0 = mth.FloorDiv(z, s.cxz) * s.cxz
+	}
 	if c != nil && c.corners != nil {
 		t := c.corners
 		if s.id >= len(t.last) {
@@ -74,21 +86,35 @@ func (s interpS) Value(c *Ctx, x, y, z int32) float32 {
 		}
 		l := &t.last[s.id]
 		if l.gen != t.gen || l.x != x0 || l.y != y0 || l.z != z0 {
+			x1, y1, z1 := x0+s.cxz, y0+s.cy, z0+s.cxz
 			v := [8]float32{
 				s.corner(c, x0, y0, z0), s.corner(c, x1, y0, z0), s.corner(c, x0, y1, z0), s.corner(c, x1, y1, z0),
 				s.corner(c, x0, y0, z1), s.corner(c, x1, y0, z1), s.corner(c, x0, y1, z1), s.corner(c, x1, y1, z1)}
 			l = &t.last[s.id]
-			*l = lastCell{x0, y0, z0, t.gen, v}
+			*l = lastCell{x: x0, y: y0, z: z0, gen: t.gen, v: v, dx: -1}
 		}
-		v := &l.v
-		return mth.Lerp3F(tx, ty, tz, v[0], v[1], v[2], v[3], v[4], v[5], v[6], v[7])
+		// Lerp3F blends x, then y, then z: the two xy-planes only change
+		// with (x, y), so consecutive z steps reuse them.
+		if dx, dy := x-x0, y-y0; dx != l.dx || dy != l.dy {
+			tx := float32(dx) * s.invXz
+			ty := float32(dy) * s.invY
+			v := &l.v
+			l.a = mth.Lerp2F(tx, ty, v[0], v[1], v[2], v[3])
+			l.b = mth.Lerp2F(tx, ty, v[4], v[5], v[6], v[7])
+			l.dx, l.dy = dx, dy
+		}
+		return mth.LerpF(float32(z-z0)*s.invXz, l.a, l.b)
 	}
+	x1, y1, z1 := x0+s.cxz, y0+s.cy, z0+s.cxz
+	tx := float32(x-x0) * s.invXz
+	ty := float32(y-y0) * s.invY
+	tz := float32(z-z0) * s.invXz
 	return mth.Lerp3F(tx, ty, tz,
 		s.corner(c, x0, y0, z0), s.corner(c, x1, y0, z0), s.corner(c, x0, y1, z0), s.corner(c, x1, y1, z0),
 		s.corner(c, x0, y0, z1), s.corner(c, x1, y0, z1), s.corner(c, x0, y1, z1), s.corner(c, x1, y1, z1))
 }
 
-func (s interpS) corner(c *Ctx, x, y, z int32) float32 {
+func (s *interpS) corner(c *Ctx, x, y, z int32) float32 {
 	if c == nil || c.corners == nil {
 		return s.in.Value(c, x, y, z)
 	}

@@ -221,6 +221,7 @@ func (s *Server) Start() error {
 		ConnThrottle:            time.Second,
 		MaxPacketsPerSecond:     s.props.RateLimit,
 		Translations:            s.cfg.Translations,
+		RecordHistory:           func() bool { return s.javaBridge() != nil },
 		SessionServer:           s.cfg.SessionServer,
 		Logger:                  s.log,
 	}, handler{s})
@@ -397,7 +398,7 @@ func (s *Server) CreateWorld(opts api.WorldOptions) (api.World, error) {
 		Seed:      seed,
 		Flat:      strings.Contains(strings.ToLower(opts.Generator), "flat"),
 		FlatSpec:  opts.GeneratorSettings,
-		Workers:   s.cfg.Engine.Workers.ChunkIO,
+		Workers:   s.cfg.Engine.Workers.ChunkIOWorkers(),
 		TickProcs: s.cfg.Engine.Workers.Tick,
 	})
 	if err != nil {
@@ -538,6 +539,13 @@ func (r *pluginRegistry) Plugin(id string) (api.PluginInfo, bool) {
 }
 
 func (r *pluginRegistry) IsEnabled(id string) bool { return r.m != nil && r.m.IsEnabled(id) }
+
+func (r *pluginRegistry) ListComponent() api.Component {
+	if r.m == nil {
+		return api.Text("Plugins (0): ")
+	}
+	return r.m.ListComponent()
+}
 func (r *pluginRegistry) DataDir(id string) string {
 	if r.m == nil {
 		return filepath.Join("plugins", id)

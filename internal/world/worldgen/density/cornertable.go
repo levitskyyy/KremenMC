@@ -16,6 +16,9 @@ type lastCell struct {
 	x, y, z int32
 	gen     uint32
 	v       [8]float32
+	// a, b are the z0 and z1 xy-plane blends at cell offset (dx, dy).
+	dx, dy int32
+	a, b   float32
 }
 
 type cornerSlot struct {

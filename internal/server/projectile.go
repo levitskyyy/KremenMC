@@ -86,7 +86,7 @@ func (w *World) spawnProjectile(kind string, owner api.Entity, at api.Vec3, yaw,
 		}
 	}
 	w.mobsMu.Lock()
-	w.mobs[m.e.ID] = m
+	w.addMobLocked(m)
 	w.mobsMu.Unlock()
 	return m
 }

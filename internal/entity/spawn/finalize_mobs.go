@@ -2,8 +2,13 @@ package spawn
 
 import (
 	"encoding/json"
+	"math"
 	"strings"
 )
+
+// variantMobs are the mobs with a data-driven <mob>_variant registry
+// selected by spawn conditions in finalizeSpawn.
+var variantMobs = []string{"cow", "pig", "chicken", "wolf", "cat", "frog", "zombie_nautilus"}
 
 // Per-type finalizeSpawn hooks whose draw order was matched against the
 // reference in the scene goldens (see doc.go for the covered conditions).
@@ -28,7 +33,7 @@ func sheepColor(c *FinalizeContext) string {
 }
 
 func finalizeSheep(c *FinalizeContext, m *Mob, group any) any {
-	m.set("color", sheepColor(c))
+	m.set("color", sheepColorIn(c, c.biomeOf(m)))
 	return FinalizeAgeable(c, m, group)
 }
 
@@ -38,8 +43,7 @@ func finalizeSheep(c *FinalizeContext, m *Mob, group any) any {
 func variantFinalizer(registry string) FinalizeFunc {
 	return func(c *FinalizeContext, m *Mob, group any) any {
 		if v := c.E.Data.variants[registry]; len(v) > 0 {
-			x, y, z := m.BlockPos()
-			m.set("variant", pickVariant(c, v, c.L.Biome(x, y, z)))
+			m.set("variant", pickVariant(c, v, c.variantEnv(m)))
 		}
 		if n := c.E.Data.soundVariants[registry]; n > 0 {
 			m.set("sound_variant", c.R.NextIntn(int32(n)))
@@ -48,11 +52,11 @@ func variantFinalizer(registry string) FinalizeFunc {
 	}
 }
 
-func pickVariant(c *FinalizeContext, vs []variantDef, biome string) string {
+func pickVariant(c *FinalizeContext, vs []variantDef, env variantEnv) string {
 	best := -1 << 31
 	var cands []string
 	for _, v := range vs {
-		p, ok := v.match(c.E.Data, biome)
+		p, ok := v.match(c.E.Data, env)
 		if !ok {
 			continue
 		}
@@ -129,12 +133,26 @@ type variantDef struct {
 }
 
 type variantCond struct {
-	priority int
-	kind     string
-	biomes   []string // literal biomes or "#tag"
+	priority   int
+	kind       string
+	biomes     []string // literal biomes or "#tag"
+	structures []string // literal structures or "#tag"
+	min, max   float64  // moon_brightness range (NaN = open)
 }
 
-func (v variantDef) match(d *Data, biome string) (int, bool) {
+// variantEnv is the spawn context a variant condition reads.
+type variantEnv struct {
+	biome   string
+	structs []StructureHit
+	moon    float32
+}
+
+func (c *FinalizeContext) variantEnv(m *Mob) variantEnv {
+	x, y, z := m.BlockPos()
+	return variantEnv{biome: c.L.Biome(x, y, z), structs: c.L.Structures(x, y, z), moon: c.L.MoonBrightness()}
+}
+
+func (v variantDef) match(d *Data, env variantEnv) (int, bool) {
 	best, ok := 0, false
 	for _, c := range v.conds {
 		hit := false
@@ -144,11 +162,27 @@ func (v variantDef) match(d *Data, biome string) (int, bool) {
 		case "minecraft:biome":
 			for _, b := range c.biomes {
 				if t, isTag := strings.CutPrefix(b, "#"); isTag {
-					hit = hit || d.biomeSet(t)[biome]
+					hit = hit || d.biomeSet(t)[env.biome]
 				} else {
-					hit = hit || qualify(b) == biome
+					hit = hit || qualify(b) == env.biome
 				}
 			}
+		case "minecraft:structure":
+			for _, h := range env.structs {
+				if !h.InPiece {
+					continue
+				}
+				for _, s := range c.structures {
+					if t, isTag := strings.CutPrefix(s, "#"); isTag {
+						hit = hit || d.structTags[qualify(t)][qualify(h.Name)]
+					} else {
+						hit = hit || qualify(s) == qualify(h.Name)
+					}
+				}
+			}
+		case "minecraft:moon_brightness":
+			b := float64(env.moon)
+			hit = (math.IsNaN(c.min) || b >= c.min) && (math.IsNaN(c.max) || b <= c.max)
 		}
 		if hit && (!ok || c.priority > best) {
 			best, ok = c.priority, true
@@ -157,13 +191,25 @@ func (v variantDef) match(d *Data, biome string) (int, bool) {
 	return best, ok
 }
 
+func stringOrList(raw json.RawMessage) []string {
+	var one string
+	if json.Unmarshal(raw, &one) == nil {
+		return []string{one}
+	}
+	var list []string
+	_ = json.Unmarshal(raw, &list)
+	return list
+}
+
 func parseVariant(name string, b []byte) (variantDef, error) {
 	var j struct {
 		SpawnConditions []struct {
 			Priority  int `json:"priority"`
 			Condition *struct {
-				Type   string          `json:"type"`
-				Biomes json.RawMessage `json:"biomes"`
+				Type       string          `json:"type"`
+				Biomes     json.RawMessage `json:"biomes"`
+				Structures json.RawMessage `json:"structures"`
+				Range      json.RawMessage `json:"range"`
 			} `json:"condition"`
 		} `json:"spawn_conditions"`
 	}
@@ -172,14 +218,24 @@ func parseVariant(name string, b []byte) (variantDef, error) {
 	}
 	v := variantDef{name: name}
 	for _, sc := range j.SpawnConditions {
-		c := variantCond{priority: sc.Priority}
+		c := variantCond{priority: sc.Priority, min: math.NaN(), max: math.NaN()}
 		if sc.Condition != nil {
 			c.kind = qualify(sc.Condition.Type)
-			var one string
-			if json.Unmarshal(sc.Condition.Biomes, &one) == nil {
-				c.biomes = []string{one}
-			} else {
-				_ = json.Unmarshal(sc.Condition.Biomes, &c.biomes)
+			c.biomes = stringOrList(sc.Condition.Biomes)
+			c.structures = stringOrList(sc.Condition.Structures)
+			if len(sc.Condition.Range) > 0 {
+				var exact float64
+				var r struct{ Min, Max *float64 }
+				if json.Unmarshal(sc.Condition.Range, &exact) == nil {
+					c.min, c.max = exact, exact
+				} else if json.Unmarshal(sc.Condition.Range, &r) == nil {
+					if r.Min != nil {
+						c.min = *r.Min
+					}
+					if r.Max != nil {
+						c.max = *r.Max
+					}
+				}
 			}
 		}
 		v.conds = append(v.conds, c)

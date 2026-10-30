@@ -235,6 +235,7 @@ type Data struct {
 
 	variants      map[string][]variantDef // "cow" -> cow_variant entries
 	soundVariants map[string]int          // "cow" -> number of cow_sound_variant entries
+	structTags    map[string]map[string]bool
 	tagFunc       TagFunc
 
 	blockTags  map[string][]bool // tag -> per-state membership
@@ -263,9 +264,9 @@ func Load(get JSONFunc, keys KeysFunc, tag TagFunc) (*Data, error) {
 	d := &Data{
 		Biomes: map[string]*Biome{}, Structures: map[string]*Structure{}, Dimensions: map[string]*Dimension{},
 		blockTags: map[string][]bool{}, biomeTags: map[string]map[string]bool{}, entityTags: map[string]map[int32]bool{},
-		variants: map[string][]variantDef{}, soundVariants: map[string]int{}, tagFunc: tag,
+		variants: map[string][]variantDef{}, soundVariants: map[string]int{}, structTags: map[string]map[string]bool{}, tagFunc: tag,
 	}
-	for _, mob := range []string{"cow", "pig", "chicken"} {
+	for _, mob := range variantMobs {
 		for _, k := range sortedKeys(keys(mob + "_variant")) {
 			b, ok := get(mob+"_variant", k)
 			if !ok {
@@ -283,6 +284,16 @@ func Load(get JSONFunc, keys KeysFunc, tag TagFunc) (*Data, error) {
 				for _, b := range c.biomes {
 					if t, ok := strings.CutPrefix(b, "#"); ok {
 						d.biomeSet(t)
+					}
+				}
+				for _, b := range c.structures {
+					if t, ok := strings.CutPrefix(b, "#"); ok && tag != nil {
+						set := map[string]bool{}
+						members, _ := tag("worldgen/structure", t)
+						for _, m := range members {
+							set[qualify(m)] = true
+						}
+						d.structTags[qualify(t)] = set
 					}
 				}
 			}

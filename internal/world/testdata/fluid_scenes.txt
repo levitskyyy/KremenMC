@@ -1,0 +1,63 @@
+# Fluid scenes for kremenmc.probe.fluid.Scenes (see fluid_ref_test.go).
+scene flat overworld -9 100 -9 9 102 9
+cmd fill -8 100 -8 8 100 8 stone
+cmd setblock 0 101 0 water
+run 60
+
+scene drop overworld 55 98 -9 73 102 9
+cmd fill 56 100 -8 72 100 8 stone
+cmd fill 56 98 -8 72 98 8 stone
+cmd setblock 67 100 0 air
+cmd setblock 64 100 -4 air
+cmd setblock 64 101 0 water
+run 60
+
+scene drain overworld 119 100 -9 137 102 9
+cmd fill 120 100 -8 136 100 8 stone
+cmd setblock 128 101 0 water
+run 45
+cmd setblock 128 101 0 air
+run 60
+
+scene infinite overworld 183 100 -6 197 102 6
+cmd fill 184 100 -5 196 100 5 stone
+cmd setblock 189 101 0 water
+cmd setblock 191 101 0 water
+run 30
+
+scene lava overworld 247 100 -6 261 102 6
+cmd fill 248 100 -5 260 100 5 stone
+cmd setblock 254 101 0 lava
+run 200
+
+scene meet overworld 311 100 -3 329 102 3
+cmd fill 312 100 -2 328 100 2 stone
+cmd setblock 317 101 0 water
+cmd setblock 323 101 0 lava
+run 150
+
+scene lavafall overworld 375 100 -4 385 106 4
+cmd fill 376 100 -3 384 100 3 stone
+cmd setblock 380 101 0 water
+cmd setblock 382 105 0 lava
+run 120
+
+scene logged overworld 439 100 -6 453 102 6
+cmd fill 440 100 -5 452 100 5 stone
+cmd setblock 446 101 0 oak_slab[type=bottom,waterlogged=true]
+run 40
+
+scene breaks overworld 503 100 -4 515 102 4
+cmd fill 504 100 -3 514 100 3 stone
+cmd setblock 509 101 0 torch
+cmd setblock 510 101 0 poppy
+cmd setblock 508 101 0 rail
+cmd setblock 509 101 1 ladder[facing=south]
+cmd setblock 509 101 -1 oak_sign
+cmd setblock 507 101 0 water
+run 40
+
+scene nether nether 0 100 -6 14 102 6
+cmd fill 1 100 -5 13 100 5 stone
+cmd setblock 7 101 0 lava
+run 120

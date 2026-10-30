@@ -121,10 +121,10 @@ func (h *fakeHost) PlayerByName(name string) (PlayerInfo, bool) {
 func (h *fakeHost) SendMessage(target UUID, json string) {
 	h.messages <- [2]string{target.String(), json}
 }
-func (h *fakeHost) Broadcast(json, perm string) int { h.bcast <- json; return len(h.Players()) }
-func (h *fakeHost) Kick(UUID, string)               {}
-func (h *fakeHost) Teleport(UUID, Location) bool    { return true }
-func (h *fakeHost) HasPermission(UUID, string) bool { return true }
+func (h *fakeHost) Broadcast(json, perm string) int         { h.bcast <- json; return len(h.Players()) }
+func (h *fakeHost) Kick(UUID, string)                       {}
+func (h *fakeHost) Teleport(UUID, Location) bool            { return true }
+func (h *fakeHost) HasPermission(UUID, string, string) bool { return true }
 func (h *fakeHost) Worlds() []WorldInfo {
 	return []WorldInfo{{Name: "world", Environment: "NORMAL", MinY: -64, MaxY: 320}}
 }
@@ -132,6 +132,10 @@ func (h *fakeHost) Block(string, int, int, int) (string, bool)   { return "minec
 func (h *fakeHost) SetBlock(string, int, int, int, string, bool) {}
 func (h *fakeHost) RegisterCommand(c CommandSpec)                { h.commands <- c }
 func (h *fakeHost) DispatchCommand(UUID, string) bool            { return false }
+func (h *fakeHost) SendPacket(UUID, string, Fields)              {}
+func (h *fakeHost) SendRawPacket(UUID, []byte)                   {}
+func (h *fakeHost) Query(string, Fields) (any, error)            { return nil, nil }
+func (h *fakeHost) Action(string, Fields)                        {}
 
 func e2ePrereqs(t *testing.T) (java, javac, libsDir string) {
 	t.Helper()

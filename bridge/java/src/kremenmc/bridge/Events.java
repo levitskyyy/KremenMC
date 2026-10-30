@@ -52,6 +52,7 @@ final class Events {
         WIRE.put("BlockBreak", List.of(BlockBreakEvent.class));
         WIRE.put("BlockPlace", List.of(BlockPlaceEvent.class));
         WIRE.put("PlayerInteract", List.of(PlayerInteractEvent.class));
+        WorldEvents.register(WIRE);
     }
 
     private static boolean listened(Class<? extends Event> c) {
@@ -61,6 +62,8 @@ final class Events {
     /** Join and quit are always forwarded so the player registry stays current. */
     static List<String> listenedNames() {
         List<String> out = new ArrayList<>(List.of("PlayerJoin", "PlayerQuit"));
+        if (listened(org.bukkit.event.inventory.InventoryClickEvent.class)) out.add("InventoryClick");
+        if (listened(org.bukkit.event.inventory.InventoryDragEvent.class)) out.add("InventoryDrag");
         for (Map.Entry<String, List<Class<? extends Event>>> e : WIRE.entrySet()) {
             if (out.contains(e.getKey())) continue;
             for (Class<? extends Event> c : e.getValue()) {
@@ -90,7 +93,11 @@ final class Events {
             case "BlockBreak" -> blockBreak(b, f, out);
             case "BlockPlace" -> blockPlace(b, f, out);
             case "PlayerInteract" -> interact(b, f, out);
-            default -> throw new IllegalArgumentException("unknown event " + name);
+            default -> {
+                Boolean r = WorldEvents.dispatch(b, name, f, out);
+                if (r == null) throw new IllegalArgumentException("unknown event " + name);
+                yield r;
+            }
         };
         return new Object[] {cancelled, out};
     }
@@ -129,6 +136,8 @@ final class Events {
         Component msg = Text.component(Wire.str(f, "joinMessage"));
         PlayerJoinEvent e = new PlayerJoinEvent(p, msg);
         call(b, e);
+        echoJoin(b, p);
+        Scoreboards.of(b).onJoin(p.getUniqueId());
         if (!Objects.equals(msg, e.joinMessage())) out.put("joinMessage", Text.json(e.joinMessage()));
         return false;
     }
@@ -148,9 +157,28 @@ final class Events {
             call(b, e);
         } finally {
             b.players.remove(id);
+            Scoreboards.of(b).onQuit(id);
+            BossBars.quit(id);
+            echoQuit(b, p);
         }
         if (!Objects.equals(msg, e.quitMessage())) out.put("quitMessage", Text.json(e.quitMessage()));
         return false;
+    }
+
+    private static void echoJoin(Bridge b, Player joined) {
+        List<Player> online = b.players.online();
+        if (!online.contains(joined)) online.add(joined);
+        for (Player o : online) {
+            if (!(Stubs.implOf(o) instanceof Players.PlayerImpl pi)) continue;
+            Nms.echoAdd(pi, o.equals(joined) ? online : List.of(joined));
+        }
+    }
+
+    private static void echoQuit(Bridge b, Player gone) {
+        if (Stubs.implOf(gone) instanceof Players.PlayerImpl g) Nms.close(b, g);
+        for (Player o : b.players.online()) {
+            if (!o.equals(gone) && Stubs.implOf(o) instanceof Players.PlayerImpl pi) Nms.echoRemove(pi, gone.getUniqueId());
+        }
     }
 
     private static boolean chat(Bridge b, Map<String, Object> f, Map<String, Object> out) {

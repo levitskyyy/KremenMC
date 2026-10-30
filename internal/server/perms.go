@@ -151,6 +151,11 @@ func (p *permissible) IsPermissionSet(name string) bool {
 }
 
 func (p *permissible) HasPermission(name string) bool {
+	return p.hasPermissionOr(name, api.DefaultOp)
+}
+
+// hasPermissionOr uses def for permissions the server does not know.
+func (p *permissible) hasPermissionOr(name string, def api.PermissionDefault) bool {
 	if name == "" {
 		return true
 	}
@@ -165,7 +170,7 @@ func (p *permissible) HasPermission(name string) bool {
 	if perm, ok := p.perms.Get(name); ok {
 		return perm.Default.Value(p.op())
 	}
-	return p.op()
+	return def.Value(p.op())
 }
 
 func (p *permissible) EffectivePermissions() map[string]bool {

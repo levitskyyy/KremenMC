@@ -65,6 +65,7 @@ func (h handler) Login(c *mcnet.Conn) *proto.Text {
 
 func (h handler) Join(c *mcnet.Conn) (mcnet.Session, error) {
 	p := newPlayer(h.s, c)
+	h.s.openPipe(p)
 	select {
 	case h.s.joins <- p:
 	case <-h.s.stop:
@@ -280,6 +281,9 @@ func (s *Server) leave(p *Player) {
 	close(p.chatCh)
 	p.tasks.drop(nil)
 	s.bar.left(p)
+	p.inv.mu.Lock()
+	p.closeChestLocked(false)
+	p.inv.mu.Unlock()
 	if err := p.savePlayerData(); err != nil {
 		s.log.Error("save playerdata", "player", p.prof.Name, "err", err)
 	}

@@ -47,15 +47,27 @@ type Hooks struct {
 	ChunkLoaded   func(c *Chunk)
 	ChunkUnloaded func(c *Chunk)
 	BlockChanged  BlockChangeFunc
+	// ShapeUpdate runs in the owning region's phase after a block change
+	// applied there, for neighbour shape updates. Changes it makes through t
+	// recurse up to MaxUpdateDepth.
+	ShapeUpdate func(t *TickContext, x, y, z int, old, new data.StateID)
+	// Fluid performs fluid side effects (drops, fizz); FluidConversion
+	// reports the water/lava source conversion game rules.
+	Fluid           func(t *TickContext, ev FluidEvent, x, y, z int, old data.StateID)
+	FluidConversion func(k FluidKind) bool
 }
+
+// MaxUpdateDepth bounds recursive ShapeUpdate chains.
+const MaxUpdateDepth = 512
 
 type Config struct {
 	Dim             Dimension
 	Generator       Generator
 	Storage         Storage
-	Workers         int // load/generate/save workers (default GOMAXPROCS)
-	TickWorkers     int // region tick workers (default GOMAXPROCS)
-	RandomTickSpeed int // random ticks per section per tick (default 3; 0 disables)
+	Workers         int  // load/generate/save workers (default GOMAXPROCS)
+	TickWorkers     int  // region tick workers (default GOMAXPROCS)
+	RandomTickSpeed int  // random ticks per section per tick (default 3; 0 disables)
+	Ultrawarm       bool // nether rules: faster, farther lava
 	Seed            int64
 	Hooks           Hooks
 	Logf            func(format string, args ...any)
@@ -87,6 +99,10 @@ type World struct {
 	tickets    map[TicketID]*ticket
 	nextTicket TicketID
 	unloads    map[uint64]struct{}
+	// centres snapshots ticket centres for load ranking; epoch bumps on
+	// every change.
+	centres     atomic.Pointer[[]ChunkPos]
+	ticketEpoch atomic.Uint64
 
 	tick     atomic.Int64
 	tickMu   sync.Mutex
@@ -142,6 +158,7 @@ func New(cfg Config) (*World, error) {
 		w.shards[i].m = map[uint64]*Chunk{}
 	}
 	w.io = newPool(cfg.Workers)
+	w.io.rank, w.io.epoch = w.loadRank, w.ticketEpoch.Load
 	w.ctxPool.New = func() any {
 		return &TickContext{w: w, light: NewLightEngine(cfg.Dim, w.chunkSource)}
 	}
@@ -250,7 +267,7 @@ func (w *World) request(p ChunkPos, waiter bool) *op {
 		o.waiters++
 	}
 	w.inflight[k] = o
-	if !w.io.submit(func() { w.load(p, o, prev) }) {
+	if !w.io.submitLoad(p, o.ctx, func() { w.load(p, o, prev) }) {
 		delete(w.inflight, k)
 		o.cancel()
 		o.err = ErrClosed
@@ -395,4 +412,29 @@ func (w *World) Run(ctx context.Context) {
 			w.DoTick()
 		}
 	}
+}
+
+// BlockReader reads blocks through a one-chunk cache, for bursts of nearby
+// reads on a single goroutine (explosion rays, collision clips).
+type BlockReader struct {
+	w   *World
+	key uint64
+	c   *Chunk
+	set bool
+}
+
+func (w *World) Reader() BlockReader { return BlockReader{w: w} }
+
+func (r *BlockReader) Block(x, y, z int) data.StateID {
+	p := ChunkAt(x, z)
+	if k := p.Key(); !r.set || k != r.key {
+		r.key, r.c, r.set = k, r.w.Chunk(p), true
+	}
+	if r.c == nil {
+		return data.Air
+	}
+	r.c.mu.RLock()
+	s := r.c.Block(x&15, y, z&15)
+	r.c.mu.RUnlock()
+	return s
 }

@@ -31,7 +31,7 @@ func (m *Manager) AdminCommand(perm string) *api.CommandNode {
 		}))
 	}
 	list := func(c api.CommandContext) (int, error) {
-		c.Sender().SendMessage(m.listComponent())
+		c.Sender().SendMessage(m.ListComponent())
 		return len(m.Order()), nil
 	}
 	return api.Literal("plugins").
@@ -46,10 +46,12 @@ func (m *Manager) AdminCommand(perm string) *api.CommandNode {
 		)
 }
 
-func (m *Manager) listComponent() api.Component {
+// ListComponent is the colored plugin list shown by /plugins.
+func (m *Manager) ListComponent() api.Component {
 	order := m.Order()
 	failed := m.Failed()
-	msg := api.Text(fmt.Sprintf("Plugins (%d): ", len(order)))
+	ext := m.externalPlugins()
+	msg := api.Text(fmt.Sprintf("Plugins (%d): ", len(order)+len(ext)))
 	first := true
 	add := func(name, color string) {
 		if !first {
@@ -71,6 +73,13 @@ func (m *Manager) listComponent() api.Component {
 		if _, loaded := m.State(id); !loaded {
 			add(id, "dark_red")
 		}
+	}
+	for _, p := range ext {
+		color := "red"
+		if p.Enabled {
+			color = "green"
+		}
+		add(p.Name, color)
 	}
 	return msg
 }

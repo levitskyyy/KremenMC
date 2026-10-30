@@ -127,6 +127,17 @@ func step776(st *step) {
 		o.Encode(w)
 		return x.emit("animate", w)
 	})
+	st.clientbound(packets.Play, "animate", func(x *xctx, r *proto.Reader) error {
+		var p packets.ClientboundAnimate
+		if err := p.Decode(r); err != nil {
+			return err
+		}
+		// 26.3 renumbered the remaining actions: wake up, crit, magic crit.
+		o := v776.ClientboundAnimate{EntityID: p.EntityID, Animation: [...]uint8{2, 4, 5}[min(p.Animation, 2)]}
+		w := x.out()
+		o.Encode(w)
+		return x.emit("animate", w)
+	})
 	st.clientbound(packets.Play, "explode", func(x *xctx, r *proto.Reader) error {
 		b := r.B
 		if len(b) == 0 {

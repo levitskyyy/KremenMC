@@ -2,7 +2,6 @@ package server
 
 import (
 	"context"
-	"math"
 	"strings"
 	"unicode/utf8"
 
@@ -486,29 +485,10 @@ func (p *Player) useItemOn(m *packets.ServerboundUseItemOn) {
 	if p.spawnEgg(w, item, clicked.Add(o[0], o[1], o[2]), hand) {
 		return
 	}
-	placed, ok := data.DefaultState(string(item.Type))
+	target, old, placed, upperPos, upper, ok := p.placeState(w, string(item.Type), clicked, face, cursor)
 	if !ok {
-		return
-	}
-	target := clicked
-	if data.Flags(w.w.Block(clicked.X, clicked.Y, clicked.Z))&data.FlagReplaceable == 0 {
-		o := faceOffsets[face]
-		target = clicked.Add(o[0], o[1], o[2])
-	}
-	old := w.w.Block(target.X, target.Y, target.Z)
-	if !w.w.Dim().Contains(target.Y) || data.Flags(old)&data.FlagReplaceable == 0 && !data.IsAir(old) {
 		p.resync(w, target)
 		return
-	}
-	placed = orient(placed, face, p.Location().Yaw, cursor.Y)
-	var upper data.StateID
-	if h, ok := data.Canonical().Value(placed, "half"); ok && h == "lower" {
-		upper, _ = data.With(placed, "half", "upper")
-		a := w.w.Block(target.X, target.Y+1, target.Z)
-		if !w.w.Dim().Contains(target.Y+1) || data.Flags(a)&data.FlagReplaceable == 0 && !data.IsAir(a) {
-			p.resync(w, target)
-			return
-		}
 	}
 	if p.obstructed(w, target, placed) {
 		p.resync(w, target)
@@ -537,8 +517,9 @@ func (p *Player) useItemOn(m *packets.ServerboundUseItemOn) {
 		}
 	}
 	w.w.SetBlock(target.X, target.Y, target.Z, placed)
+	w.placeSound(target, placed, p)
 	if upper != 0 {
-		w.w.SetBlock(target.X, target.Y+1, target.Z, upper)
+		w.w.SetBlock(upperPos.X, upperPos.Y, upperPos.Z, upper)
 	}
 	if gm == api.Survival {
 		p.inv.mu.Lock()
@@ -577,36 +558,6 @@ var horizontal = [4]string{"south", "west", "north", "east"}
 var faceNames = [6]string{"down", "up", "north", "south", "west", "east"}
 var opposite = [6]api.BlockFace{api.FaceUp, api.FaceDown, api.FaceSouth, api.FaceNorth, api.FaceEast, api.FaceWest}
 
-// orient applies the common placement properties: axis, facing, slab and stair half.
-func orient(st data.StateID, face api.BlockFace, yaw float32, cursorY float64) data.StateID {
-	axis := "y"
-	switch face {
-	case api.FaceNorth, api.FaceSouth:
-		axis = "z"
-	case api.FaceWest, api.FaceEast:
-		axis = "x"
-	}
-	if s, ok := data.With(st, "axis", axis); ok {
-		st = s
-	}
-	look := horizontal[int(math.Floor(float64(yaw)/90+0.5))&3]
-	if s, ok := data.With(st, "facing", look); ok {
-		st = s
-	} else if s, ok := data.With(st, "facing", faceNames[opposite[face]]); ok {
-		st = s
-	}
-	top := face == api.FaceDown || face != api.FaceUp && cursorY > 0.5
-	if top {
-		if s, ok := data.With(st, "type", "top"); ok {
-			st = s
-		}
-		if s, ok := data.With(st, "half", "top"); ok {
-			st = s
-		}
-	}
-	return st
-}
-
 func (p *Player) interactEntity(id int32, hand api.Hand, attack bool, at api.Vec3) {
 	w := p.world.Load()
 	var target api.Entity
@@ -625,8 +576,16 @@ func (p *Player) interactEntity(id int32, hand api.Hand, attack bool, at api.Vec
 	if target != nil && attack {
 		p.attackEntity(target)
 	}
-	if target == nil || !p.s.bus.HasHandlers(api.KindPlayerInteractEntity) {
+	if target == nil {
 		return
 	}
-	p.s.bus.Dispatch(&api.PlayerInteractEntityEvent{Player: p, Target: target, Hand: hand, Attack: attack, At: at})
+	if p.s.bus.HasHandlers(api.KindPlayerInteractEntity) {
+		ev := &api.PlayerInteractEntityEvent{Player: p, Target: target, Hand: hand, Attack: attack, At: at}
+		if p.s.bus.Dispatch(ev).(*api.PlayerInteractEntityEvent).Cancelled() {
+			return
+		}
+	}
+	if m, ok := target.(*Mob); ok && !attack && p.interactMob(m, hand) {
+		p.swing(int32(hand))
+	}
 }

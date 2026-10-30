@@ -1,0 +1,15 @@
+KremenMC
+Copyright (C) the KremenMC authors. Licensed under the GNU General Public License v3.0 (see LICENSE).
+
+Third-party source code included in this repository: none.
+
+The Java plugin bridge (bridge/java) is an independent implementation of the
+Bukkit/Spigot/Paper APIs. No code from CraftBukkit, Spigot or Paper server
+sources is included; if any is ported in the future it will be listed here
+with its project, URL and license, and keep its original license header.
+
+Libraries downloaded at runtime (not bundled; pinned in internal/bridge/libs.go):
+  paper-api            https://repo.papermc.io  GPL-3.0 / MIT (Bukkit API: GPL-3.0)
+  brigadier            https://repo.papermc.io  MIT (Mojang)
+  adventure            https://repo1.maven.org  MIT (KyoriPowered)
+  and the other artifacts listed in internal/bridge/libs.go under their own licenses.

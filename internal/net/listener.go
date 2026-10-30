@@ -51,7 +51,10 @@ type Config struct {
 	SessionServer       string
 	HTTPClient          *http.Client
 	Translations        translate.Registry
-	Logger              *slog.Logger
+	// RecordHistory, checked once per connection, keeps its handshake, login
+	// and configuration packets for Conn.TakeHistory.
+	RecordHistory func() bool
+	Logger        *slog.Logger
 }
 
 func (c *Config) defaults() {
@@ -336,11 +339,19 @@ func (l *Listener) handle(c *Conn) {
 		return
 	}
 	c.fr = proto.NewFrameReader(&prefixReader{b: first[0], ok: true, r: c.nc, n: &l.bytesIn})
+	if l.cfg.RecordHistory != nil && l.cfg.RecordHistory() {
+		c.hist.Store(&history{})
+	}
 	c.writerWG.Add(1)
 	go c.writer()
 
 	sess = l.serve(c)
 	if sess == nil {
+		return
+	}
+	c.TakeHistory()
+	if ts := c.tap.Load(); ts != nil {
+		l.playTapped(c, sess, ts)
 		return
 	}
 	var buf []packets.Packet

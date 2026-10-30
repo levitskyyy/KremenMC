@@ -473,6 +473,10 @@ func (b *builtins) plugins() *api.CommandNode {
 			c.Sender().SendMessage(api.Text("Plugins (0): "))
 			return 0, nil
 		}
+		if l, ok := reg.(interface{ ListComponent() api.Component }); ok {
+			c.Sender().SendMessage(l.ListComponent())
+			return len(reg.Plugins()), nil
+		}
 		ps := reg.Plugins()
 		msg := textf("Plugins (%d): ", len(ps))
 		for i, p := range ps {

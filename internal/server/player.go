@@ -9,6 +9,7 @@ import (
 	"time"
 
 	"github.com/levitskyyy/KremenMC/api"
+	"github.com/levitskyyy/KremenMC/internal/bridge"
 	"github.com/levitskyyy/KremenMC/internal/data"
 	"github.com/levitskyyy/KremenMC/internal/entity"
 	mcnet "github.com/levitskyyy/KremenMC/internal/net"
@@ -67,6 +68,7 @@ type Player struct {
 
 	joined atomic.Bool
 	quit   atomic.Bool
+	pipe   *bridge.Pipe // set before play when the Java bridge routes this player's packets
 	pdata  *dataContainer
 
 	// tick-owned
@@ -138,6 +140,9 @@ func (p *Player) Handle(pk packets.Packet) {
 }
 
 func (p *Player) Closed(err error) {
+	if p.pipe != nil {
+		p.pipe.Close()
+	}
 	p.quit.Store(true)
 	select {
 	case p.s.quits <- p:
@@ -242,6 +247,9 @@ func (p *Player) Teleport(to api.Location, cause api.TeleportCause) bool {
 			return false
 		}
 		to = ev.To
+	}
+	if !p.bridgeTeleport(&to, cause) {
+		return false
 	}
 	p.teleport(to)
 	return true

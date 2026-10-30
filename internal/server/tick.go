@@ -188,7 +188,9 @@ func (s *Server) doTick() {
 		}
 		w.tickSpawn(s.list)
 		w.tickEntities()
+		w.aiPrepare(s.list)
 		w.w.DoTick()
+		w.aiApply()
 		if tick%timeSync == 0 {
 			w.broadcastTime()
 		}

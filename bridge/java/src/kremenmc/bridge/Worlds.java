@@ -52,17 +52,26 @@ final class Worlds {
         return Stubs.proxy(Block.class, new BlockImpl(b, w, x, y, z, knownState));
     }
 
-    public static final class WorldImpl {
+    public static final class WorldImpl extends WorldExtras {
         final Bridge b;
         final String name;
         volatile Map<String, Object> info = Map.of();
 
         WorldImpl(Bridge b, String name) {
+            super(b, name);
             this.b = b;
             this.name = name;
         }
 
+        private volatile net.minecraft.server.level.ServerLevel level;
+
         private World self() { return b.worlds.get(name); }
+
+        public net.minecraft.server.level.ServerLevel getHandle() {
+            net.minecraft.server.level.ServerLevel l = level;
+            if (l == null && self() instanceof org.bukkit.craftbukkit.CraftWorld cw) level = l = new net.minecraft.server.level.ServerLevel(cw);
+            return l;
+        }
 
         public String getName() { return name; }
         public UUID getUID() { return info.get("uuid") instanceof UUID u ? u : UUID.nameUUIDFromBytes(name.getBytes()); }
@@ -159,6 +168,15 @@ final class Worlds {
 
         public void setType(Material m, boolean physics) {
             String s = Materials.state(m);
+            b.conn.notify(Wire.OP_SET_BLOCK, world.getName(), x, y, z, s, physics);
+            state = s;
+        }
+
+        public org.bukkit.block.data.BlockData getBlockData() { return WorldExtras.blockData(state()); }
+        public void setBlockData(org.bukkit.block.data.BlockData d) { setBlockData(d, true); }
+
+        public void setBlockData(org.bukkit.block.data.BlockData d, boolean physics) {
+            String s = d.getAsString();
             b.conn.notify(Wire.OP_SET_BLOCK, world.getName(), x, y, z, s, physics);
             state = s;
         }

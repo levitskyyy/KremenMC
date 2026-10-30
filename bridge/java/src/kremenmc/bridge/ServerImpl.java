@@ -35,10 +35,13 @@ import org.bukkit.plugin.messaging.Messenger;
 import org.bukkit.scheduler.BukkitScheduler;
 
 /** Methods of org.bukkit.Server that the bridge implements; the rest go through Stubs. */
-public final class ServerImpl {
+public final class ServerImpl extends ServerExtras {
     private final Bridge b;
 
-    ServerImpl(Bridge b) { this.b = b; }
+    ServerImpl(Bridge b) {
+        super(b);
+        this.b = b;
+    }
 
     public String getName() { return b.infoString("name", "KremenMC"); }
     public String getVersion() { return b.infoString("version", "dev") + " (MC: " + getMinecraftVersion() + ")"; }
@@ -54,7 +57,11 @@ public final class ServerImpl {
     public boolean isPrimaryThread() { return b.main.isCurrent(); }
     public boolean isStopping() { return false; }
     public int getCurrentTick() { return (int) b.scheduler.currentTick(); }
-    public double[] getTPS() { return new double[] {20, 20, 20}; }
+    public double[] getTPS() {
+        double t = Math.min(20, Wire.dbl(Wire.map(b.query("tps")), "tps"));
+        return new double[] {t, t, t};
+    }
+    public double getAverageTickTime() { return Wire.dbl(Wire.map(b.query("tps")), "mspt"); }
     public GameMode getDefaultGameMode() { return GameMode.SURVIVAL; }
     public File getWorldContainer() { return new File("."); }
     public File getPluginsFolder() { return b.pluginsDir; }
@@ -78,7 +85,37 @@ public final class ServerImpl {
     public OfflinePlayer getOfflinePlayer(UUID id) {
         Player p = b.players.get(id);
         if (p != null) return p;
-        throw new UnsupportedOperationException("kremenmc bridge: offline player data is not available");
+        return Stubs.proxy(OfflinePlayer.class, new OfflineImpl(id));
+    }
+
+    /** A player who is not online; the bridge has no stored data for them. */
+    public static final class OfflineImpl extends OfflineExtras {
+        private final UUID id;
+        OfflineImpl(UUID id) {
+            super(id);
+            this.id = id;
+        }
+
+        public UUID getUniqueId() { return id; }
+        public boolean isOnline() { return false; }
+        public boolean isConnected() { return false; }
+        public boolean hasPlayedBefore() { return false; }
+        public Player getPlayer() { return null; }
+        @Override public boolean equals(Object o) { return o instanceof OfflineImpl x && x.id.equals(id); }
+        @Override public int hashCode() { return id.hashCode(); }
+        @Override public String toString() { return "OfflinePlayer{" + id + "}"; }
+    }
+
+    public List<Entity> selectEntities(CommandSender sender, String selector) {
+        UUID id = sender instanceof Player p ? p.getUniqueId() : null;
+        List<Entity> out = new ArrayList<>();
+        for (Object o : Wire.list(b.query("select", "sender", id, "input", selector))) {
+            if (o instanceof UUID u) {
+                Entity e = b.players.get(u);
+                if (e != null) out.add(e);
+            }
+        }
+        return out;
     }
 
     public Player getPlayer(Entity e) { return e instanceof Player p ? p : null; }
@@ -116,6 +153,7 @@ public final class ServerImpl {
     }
 
     public boolean dispatchCommand(CommandSender sender, String line) throws CommandException {
+        if (b.brigadier.owns(line)) return b.brigadier.execute(sender, line);
         if (b.commandMap.getCommand(line.split(" ", 2)[0]) != null) {
             return b.commandMap.dispatch(sender, line);
         }
@@ -140,12 +178,6 @@ public final class ServerImpl {
         return out;
     }
 
-    public Set<OfflinePlayer> getOperators() {
-        Set<OfflinePlayer> out = new HashSet<>();
-        for (Player p : b.players.online()) if (p.isOp()) out.add(p);
-        return out;
-    }
-
     public void shutdown() {
         b.log.warning("a plugin requested server shutdown; ignored by the bridge");
     }
@@ -161,6 +193,15 @@ public final class ServerImpl {
         if (u == null) unsafe = u = Stubs.proxy(UnsafeValues.class, new UnsafeImpl(b));
         return u;
     }
+
+    public org.bukkit.inventory.Inventory createInventory(org.bukkit.inventory.InventoryHolder h, int size) { return Inventories.create(b, h, org.bukkit.event.inventory.InventoryType.CHEST, size, null); }
+    public org.bukkit.inventory.Inventory createInventory(org.bukkit.inventory.InventoryHolder h, int size, String title) { return Inventories.create(b, h, org.bukkit.event.inventory.InventoryType.CHEST, size, Text.component(Text.jsonLegacy(title))); }
+    public org.bukkit.inventory.Inventory createInventory(org.bukkit.inventory.InventoryHolder h, int size, net.kyori.adventure.text.Component title) { return Inventories.create(b, h, org.bukkit.event.inventory.InventoryType.CHEST, size, title); }
+    public org.bukkit.inventory.Inventory createInventory(org.bukkit.inventory.InventoryHolder h, org.bukkit.event.inventory.InventoryType t) { return Inventories.create(b, h, t, 0, null); }
+    public org.bukkit.inventory.Inventory createInventory(org.bukkit.inventory.InventoryHolder h, org.bukkit.event.inventory.InventoryType t, String title) { return Inventories.create(b, h, t, 0, Text.component(Text.jsonLegacy(title))); }
+    public org.bukkit.inventory.Inventory createInventory(org.bukkit.inventory.InventoryHolder h, org.bukkit.event.inventory.InventoryType t, net.kyori.adventure.text.Component title) { return Inventories.create(b, h, t, 0, title); }
+    private final org.bukkit.inventory.ItemFactory itemFactory = Stubs.proxy(org.bukkit.inventory.ItemFactory.class, new Items.FactoryImpl());
+    public org.bukkit.inventory.ItemFactory getItemFactory() { return itemFactory; }
 
     @Override public String toString() { return "CraftServer{kremenmc}"; }
 
@@ -178,5 +219,10 @@ public final class ServerImpl {
         public Material toLegacy(Material m) { return m; }
         public Material fromLegacy(Material m) { return m; }
         public Material getMaterial(String name, int version) { return Worlds.Materials.fromState(name); }
+
+        @SuppressWarnings({"unchecked", "rawtypes"})
+        public org.bukkit.Keyed get(io.papermc.paper.registry.RegistryKey key, org.bukkit.NamespacedKey id) {
+            return io.papermc.paper.registry.RegistryAccess.registryAccess().getRegistry(key).get(id);
+        }
     }
 }

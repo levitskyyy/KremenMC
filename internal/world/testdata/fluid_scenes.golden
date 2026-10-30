@@ -1,0 +1,3167 @@
+scene flat
+warn fill -10 99 -10 10 103 10 air: No blocks were filled
+s -8 100 -8 stone
+s -7 100 -8 stone
+s -6 100 -8 stone
+s -5 100 -8 stone
+s -4 100 -8 stone
+s -3 100 -8 stone
+s -2 100 -8 stone
+s -1 100 -8 stone
+s 0 100 -8 stone
+s 1 100 -8 stone
+s 2 100 -8 stone
+s 3 100 -8 stone
+s 4 100 -8 stone
+s 5 100 -8 stone
+s 6 100 -8 stone
+s 7 100 -8 stone
+s 8 100 -8 stone
+s -8 100 -7 stone
+s -7 100 -7 stone
+s -6 100 -7 stone
+s -5 100 -7 stone
+s -4 100 -7 stone
+s -3 100 -7 stone
+s -2 100 -7 stone
+s -1 100 -7 stone
+s 0 100 -7 stone
+s 1 100 -7 stone
+s 2 100 -7 stone
+s 3 100 -7 stone
+s 4 100 -7 stone
+s 5 100 -7 stone
+s 6 100 -7 stone
+s 7 100 -7 stone
+s 8 100 -7 stone
+s -8 100 -6 stone
+s -7 100 -6 stone
+s -6 100 -6 stone
+s -5 100 -6 stone
+s -4 100 -6 stone
+s -3 100 -6 stone
+s -2 100 -6 stone
+s -1 100 -6 stone
+s 0 100 -6 stone
+s 1 100 -6 stone
+s 2 100 -6 stone
+s 3 100 -6 stone
+s 4 100 -6 stone
+s 5 100 -6 stone
+s 6 100 -6 stone
+s 7 100 -6 stone
+s 8 100 -6 stone
+s -8 100 -5 stone
+s -7 100 -5 stone
+s -6 100 -5 stone
+s -5 100 -5 stone
+s -4 100 -5 stone
+s -3 100 -5 stone
+s -2 100 -5 stone
+s -1 100 -5 stone
+s 0 100 -5 stone
+s 1 100 -5 stone
+s 2 100 -5 stone
+s 3 100 -5 stone
+s 4 100 -5 stone
+s 5 100 -5 stone
+s 6 100 -5 stone
+s 7 100 -5 stone
+s 8 100 -5 stone
+s -8 100 -4 stone
+s -7 100 -4 stone
+s -6 100 -4 stone
+s -5 100 -4 stone
+s -4 100 -4 stone
+s -3 100 -4 stone
+s -2 100 -4 stone
+s -1 100 -4 stone
+s 0 100 -4 stone
+s 1 100 -4 stone
+s 2 100 -4 stone
+s 3 100 -4 stone
+s 4 100 -4 stone
+s 5 100 -4 stone
+s 6 100 -4 stone
+s 7 100 -4 stone
+s 8 100 -4 stone
+s -8 100 -3 stone
+s -7 100 -3 stone
+s -6 100 -3 stone
+s -5 100 -3 stone
+s -4 100 -3 stone
+s -3 100 -3 stone
+s -2 100 -3 stone
+s -1 100 -3 stone
+s 0 100 -3 stone
+s 1 100 -3 stone
+s 2 100 -3 stone
+s 3 100 -3 stone
+s 4 100 -3 stone
+s 5 100 -3 stone
+s 6 100 -3 stone
+s 7 100 -3 stone
+s 8 100 -3 stone
+s -8 100 -2 stone
+s -7 100 -2 stone
+s -6 100 -2 stone
+s -5 100 -2 stone
+s -4 100 -2 stone
+s -3 100 -2 stone
+s -2 100 -2 stone
+s -1 100 -2 stone
+s 0 100 -2 stone
+s 1 100 -2 stone
+s 2 100 -2 stone
+s 3 100 -2 stone
+s 4 100 -2 stone
+s 5 100 -2 stone
+s 6 100 -2 stone
+s 7 100 -2 stone
+s 8 100 -2 stone
+s -8 100 -1 stone
+s -7 100 -1 stone
+s -6 100 -1 stone
+s -5 100 -1 stone
+s -4 100 -1 stone
+s -3 100 -1 stone
+s -2 100 -1 stone
+s -1 100 -1 stone
+s 0 100 -1 stone
+s 1 100 -1 stone
+s 2 100 -1 stone
+s 3 100 -1 stone
+s 4 100 -1 stone
+s 5 100 -1 stone
+s 6 100 -1 stone
+s 7 100 -1 stone
+s 8 100 -1 stone
+s -8 100 0 stone
+s -7 100 0 stone
+s -6 100 0 stone
+s -5 100 0 stone
+s -4 100 0 stone
+s -3 100 0 stone
+s -2 100 0 stone
+s -1 100 0 stone
+s 0 100 0 stone
+s 1 100 0 stone
+s 2 100 0 stone
+s 3 100 0 stone
+s 4 100 0 stone
+s 5 100 0 stone
+s 6 100 0 stone
+s 7 100 0 stone
+s 8 100 0 stone
+s -8 100 1 stone
+s -7 100 1 stone
+s -6 100 1 stone
+s -5 100 1 stone
+s -4 100 1 stone
+s -3 100 1 stone
+s -2 100 1 stone
+s -1 100 1 stone
+s 0 100 1 stone
+s 1 100 1 stone
+s 2 100 1 stone
+s 3 100 1 stone
+s 4 100 1 stone
+s 5 100 1 stone
+s 6 100 1 stone
+s 7 100 1 stone
+s 8 100 1 stone
+s -8 100 2 stone
+s -7 100 2 stone
+s -6 100 2 stone
+s -5 100 2 stone
+s -4 100 2 stone
+s -3 100 2 stone
+s -2 100 2 stone
+s -1 100 2 stone
+s 0 100 2 stone
+s 1 100 2 stone
+s 2 100 2 stone
+s 3 100 2 stone
+s 4 100 2 stone
+s 5 100 2 stone
+s 6 100 2 stone
+s 7 100 2 stone
+s 8 100 2 stone
+s -8 100 3 stone
+s -7 100 3 stone
+s -6 100 3 stone
+s -5 100 3 stone
+s -4 100 3 stone
+s -3 100 3 stone
+s -2 100 3 stone
+s -1 100 3 stone
+s 0 100 3 stone
+s 1 100 3 stone
+s 2 100 3 stone
+s 3 100 3 stone
+s 4 100 3 stone
+s 5 100 3 stone
+s 6 100 3 stone
+s 7 100 3 stone
+s 8 100 3 stone
+s -8 100 4 stone
+s -7 100 4 stone
+s -6 100 4 stone
+s -5 100 4 stone
+s -4 100 4 stone
+s -3 100 4 stone
+s -2 100 4 stone
+s -1 100 4 stone
+s 0 100 4 stone
+s 1 100 4 stone
+s 2 100 4 stone
+s 3 100 4 stone
+s 4 100 4 stone
+s 5 100 4 stone
+s 6 100 4 stone
+s 7 100 4 stone
+s 8 100 4 stone
+s -8 100 5 stone
+s -7 100 5 stone
+s -6 100 5 stone
+s -5 100 5 stone
+s -4 100 5 stone
+s -3 100 5 stone
+s -2 100 5 stone
+s -1 100 5 stone
+s 0 100 5 stone
+s 1 100 5 stone
+s 2 100 5 stone
+s 3 100 5 stone
+s 4 100 5 stone
+s 5 100 5 stone
+s 6 100 5 stone
+s 7 100 5 stone
+s 8 100 5 stone
+s -8 100 6 stone
+s -7 100 6 stone
+s -6 100 6 stone
+s -5 100 6 stone
+s -4 100 6 stone
+s -3 100 6 stone
+s -2 100 6 stone
+s -1 100 6 stone
+s 0 100 6 stone
+s 1 100 6 stone
+s 2 100 6 stone
+s 3 100 6 stone
+s 4 100 6 stone
+s 5 100 6 stone
+s 6 100 6 stone
+s 7 100 6 stone
+s 8 100 6 stone
+s -8 100 7 stone
+s -7 100 7 stone
+s -6 100 7 stone
+s -5 100 7 stone
+s -4 100 7 stone
+s -3 100 7 stone
+s -2 100 7 stone
+s -1 100 7 stone
+s 0 100 7 stone
+s 1 100 7 stone
+s 2 100 7 stone
+s 3 100 7 stone
+s 4 100 7 stone
+s 5 100 7 stone
+s 6 100 7 stone
+s 7 100 7 stone
+s 8 100 7 stone
+s -8 100 8 stone
+s -7 100 8 stone
+s -6 100 8 stone
+s -5 100 8 stone
+s -4 100 8 stone
+s -3 100 8 stone
+s -2 100 8 stone
+s -1 100 8 stone
+s 0 100 8 stone
+s 1 100 8 stone
+s 2 100 8 stone
+s 3 100 8 stone
+s 4 100 8 stone
+s 5 100 8 stone
+s 6 100 8 stone
+s 7 100 8 stone
+s 8 100 8 stone
+s 0 101 0 water[level=0]
+t 5 0 101 -1 water[level=1]
+t 5 -1 101 0 water[level=1]
+t 5 1 101 0 water[level=1]
+t 5 0 101 1 water[level=1]
+t 10 0 101 -2 water[level=2]
+t 10 -1 101 -1 water[level=2]
+t 10 1 101 -1 water[level=2]
+t 10 -2 101 0 water[level=2]
+t 10 2 101 0 water[level=2]
+t 10 -1 101 1 water[level=2]
+t 10 1 101 1 water[level=2]
+t 10 0 101 2 water[level=2]
+t 15 0 101 -3 water[level=3]
+t 15 -1 101 -2 water[level=3]
+t 15 1 101 -2 water[level=3]
+t 15 -2 101 -1 water[level=3]
+t 15 2 101 -1 water[level=3]
+t 15 -3 101 0 water[level=3]
+t 15 3 101 0 water[level=3]
+t 15 -2 101 1 water[level=3]
+t 15 2 101 1 water[level=3]
+t 15 -1 101 2 water[level=3]
+t 15 1 101 2 water[level=3]
+t 15 0 101 3 water[level=3]
+t 20 0 101 -4 water[level=4]
+t 20 -1 101 -3 water[level=4]
+t 20 1 101 -3 water[level=4]
+t 20 -2 101 -2 water[level=4]
+t 20 2 101 -2 water[level=4]
+t 20 -3 101 -1 water[level=4]
+t 20 3 101 -1 water[level=4]
+t 20 -4 101 0 water[level=4]
+t 20 4 101 0 water[level=4]
+t 20 -3 101 1 water[level=4]
+t 20 3 101 1 water[level=4]
+t 20 -2 101 2 water[level=4]
+t 20 2 101 2 water[level=4]
+t 20 -1 101 3 water[level=4]
+t 20 1 101 3 water[level=4]
+t 20 0 101 4 water[level=4]
+t 25 0 101 -5 water[level=5]
+t 25 -1 101 -4 water[level=5]
+t 25 1 101 -4 water[level=5]
+t 25 -2 101 -3 water[level=5]
+t 25 2 101 -3 water[level=5]
+t 25 -3 101 -2 water[level=5]
+t 25 3 101 -2 water[level=5]
+t 25 -4 101 -1 water[level=5]
+t 25 4 101 -1 water[level=5]
+t 25 -5 101 0 water[level=5]
+t 25 5 101 0 water[level=5]
+t 25 -4 101 1 water[level=5]
+t 25 4 101 1 water[level=5]
+t 25 -3 101 2 water[level=5]
+t 25 3 101 2 water[level=5]
+t 25 -2 101 3 water[level=5]
+t 25 2 101 3 water[level=5]
+t 25 -1 101 4 water[level=5]
+t 25 1 101 4 water[level=5]
+t 25 0 101 5 water[level=5]
+t 30 0 101 -6 water[level=6]
+t 30 -1 101 -5 water[level=6]
+t 30 1 101 -5 water[level=6]
+t 30 -2 101 -4 water[level=6]
+t 30 2 101 -4 water[level=6]
+t 30 -3 101 -3 water[level=6]
+t 30 3 101 -3 water[level=6]
+t 30 -4 101 -2 water[level=6]
+t 30 4 101 -2 water[level=6]
+t 30 -5 101 -1 water[level=6]
+t 30 5 101 -1 water[level=6]
+t 30 -6 101 0 water[level=6]
+t 30 6 101 0 water[level=6]
+t 30 -5 101 1 water[level=6]
+t 30 5 101 1 water[level=6]
+t 30 -4 101 2 water[level=6]
+t 30 4 101 2 water[level=6]
+t 30 -3 101 3 water[level=6]
+t 30 3 101 3 water[level=6]
+t 30 -2 101 4 water[level=6]
+t 30 2 101 4 water[level=6]
+t 30 -1 101 5 water[level=6]
+t 30 1 101 5 water[level=6]
+t 30 0 101 6 water[level=6]
+t 35 0 101 -7 water[level=7]
+t 35 -1 101 -6 water[level=7]
+t 35 1 101 -6 water[level=7]
+t 35 -2 101 -5 water[level=7]
+t 35 2 101 -5 water[level=7]
+t 35 -3 101 -4 water[level=7]
+t 35 3 101 -4 water[level=7]
+t 35 -4 101 -3 water[level=7]
+t 35 4 101 -3 water[level=7]
+t 35 -5 101 -2 water[level=7]
+t 35 5 101 -2 water[level=7]
+t 35 -6 101 -1 water[level=7]
+t 35 6 101 -1 water[level=7]
+t 35 -7 101 0 water[level=7]
+t 35 7 101 0 water[level=7]
+t 35 -6 101 1 water[level=7]
+t 35 6 101 1 water[level=7]
+t 35 -5 101 2 water[level=7]
+t 35 5 101 2 water[level=7]
+t 35 -4 101 3 water[level=7]
+t 35 4 101 3 water[level=7]
+t 35 -3 101 4 water[level=7]
+t 35 3 101 4 water[level=7]
+t 35 -2 101 5 water[level=7]
+t 35 2 101 5 water[level=7]
+t 35 -1 101 6 water[level=7]
+t 35 1 101 6 water[level=7]
+t 35 0 101 7 water[level=7]
+scene drop
+warn fill 54 97 -10 74 103 10 air: No blocks were filled
+s 56 98 -8 stone
+s 57 98 -8 stone
+s 58 98 -8 stone
+s 59 98 -8 stone
+s 60 98 -8 stone
+s 61 98 -8 stone
+s 62 98 -8 stone
+s 63 98 -8 stone
+s 64 98 -8 stone
+s 65 98 -8 stone
+s 66 98 -8 stone
+s 67 98 -8 stone
+s 68 98 -8 stone
+s 69 98 -8 stone
+s 70 98 -8 stone
+s 71 98 -8 stone
+s 72 98 -8 stone
+s 56 98 -7 stone
+s 57 98 -7 stone
+s 58 98 -7 stone
+s 59 98 -7 stone
+s 60 98 -7 stone
+s 61 98 -7 stone
+s 62 98 -7 stone
+s 63 98 -7 stone
+s 64 98 -7 stone
+s 65 98 -7 stone
+s 66 98 -7 stone
+s 67 98 -7 stone
+s 68 98 -7 stone
+s 69 98 -7 stone
+s 70 98 -7 stone
+s 71 98 -7 stone
+s 72 98 -7 stone
+s 56 98 -6 stone
+s 57 98 -6 stone
+s 58 98 -6 stone
+s 59 98 -6 stone
+s 60 98 -6 stone
+s 61 98 -6 stone
+s 62 98 -6 stone
+s 63 98 -6 stone
+s 64 98 -6 stone
+s 65 98 -6 stone
+s 66 98 -6 stone
+s 67 98 -6 stone
+s 68 98 -6 stone
+s 69 98 -6 stone
+s 70 98 -6 stone
+s 71 98 -6 stone
+s 72 98 -6 stone
+s 56 98 -5 stone
+s 57 98 -5 stone
+s 58 98 -5 stone
+s 59 98 -5 stone
+s 60 98 -5 stone
+s 61 98 -5 stone
+s 62 98 -5 stone
+s 63 98 -5 stone
+s 64 98 -5 stone
+s 65 98 -5 stone
+s 66 98 -5 stone
+s 67 98 -5 stone
+s 68 98 -5 stone
+s 69 98 -5 stone
+s 70 98 -5 stone
+s 71 98 -5 stone
+s 72 98 -5 stone
+s 56 98 -4 stone
+s 57 98 -4 stone
+s 58 98 -4 stone
+s 59 98 -4 stone
+s 60 98 -4 stone
+s 61 98 -4 stone
+s 62 98 -4 stone
+s 63 98 -4 stone
+s 64 98 -4 stone
+s 65 98 -4 stone
+s 66 98 -4 stone
+s 67 98 -4 stone
+s 68 98 -4 stone
+s 69 98 -4 stone
+s 70 98 -4 stone
+s 71 98 -4 stone
+s 72 98 -4 stone
+s 56 98 -3 stone
+s 57 98 -3 stone
+s 58 98 -3 stone
+s 59 98 -3 stone
+s 60 98 -3 stone
+s 61 98 -3 stone
+s 62 98 -3 stone
+s 63 98 -3 stone
+s 64 98 -3 stone
+s 65 98 -3 stone
+s 66 98 -3 stone
+s 67 98 -3 stone
+s 68 98 -3 stone
+s 69 98 -3 stone
+s 70 98 -3 stone
+s 71 98 -3 stone
+s 72 98 -3 stone
+s 56 98 -2 stone
+s 57 98 -2 stone
+s 58 98 -2 stone
+s 59 98 -2 stone
+s 60 98 -2 stone
+s 61 98 -2 stone
+s 62 98 -2 stone
+s 63 98 -2 stone
+s 64 98 -2 stone
+s 65 98 -2 stone
+s 66 98 -2 stone
+s 67 98 -2 stone
+s 68 98 -2 stone
+s 69 98 -2 stone
+s 70 98 -2 stone
+s 71 98 -2 stone
+s 72 98 -2 stone
+s 56 98 -1 stone
+s 57 98 -1 stone
+s 58 98 -1 stone
+s 59 98 -1 stone
+s 60 98 -1 stone
+s 61 98 -1 stone
+s 62 98 -1 stone
+s 63 98 -1 stone
+s 64 98 -1 stone
+s 65 98 -1 stone
+s 66 98 -1 stone
+s 67 98 -1 stone
+s 68 98 -1 stone
+s 69 98 -1 stone
+s 70 98 -1 stone
+s 71 98 -1 stone
+s 72 98 -1 stone
+s 56 98 0 stone
+s 57 98 0 stone
+s 58 98 0 stone
+s 59 98 0 stone
+s 60 98 0 stone
+s 61 98 0 stone
+s 62 98 0 stone
+s 63 98 0 stone
+s 64 98 0 stone
+s 65 98 0 stone
+s 66 98 0 stone
+s 67 98 0 stone
+s 68 98 0 stone
+s 69 98 0 stone
+s 70 98 0 stone
+s 71 98 0 stone
+s 72 98 0 stone
+s 56 98 1 stone
+s 57 98 1 stone
+s 58 98 1 stone
+s 59 98 1 stone
+s 60 98 1 stone
+s 61 98 1 stone
+s 62 98 1 stone
+s 63 98 1 stone
+s 64 98 1 stone
+s 65 98 1 stone
+s 66 98 1 stone
+s 67 98 1 stone
+s 68 98 1 stone
+s 69 98 1 stone
+s 70 98 1 stone
+s 71 98 1 stone
+s 72 98 1 stone
+s 56 98 2 stone
+s 57 98 2 stone
+s 58 98 2 stone
+s 59 98 2 stone
+s 60 98 2 stone
+s 61 98 2 stone
+s 62 98 2 stone
+s 63 98 2 stone
+s 64 98 2 stone
+s 65 98 2 stone
+s 66 98 2 stone
+s 67 98 2 stone
+s 68 98 2 stone
+s 69 98 2 stone
+s 70 98 2 stone
+s 71 98 2 stone
+s 72 98 2 stone
+s 56 98 3 stone
+s 57 98 3 stone
+s 58 98 3 stone
+s 59 98 3 stone
+s 60 98 3 stone
+s 61 98 3 stone
+s 62 98 3 stone
+s 63 98 3 stone
+s 64 98 3 stone
+s 65 98 3 stone
+s 66 98 3 stone
+s 67 98 3 stone
+s 68 98 3 stone
+s 69 98 3 stone
+s 70 98 3 stone
+s 71 98 3 stone
+s 72 98 3 stone
+s 56 98 4 stone
+s 57 98 4 stone
+s 58 98 4 stone
+s 59 98 4 stone
+s 60 98 4 stone
+s 61 98 4 stone
+s 62 98 4 stone
+s 63 98 4 stone
+s 64 98 4 stone
+s 65 98 4 stone
+s 66 98 4 stone
+s 67 98 4 stone
+s 68 98 4 stone
+s 69 98 4 stone
+s 70 98 4 stone
+s 71 98 4 stone
+s 72 98 4 stone
+s 56 98 5 stone
+s 57 98 5 stone
+s 58 98 5 stone
+s 59 98 5 stone
+s 60 98 5 stone
+s 61 98 5 stone
+s 62 98 5 stone
+s 63 98 5 stone
+s 64 98 5 stone
+s 65 98 5 stone
+s 66 98 5 stone
+s 67 98 5 stone
+s 68 98 5 stone
+s 69 98 5 stone
+s 70 98 5 stone
+s 71 98 5 stone
+s 72 98 5 stone
+s 56 98 6 stone
+s 57 98 6 stone
+s 58 98 6 stone
+s 59 98 6 stone
+s 60 98 6 stone
+s 61 98 6 stone
+s 62 98 6 stone
+s 63 98 6 stone
+s 64 98 6 stone
+s 65 98 6 stone
+s 66 98 6 stone
+s 67 98 6 stone
+s 68 98 6 stone
+s 69 98 6 stone
+s 70 98 6 stone
+s 71 98 6 stone
+s 72 98 6 stone
+s 56 98 7 stone
+s 57 98 7 stone
+s 58 98 7 stone
+s 59 98 7 stone
+s 60 98 7 stone
+s 61 98 7 stone
+s 62 98 7 stone
+s 63 98 7 stone
+s 64 98 7 stone
+s 65 98 7 stone
+s 66 98 7 stone
+s 67 98 7 stone
+s 68 98 7 stone
+s 69 98 7 stone
+s 70 98 7 stone
+s 71 98 7 stone
+s 72 98 7 stone
+s 56 98 8 stone
+s 57 98 8 stone
+s 58 98 8 stone
+s 59 98 8 stone
+s 60 98 8 stone
+s 61 98 8 stone
+s 62 98 8 stone
+s 63 98 8 stone
+s 64 98 8 stone
+s 65 98 8 stone
+s 66 98 8 stone
+s 67 98 8 stone
+s 68 98 8 stone
+s 69 98 8 stone
+s 70 98 8 stone
+s 71 98 8 stone
+s 72 98 8 stone
+s 56 100 -8 stone
+s 57 100 -8 stone
+s 58 100 -8 stone
+s 59 100 -8 stone
+s 60 100 -8 stone
+s 61 100 -8 stone
+s 62 100 -8 stone
+s 63 100 -8 stone
+s 64 100 -8 stone
+s 65 100 -8 stone
+s 66 100 -8 stone
+s 67 100 -8 stone
+s 68 100 -8 stone
+s 69 100 -8 stone
+s 70 100 -8 stone
+s 71 100 -8 stone
+s 72 100 -8 stone
+s 56 100 -7 stone
+s 57 100 -7 stone
+s 58 100 -7 stone
+s 59 100 -7 stone
+s 60 100 -7 stone
+s 61 100 -7 stone
+s 62 100 -7 stone
+s 63 100 -7 stone
+s 64 100 -7 stone
+s 65 100 -7 stone
+s 66 100 -7 stone
+s 67 100 -7 stone
+s 68 100 -7 stone
+s 69 100 -7 stone
+s 70 100 -7 stone
+s 71 100 -7 stone
+s 72 100 -7 stone
+s 56 100 -6 stone
+s 57 100 -6 stone
+s 58 100 -6 stone
+s 59 100 -6 stone
+s 60 100 -6 stone
+s 61 100 -6 stone
+s 62 100 -6 stone
+s 63 100 -6 stone
+s 64 100 -6 stone
+s 65 100 -6 stone
+s 66 100 -6 stone
+s 67 100 -6 stone
+s 68 100 -6 stone
+s 69 100 -6 stone
+s 70 100 -6 stone
+s 71 100 -6 stone
+s 72 100 -6 stone
+s 56 100 -5 stone
+s 57 100 -5 stone
+s 58 100 -5 stone
+s 59 100 -5 stone
+s 60 100 -5 stone
+s 61 100 -5 stone
+s 62 100 -5 stone
+s 63 100 -5 stone
+s 64 100 -5 stone
+s 65 100 -5 stone
+s 66 100 -5 stone
+s 67 100 -5 stone
+s 68 100 -5 stone
+s 69 100 -5 stone
+s 70 100 -5 stone
+s 71 100 -5 stone
+s 72 100 -5 stone
+s 56 100 -4 stone
+s 57 100 -4 stone
+s 58 100 -4 stone
+s 59 100 -4 stone
+s 60 100 -4 stone
+s 61 100 -4 stone
+s 62 100 -4 stone
+s 63 100 -4 stone
+s 65 100 -4 stone
+s 66 100 -4 stone
+s 67 100 -4 stone
+s 68 100 -4 stone
+s 69 100 -4 stone
+s 70 100 -4 stone
+s 71 100 -4 stone
+s 72 100 -4 stone
+s 56 100 -3 stone
+s 57 100 -3 stone
+s 58 100 -3 stone
+s 59 100 -3 stone
+s 60 100 -3 stone
+s 61 100 -3 stone
+s 62 100 -3 stone
+s 63 100 -3 stone
+s 64 100 -3 stone
+s 65 100 -3 stone
+s 66 100 -3 stone
+s 67 100 -3 stone
+s 68 100 -3 stone
+s 69 100 -3 stone
+s 70 100 -3 stone
+s 71 100 -3 stone
+s 72 100 -3 stone
+s 56 100 -2 stone
+s 57 100 -2 stone
+s 58 100 -2 stone
+s 59 100 -2 stone
+s 60 100 -2 stone
+s 61 100 -2 stone
+s 62 100 -2 stone
+s 63 100 -2 stone
+s 64 100 -2 stone
+s 65 100 -2 stone
+s 66 100 -2 stone
+s 67 100 -2 stone
+s 68 100 -2 stone
+s 69 100 -2 stone
+s 70 100 -2 stone
+s 71 100 -2 stone
+s 72 100 -2 stone
+s 56 100 -1 stone
+s 57 100 -1 stone
+s 58 100 -1 stone
+s 59 100 -1 stone
+s 60 100 -1 stone
+s 61 100 -1 stone
+s 62 100 -1 stone
+s 63 100 -1 stone
+s 64 100 -1 stone
+s 65 100 -1 stone
+s 66 100 -1 stone
+s 67 100 -1 stone
+s 68 100 -1 stone
+s 69 100 -1 stone
+s 70 100 -1 stone
+s 71 100 -1 stone
+s 72 100 -1 stone
+s 56 100 0 stone
+s 57 100 0 stone
+s 58 100 0 stone
+s 59 100 0 stone
+s 60 100 0 stone
+s 61 100 0 stone
+s 62 100 0 stone
+s 63 100 0 stone
+s 64 100 0 stone
+s 65 100 0 stone
+s 66 100 0 stone
+s 68 100 0 stone
+s 69 100 0 stone
+s 70 100 0 stone
+s 71 100 0 stone
+s 72 100 0 stone
+s 56 100 1 stone
+s 57 100 1 stone
+s 58 100 1 stone
+s 59 100 1 stone
+s 60 100 1 stone
+s 61 100 1 stone
+s 62 100 1 stone
+s 63 100 1 stone
+s 64 100 1 stone
+s 65 100 1 stone
+s 66 100 1 stone
+s 67 100 1 stone
+s 68 100 1 stone
+s 69 100 1 stone
+s 70 100 1 stone
+s 71 100 1 stone
+s 72 100 1 stone
+s 56 100 2 stone
+s 57 100 2 stone
+s 58 100 2 stone
+s 59 100 2 stone
+s 60 100 2 stone
+s 61 100 2 stone
+s 62 100 2 stone
+s 63 100 2 stone
+s 64 100 2 stone
+s 65 100 2 stone
+s 66 100 2 stone
+s 67 100 2 stone
+s 68 100 2 stone
+s 69 100 2 stone
+s 70 100 2 stone
+s 71 100 2 stone
+s 72 100 2 stone
+s 56 100 3 stone
+s 57 100 3 stone
+s 58 100 3 stone
+s 59 100 3 stone
+s 60 100 3 stone
+s 61 100 3 stone
+s 62 100 3 stone
+s 63 100 3 stone
+s 64 100 3 stone
+s 65 100 3 stone
+s 66 100 3 stone
+s 67 100 3 stone
+s 68 100 3 stone
+s 69 100 3 stone
+s 70 100 3 stone
+s 71 100 3 stone
+s 72 100 3 stone
+s 56 100 4 stone
+s 57 100 4 stone
+s 58 100 4 stone
+s 59 100 4 stone
+s 60 100 4 stone
+s 61 100 4 stone
+s 62 100 4 stone
+s 63 100 4 stone
+s 64 100 4 stone
+s 65 100 4 stone
+s 66 100 4 stone
+s 67 100 4 stone
+s 68 100 4 stone
+s 69 100 4 stone
+s 70 100 4 stone
+s 71 100 4 stone
+s 72 100 4 stone
+s 56 100 5 stone
+s 57 100 5 stone
+s 58 100 5 stone
+s 59 100 5 stone
+s 60 100 5 stone
+s 61 100 5 stone
+s 62 100 5 stone
+s 63 100 5 stone
+s 64 100 5 stone
+s 65 100 5 stone
+s 66 100 5 stone
+s 67 100 5 stone
+s 68 100 5 stone
+s 69 100 5 stone
+s 70 100 5 stone
+s 71 100 5 stone
+s 72 100 5 stone
+s 56 100 6 stone
+s 57 100 6 stone
+s 58 100 6 stone
+s 59 100 6 stone
+s 60 100 6 stone
+s 61 100 6 stone
+s 62 100 6 stone
+s 63 100 6 stone
+s 64 100 6 stone
+s 65 100 6 stone
+s 66 100 6 stone
+s 67 100 6 stone
+s 68 100 6 stone
+s 69 100 6 stone
+s 70 100 6 stone
+s 71 100 6 stone
+s 72 100 6 stone
+s 56 100 7 stone
+s 57 100 7 stone
+s 58 100 7 stone
+s 59 100 7 stone
+s 60 100 7 stone
+s 61 100 7 stone
+s 62 100 7 stone
+s 63 100 7 stone
+s 64 100 7 stone
+s 65 100 7 stone
+s 66 100 7 stone
+s 67 100 7 stone
+s 68 100 7 stone
+s 69 100 7 stone
+s 70 100 7 stone
+s 71 100 7 stone
+s 72 100 7 stone
+s 56 100 8 stone
+s 57 100 8 stone
+s 58 100 8 stone
+s 59 100 8 stone
+s 60 100 8 stone
+s 61 100 8 stone
+s 62 100 8 stone
+s 63 100 8 stone
+s 64 100 8 stone
+s 65 100 8 stone
+s 66 100 8 stone
+s 67 100 8 stone
+s 68 100 8 stone
+s 69 100 8 stone
+s 70 100 8 stone
+s 71 100 8 stone
+s 72 100 8 stone
+s 64 101 0 water[level=0]
+t 5 65 101 0 water[level=1]
+t 10 66 101 0 water[level=2]
+t 15 67 101 0 water[level=3]
+t 20 67 100 0 water[level=8]
+t 25 67 99 0 water[level=8]
+t 30 67 99 -1 water[level=1]
+t 30 66 99 0 water[level=1]
+t 30 68 99 0 water[level=1]
+t 30 67 99 1 water[level=1]
+t 35 67 99 -2 water[level=2]
+t 35 66 99 -1 water[level=2]
+t 35 68 99 -1 water[level=2]
+t 35 65 99 0 water[level=2]
+t 35 69 99 0 water[level=2]
+t 35 66 99 1 water[level=2]
+t 35 68 99 1 water[level=2]
+t 35 67 99 2 water[level=2]
+t 40 67 99 -3 water[level=3]
+t 40 66 99 -2 water[level=3]
+t 40 68 99 -2 water[level=3]
+t 40 65 99 -1 water[level=3]
+t 40 69 99 -1 water[level=3]
+t 40 64 99 0 water[level=3]
+t 40 70 99 0 water[level=3]
+t 40 65 99 1 water[level=3]
+t 40 69 99 1 water[level=3]
+t 40 66 99 2 water[level=3]
+t 40 68 99 2 water[level=3]
+t 40 67 99 3 water[level=3]
+t 45 67 99 -4 water[level=4]
+t 45 66 99 -3 water[level=4]
+t 45 68 99 -3 water[level=4]
+t 45 65 99 -2 water[level=4]
+t 45 69 99 -2 water[level=4]
+t 45 64 99 -1 water[level=4]
+t 45 70 99 -1 water[level=4]
+t 45 63 99 0 water[level=4]
+t 45 71 99 0 water[level=4]
+t 45 64 99 1 water[level=4]
+t 45 70 99 1 water[level=4]
+t 45 65 99 2 water[level=4]
+t 45 69 99 2 water[level=4]
+t 45 66 99 3 water[level=4]
+t 45 68 99 3 water[level=4]
+t 45 67 99 4 water[level=4]
+t 50 67 99 -5 water[level=5]
+t 50 66 99 -4 water[level=5]
+t 50 65 99 -3 water[level=5]
+t 50 69 99 -3 water[level=5]
+t 50 64 99 -2 water[level=5]
+t 50 70 99 -2 water[level=5]
+t 50 63 99 -1 water[level=5]
+t 50 71 99 -1 water[level=5]
+t 50 62 99 0 water[level=5]
+t 50 72 99 0 water[level=5]
+t 50 63 99 1 water[level=5]
+t 50 71 99 1 water[level=5]
+t 50 64 99 2 water[level=5]
+t 50 70 99 2 water[level=5]
+t 50 65 99 3 water[level=5]
+t 50 69 99 3 water[level=5]
+t 50 66 99 4 water[level=5]
+t 50 67 99 5 water[level=5]
+t 55 67 99 -6 water[level=6]
+t 55 66 99 -5 water[level=6]
+t 55 65 99 -4 water[level=6]
+t 55 64 99 -3 water[level=6]
+t 55 70 99 -3 water[level=6]
+t 55 63 99 -2 water[level=6]
+t 55 71 99 -2 water[level=6]
+t 55 62 99 -1 water[level=6]
+t 55 72 99 -1 water[level=6]
+t 55 61 99 0 water[level=6]
+t 55 73 99 0 water[level=6]
+t 55 62 99 1 water[level=6]
+t 55 72 99 1 water[level=6]
+t 55 63 99 2 water[level=6]
+t 55 71 99 2 water[level=6]
+t 55 64 99 3 water[level=6]
+t 55 70 99 3 water[level=6]
+t 55 65 99 4 water[level=6]
+t 55 66 99 5 water[level=6]
+t 55 67 99 6 water[level=6]
+t 60 73 98 0 water[level=8]
+t 60 67 99 -7 water[level=7]
+t 60 66 99 -6 water[level=7]
+t 60 65 99 -5 water[level=7]
+t 60 64 99 -4 water[level=7]
+t 60 63 99 -3 water[level=7]
+t 60 71 99 -3 water[level=7]
+t 60 62 99 -2 water[level=7]
+t 60 72 99 -2 water[level=7]
+t 60 61 99 -1 water[level=7]
+t 60 73 99 -1 water[level=7]
+t 60 60 99 0 water[level=7]
+t 60 61 99 1 water[level=7]
+t 60 73 99 1 water[level=7]
+t 60 62 99 2 water[level=7]
+t 60 72 99 2 water[level=7]
+t 60 63 99 3 water[level=7]
+t 60 71 99 3 water[level=7]
+t 60 64 99 4 water[level=7]
+t 60 65 99 5 water[level=7]
+t 60 66 99 6 water[level=7]
+t 60 67 99 7 water[level=7]
+scene drain
+warn fill 118 99 -10 138 103 10 air: No blocks were filled
+s 120 100 -8 stone
+s 121 100 -8 stone
+s 122 100 -8 stone
+s 123 100 -8 stone
+s 124 100 -8 stone
+s 125 100 -8 stone
+s 126 100 -8 stone
+s 127 100 -8 stone
+s 128 100 -8 stone
+s 129 100 -8 stone
+s 130 100 -8 stone
+s 131 100 -8 stone
+s 132 100 -8 stone
+s 133 100 -8 stone
+s 134 100 -8 stone
+s 135 100 -8 stone
+s 136 100 -8 stone
+s 120 100 -7 stone
+s 121 100 -7 stone
+s 122 100 -7 stone
+s 123 100 -7 stone
+s 124 100 -7 stone
+s 125 100 -7 stone
+s 126 100 -7 stone
+s 127 100 -7 stone
+s 128 100 -7 stone
+s 129 100 -7 stone
+s 130 100 -7 stone
+s 131 100 -7 stone
+s 132 100 -7 stone
+s 133 100 -7 stone
+s 134 100 -7 stone
+s 135 100 -7 stone
+s 136 100 -7 stone
+s 120 100 -6 stone
+s 121 100 -6 stone
+s 122 100 -6 stone
+s 123 100 -6 stone
+s 124 100 -6 stone
+s 125 100 -6 stone
+s 126 100 -6 stone
+s 127 100 -6 stone
+s 128 100 -6 stone
+s 129 100 -6 stone
+s 130 100 -6 stone
+s 131 100 -6 stone
+s 132 100 -6 stone
+s 133 100 -6 stone
+s 134 100 -6 stone
+s 135 100 -6 stone
+s 136 100 -6 stone
+s 120 100 -5 stone
+s 121 100 -5 stone
+s 122 100 -5 stone
+s 123 100 -5 stone
+s 124 100 -5 stone
+s 125 100 -5 stone
+s 126 100 -5 stone
+s 127 100 -5 stone
+s 128 100 -5 stone
+s 129 100 -5 stone
+s 130 100 -5 stone
+s 131 100 -5 stone
+s 132 100 -5 stone
+s 133 100 -5 stone
+s 134 100 -5 stone
+s 135 100 -5 stone
+s 136 100 -5 stone
+s 120 100 -4 stone
+s 121 100 -4 stone
+s 122 100 -4 stone
+s 123 100 -4 stone
+s 124 100 -4 stone
+s 125 100 -4 stone
+s 126 100 -4 stone
+s 127 100 -4 stone
+s 128 100 -4 stone
+s 129 100 -4 stone
+s 130 100 -4 stone
+s 131 100 -4 stone
+s 132 100 -4 stone
+s 133 100 -4 stone
+s 134 100 -4 stone
+s 135 100 -4 stone
+s 136 100 -4 stone
+s 120 100 -3 stone
+s 121 100 -3 stone
+s 122 100 -3 stone
+s 123 100 -3 stone
+s 124 100 -3 stone
+s 125 100 -3 stone
+s 126 100 -3 stone
+s 127 100 -3 stone
+s 128 100 -3 stone
+s 129 100 -3 stone
+s 130 100 -3 stone
+s 131 100 -3 stone
+s 132 100 -3 stone
+s 133 100 -3 stone
+s 134 100 -3 stone
+s 135 100 -3 stone
+s 136 100 -3 stone
+s 120 100 -2 stone
+s 121 100 -2 stone
+s 122 100 -2 stone
+s 123 100 -2 stone
+s 124 100 -2 stone
+s 125 100 -2 stone
+s 126 100 -2 stone
+s 127 100 -2 stone
+s 128 100 -2 stone
+s 129 100 -2 stone
+s 130 100 -2 stone
+s 131 100 -2 stone
+s 132 100 -2 stone
+s 133 100 -2 stone
+s 134 100 -2 stone
+s 135 100 -2 stone
+s 136 100 -2 stone
+s 120 100 -1 stone
+s 121 100 -1 stone
+s 122 100 -1 stone
+s 123 100 -1 stone
+s 124 100 -1 stone
+s 125 100 -1 stone
+s 126 100 -1 stone
+s 127 100 -1 stone
+s 128 100 -1 stone
+s 129 100 -1 stone
+s 130 100 -1 stone
+s 131 100 -1 stone
+s 132 100 -1 stone
+s 133 100 -1 stone
+s 134 100 -1 stone
+s 135 100 -1 stone
+s 136 100 -1 stone
+s 120 100 0 stone
+s 121 100 0 stone
+s 122 100 0 stone
+s 123 100 0 stone
+s 124 100 0 stone
+s 125 100 0 stone
+s 126 100 0 stone
+s 127 100 0 stone
+s 128 100 0 stone
+s 129 100 0 stone
+s 130 100 0 stone
+s 131 100 0 stone
+s 132 100 0 stone
+s 133 100 0 stone
+s 134 100 0 stone
+s 135 100 0 stone
+s 136 100 0 stone
+s 120 100 1 stone
+s 121 100 1 stone
+s 122 100 1 stone
+s 123 100 1 stone
+s 124 100 1 stone
+s 125 100 1 stone
+s 126 100 1 stone
+s 127 100 1 stone
+s 128 100 1 stone
+s 129 100 1 stone
+s 130 100 1 stone
+s 131 100 1 stone
+s 132 100 1 stone
+s 133 100 1 stone
+s 134 100 1 stone
+s 135 100 1 stone
+s 136 100 1 stone
+s 120 100 2 stone
+s 121 100 2 stone
+s 122 100 2 stone
+s 123 100 2 stone
+s 124 100 2 stone
+s 125 100 2 stone
+s 126 100 2 stone
+s 127 100 2 stone
+s 128 100 2 stone
+s 129 100 2 stone
+s 130 100 2 stone
+s 131 100 2 stone
+s 132 100 2 stone
+s 133 100 2 stone
+s 134 100 2 stone
+s 135 100 2 stone
+s 136 100 2 stone
+s 120 100 3 stone
+s 121 100 3 stone
+s 122 100 3 stone
+s 123 100 3 stone
+s 124 100 3 stone
+s 125 100 3 stone
+s 126 100 3 stone
+s 127 100 3 stone
+s 128 100 3 stone
+s 129 100 3 stone
+s 130 100 3 stone
+s 131 100 3 stone
+s 132 100 3 stone
+s 133 100 3 stone
+s 134 100 3 stone
+s 135 100 3 stone
+s 136 100 3 stone
+s 120 100 4 stone
+s 121 100 4 stone
+s 122 100 4 stone
+s 123 100 4 stone
+s 124 100 4 stone
+s 125 100 4 stone
+s 126 100 4 stone
+s 127 100 4 stone
+s 128 100 4 stone
+s 129 100 4 stone
+s 130 100 4 stone
+s 131 100 4 stone
+s 132 100 4 stone
+s 133 100 4 stone
+s 134 100 4 stone
+s 135 100 4 stone
+s 136 100 4 stone
+s 120 100 5 stone
+s 121 100 5 stone
+s 122 100 5 stone
+s 123 100 5 stone
+s 124 100 5 stone
+s 125 100 5 stone
+s 126 100 5 stone
+s 127 100 5 stone
+s 128 100 5 stone
+s 129 100 5 stone
+s 130 100 5 stone
+s 131 100 5 stone
+s 132 100 5 stone
+s 133 100 5 stone
+s 134 100 5 stone
+s 135 100 5 stone
+s 136 100 5 stone
+s 120 100 6 stone
+s 121 100 6 stone
+s 122 100 6 stone
+s 123 100 6 stone
+s 124 100 6 stone
+s 125 100 6 stone
+s 126 100 6 stone
+s 127 100 6 stone
+s 128 100 6 stone
+s 129 100 6 stone
+s 130 100 6 stone
+s 131 100 6 stone
+s 132 100 6 stone
+s 133 100 6 stone
+s 134 100 6 stone
+s 135 100 6 stone
+s 136 100 6 stone
+s 120 100 7 stone
+s 121 100 7 stone
+s 122 100 7 stone
+s 123 100 7 stone
+s 124 100 7 stone
+s 125 100 7 stone
+s 126 100 7 stone
+s 127 100 7 stone
+s 128 100 7 stone
+s 129 100 7 stone
+s 130 100 7 stone
+s 131 100 7 stone
+s 132 100 7 stone
+s 133 100 7 stone
+s 134 100 7 stone
+s 135 100 7 stone
+s 136 100 7 stone
+s 120 100 8 stone
+s 121 100 8 stone
+s 122 100 8 stone
+s 123 100 8 stone
+s 124 100 8 stone
+s 125 100 8 stone
+s 126 100 8 stone
+s 127 100 8 stone
+s 128 100 8 stone
+s 129 100 8 stone
+s 130 100 8 stone
+s 131 100 8 stone
+s 132 100 8 stone
+s 133 100 8 stone
+s 134 100 8 stone
+s 135 100 8 stone
+s 136 100 8 stone
+s 128 101 0 water[level=0]
+t 5 128 101 -1 water[level=1]
+t 5 127 101 0 water[level=1]
+t 5 129 101 0 water[level=1]
+t 5 128 101 1 water[level=1]
+t 10 128 101 -2 water[level=2]
+t 10 127 101 -1 water[level=2]
+t 10 129 101 -1 water[level=2]
+t 10 126 101 0 water[level=2]
+t 10 130 101 0 water[level=2]
+t 10 127 101 1 water[level=2]
+t 10 129 101 1 water[level=2]
+t 10 128 101 2 water[level=2]
+t 15 128 101 -3 water[level=3]
+t 15 127 101 -2 water[level=3]
+t 15 129 101 -2 water[level=3]
+t 15 126 101 -1 water[level=3]
+t 15 130 101 -1 water[level=3]
+t 15 125 101 0 water[level=3]
+t 15 131 101 0 water[level=3]
+t 15 126 101 1 water[level=3]
+t 15 130 101 1 water[level=3]
+t 15 127 101 2 water[level=3]
+t 15 129 101 2 water[level=3]
+t 15 128 101 3 water[level=3]
+t 20 128 101 -4 water[level=4]
+t 20 127 101 -3 water[level=4]
+t 20 129 101 -3 water[level=4]
+t 20 126 101 -2 water[level=4]
+t 20 130 101 -2 water[level=4]
+t 20 125 101 -1 water[level=4]
+t 20 131 101 -1 water[level=4]
+t 20 124 101 0 water[level=4]
+t 20 132 101 0 water[level=4]
+t 20 125 101 1 water[level=4]
+t 20 131 101 1 water[level=4]
+t 20 126 101 2 water[level=4]
+t 20 130 101 2 water[level=4]
+t 20 127 101 3 water[level=4]
+t 20 129 101 3 water[level=4]
+t 20 128 101 4 water[level=4]
+t 25 128 101 -5 water[level=5]
+t 25 127 101 -4 water[level=5]
+t 25 129 101 -4 water[level=5]
+t 25 126 101 -3 water[level=5]
+t 25 130 101 -3 water[level=5]
+t 25 125 101 -2 water[level=5]
+t 25 131 101 -2 water[level=5]
+t 25 124 101 -1 water[level=5]
+t 25 132 101 -1 water[level=5]
+t 25 123 101 0 water[level=5]
+t 25 133 101 0 water[level=5]
+t 25 124 101 1 water[level=5]
+t 25 132 101 1 water[level=5]
+t 25 125 101 2 water[level=5]
+t 25 131 101 2 water[level=5]
+t 25 126 101 3 water[level=5]
+t 25 130 101 3 water[level=5]
+t 25 127 101 4 water[level=5]
+t 25 129 101 4 water[level=5]
+t 25 128 101 5 water[level=5]
+t 30 128 101 -6 water[level=6]
+t 30 127 101 -5 water[level=6]
+t 30 129 101 -5 water[level=6]
+t 30 126 101 -4 water[level=6]
+t 30 130 101 -4 water[level=6]
+t 30 125 101 -3 water[level=6]
+t 30 131 101 -3 water[level=6]
+t 30 124 101 -2 water[level=6]
+t 30 132 101 -2 water[level=6]
+t 30 123 101 -1 water[level=6]
+t 30 133 101 -1 water[level=6]
+t 30 122 101 0 water[level=6]
+t 30 134 101 0 water[level=6]
+t 30 123 101 1 water[level=6]
+t 30 133 101 1 water[level=6]
+t 30 124 101 2 water[level=6]
+t 30 132 101 2 water[level=6]
+t 30 125 101 3 water[level=6]
+t 30 131 101 3 water[level=6]
+t 30 126 101 4 water[level=6]
+t 30 130 101 4 water[level=6]
+t 30 127 101 5 water[level=6]
+t 30 129 101 5 water[level=6]
+t 30 128 101 6 water[level=6]
+t 35 128 101 -7 water[level=7]
+t 35 127 101 -6 water[level=7]
+t 35 129 101 -6 water[level=7]
+t 35 126 101 -5 water[level=7]
+t 35 130 101 -5 water[level=7]
+t 35 125 101 -4 water[level=7]
+t 35 131 101 -4 water[level=7]
+t 35 124 101 -3 water[level=7]
+t 35 132 101 -3 water[level=7]
+t 35 123 101 -2 water[level=7]
+t 35 133 101 -2 water[level=7]
+t 35 122 101 -1 water[level=7]
+t 35 134 101 -1 water[level=7]
+t 35 121 101 0 water[level=7]
+t 35 135 101 0 water[level=7]
+t 35 122 101 1 water[level=7]
+t 35 134 101 1 water[level=7]
+t 35 123 101 2 water[level=7]
+t 35 133 101 2 water[level=7]
+t 35 124 101 3 water[level=7]
+t 35 132 101 3 water[level=7]
+t 35 125 101 4 water[level=7]
+t 35 131 101 4 water[level=7]
+t 35 126 101 5 water[level=7]
+t 35 130 101 5 water[level=7]
+t 35 127 101 6 water[level=7]
+t 35 129 101 6 water[level=7]
+t 35 128 101 7 water[level=7]
+s 120 100 -8 stone
+s 121 100 -8 stone
+s 122 100 -8 stone
+s 123 100 -8 stone
+s 124 100 -8 stone
+s 125 100 -8 stone
+s 126 100 -8 stone
+s 127 100 -8 stone
+s 128 100 -8 stone
+s 129 100 -8 stone
+s 130 100 -8 stone
+s 131 100 -8 stone
+s 132 100 -8 stone
+s 133 100 -8 stone
+s 134 100 -8 stone
+s 135 100 -8 stone
+s 136 100 -8 stone
+s 120 100 -7 stone
+s 121 100 -7 stone
+s 122 100 -7 stone
+s 123 100 -7 stone
+s 124 100 -7 stone
+s 125 100 -7 stone
+s 126 100 -7 stone
+s 127 100 -7 stone
+s 128 100 -7 stone
+s 129 100 -7 stone
+s 130 100 -7 stone
+s 131 100 -7 stone
+s 132 100 -7 stone
+s 133 100 -7 stone
+s 134 100 -7 stone
+s 135 100 -7 stone
+s 136 100 -7 stone
+s 120 100 -6 stone
+s 121 100 -6 stone
+s 122 100 -6 stone
+s 123 100 -6 stone
+s 124 100 -6 stone
+s 125 100 -6 stone
+s 126 100 -6 stone
+s 127 100 -6 stone
+s 128 100 -6 stone
+s 129 100 -6 stone
+s 130 100 -6 stone
+s 131 100 -6 stone
+s 132 100 -6 stone
+s 133 100 -6 stone
+s 134 100 -6 stone
+s 135 100 -6 stone
+s 136 100 -6 stone
+s 120 100 -5 stone
+s 121 100 -5 stone
+s 122 100 -5 stone
+s 123 100 -5 stone
+s 124 100 -5 stone
+s 125 100 -5 stone
+s 126 100 -5 stone
+s 127 100 -5 stone
+s 128 100 -5 stone
+s 129 100 -5 stone
+s 130 100 -5 stone
+s 131 100 -5 stone
+s 132 100 -5 stone
+s 133 100 -5 stone
+s 134 100 -5 stone
+s 135 100 -5 stone
+s 136 100 -5 stone
+s 120 100 -4 stone
+s 121 100 -4 stone
+s 122 100 -4 stone
+s 123 100 -4 stone
+s 124 100 -4 stone
+s 125 100 -4 stone
+s 126 100 -4 stone
+s 127 100 -4 stone
+s 128 100 -4 stone
+s 129 100 -4 stone
+s 130 100 -4 stone
+s 131 100 -4 stone
+s 132 100 -4 stone
+s 133 100 -4 stone
+s 134 100 -4 stone
+s 135 100 -4 stone
+s 136 100 -4 stone
+s 120 100 -3 stone
+s 121 100 -3 stone
+s 122 100 -3 stone
+s 123 100 -3 stone
+s 124 100 -3 stone
+s 125 100 -3 stone
+s 126 100 -3 stone
+s 127 100 -3 stone
+s 128 100 -3 stone
+s 129 100 -3 stone
+s 130 100 -3 stone
+s 131 100 -3 stone
+s 132 100 -3 stone
+s 133 100 -3 stone
+s 134 100 -3 stone
+s 135 100 -3 stone
+s 136 100 -3 stone
+s 120 100 -2 stone
+s 121 100 -2 stone
+s 122 100 -2 stone
+s 123 100 -2 stone
+s 124 100 -2 stone
+s 125 100 -2 stone
+s 126 100 -2 stone
+s 127 100 -2 stone
+s 128 100 -2 stone
+s 129 100 -2 stone
+s 130 100 -2 stone
+s 131 100 -2 stone
+s 132 100 -2 stone
+s 133 100 -2 stone
+s 134 100 -2 stone
+s 135 100 -2 stone
+s 136 100 -2 stone
+s 120 100 -1 stone
+s 121 100 -1 stone
+s 122 100 -1 stone
+s 123 100 -1 stone
+s 124 100 -1 stone
+s 125 100 -1 stone
+s 126 100 -1 stone
+s 127 100 -1 stone
+s 128 100 -1 stone
+s 129 100 -1 stone
+s 130 100 -1 stone
+s 131 100 -1 stone
+s 132 100 -1 stone
+s 133 100 -1 stone
+s 134 100 -1 stone
+s 135 100 -1 stone
+s 136 100 -1 stone
+s 120 100 0 stone
+s 121 100 0 stone
+s 122 100 0 stone
+s 123 100 0 stone
+s 124 100 0 stone
+s 125 100 0 stone
+s 126 100 0 stone
+s 127 100 0 stone
+s 128 100 0 stone
+s 129 100 0 stone
+s 130 100 0 stone
+s 131 100 0 stone
+s 132 100 0 stone
+s 133 100 0 stone
+s 134 100 0 stone
+s 135 100 0 stone
+s 136 100 0 stone
+s 120 100 1 stone
+s 121 100 1 stone
+s 122 100 1 stone
+s 123 100 1 stone
+s 124 100 1 stone
+s 125 100 1 stone
+s 126 100 1 stone
+s 127 100 1 stone
+s 128 100 1 stone
+s 129 100 1 stone
+s 130 100 1 stone
+s 131 100 1 stone
+s 132 100 1 stone
+s 133 100 1 stone
+s 134 100 1 stone
+s 135 100 1 stone
+s 136 100 1 stone
+s 120 100 2 stone
+s 121 100 2 stone
+s 122 100 2 stone
+s 123 100 2 stone
+s 124 100 2 stone
+s 125 100 2 stone
+s 126 100 2 stone
+s 127 100 2 stone
+s 128 100 2 stone
+s 129 100 2 stone
+s 130 100 2 stone
+s 131 100 2 stone
+s 132 100 2 stone
+s 133 100 2 stone
+s 134 100 2 stone
+s 135 100 2 stone
+s 136 100 2 stone
+s 120 100 3 stone
+s 121 100 3 stone
+s 122 100 3 stone
+s 123 100 3 stone
+s 124 100 3 stone
+s 125 100 3 stone
+s 126 100 3 stone
+s 127 100 3 stone
+s 128 100 3 stone
+s 129 100 3 stone
+s 130 100 3 stone
+s 131 100 3 stone
+s 132 100 3 stone
+s 133 100 3 stone
+s 134 100 3 stone
+s 135 100 3 stone
+s 136 100 3 stone
+s 120 100 4 stone
+s 121 100 4 stone
+s 122 100 4 stone
+s 123 100 4 stone
+s 124 100 4 stone
+s 125 100 4 stone
+s 126 100 4 stone
+s 127 100 4 stone
+s 128 100 4 stone
+s 129 100 4 stone
+s 130 100 4 stone
+s 131 100 4 stone
+s 132 100 4 stone
+s 133 100 4 stone
+s 134 100 4 stone
+s 135 100 4 stone
+s 136 100 4 stone
+s 120 100 5 stone
+s 121 100 5 stone
+s 122 100 5 stone
+s 123 100 5 stone
+s 124 100 5 stone
+s 125 100 5 stone
+s 126 100 5 stone
+s 127 100 5 stone
+s 128 100 5 stone
+s 129 100 5 stone
+s 130 100 5 stone
+s 131 100 5 stone
+s 132 100 5 stone
+s 133 100 5 stone
+s 134 100 5 stone
+s 135 100 5 stone
+s 136 100 5 stone
+s 120 100 6 stone
+s 121 100 6 stone
+s 122 100 6 stone
+s 123 100 6 stone
+s 124 100 6 stone
+s 125 100 6 stone
+s 126 100 6 stone
+s 127 100 6 stone
+s 128 100 6 stone
+s 129 100 6 stone
+s 130 100 6 stone
+s 131 100 6 stone
+s 132 100 6 stone
+s 133 100 6 stone
+s 134 100 6 stone
+s 135 100 6 stone
+s 136 100 6 stone
+s 120 100 7 stone
+s 121 100 7 stone
+s 122 100 7 stone
+s 123 100 7 stone
+s 124 100 7 stone
+s 125 100 7 stone
+s 126 100 7 stone
+s 127 100 7 stone
+s 128 100 7 stone
+s 129 100 7 stone
+s 130 100 7 stone
+s 131 100 7 stone
+s 132 100 7 stone
+s 133 100 7 stone
+s 134 100 7 stone
+s 135 100 7 stone
+s 136 100 7 stone
+s 120 100 8 stone
+s 121 100 8 stone
+s 122 100 8 stone
+s 123 100 8 stone
+s 124 100 8 stone
+s 125 100 8 stone
+s 126 100 8 stone
+s 127 100 8 stone
+s 128 100 8 stone
+s 129 100 8 stone
+s 130 100 8 stone
+s 131 100 8 stone
+s 132 100 8 stone
+s 133 100 8 stone
+s 134 100 8 stone
+s 135 100 8 stone
+s 136 100 8 stone
+s 128 101 -7 water[level=7]
+s 127 101 -6 water[level=7]
+s 128 101 -6 water[level=6]
+s 129 101 -6 water[level=7]
+s 126 101 -5 water[level=7]
+s 127 101 -5 water[level=6]
+s 128 101 -5 water[level=5]
+s 129 101 -5 water[level=6]
+s 130 101 -5 water[level=7]
+s 125 101 -4 water[level=7]
+s 126 101 -4 water[level=6]
+s 127 101 -4 water[level=5]
+s 128 101 -4 water[level=4]
+s 129 101 -4 water[level=5]
+s 130 101 -4 water[level=6]
+s 131 101 -4 water[level=7]
+s 124 101 -3 water[level=7]
+s 125 101 -3 water[level=6]
+s 126 101 -3 water[level=5]
+s 127 101 -3 water[level=4]
+s 128 101 -3 water[level=3]
+s 129 101 -3 water[level=4]
+s 130 101 -3 water[level=5]
+s 131 101 -3 water[level=6]
+s 132 101 -3 water[level=7]
+s 123 101 -2 water[level=7]
+s 124 101 -2 water[level=6]
+s 125 101 -2 water[level=5]
+s 126 101 -2 water[level=4]
+s 127 101 -2 water[level=3]
+s 128 101 -2 water[level=2]
+s 129 101 -2 water[level=3]
+s 130 101 -2 water[level=4]
+s 131 101 -2 water[level=5]
+s 132 101 -2 water[level=6]
+s 133 101 -2 water[level=7]
+s 122 101 -1 water[level=7]
+s 123 101 -1 water[level=6]
+s 124 101 -1 water[level=5]
+s 125 101 -1 water[level=4]
+s 126 101 -1 water[level=3]
+s 127 101 -1 water[level=2]
+s 128 101 -1 water[level=1]
+s 129 101 -1 water[level=2]
+s 130 101 -1 water[level=3]
+s 131 101 -1 water[level=4]
+s 132 101 -1 water[level=5]
+s 133 101 -1 water[level=6]
+s 134 101 -1 water[level=7]
+s 121 101 0 water[level=7]
+s 122 101 0 water[level=6]
+s 123 101 0 water[level=5]
+s 124 101 0 water[level=4]
+s 125 101 0 water[level=3]
+s 126 101 0 water[level=2]
+s 127 101 0 water[level=1]
+s 129 101 0 water[level=1]
+s 130 101 0 water[level=2]
+s 131 101 0 water[level=3]
+s 132 101 0 water[level=4]
+s 133 101 0 water[level=5]
+s 134 101 0 water[level=6]
+s 135 101 0 water[level=7]
+s 122 101 1 water[level=7]
+s 123 101 1 water[level=6]
+s 124 101 1 water[level=5]
+s 125 101 1 water[level=4]
+s 126 101 1 water[level=3]
+s 127 101 1 water[level=2]
+s 128 101 1 water[level=1]
+s 129 101 1 water[level=2]
+s 130 101 1 water[level=3]
+s 131 101 1 water[level=4]
+s 132 101 1 water[level=5]
+s 133 101 1 water[level=6]
+s 134 101 1 water[level=7]
+s 123 101 2 water[level=7]
+s 124 101 2 water[level=6]
+s 125 101 2 water[level=5]
+s 126 101 2 water[level=4]
+s 127 101 2 water[level=3]
+s 128 101 2 water[level=2]
+s 129 101 2 water[level=3]
+s 130 101 2 water[level=4]
+s 131 101 2 water[level=5]
+s 132 101 2 water[level=6]
+s 133 101 2 water[level=7]
+s 124 101 3 water[level=7]
+s 125 101 3 water[level=6]
+s 126 101 3 water[level=5]
+s 127 101 3 water[level=4]
+s 128 101 3 water[level=3]
+s 129 101 3 water[level=4]
+s 130 101 3 water[level=5]
+s 131 101 3 water[level=6]
+s 132 101 3 water[level=7]
+s 125 101 4 water[level=7]
+s 126 101 4 water[level=6]
+s 127 101 4 water[level=5]
+s 128 101 4 water[level=4]
+s 129 101 4 water[level=5]
+s 130 101 4 water[level=6]
+s 131 101 4 water[level=7]
+s 126 101 5 water[level=7]
+s 127 101 5 water[level=6]
+s 128 101 5 water[level=5]
+s 129 101 5 water[level=6]
+s 130 101 5 water[level=7]
+s 127 101 6 water[level=7]
+s 128 101 6 water[level=6]
+s 129 101 6 water[level=7]
+s 128 101 7 water[level=7]
+t 50 128 101 -1 water[level=3]
+t 50 127 101 0 water[level=3]
+t 50 128 101 0 water[level=2]
+t 50 129 101 0 water[level=3]
+t 50 128 101 1 water[level=3]
+t 55 128 101 -2 water[level=4]
+t 55 127 101 -1 water[level=4]
+t 55 129 101 -1 water[level=4]
+t 55 126 101 0 water[level=4]
+t 55 128 101 0 water[level=4]
+t 55 130 101 0 water[level=4]
+t 55 127 101 1 water[level=4]
+t 55 129 101 1 water[level=4]
+t 55 128 101 2 water[level=4]
+t 60 128 101 -3 water[level=5]
+t 60 127 101 -2 water[level=5]
+t 60 129 101 -2 water[level=5]
+t 60 126 101 -1 water[level=5]
+t 60 128 101 -1 water[level=5]
+t 60 130 101 -1 water[level=5]
+t 60 125 101 0 water[level=5]
+t 60 127 101 0 water[level=5]
+t 60 129 101 0 water[level=5]
+t 60 131 101 0 water[level=5]
+t 60 126 101 1 water[level=5]
+t 60 128 101 1 water[level=5]
+t 60 130 101 1 water[level=5]
+t 60 127 101 2 water[level=5]
+t 60 129 101 2 water[level=5]
+t 60 128 101 3 water[level=5]
+t 65 128 101 -4 water[level=6]
+t 65 127 101 -3 water[level=6]
+t 65 129 101 -3 water[level=6]
+t 65 126 101 -2 water[level=6]
+t 65 128 101 -2 water[level=6]
+t 65 130 101 -2 water[level=6]
+t 65 125 101 -1 water[level=6]
+t 65 127 101 -1 water[level=6]
+t 65 129 101 -1 water[level=6]
+t 65 131 101 -1 water[level=6]
+t 65 124 101 0 water[level=6]
+t 65 126 101 0 water[level=6]
+t 65 128 101 0 water[level=6]
+t 65 130 101 0 water[level=6]
+t 65 132 101 0 water[level=6]
+t 65 125 101 1 water[level=6]
+t 65 127 101 1 water[level=6]
+t 65 129 101 1 water[level=6]
+t 65 131 101 1 water[level=6]
+t 65 126 101 2 water[level=6]
+t 65 128 101 2 water[level=6]
+t 65 130 101 2 water[level=6]
+t 65 127 101 3 water[level=6]
+t 65 129 101 3 water[level=6]
+t 65 128 101 4 water[level=6]
+t 70 128 101 -5 water[level=7]
+t 70 127 101 -4 water[level=7]
+t 70 129 101 -4 water[level=7]
+t 70 126 101 -3 water[level=7]
+t 70 128 101 -3 water[level=7]
+t 70 130 101 -3 water[level=7]
+t 70 125 101 -2 water[level=7]
+t 70 127 101 -2 water[level=7]
+t 70 129 101 -2 water[level=7]
+t 70 131 101 -2 water[level=7]
+t 70 124 101 -1 water[level=7]
+t 70 126 101 -1 water[level=7]
+t 70 128 101 -1 water[level=7]
+t 70 130 101 -1 water[level=7]
+t 70 132 101 -1 water[level=7]
+t 70 123 101 0 water[level=7]
+t 70 125 101 0 water[level=7]
+t 70 127 101 0 water[level=7]
+t 70 129 101 0 water[level=7]
+t 70 131 101 0 water[level=7]
+t 70 133 101 0 water[level=7]
+t 70 124 101 1 water[level=7]
+t 70 126 101 1 water[level=7]
+t 70 128 101 1 water[level=7]
+t 70 130 101 1 water[level=7]
+t 70 132 101 1 water[level=7]
+t 70 125 101 2 water[level=7]
+t 70 127 101 2 water[level=7]
+t 70 129 101 2 water[level=7]
+t 70 131 101 2 water[level=7]
+t 70 126 101 3 water[level=7]
+t 70 128 101 3 water[level=7]
+t 70 130 101 3 water[level=7]
+t 70 127 101 4 water[level=7]
+t 70 129 101 4 water[level=7]
+t 70 128 101 5 water[level=7]
+t 75 128 101 -6 air
+t 75 127 101 -5 air
+t 75 129 101 -5 air
+t 75 126 101 -4 air
+t 75 128 101 -4 air
+t 75 130 101 -4 air
+t 75 125 101 -3 air
+t 75 127 101 -3 air
+t 75 129 101 -3 air
+t 75 131 101 -3 air
+t 75 124 101 -2 air
+t 75 126 101 -2 air
+t 75 128 101 -2 air
+t 75 130 101 -2 air
+t 75 132 101 -2 air
+t 75 123 101 -1 air
+t 75 125 101 -1 air
+t 75 127 101 -1 air
+t 75 129 101 -1 air
+t 75 131 101 -1 air
+t 75 133 101 -1 air
+t 75 122 101 0 air
+t 75 124 101 0 air
+t 75 126 101 0 air
+t 75 128 101 0 air
+t 75 130 101 0 air
+t 75 132 101 0 air
+t 75 134 101 0 air
+t 75 123 101 1 air
+t 75 125 101 1 air
+t 75 127 101 1 air
+t 75 129 101 1 air
+t 75 131 101 1 air
+t 75 133 101 1 air
+t 75 124 101 2 air
+t 75 126 101 2 air
+t 75 128 101 2 air
+t 75 130 101 2 air
+t 75 132 101 2 air
+t 75 125 101 3 air
+t 75 127 101 3 air
+t 75 129 101 3 air
+t 75 131 101 3 air
+t 75 126 101 4 air
+t 75 128 101 4 air
+t 75 130 101 4 air
+t 75 127 101 5 air
+t 75 129 101 5 air
+t 75 128 101 6 air
+t 80 128 101 -7 air
+t 80 127 101 -6 air
+t 80 129 101 -6 air
+t 80 126 101 -5 air
+t 80 128 101 -5 air
+t 80 130 101 -5 air
+t 80 125 101 -4 air
+t 80 127 101 -4 air
+t 80 129 101 -4 air
+t 80 131 101 -4 air
+t 80 124 101 -3 air
+t 80 126 101 -3 air
+t 80 128 101 -3 air
+t 80 130 101 -3 air
+t 80 132 101 -3 air
+t 80 123 101 -2 air
+t 80 125 101 -2 air
+t 80 127 101 -2 air
+t 80 129 101 -2 air
+t 80 131 101 -2 air
+t 80 133 101 -2 air
+t 80 122 101 -1 air
+t 80 124 101 -1 air
+t 80 126 101 -1 air
+t 80 128 101 -1 air
+t 80 130 101 -1 air
+t 80 132 101 -1 air
+t 80 134 101 -1 air
+t 80 121 101 0 air
+t 80 123 101 0 air
+t 80 125 101 0 air
+t 80 127 101 0 air
+t 80 129 101 0 air
+t 80 131 101 0 air
+t 80 133 101 0 air
+t 80 135 101 0 air
+t 80 122 101 1 air
+t 80 124 101 1 air
+t 80 126 101 1 air
+t 80 128 101 1 air
+t 80 130 101 1 air
+t 80 132 101 1 air
+t 80 134 101 1 air
+t 80 123 101 2 air
+t 80 125 101 2 air
+t 80 127 101 2 air
+t 80 129 101 2 air
+t 80 131 101 2 air
+t 80 133 101 2 air
+t 80 124 101 3 air
+t 80 126 101 3 air
+t 80 128 101 3 air
+t 80 130 101 3 air
+t 80 132 101 3 air
+t 80 125 101 4 air
+t 80 127 101 4 air
+t 80 129 101 4 air
+t 80 131 101 4 air
+t 80 126 101 5 air
+t 80 128 101 5 air
+t 80 130 101 5 air
+t 80 127 101 6 air
+t 80 129 101 6 air
+t 80 128 101 7 air
+scene infinite
+warn fill 182 99 -7 198 103 7 air: No blocks were filled
+s 184 100 -5 stone
+s 185 100 -5 stone
+s 186 100 -5 stone
+s 187 100 -5 stone
+s 188 100 -5 stone
+s 189 100 -5 stone
+s 190 100 -5 stone
+s 191 100 -5 stone
+s 192 100 -5 stone
+s 193 100 -5 stone
+s 194 100 -5 stone
+s 195 100 -5 stone
+s 196 100 -5 stone
+s 184 100 -4 stone
+s 185 100 -4 stone
+s 186 100 -4 stone
+s 187 100 -4 stone
+s 188 100 -4 stone
+s 189 100 -4 stone
+s 190 100 -4 stone
+s 191 100 -4 stone
+s 192 100 -4 stone
+s 193 100 -4 stone
+s 194 100 -4 stone
+s 195 100 -4 stone
+s 196 100 -4 stone
+s 184 100 -3 stone
+s 185 100 -3 stone
+s 186 100 -3 stone
+s 187 100 -3 stone
+s 188 100 -3 stone
+s 189 100 -3 stone
+s 190 100 -3 stone
+s 191 100 -3 stone
+s 192 100 -3 stone
+s 193 100 -3 stone
+s 194 100 -3 stone
+s 195 100 -3 stone
+s 196 100 -3 stone
+s 184 100 -2 stone
+s 185 100 -2 stone
+s 186 100 -2 stone
+s 187 100 -2 stone
+s 188 100 -2 stone
+s 189 100 -2 stone
+s 190 100 -2 stone
+s 191 100 -2 stone
+s 192 100 -2 stone
+s 193 100 -2 stone
+s 194 100 -2 stone
+s 195 100 -2 stone
+s 196 100 -2 stone
+s 184 100 -1 stone
+s 185 100 -1 stone
+s 186 100 -1 stone
+s 187 100 -1 stone
+s 188 100 -1 stone
+s 189 100 -1 stone
+s 190 100 -1 stone
+s 191 100 -1 stone
+s 192 100 -1 stone
+s 193 100 -1 stone
+s 194 100 -1 stone
+s 195 100 -1 stone
+s 196 100 -1 stone
+s 184 100 0 stone
+s 185 100 0 stone
+s 186 100 0 stone
+s 187 100 0 stone
+s 188 100 0 stone
+s 189 100 0 stone
+s 190 100 0 stone
+s 191 100 0 stone
+s 192 100 0 stone
+s 193 100 0 stone
+s 194 100 0 stone
+s 195 100 0 stone
+s 196 100 0 stone
+s 184 100 1 stone
+s 185 100 1 stone
+s 186 100 1 stone
+s 187 100 1 stone
+s 188 100 1 stone
+s 189 100 1 stone
+s 190 100 1 stone
+s 191 100 1 stone
+s 192 100 1 stone
+s 193 100 1 stone
+s 194 100 1 stone
+s 195 100 1 stone
+s 196 100 1 stone
+s 184 100 2 stone
+s 185 100 2 stone
+s 186 100 2 stone
+s 187 100 2 stone
+s 188 100 2 stone
+s 189 100 2 stone
+s 190 100 2 stone
+s 191 100 2 stone
+s 192 100 2 stone
+s 193 100 2 stone
+s 194 100 2 stone
+s 195 100 2 stone
+s 196 100 2 stone
+s 184 100 3 stone
+s 185 100 3 stone
+s 186 100 3 stone
+s 187 100 3 stone
+s 188 100 3 stone
+s 189 100 3 stone
+s 190 100 3 stone
+s 191 100 3 stone
+s 192 100 3 stone
+s 193 100 3 stone
+s 194 100 3 stone
+s 195 100 3 stone
+s 196 100 3 stone
+s 184 100 4 stone
+s 185 100 4 stone
+s 186 100 4 stone
+s 187 100 4 stone
+s 188 100 4 stone
+s 189 100 4 stone
+s 190 100 4 stone
+s 191 100 4 stone
+s 192 100 4 stone
+s 193 100 4 stone
+s 194 100 4 stone
+s 195 100 4 stone
+s 196 100 4 stone
+s 184 100 5 stone
+s 185 100 5 stone
+s 186 100 5 stone
+s 187 100 5 stone
+s 188 100 5 stone
+s 189 100 5 stone
+s 190 100 5 stone
+s 191 100 5 stone
+s 192 100 5 stone
+s 193 100 5 stone
+s 194 100 5 stone
+s 195 100 5 stone
+s 196 100 5 stone
+s 189 101 0 water[level=0]
+s 191 101 0 water[level=0]
+t 5 189 101 -1 water[level=1]
+t 5 191 101 -1 water[level=1]
+t 5 188 101 0 water[level=1]
+t 5 190 101 0 water[level=0]
+t 5 192 101 0 water[level=1]
+t 5 189 101 1 water[level=1]
+t 5 191 101 1 water[level=1]
+t 10 189 101 -2 water[level=2]
+t 10 191 101 -2 water[level=2]
+t 10 190 101 -1 water[level=1]
+t 10 187 101 0 water[level=2]
+t 10 193 101 0 water[level=2]
+t 10 190 101 1 water[level=1]
+t 10 189 101 2 water[level=2]
+t 10 191 101 2 water[level=2]
+t 15 189 101 -3 water[level=3]
+t 15 191 101 -3 water[level=3]
+t 15 190 101 -2 water[level=2]
+t 15 186 101 0 water[level=3]
+t 15 194 101 0 water[level=3]
+t 15 190 101 2 water[level=2]
+t 15 189 101 3 water[level=3]
+t 15 191 101 3 water[level=3]
+t 20 189 101 -4 water[level=4]
+t 20 191 101 -4 water[level=4]
+t 20 190 101 -3 water[level=3]
+t 20 185 101 0 water[level=4]
+t 20 195 101 0 water[level=4]
+t 20 190 101 3 water[level=3]
+t 20 189 101 4 water[level=4]
+t 20 191 101 4 water[level=4]
+t 25 189 101 -5 water[level=5]
+t 25 191 101 -5 water[level=5]
+t 25 190 101 -4 water[level=4]
+t 25 184 101 0 water[level=5]
+t 25 196 101 0 water[level=5]
+t 25 190 101 4 water[level=4]
+t 25 189 101 5 water[level=5]
+t 25 191 101 5 water[level=5]
+t 30 189 101 -6 water[level=6]
+t 30 191 101 -6 water[level=6]
+t 30 190 101 -5 water[level=5]
+t 30 183 101 0 water[level=6]
+t 30 197 101 0 water[level=6]
+t 30 190 101 5 water[level=5]
+t 30 189 101 6 water[level=6]
+t 30 191 101 6 water[level=6]
+scene lava
+warn fill 246 99 -7 262 103 7 air: No blocks were filled
+s 248 100 -5 stone
+s 249 100 -5 stone
+s 250 100 -5 stone
+s 251 100 -5 stone
+s 252 100 -5 stone
+s 253 100 -5 stone
+s 254 100 -5 stone
+s 255 100 -5 stone
+s 256 100 -5 stone
+s 257 100 -5 stone
+s 258 100 -5 stone
+s 259 100 -5 stone
+s 260 100 -5 stone
+s 248 100 -4 stone
+s 249 100 -4 stone
+s 250 100 -4 stone
+s 251 100 -4 stone
+s 252 100 -4 stone
+s 253 100 -4 stone
+s 254 100 -4 stone
+s 255 100 -4 stone
+s 256 100 -4 stone
+s 257 100 -4 stone
+s 258 100 -4 stone
+s 259 100 -4 stone
+s 260 100 -4 stone
+s 248 100 -3 stone
+s 249 100 -3 stone
+s 250 100 -3 stone
+s 251 100 -3 stone
+s 252 100 -3 stone
+s 253 100 -3 stone
+s 254 100 -3 stone
+s 255 100 -3 stone
+s 256 100 -3 stone
+s 257 100 -3 stone
+s 258 100 -3 stone
+s 259 100 -3 stone
+s 260 100 -3 stone
+s 248 100 -2 stone
+s 249 100 -2 stone
+s 250 100 -2 stone
+s 251 100 -2 stone
+s 252 100 -2 stone
+s 253 100 -2 stone
+s 254 100 -2 stone
+s 255 100 -2 stone
+s 256 100 -2 stone
+s 257 100 -2 stone
+s 258 100 -2 stone
+s 259 100 -2 stone
+s 260 100 -2 stone
+s 248 100 -1 stone
+s 249 100 -1 stone
+s 250 100 -1 stone
+s 251 100 -1 stone
+s 252 100 -1 stone
+s 253 100 -1 stone
+s 254 100 -1 stone
+s 255 100 -1 stone
+s 256 100 -1 stone
+s 257 100 -1 stone
+s 258 100 -1 stone
+s 259 100 -1 stone
+s 260 100 -1 stone
+s 248 100 0 stone
+s 249 100 0 stone
+s 250 100 0 stone
+s 251 100 0 stone
+s 252 100 0 stone
+s 253 100 0 stone
+s 254 100 0 stone
+s 255 100 0 stone
+s 256 100 0 stone
+s 257 100 0 stone
+s 258 100 0 stone
+s 259 100 0 stone
+s 260 100 0 stone
+s 248 100 1 stone
+s 249 100 1 stone
+s 250 100 1 stone
+s 251 100 1 stone
+s 252 100 1 stone
+s 253 100 1 stone
+s 254 100 1 stone
+s 255 100 1 stone
+s 256 100 1 stone
+s 257 100 1 stone
+s 258 100 1 stone
+s 259 100 1 stone
+s 260 100 1 stone
+s 248 100 2 stone
+s 249 100 2 stone
+s 250 100 2 stone
+s 251 100 2 stone
+s 252 100 2 stone
+s 253 100 2 stone
+s 254 100 2 stone
+s 255 100 2 stone
+s 256 100 2 stone
+s 257 100 2 stone
+s 258 100 2 stone
+s 259 100 2 stone
+s 260 100 2 stone
+s 248 100 3 stone
+s 249 100 3 stone
+s 250 100 3 stone
+s 251 100 3 stone
+s 252 100 3 stone
+s 253 100 3 stone
+s 254 100 3 stone
+s 255 100 3 stone
+s 256 100 3 stone
+s 257 100 3 stone
+s 258 100 3 stone
+s 259 100 3 stone
+s 260 100 3 stone
+s 248 100 4 stone
+s 249 100 4 stone
+s 250 100 4 stone
+s 251 100 4 stone
+s 252 100 4 stone
+s 253 100 4 stone
+s 254 100 4 stone
+s 255 100 4 stone
+s 256 100 4 stone
+s 257 100 4 stone
+s 258 100 4 stone
+s 259 100 4 stone
+s 260 100 4 stone
+s 248 100 5 stone
+s 249 100 5 stone
+s 250 100 5 stone
+s 251 100 5 stone
+s 252 100 5 stone
+s 253 100 5 stone
+s 254 100 5 stone
+s 255 100 5 stone
+s 256 100 5 stone
+s 257 100 5 stone
+s 258 100 5 stone
+s 259 100 5 stone
+s 260 100 5 stone
+s 254 101 0 lava[level=0]
+t 30 254 101 -1 lava[level=2]
+t 30 253 101 0 lava[level=2]
+t 30 255 101 0 lava[level=2]
+t 30 254 101 1 lava[level=2]
+t 60 254 101 -2 lava[level=4]
+t 60 253 101 -1 lava[level=4]
+t 60 255 101 -1 lava[level=4]
+t 60 252 101 0 lava[level=4]
+t 60 256 101 0 lava[level=4]
+t 60 253 101 1 lava[level=4]
+t 60 255 101 1 lava[level=4]
+t 60 254 101 2 lava[level=4]
+t 90 254 101 -3 lava[level=6]
+t 90 253 101 -2 lava[level=6]
+t 90 255 101 -2 lava[level=6]
+t 90 252 101 -1 lava[level=6]
+t 90 256 101 -1 lava[level=6]
+t 90 251 101 0 lava[level=6]
+t 90 257 101 0 lava[level=6]
+t 90 252 101 1 lava[level=6]
+t 90 256 101 1 lava[level=6]
+t 90 253 101 2 lava[level=6]
+t 90 255 101 2 lava[level=6]
+t 90 254 101 3 lava[level=6]
+scene meet
+warn fill 310 99 -4 330 103 4 air: No blocks were filled
+s 312 100 -2 stone
+s 313 100 -2 stone
+s 314 100 -2 stone
+s 315 100 -2 stone
+s 316 100 -2 stone
+s 317 100 -2 stone
+s 318 100 -2 stone
+s 319 100 -2 stone
+s 320 100 -2 stone
+s 321 100 -2 stone
+s 322 100 -2 stone
+s 323 100 -2 stone
+s 324 100 -2 stone
+s 325 100 -2 stone
+s 326 100 -2 stone
+s 327 100 -2 stone
+s 328 100 -2 stone
+s 312 100 -1 stone
+s 313 100 -1 stone
+s 314 100 -1 stone
+s 315 100 -1 stone
+s 316 100 -1 stone
+s 317 100 -1 stone
+s 318 100 -1 stone
+s 319 100 -1 stone
+s 320 100 -1 stone
+s 321 100 -1 stone
+s 322 100 -1 stone
+s 323 100 -1 stone
+s 324 100 -1 stone
+s 325 100 -1 stone
+s 326 100 -1 stone
+s 327 100 -1 stone
+s 328 100 -1 stone
+s 312 100 0 stone
+s 313 100 0 stone
+s 314 100 0 stone
+s 315 100 0 stone
+s 316 100 0 stone
+s 317 100 0 stone
+s 318 100 0 stone
+s 319 100 0 stone
+s 320 100 0 stone
+s 321 100 0 stone
+s 322 100 0 stone
+s 323 100 0 stone
+s 324 100 0 stone
+s 325 100 0 stone
+s 326 100 0 stone
+s 327 100 0 stone
+s 328 100 0 stone
+s 312 100 1 stone
+s 313 100 1 stone
+s 314 100 1 stone
+s 315 100 1 stone
+s 316 100 1 stone
+s 317 100 1 stone
+s 318 100 1 stone
+s 319 100 1 stone
+s 320 100 1 stone
+s 321 100 1 stone
+s 322 100 1 stone
+s 323 100 1 stone
+s 324 100 1 stone
+s 325 100 1 stone
+s 326 100 1 stone
+s 327 100 1 stone
+s 328 100 1 stone
+s 312 100 2 stone
+s 313 100 2 stone
+s 314 100 2 stone
+s 315 100 2 stone
+s 316 100 2 stone
+s 317 100 2 stone
+s 318 100 2 stone
+s 319 100 2 stone
+s 320 100 2 stone
+s 321 100 2 stone
+s 322 100 2 stone
+s 323 100 2 stone
+s 324 100 2 stone
+s 325 100 2 stone
+s 326 100 2 stone
+s 327 100 2 stone
+s 328 100 2 stone
+s 317 101 0 water[level=0]
+s 323 101 0 lava[level=0]
+t 5 317 101 -1 water[level=1]
+t 5 317 101 1 water[level=1]
+t 10 317 101 -2 water[level=2]
+t 10 317 101 2 water[level=2]
+t 15 317 101 -3 water[level=3]
+t 15 317 101 3 water[level=3]
+t 20 317 100 -3 water[level=8]
+t 20 317 100 3 water[level=8]
+t 30 323 101 -1 lava[level=2]
+t 30 323 101 1 lava[level=2]
+t 60 323 101 -2 lava[level=4]
+t 60 323 101 2 lava[level=4]
+t 90 323 101 -3 lava[level=6]
+t 90 323 101 3 lava[level=6]
+t 120 323 100 -3 lava[level=8]
+t 120 323 100 3 lava[level=8]
+scene lavafall
+warn fill 374 99 -5 386 107 5 air: No blocks were filled
+s 376 100 -3 stone
+s 377 100 -3 stone
+s 378 100 -3 stone
+s 379 100 -3 stone
+s 380 100 -3 stone
+s 381 100 -3 stone
+s 382 100 -3 stone
+s 383 100 -3 stone
+s 384 100 -3 stone
+s 376 100 -2 stone
+s 377 100 -2 stone
+s 378 100 -2 stone
+s 379 100 -2 stone
+s 380 100 -2 stone
+s 381 100 -2 stone
+s 382 100 -2 stone
+s 383 100 -2 stone
+s 384 100 -2 stone
+s 376 100 -1 stone
+s 377 100 -1 stone
+s 378 100 -1 stone
+s 379 100 -1 stone
+s 380 100 -1 stone
+s 381 100 -1 stone
+s 382 100 -1 stone
+s 383 100 -1 stone
+s 384 100 -1 stone
+s 376 100 0 stone
+s 377 100 0 stone
+s 378 100 0 stone
+s 379 100 0 stone
+s 380 100 0 stone
+s 381 100 0 stone
+s 382 100 0 stone
+s 383 100 0 stone
+s 384 100 0 stone
+s 376 100 1 stone
+s 377 100 1 stone
+s 378 100 1 stone
+s 379 100 1 stone
+s 380 100 1 stone
+s 381 100 1 stone
+s 382 100 1 stone
+s 383 100 1 stone
+s 384 100 1 stone
+s 376 100 2 stone
+s 377 100 2 stone
+s 378 100 2 stone
+s 379 100 2 stone
+s 380 100 2 stone
+s 381 100 2 stone
+s 382 100 2 stone
+s 383 100 2 stone
+s 384 100 2 stone
+s 376 100 3 stone
+s 377 100 3 stone
+s 378 100 3 stone
+s 379 100 3 stone
+s 380 100 3 stone
+s 381 100 3 stone
+s 382 100 3 stone
+s 383 100 3 stone
+s 384 100 3 stone
+s 380 101 0 water[level=0]
+s 382 105 0 lava[level=0]
+t 5 380 101 -1 water[level=1]
+t 5 380 101 1 water[level=1]
+t 10 380 101 -2 water[level=2]
+t 10 380 101 2 water[level=2]
+t 15 380 101 -3 water[level=3]
+t 15 380 101 3 water[level=3]
+t 20 380 101 -4 water[level=4]
+t 20 380 101 4 water[level=4]
+t 25 380 100 -4 water[level=8]
+t 25 380 100 4 water[level=8]
+t 30 382 104 0 lava[level=8]
+t 60 382 103 0 lava[level=8]
+t 60 382 105 -1 lava[level=2]
+t 60 381 105 0 lava[level=2]
+t 60 383 105 0 lava[level=2]
+t 60 382 105 1 lava[level=2]
+t 90 382 102 0 lava[level=8]
+t 90 382 104 -1 lava[level=8]
+t 90 381 104 0 lava[level=8]
+t 90 383 104 0 lava[level=8]
+t 90 382 104 1 lava[level=8]
+t 120 382 101 0 lava[level=8]
+t 120 382 103 -1 lava[level=8]
+t 120 381 103 0 lava[level=8]
+t 120 383 103 0 lava[level=8]
+t 120 382 103 1 lava[level=8]
+scene logged
+warn fill 438 99 -7 454 103 7 air: No blocks were filled
+s 440 100 -5 stone
+s 441 100 -5 stone
+s 442 100 -5 stone
+s 443 100 -5 stone
+s 444 100 -5 stone
+s 445 100 -5 stone
+s 446 100 -5 stone
+s 447 100 -5 stone
+s 448 100 -5 stone
+s 449 100 -5 stone
+s 450 100 -5 stone
+s 451 100 -5 stone
+s 452 100 -5 stone
+s 440 100 -4 stone
+s 441 100 -4 stone
+s 442 100 -4 stone
+s 443 100 -4 stone
+s 444 100 -4 stone
+s 445 100 -4 stone
+s 446 100 -4 stone
+s 447 100 -4 stone
+s 448 100 -4 stone
+s 449 100 -4 stone
+s 450 100 -4 stone
+s 451 100 -4 stone
+s 452 100 -4 stone
+s 440 100 -3 stone
+s 441 100 -3 stone
+s 442 100 -3 stone
+s 443 100 -3 stone
+s 444 100 -3 stone
+s 445 100 -3 stone
+s 446 100 -3 stone
+s 447 100 -3 stone
+s 448 100 -3 stone
+s 449 100 -3 stone
+s 450 100 -3 stone
+s 451 100 -3 stone
+s 452 100 -3 stone
+s 440 100 -2 stone
+s 441 100 -2 stone
+s 442 100 -2 stone
+s 443 100 -2 stone
+s 444 100 -2 stone
+s 445 100 -2 stone
+s 446 100 -2 stone
+s 447 100 -2 stone
+s 448 100 -2 stone
+s 449 100 -2 stone
+s 450 100 -2 stone
+s 451 100 -2 stone
+s 452 100 -2 stone
+s 440 100 -1 stone
+s 441 100 -1 stone
+s 442 100 -1 stone
+s 443 100 -1 stone
+s 444 100 -1 stone
+s 445 100 -1 stone
+s 446 100 -1 stone
+s 447 100 -1 stone
+s 448 100 -1 stone
+s 449 100 -1 stone
+s 450 100 -1 stone
+s 451 100 -1 stone
+s 452 100 -1 stone
+s 440 100 0 stone
+s 441 100 0 stone
+s 442 100 0 stone
+s 443 100 0 stone
+s 444 100 0 stone
+s 445 100 0 stone
+s 446 100 0 stone
+s 447 100 0 stone
+s 448 100 0 stone
+s 449 100 0 stone
+s 450 100 0 stone
+s 451 100 0 stone
+s 452 100 0 stone
+s 440 100 1 stone
+s 441 100 1 stone
+s 442 100 1 stone
+s 443 100 1 stone
+s 444 100 1 stone
+s 445 100 1 stone
+s 446 100 1 stone
+s 447 100 1 stone
+s 448 100 1 stone
+s 449 100 1 stone
+s 450 100 1 stone
+s 451 100 1 stone
+s 452 100 1 stone
+s 440 100 2 stone
+s 441 100 2 stone
+s 442 100 2 stone
+s 443 100 2 stone
+s 444 100 2 stone
+s 445 100 2 stone
+s 446 100 2 stone
+s 447 100 2 stone
+s 448 100 2 stone
+s 449 100 2 stone
+s 450 100 2 stone
+s 451 100 2 stone
+s 452 100 2 stone
+s 440 100 3 stone
+s 441 100 3 stone
+s 442 100 3 stone
+s 443 100 3 stone
+s 444 100 3 stone
+s 445 100 3 stone
+s 446 100 3 stone
+s 447 100 3 stone
+s 448 100 3 stone
+s 449 100 3 stone
+s 450 100 3 stone
+s 451 100 3 stone
+s 452 100 3 stone
+s 440 100 4 stone
+s 441 100 4 stone
+s 442 100 4 stone
+s 443 100 4 stone
+s 444 100 4 stone
+s 445 100 4 stone
+s 446 100 4 stone
+s 447 100 4 stone
+s 448 100 4 stone
+s 449 100 4 stone
+s 450 100 4 stone
+s 451 100 4 stone
+s 452 100 4 stone
+s 440 100 5 stone
+s 441 100 5 stone
+s 442 100 5 stone
+s 443 100 5 stone
+s 444 100 5 stone
+s 445 100 5 stone
+s 446 100 5 stone
+s 447 100 5 stone
+s 448 100 5 stone
+s 449 100 5 stone
+s 450 100 5 stone
+s 451 100 5 stone
+s 452 100 5 stone
+s 446 101 0 oak_slab[type=bottom,waterlogged=true]
+t 5 446 101 -1 water[level=1]
+t 5 445 101 0 water[level=1]
+t 5 447 101 0 water[level=1]
+t 5 446 101 1 water[level=1]
+t 10 446 101 -2 water[level=2]
+t 10 445 101 -1 water[level=2]
+t 10 447 101 -1 water[level=2]
+t 10 444 101 0 water[level=2]
+t 10 448 101 0 water[level=2]
+t 10 445 101 1 water[level=2]
+t 10 447 101 1 water[level=2]
+t 10 446 101 2 water[level=2]
+t 15 446 101 -3 water[level=3]
+t 15 445 101 -2 water[level=3]
+t 15 447 101 -2 water[level=3]
+t 15 443 101 0 water[level=3]
+t 15 449 101 0 water[level=3]
+t 15 445 101 2 water[level=3]
+t 15 447 101 2 water[level=3]
+t 15 446 101 3 water[level=3]
+t 20 446 101 -4 water[level=4]
+t 20 445 101 -3 water[level=4]
+t 20 447 101 -3 water[level=4]
+t 20 442 101 0 water[level=4]
+t 20 450 101 0 water[level=4]
+t 20 445 101 3 water[level=4]
+t 20 447 101 3 water[level=4]
+t 20 446 101 4 water[level=4]
+t 25 446 101 -5 water[level=5]
+t 25 445 101 -4 water[level=5]
+t 25 447 101 -4 water[level=5]
+t 25 441 101 0 water[level=5]
+t 25 451 101 0 water[level=5]
+t 25 445 101 4 water[level=5]
+t 25 447 101 4 water[level=5]
+t 25 446 101 5 water[level=5]
+t 30 446 101 -6 water[level=6]
+t 30 445 101 -5 water[level=6]
+t 30 447 101 -5 water[level=6]
+t 30 440 101 0 water[level=6]
+t 30 452 101 0 water[level=6]
+t 30 445 101 5 water[level=6]
+t 30 447 101 5 water[level=6]
+t 30 446 101 6 water[level=6]
+t 35 446 100 -6 water[level=8]
+t 35 446 100 6 water[level=8]
+t 35 445 101 -6 water[level=7]
+t 35 447 101 -6 water[level=7]
+t 35 439 101 0 water[level=7]
+t 35 453 101 0 water[level=7]
+t 35 445 101 6 water[level=7]
+t 35 447 101 6 water[level=7]
+t 40 445 100 -6 water[level=8]
+t 40 447 100 -6 water[level=8]
+t 40 439 100 0 water[level=8]
+t 40 453 100 0 water[level=8]
+t 40 445 100 6 water[level=8]
+t 40 447 100 6 water[level=8]
+scene breaks
+warn fill 502 99 -5 516 103 5 air: No blocks were filled
+s 504 100 -3 stone
+s 505 100 -3 stone
+s 506 100 -3 stone
+s 507 100 -3 stone
+s 508 100 -3 stone
+s 509 100 -3 stone
+s 510 100 -3 stone
+s 511 100 -3 stone
+s 512 100 -3 stone
+s 513 100 -3 stone
+s 514 100 -3 stone
+s 504 100 -2 stone
+s 505 100 -2 stone
+s 506 100 -2 stone
+s 507 100 -2 stone
+s 508 100 -2 stone
+s 509 100 -2 stone
+s 510 100 -2 stone
+s 511 100 -2 stone
+s 512 100 -2 stone
+s 513 100 -2 stone
+s 514 100 -2 stone
+s 504 100 -1 stone
+s 505 100 -1 stone
+s 506 100 -1 stone
+s 507 100 -1 stone
+s 508 100 -1 stone
+s 509 100 -1 stone
+s 510 100 -1 stone
+s 511 100 -1 stone
+s 512 100 -1 stone
+s 513 100 -1 stone
+s 514 100 -1 stone
+s 504 100 0 stone
+s 505 100 0 stone
+s 506 100 0 stone
+s 507 100 0 stone
+s 508 100 0 stone
+s 509 100 0 stone
+s 510 100 0 stone
+s 511 100 0 stone
+s 512 100 0 stone
+s 513 100 0 stone
+s 514 100 0 stone
+s 504 100 1 stone
+s 505 100 1 stone
+s 506 100 1 stone
+s 507 100 1 stone
+s 508 100 1 stone
+s 509 100 1 stone
+s 510 100 1 stone
+s 511 100 1 stone
+s 512 100 1 stone
+s 513 100 1 stone
+s 514 100 1 stone
+s 504 100 2 stone
+s 505 100 2 stone
+s 506 100 2 stone
+s 507 100 2 stone
+s 508 100 2 stone
+s 509 100 2 stone
+s 510 100 2 stone
+s 511 100 2 stone
+s 512 100 2 stone
+s 513 100 2 stone
+s 514 100 2 stone
+s 504 100 3 stone
+s 505 100 3 stone
+s 506 100 3 stone
+s 507 100 3 stone
+s 508 100 3 stone
+s 509 100 3 stone
+s 510 100 3 stone
+s 511 100 3 stone
+s 512 100 3 stone
+s 513 100 3 stone
+s 514 100 3 stone
+s 509 101 -1 oak_sign[rotation=8,waterlogged=false]
+s 507 101 0 water[level=0]
+s 508 101 0 rail[shape=north_south,waterlogged=false]
+s 509 101 0 torch
+s 510 101 0 poppy
+s 509 101 1 ladder[facing=south,waterlogged=false]
+t 5 507 101 -1 water[level=1]
+t 5 506 101 0 water[level=1]
+t 5 507 101 1 water[level=1]
+t 10 507 101 -2 water[level=2]
+t 10 505 101 0 water[level=2]
+t 10 507 101 2 water[level=2]
+t 15 507 101 -3 water[level=3]
+t 15 504 101 0 water[level=3]
+t 15 507 101 3 water[level=3]
+t 20 507 101 -4 water[level=4]
+t 20 503 101 0 water[level=4]
+t 20 507 101 4 water[level=4]
+t 25 507 100 -4 water[level=8]
+t 25 503 100 0 water[level=8]
+t 25 507 100 4 water[level=8]
+scene nether
+warn fill -1 99 -7 15 103 7 air: No blocks were filled
+s 1 100 -5 stone
+s 2 100 -5 stone
+s 3 100 -5 stone
+s 4 100 -5 stone
+s 5 100 -5 stone
+s 6 100 -5 stone
+s 7 100 -5 stone
+s 8 100 -5 stone
+s 9 100 -5 stone
+s 10 100 -5 stone
+s 11 100 -5 stone
+s 12 100 -5 stone
+s 13 100 -5 stone
+s 1 100 -4 stone
+s 2 100 -4 stone
+s 3 100 -4 stone
+s 4 100 -4 stone
+s 5 100 -4 stone
+s 6 100 -4 stone
+s 7 100 -4 stone
+s 8 100 -4 stone
+s 9 100 -4 stone
+s 10 100 -4 stone
+s 11 100 -4 stone
+s 12 100 -4 stone
+s 13 100 -4 stone
+s 1 100 -3 stone
+s 2 100 -3 stone
+s 3 100 -3 stone
+s 4 100 -3 stone
+s 5 100 -3 stone
+s 6 100 -3 stone
+s 7 100 -3 stone
+s 8 100 -3 stone
+s 9 100 -3 stone
+s 10 100 -3 stone
+s 11 100 -3 stone
+s 12 100 -3 stone
+s 13 100 -3 stone
+s 1 100 -2 stone
+s 2 100 -2 stone
+s 3 100 -2 stone
+s 4 100 -2 stone
+s 5 100 -2 stone
+s 6 100 -2 stone
+s 7 100 -2 stone
+s 8 100 -2 stone
+s 9 100 -2 stone
+s 10 100 -2 stone
+s 11 100 -2 stone
+s 12 100 -2 stone
+s 13 100 -2 stone
+s 1 100 -1 stone
+s 2 100 -1 stone
+s 3 100 -1 stone
+s 4 100 -1 stone
+s 5 100 -1 stone
+s 6 100 -1 stone
+s 7 100 -1 stone
+s 8 100 -1 stone
+s 9 100 -1 stone
+s 10 100 -1 stone
+s 11 100 -1 stone
+s 12 100 -1 stone
+s 13 100 -1 stone
+s 1 100 0 stone
+s 2 100 0 stone
+s 3 100 0 stone
+s 4 100 0 stone
+s 5 100 0 stone
+s 6 100 0 stone
+s 7 100 0 stone
+s 8 100 0 stone
+s 9 100 0 stone
+s 10 100 0 stone
+s 11 100 0 stone
+s 12 100 0 stone
+s 13 100 0 stone
+s 1 100 1 stone
+s 2 100 1 stone
+s 3 100 1 stone
+s 4 100 1 stone
+s 5 100 1 stone
+s 6 100 1 stone
+s 7 100 1 stone
+s 8 100 1 stone
+s 9 100 1 stone
+s 10 100 1 stone
+s 11 100 1 stone
+s 12 100 1 stone
+s 13 100 1 stone
+s 1 100 2 stone
+s 2 100 2 stone
+s 3 100 2 stone
+s 4 100 2 stone
+s 5 100 2 stone
+s 6 100 2 stone
+s 7 100 2 stone
+s 8 100 2 stone
+s 9 100 2 stone
+s 10 100 2 stone
+s 11 100 2 stone
+s 12 100 2 stone
+s 13 100 2 stone
+s 1 100 3 stone
+s 2 100 3 stone
+s 3 100 3 stone
+s 4 100 3 stone
+s 5 100 3 stone
+s 6 100 3 stone
+s 7 100 3 stone
+s 8 100 3 stone
+s 9 100 3 stone
+s 10 100 3 stone
+s 11 100 3 stone
+s 12 100 3 stone
+s 13 100 3 stone
+s 1 100 4 stone
+s 2 100 4 stone
+s 3 100 4 stone
+s 4 100 4 stone
+s 5 100 4 stone
+s 6 100 4 stone
+s 7 100 4 stone
+s 8 100 4 stone
+s 9 100 4 stone
+s 10 100 4 stone
+s 11 100 4 stone
+s 12 100 4 stone
+s 13 100 4 stone
+s 1 100 5 stone
+s 2 100 5 stone
+s 3 100 5 stone
+s 4 100 5 stone
+s 5 100 5 stone
+s 6 100 5 stone
+s 7 100 5 stone
+s 8 100 5 stone
+s 9 100 5 stone
+s 10 100 5 stone
+s 11 100 5 stone
+s 12 100 5 stone
+s 13 100 5 stone
+s 7 101 0 lava[level=0]
+t 10 7 101 -1 lava[level=1]
+t 10 6 101 0 lava[level=1]
+t 10 8 101 0 lava[level=1]
+t 10 7 101 1 lava[level=1]
+t 20 7 101 -2 lava[level=2]
+t 20 6 101 -1 lava[level=2]
+t 20 8 101 -1 lava[level=2]
+t 20 5 101 0 lava[level=2]
+t 20 9 101 0 lava[level=2]
+t 20 6 101 1 lava[level=2]
+t 20 8 101 1 lava[level=2]
+t 20 7 101 2 lava[level=2]
+t 30 7 101 -3 lava[level=3]
+t 30 6 101 -2 lava[level=3]
+t 30 8 101 -2 lava[level=3]
+t 30 4 101 0 lava[level=3]
+t 30 10 101 0 lava[level=3]
+t 30 6 101 2 lava[level=3]
+t 30 8 101 2 lava[level=3]
+t 30 7 101 3 lava[level=3]
+t 40 7 101 -4 lava[level=4]
+t 40 6 101 -3 lava[level=4]
+t 40 8 101 -3 lava[level=4]
+t 40 3 101 0 lava[level=4]
+t 40 11 101 0 lava[level=4]
+t 40 6 101 3 lava[level=4]
+t 40 8 101 3 lava[level=4]
+t 40 7 101 4 lava[level=4]
+t 50 7 101 -5 lava[level=5]
+t 50 6 101 -4 lava[level=5]
+t 50 8 101 -4 lava[level=5]
+t 50 2 101 0 lava[level=5]
+t 50 12 101 0 lava[level=5]
+t 50 6 101 4 lava[level=5]
+t 50 8 101 4 lava[level=5]
+t 50 7 101 5 lava[level=5]
+t 60 7 101 -6 lava[level=6]
+t 60 6 101 -5 lava[level=6]
+t 60 8 101 -5 lava[level=6]
+t 60 1 101 0 lava[level=6]
+t 60 13 101 0 lava[level=6]
+t 60 6 101 5 lava[level=6]
+t 60 8 101 5 lava[level=6]
+t 60 7 101 6 lava[level=6]
+t 70 7 100 -6 lava[level=8]
+t 70 7 100 6 lava[level=8]
+t 70 6 101 -6 lava[level=7]
+t 70 8 101 -6 lava[level=7]
+t 70 0 101 0 lava[level=7]
+t 70 14 101 0 lava[level=7]
+t 70 6 101 6 lava[level=7]
+t 70 8 101 6 lava[level=7]
+t 80 6 100 -6 lava[level=8]
+t 80 8 100 -6 lava[level=8]
+t 80 0 100 0 lava[level=8]
+t 80 14 100 0 lava[level=8]
+t 80 6 100 6 lava[level=8]
+t 80 8 100 6 lava[level=8]

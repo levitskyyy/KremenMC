@@ -2,7 +2,6 @@ package server
 
 import (
 	"math"
-	"math/rand/v2"
 
 	"github.com/levitskyyy/KremenMC/api"
 	"github.com/levitskyyy/KremenMC/internal/data"
@@ -25,8 +24,8 @@ func (w *World) broadcastNear(pos api.Vec3, pk packets.Packet) {
 
 // Animate ids.
 const (
-	animCrit      = 4
-	animMagicCrit = 5
+	animCrit      = 1
+	animMagicCrit = 2
 )
 
 // attackStrengthScale is Player.getAttackStrengthScale(0.5).
@@ -62,6 +61,7 @@ func (p *Player) attackEntity(target api.Entity) {
 		return
 	}
 	w := p.world.Load()
+	w.aiOwnerEvent(p, target, false)
 	weapon := p.Hand(api.MainHand)
 	src := EntityDamage("minecraft:player_attack", p)
 	l := &p.liv
@@ -278,6 +278,8 @@ func (p *Player) playerDied(src DamageSource, killer *Player) {
 	w := p.world.Load()
 	msg := deathMessage(p.DisplayName(), src)
 	keep := w.ruleBool("keep_inventory", "keepInventory", false)
+	bd := p.bridgeDeath(msg, keep)
+	msg, keep = bd.msg, bd.keep
 	var drops []item.Stack
 	if !keep {
 		p.inv.mu.Lock()
@@ -291,7 +293,10 @@ func (p *Player) playerDied(src DamageSource, killer *Player) {
 		}
 		p.inv.mu.Unlock()
 	}
-	show := true
+	show := bd.show
+	if bd.clearDrops {
+		drops = nil
+	}
 	if p.s.bus.HasHandlers(api.KindEntityDeath) {
 		ev := &api.EntityDeathEvent{Entity: p, Source: src.api(), DeathMessage: &msg, KeepInventory: keep}
 		for _, d := range drops {
@@ -364,6 +369,7 @@ func (p *Player) performRespawn() {
 	if r, ok := p.RespawnLocation(); ok && (r.World == "" || r.World == w.name) {
 		spawn = r
 	}
+	spawn = p.bridgeRespawn(spawn)
 	p.teleport(spawn)
 	p.send(w.timePacket())
 	p.send(w.spawnPacket())
@@ -410,7 +416,12 @@ func (m *Mob) tickMob() {
 			m.mu.Lock()
 		}
 		fell := m.e.Tick(w.w)
+		m.e.Input = entity.MoveInput{}
+		from, to, ground := m.e.Prev, m.e.Pos, m.e.OnGround
 		m.mu.Unlock()
+		if m.liv.attrs != nil {
+			stepped(m, from, to, ground, nil)
+		}
 		if fell > 0 && m.liv.attrs != nil {
 			onLanded(m, fell)
 		}
@@ -420,6 +431,8 @@ func (m *Mob) tickMob() {
 	m.mu.Unlock()
 	if m.liv.attrs != nil {
 		m.tickMobEffects()
+		m.tickAmbient()
+		m.tickLife()
 		tickLiving(m)
 		if m.liv.motion {
 			m.liv.motion = false
@@ -443,8 +456,6 @@ func (m *Mob) tickMob() {
 	}
 	if m.onTick != nil {
 		m.onTick(m)
-	} else {
-		m.think()
 	}
 }
 
@@ -462,6 +473,9 @@ func (m *Mob) mobAttack(t combatant) {
 	if !hurt(t, src, dmg) {
 		return
 	}
+	if m.typ.Name == "iron_golem" && !m.Silent() {
+		m.w.soundAt(m.feet(), snd("entity.iron_golem.attack"), soundNeutral, 1, 1, nil)
+	}
 	kb = weaponValue(weapon, "minecraft:knockback", m, t, &src, kb)
 	if kb > 0 {
 		yaw := float64(m.Location().Yaw) * math.Pi / 180
@@ -471,66 +485,4 @@ func (m *Mob) mobAttack(t combatant) {
 	}
 	postAttack(victimEq, "victim", m, t, &src)
 	postAttack(m.liv.equip, "attacker", m, t, &src)
-}
-
-// think is the placeholder brain (mob AI is not vanilla yet): monsters
-// chase and hit the nearest player within 16 blocks, other mobs wander.
-func (m *Mob) think() {
-	if m.typ.Category == "misc" || m.liv.attrs == nil {
-		return
-	}
-	m.mu.Lock()
-	e := m.e
-	speed := 0.0
-	var dx, dz float64
-	var target *Player
-	if m.typ.Category == "monster" {
-		bd := 16.0 * 16
-		for _, p := range m.w.playerList() {
-			if gm := p.GameMode(); gm == api.Creative || gm == api.Spectator || p.IsDead() {
-				continue
-			}
-			pp := p.Location().Pos
-			if d := pp.DistanceSq(e.Pos); d < bd {
-				target, bd = p, d
-				dx, dz = pp.X-e.Pos.X, pp.Z-e.Pos.Z
-			}
-		}
-		if target != nil {
-			speed = 0.12
-			if bd < 2.5 && m.ticks-m.lastHit >= 20 {
-				m.lastHit = m.ticks
-				yaw := float32(math.Atan2(-dx, dz) * 180 / math.Pi)
-				e.Yaw, e.HeadYaw = yaw, yaw
-				m.mu.Unlock()
-				m.mobAttack(target)
-				m.mu.Lock()
-			}
-		}
-	}
-	defer m.mu.Unlock()
-	if speed == 0 {
-		if m.wanderLeft <= 0 && rand.IntN(80) == 0 {
-			m.wanderLeft = 40 + rand.IntN(40)
-			a := rand.Float64() * 2 * math.Pi
-			m.wanderX, m.wanderZ = math.Cos(a), math.Sin(a)
-		}
-		if m.wanderLeft > 0 {
-			m.wanderLeft--
-			speed, dx, dz = 0.06, m.wanderX, m.wanderZ
-		}
-	}
-	if speed == 0 {
-		return
-	}
-	l := math.Hypot(dx, dz)
-	if l < 1e-6 {
-		return
-	}
-	e.Vel.X, e.Vel.Z = dx/l*speed, dz/l*speed
-	yaw := float32(math.Atan2(-dx, dz) * 180 / math.Pi)
-	e.Yaw, e.HeadYaw = yaw, yaw
-	if e.OnGround && e.HorizontalCollision {
-		e.Vel.Y = 0.42
-	}
 }

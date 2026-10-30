@@ -44,7 +44,7 @@ func TestLines(t *testing.T) {
 		"▍World 85 entities · 12/100 players",
 		"▍Net ↓12.3 ↑240 KB/s",
 		"▍Pkts ↓180 ↑2.4k /s",
-		"▍Up 3h12m · 26.3 (777) · kremenmc 0.1.0",
+		"▍Up 3h12m · 26.3 (777) · KremenMC 0.1.0",
 	}
 	if strings.Join(plain, "\n") != strings.Join(want, "\n") {
 		t.Fatalf("got\n%s\nwant\n%s", strings.Join(plain, "\n"), strings.Join(want, "\n"))

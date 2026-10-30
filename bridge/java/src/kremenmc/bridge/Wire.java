@@ -25,12 +25,16 @@ final class Wire {
 
     static final int OP_HELLO = 1, OP_LISTENERS = 2, OP_PLUGIN_STATE = 3,
             OP_PLAYERS = 10, OP_PLAYER = 11, OP_SEND_MESSAGE = 12, OP_BROADCAST = 13, OP_KICK = 14,
-            OP_TELEPORT = 15, OP_HAS_PERMISSION = 16,
+            OP_TELEPORT = 15, OP_HAS_PERMISSION = 16, OP_SEND_PACKET = 17,
             OP_WORLDS = 20, OP_GET_BLOCK = 21, OP_SET_BLOCK = 22,
-            OP_REGISTER_COMMAND = 30, OP_DISPATCH_COMMAND = 31;
+            OP_REGISTER_COMMAND = 30, OP_DISPATCH_COMMAND = 31,
+            OP_QUERY = 50, OP_ACTION = 51,
+            OP_PIPELINE = 40, OP_PIPE_SEND = 41, OP_PIPE_RECV = 42;
 
     static final int OP_LOAD_PLUGINS = 100, OP_EVENT = 101, OP_TICK = 102, OP_COMMAND = 103,
-            OP_TAB_COMPLETE = 104, OP_SHUTDOWN = 105;
+            OP_TAB_COMPLETE = 104, OP_SHUTDOWN = 105,
+            OP_PIPE_OPEN = 106, OP_PIPE_OUT = 107, OP_PIPE_IN = 108, OP_PIPE_CLOSE = 109,
+            OP_SUGGEST = 110, OP_CAN_USE = 111;
 
     record Frame(byte kind, int id, int op, List<Object> args) {}
 

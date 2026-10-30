@@ -84,6 +84,9 @@ type World struct {
 
 	mobsMu sync.RWMutex
 	mobs   map[int32]*Mob
+	grid   mobGrid
+	added  []*Mob
+	ai     aiWorld // mob_ai.go; tick goroutine and region phases
 
 	ticketsMu sync.Mutex
 	tickets   map[string]world.TicketID
@@ -161,11 +164,16 @@ func OpenWorld(s *Server, cfg WorldConfig) (*World, error) {
 	}
 	ww, err := world.New(world.Config{
 		Dim: dk.bounds(), Generator: wgen, Storage: w.store, Seed: lf.Seed,
-		Workers: cfg.Workers, TickWorkers: cfg.TickProcs,
+		Workers: cfg.Workers, TickWorkers: cfg.TickProcs, Ultrawarm: dk == dimNether, RandomTickSpeed: 3,
 		Hooks: world.Hooks{
-			BlockChanged:  w.blockChanged,
-			ChunkLoaded:   w.chunkLoaded,
-			ChunkUnloaded: w.chunkUnloaded,
+			BlockChanged:    w.blockChanged,
+			ShapeUpdate:     w.shapeUpdate,
+			ChunkLoaded:     w.chunkLoaded,
+			ChunkUnloaded:   w.chunkUnloaded,
+			RegionTick:      w.aiRegion,
+			RandomTick:      w.randomTick,
+			Fluid:           w.fluidEffect,
+			FluidConversion: w.fluidConversion,
 		},
 		Logf: logf,
 	})
@@ -630,6 +638,9 @@ func (w *World) SpawnEntity(kind api.Key, at api.Location, configure func(api.En
 		return nil, errors.New("cannot spawn players")
 	}
 	m := newMob(w, t, at)
+	if m.liv.attrs != nil {
+		m.later(func() { w.finalizeCommandSpawn(m) })
+	}
 	if configure != nil {
 		configure(m)
 	}
@@ -640,7 +651,7 @@ func (w *World) SpawnEntity(kind api.Key, at api.Location, configure func(api.En
 		}
 	}
 	w.mobsMu.Lock()
-	w.mobs[m.e.ID] = m
+	w.addMobLocked(m)
 	w.mobsMu.Unlock()
 	return m, nil
 }
@@ -680,7 +691,14 @@ func (w *World) Save() error {
 
 // tickEntities runs physics for non-player entities.
 func (w *World) tickEntities() {
-	for _, m := range w.mobList() {
+	w.mobsMu.Lock()
+	list := slices.Collect(maps.Values(w.mobs))
+	w.added = nil
+	w.mobsMu.Unlock()
+	w.grid.mu.Lock()
+	w.grid.rebuild(list)
+	w.grid.mu.Unlock()
+	for _, m := range list {
 		if m.removed.Load() {
 			w.mobsMu.Lock()
 			delete(w.mobs, m.e.ID)
@@ -690,12 +708,15 @@ func (w *World) tickEntities() {
 		m.tasks.run(w.s.CurrentTick())
 		if m.itm != nil {
 			m.itm.tick(w)
-			continue
+		} else {
+			m.tickMob()
+			if m.liv.attrs == nil && m.e.Pos.Y < float64(w.MinY()-64) {
+				m.Remove()
+			}
 		}
-		m.tickMob()
-		if m.liv.attrs == nil && m.e.Pos.Y < float64(w.MinY()-64) {
-			m.Remove()
-		}
+		w.grid.mu.Lock()
+		w.grid.move(m)
+		w.grid.mu.Unlock()
 	}
 }
 

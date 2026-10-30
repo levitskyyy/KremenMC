@@ -264,8 +264,8 @@ stackspec 01f709010035010e00010201ac020001010000	1 minecraft:potion[potion_conte
 use 131 using=true remaining=32 after=false main=01f6090000 off=00 head=00 chest=00 food=10/0.0 health=10.0 effects=minecraft:haste:1:300,minecraft:speed:0:9600 inv=- drops=- packets=-
 stackspec 01d40b010037010f64	1 minecraft:suspicious_stew[suspicious_stew_effects=[{id:"minecraft:night_vision",duration:100}]]
 use 132 using=true remaining=32 after=false main=01ee070000 off=00 head=00 chest=00 food=16/7.2000003 health=10.0 effects=minecraft:night_vision:0:100 inv=- drops=- packets=-
-stackspec 04d40901001a40200000010a676f6d633a736e61636b	4 minecraft:cookie[use_cooldown={seconds:2.5,cooldown_group:"kremenmc:snack"}]
-use 133 using=true remaining=32 after=false main=03d40901001a40200000010a676f6d633a736e61636b off=00 head=00 chest=00 food=12/0.4 health=10.0 effects=- inv=- drops=- packets=cooldown:kremenmc:snack:50
+stackspec 04d40901001a40200000010e6b72656d656e6d633a736e61636b	4 minecraft:cookie[use_cooldown={seconds:2.5,cooldown_group:"kremenmc:snack"}]
+use 133 using=true remaining=32 after=false main=03d40901001a40200000010e6b72656d656e6d633a736e61636b off=00 head=00 chest=00 food=12/0.4 health=10.0 effects=- inv=- drops=- packets=cooldown:kremenmc:snack:50
 stackspec 02010100180000000001bf050100	2 minecraft:stone[consumable={consume_seconds:0}]
 use 134 using=false remaining=0 after=false main=01010100180000000001bf050100 off=00 head=00 chest=00 food=10/0.0 health=10.0 effects=- inv=- drops=- packets=content
 use 135 using=true remaining=32 after=false main=00 off=00 head=00 chest=00 food=14/2.4 health=10.0 effects=- inv=- drops=- packets=-

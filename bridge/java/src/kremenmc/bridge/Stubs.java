@@ -16,6 +16,8 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Logger;
 import java.util.stream.Stream;
+import org.bukkit.craftbukkit.entity.CraftPlayer;
+import org.bukkit.entity.Player;
 
 /**
  * Dynamic implementations of large Bukkit interfaces. A call goes to the
@@ -41,13 +43,34 @@ final class Stubs {
         }
     }
 
-    interface Backed {
+    /** Public so generated subclasses in other packages can implement it. */
+    public interface Backed {
         Object impl();
+    }
+
+    /** Interfaces whose instances must also be of a server implementation class. */
+    private static final Map<Class<?>, Class<?>> BASES = Map.of(
+            Player.class, CraftPlayer.class,
+            org.bukkit.Server.class, org.bukkit.craftbukkit.AbstractCraftServer.class,
+            org.bukkit.World.class, org.bukkit.craftbukkit.CraftWorld.class);
+
+    /** Generates the server implementation classes ahead of the first player join. */
+    static void prepare() {
+        for (Class<?> base : BASES.values()) ClassProxy.prepare(base, Backed.class);
     }
 
     @SuppressWarnings("unchecked")
     static <T> T proxy(Class<T> iface, Object impl) {
-        return (T) Proxy.newProxyInstance(Stubs.class.getClassLoader(), new Class<?>[] {iface, Backed.class}, new Handler(iface, impl));
+        Handler h = new Handler(iface, impl);
+        Class<?> base = BASES.get(iface);
+        if (base != null) return (T) ClassProxy.create(base, h, Backed.class);
+        return (T) Proxy.newProxyInstance(Stubs.class.getClassLoader(), new Class<?>[] {iface, Backed.class}, h);
+    }
+
+    /** Like proxy, for an abstract API class with a no-argument constructor. */
+    @SuppressWarnings("unchecked")
+    static <T> T subclass(Class<T> base, Object impl) {
+        return (T) ClassProxy.create(base, new Handler(base, impl), Backed.class);
     }
 
     static Object implOf(Object proxy) {
@@ -74,7 +97,10 @@ final class Stubs {
                     throw e.getCause();
                 }
             }
-            if (m.isDefault()) return InvocationHandler.invokeDefault(proxy, m, args);
+            if (m.isDefault()) {
+                if (Proxy.isProxyClass(proxy.getClass())) return InvocationHandler.invokeDefault(proxy, m, args);
+                return ClassProxy.invokeSuper(proxy, m, args);
+            }
             return fallback(iface, m);
         }
     }

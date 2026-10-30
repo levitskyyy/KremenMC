@@ -18,6 +18,7 @@ type compiler struct {
 	s     *State
 	refs  map[string]Sampler
 	nodes map[*Node]Sampler
+	flat  map[*Node]bool
 	err   error
 }
 
@@ -102,9 +103,9 @@ func (c *compiler) build(n *Node) Sampler {
 		}
 		return shiftedS{a(0), a(1), a(2), nz, n.XZ, n.Y}
 	case KShiftA:
-		return constBinS{KMul, noiseS{c.noiseOf(n), 0.25, 0}, 4}
+		return &constBinS{KMul, noiseS{c.noiseOf(n), 0.25, 0}, 4}
 	case KShift:
-		return constBinS{KMul, noiseS{c.noiseOf(n), 0.25, 0.25}, 4}
+		return &constBinS{KMul, noiseS{c.noiseOf(n), 0.25, 0.25}, 4}
 	case KShiftB:
 		return shiftBS{c.noiseOf(n)}
 	case KEndIslands:
@@ -117,11 +118,11 @@ func (c *compiler) build(n *Node) Sampler {
 		g.factor = (n.F[1] - n.F[0]) / float32(n.I[1]-n.I[0])
 		return g
 	case KAbs, KSquare, KCube, KSqrt, KReciprocal, KNegate, KSqueeze, KLog, KSign:
-		return unaryS{kind: n.Kind, in: a(0)}
+		return &unaryS{kind: n.Kind, in: a(0)}
 	case KHalfNegative:
-		return unaryS{n.Kind, a(0), 0.5}
+		return &unaryS{n.Kind, a(0), 0.5}
 	case KQuarterNegative:
-		return unaryS{n.Kind, a(0), 0.25}
+		return &unaryS{n.Kind, a(0), 0.25}
 	case KFloor, KRound, KCeil, KTruncate:
 		r := roundS{kind: n.Kind, in: a(0)}
 		if len(n.Args) > 1 {
@@ -134,9 +135,9 @@ func (c *compiler) build(n *Node) Sampler {
 		b, e := arg(0), arg(1)
 		switch {
 		case isConst(e) && e.Value == 2:
-			return unaryS{kind: KSquare, in: a(0)}
+			return &unaryS{kind: KSquare, in: a(0)}
 		case isConst(e) && e.Value == 0.5:
-			return unaryS{kind: KSqrt, in: a(0)}
+			return &unaryS{kind: KSqrt, in: a(0)}
 		case isConst(b):
 			return powS{exp: a(1), cBase: float64(b.Value), mode: 1}
 		case isConst(e):
@@ -158,7 +159,7 @@ func (c *compiler) build(n *Node) Sampler {
 	case KClamp:
 		return clampS{a(0), n.F[0], n.F[1]}
 	case KRangeChoice:
-		return rangeS{a(0), n.F[0], n.F[1], a(1), a(2)}
+		return &rangeS{a(0), n.F[0], n.F[1], a(1), a(2)}
 	case KIntervalSelect:
 		fs := make([]Sampler, len(n.Args)-1)
 		for i := range fs {
@@ -168,13 +169,13 @@ func (c *compiler) build(n *Node) Sampler {
 	case KCache:
 		id := c.s.nextID
 		c.s.nextID++
-		return cacheS{id, a(0)}
+		return &cacheS{id: id, in: a(0), flat: c.yIndep(n.Args[0])}
 	case KBlendDensity:
 		return blendDensityS{a(0)}
 	case KInterpolated:
 		id := c.s.nextID
 		c.s.nextID++
-		return interpS{id, a(0), n.I[0], n.I[1], 1 / float32(n.I[0]), 1 / float32(n.I[1])}
+		return newInterp(id, a(0), n.I[0], n.I[1])
 	case KSlice:
 		return sliceS{a(0), n.Axis, n.I[0]}
 	case KFindTopSurface:
@@ -188,7 +189,7 @@ func (c *compiler) build(n *Node) Sampler {
 		}
 		b := n.Blend.NewBlended(r)
 		lxz, ly, mxz, my := b.Scales()
-		alpha := clampS{constBinS{KAdd, noiseS{b.Main, mxz, my}, 0.5}, 0, 1}
+		alpha := clampS{&constBinS{KAdd, noiseS{b.Main, mxz, my}, 0.5}, 0, 1}
 		return lerpS{a: alpha, f: noiseS{b.MinLimit, lxz, ly}, s: noiseS{b.MaxLimit, lxz, ly}}
 	}
 	return c.fail(fmt.Errorf("density: cannot compile kind %d", n.Kind))
@@ -198,19 +199,19 @@ func (c *compiler) binary(n *Node) Sampler {
 	l, r := c.resolve(n.Args[0]), c.resolve(n.Args[1])
 	switch {
 	case isConst(l) && (n.Kind == KSub || n.Kind == KDiv):
-		return constBinS{n.Kind, c.node(n.Args[1]), l.Value}
+		return &constBinS{n.Kind, c.node(n.Args[1]), l.Value}
 	case isConst(l):
-		return constBinS{n.Kind, c.node(n.Args[1]), l.Value}
+		return &constBinS{n.Kind, c.node(n.Args[1]), l.Value}
 	case isConst(r):
 		switch n.Kind {
 		case KSub:
-			return constBinS{KAdd, c.node(n.Args[0]), -r.Value}
+			return &constBinS{KAdd, c.node(n.Args[0]), -r.Value}
 		case KDiv:
-			return constBinS{KMul, c.node(n.Args[0]), 1 / r.Value}
+			return &constBinS{KMul, c.node(n.Args[0]), 1 / r.Value}
 		}
-		return constBinS{n.Kind, c.node(n.Args[0]), r.Value}
+		return &constBinS{n.Kind, c.node(n.Args[0]), r.Value}
 	}
-	b := binS{kind: n.Kind, l: c.node(n.Args[0]), r: c.node(n.Args[1])}
+	b := &binS{kind: n.Kind, l: c.node(n.Args[0]), r: c.node(n.Args[1])}
 	switch n.Kind {
 	case KMin:
 		b.rb = negInf
@@ -239,4 +240,67 @@ var newEndIslands = func(seed int64) Sampler {
 	r := rng.NewLegacy(seed)
 	r.Consume(17292)
 	return endIslandS{noise.NewSimplexOpt(r, true)}
+}
+
+// yIndep reports whether n's value cannot depend on the y coordinate.
+// Blend alpha/offset hooks count as independent; cacheS re-checks them at
+// sampling time. A y scale of 0 makes noise input ±0, which every gradient
+// noise treats alike (the lattice offset is added first).
+func (c *compiler) yIndep(n *Node) bool {
+	n = c.resolve(n)
+	if v, ok := c.flat[n]; ok {
+		return v
+	}
+	if c.flat == nil {
+		c.flat = map[*Node]bool{}
+	}
+	c.flat[n] = false // cycles (none expected) stay conservative
+	v := c.yIndepBuild(n)
+	c.flat[n] = v
+	return v
+}
+
+func (c *compiler) yIndepBuild(n *Node) bool {
+	all := func(ns []*Node) bool {
+		for _, a := range ns {
+			if !c.yIndep(a) {
+				return false
+			}
+		}
+		return true
+	}
+	switch n.Kind {
+	case KConstant, KBlendAlpha, KBlendOffset, KShiftA, KShiftB, KEndIslands:
+		return true
+	case KNoise:
+		return n.Y == 0 && all(n.Args)
+	case KGradient:
+		return n.Axis != AxisY
+	case KSlice:
+		return n.Axis == AxisY || all(n.Args)
+	case KFindTopSurface:
+		return c.yIndep(n.Args[1])
+	case KSpline:
+		return c.splineYIndep(n.Spline)
+	case KAbs, KSquare, KCube, KSqrt, KHalfNegative, KQuarterNegative, KReciprocal, KNegate, KSqueeze, KLog, KSign,
+		KFloor, KRound, KCeil, KTruncate, KAdd, KSub, KMul, KDiv, KMin, KMax, KPow, KLerp, KClamp, KRangeChoice,
+		KIntervalSelect, KCache:
+		return all(n.Args)
+	}
+	return false
+}
+
+func (c *compiler) splineYIndep(sp *Spline) bool {
+	if sp.Const {
+		return true
+	}
+	if !c.yIndep(sp.Coordinate) {
+		return false
+	}
+	for _, v := range sp.Values {
+		if !c.splineYIndep(v) {
+			return false
+		}
+	}
+	return true
 }

@@ -75,7 +75,9 @@ type Manager struct {
 	entries map[string]*entry
 	order   []string
 	failed  map[string]error
-	jars    []string
+
+	external func() []ExternalPlugin
+	jars     []string
 }
 
 func NewManager(srv api.Server, bus *Bus, opts Options) (*Manager, error) {
@@ -612,3 +614,26 @@ func (m *Manager) IsEnabled(id string) bool {
 func (m *Manager) DataDir(id string) string { return filepath.Join(m.opts.Dir, id) }
 
 var _ api.PluginRegistry = (*Manager)(nil)
+
+// ExternalPlugin is a plugin run outside the WASM host, e.g. by the Java bridge.
+type ExternalPlugin struct {
+	Name    string
+	Enabled bool
+}
+
+// SetExternal adds plugins from another runtime to the plugin list.
+func (m *Manager) SetExternal(f func() []ExternalPlugin) {
+	m.mu.Lock()
+	m.external = f
+	m.mu.Unlock()
+}
+
+func (m *Manager) externalPlugins() []ExternalPlugin {
+	m.mu.RLock()
+	f := m.external
+	m.mu.RUnlock()
+	if f == nil {
+		return nil
+	}
+	return f()
+}

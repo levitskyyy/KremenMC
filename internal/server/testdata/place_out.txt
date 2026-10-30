@@ -1,0 +1,232 @@
+reset
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+get 1 100 2 minecraft:nether_brick_fence[east=false,north=false,south=false,waterlogged=false,west=false]
+get 2 100 2 minecraft:oak_fence[east=true,north=true,south=true,waterlogged=false,west=false]
+get 3 100 2 minecraft:oak_fence[east=true,north=false,south=false,waterlogged=false,west=true]
+get 2 100 3 minecraft:oak_fence[east=false,north=true,south=false,waterlogged=false,west=false]
+get 4 100 2 minecraft:oak_fence_gate[facing=north,in_wall=false,open=false,powered=false]
+get 6 100 6 minecraft:cobblestone_wall[east=none,north=none,south=none,up=true,waterlogged=false,west=none]
+get 6 100 8 minecraft:cobblestone_wall[east=low,north=none,south=low,up=true,waterlogged=false,west=none]
+get 7 100 8 minecraft:cobblestone_wall[east=tall,north=none,south=none,up=false,waterlogged=false,west=tall]
+get 8 100 8 minecraft:cobblestone_wall[east=low,north=none,south=none,up=true,waterlogged=false,west=low]
+get 9 100 8 minecraft:cobblestone_wall[east=low,north=none,south=low,up=true,waterlogged=false,west=low]
+get 6 100 9 minecraft:cobblestone_wall[east=none,north=low,south=none,up=true,waterlogged=false,west=low]
+get 10 100 8 minecraft:glass_pane[east=false,north=false,south=true,waterlogged=false,west=true]
+get 10 100 9 minecraft:iron_bars[east=false,north=true,south=false,waterlogged=false,west=true]
+get 9 100 9 minecraft:glass_pane[east=true,north=true,south=false,waterlogged=false,west=false]
+get 5 100 9 minecraft:oak_fence_gate[facing=north,in_wall=true,open=false,powered=false]
+get 4 100 9 minecraft:cobblestone_wall[east=tall,north=none,south=none,up=true,waterlogged=false,west=none]
+reset
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+get 2 100 2 minecraft:oak_stairs[facing=north,half=bottom,shape=outer_right,waterlogged=false]
+get 2 100 1 minecraft:oak_stairs[facing=east,half=bottom,shape=straight,waterlogged=false]
+get 6 100 2 minecraft:oak_stairs[facing=north,half=bottom,shape=inner_left,waterlogged=false]
+get 6 100 3 minecraft:oak_stairs[facing=west,half=bottom,shape=straight,waterlogged=false]
+get 8 100 2 minecraft:oak_stairs[facing=north,half=top,shape=inner_left,waterlogged=false]
+get 8 100 3 minecraft:oak_stairs[facing=west,half=top,shape=straight,waterlogged=false]
+get 2 100 6 minecraft:stone_stairs[facing=north,half=bottom,shape=outer_left,waterlogged=false]
+get 2 100 5 minecraft:stone_stairs[facing=west,half=bottom,shape=straight,waterlogged=false]
+get 6 100 6 minecraft:stone_stairs[facing=north,half=bottom,shape=inner_right,waterlogged=false]
+get 6 100 7 minecraft:stone_stairs[facing=east,half=bottom,shape=straight,waterlogged=false]
+reset
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+get 2 100 2 minecraft:oak_slab[type=double,waterlogged=false]
+get 4 100 2 minecraft:stone_slab[type=double,waterlogged=false]
+get 6 100 2 minecraft:oak_slab[type=bottom,waterlogged=true]
+get 8 100 2 minecraft:oak_slab[type=double,waterlogged=false]
+reset
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+get 2 100 2 minecraft:oak_door[facing=south,half=lower,hinge=right,open=false,powered=false]
+get 2 101 2 minecraft:oak_door[facing=south,half=upper,hinge=right,open=false,powered=false]
+get 1 100 2 minecraft:oak_door[facing=south,half=lower,hinge=right,open=false,powered=false]
+get 1 101 2 minecraft:oak_door[facing=south,half=upper,hinge=right,open=false,powered=false]
+get 4 100 4 minecraft:iron_door[facing=south,half=lower,hinge=left,open=false,powered=false]
+get 5 100 2 minecraft:red_bed[facing=north,occupied=false,part=foot]
+get 5 100 1 minecraft:red_bed[facing=north,occupied=false,part=head]
+get 8 100 5 minecraft:chest[facing=south,type=right,waterlogged=false]
+get 9 100 5 minecraft:chest[facing=south,type=left,waterlogged=false]
+get 8 100 7 minecraft:chest[facing=south,type=single,waterlogged=false]
+get 9 100 7 minecraft:chest[facing=south,type=right,waterlogged=false]
+get 10 100 7 minecraft:chest[facing=south,type=left,waterlogged=false]
+get 2 100 8 minecraft:trapped_chest[facing=east,type=left,waterlogged=false]
+get 2 100 9 minecraft:trapped_chest[facing=east,type=right,waterlogged=false]
+get 2 100 2 minecraft:air
+get 5 100 2 minecraft:air
+get 9 100 5 minecraft:chest[facing=south,type=single,waterlogged=false]
+reset
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+get 2 100 2 minecraft:torch
+get 4 100 2 minecraft:wall_torch[facing=south]
+get 6 100 2 minecraft:ladder[facing=south,waterlogged=false]
+get 8 100 2 minecraft:stone_button[face=wall,facing=south,powered=false]
+get 10 100 2 minecraft:lever[face=floor,facing=west,powered=false]
+get 10 101 4 minecraft:lever[face=ceiling,facing=south,powered=false]
+get 2 100 6 minecraft:oak_trapdoor[facing=south,half=top,open=false,powered=false,waterlogged=false]
+get 4 100 6 minecraft:oak_trapdoor[facing=north,half=bottom,open=false,powered=false,waterlogged=false]
+get 6 100 6 minecraft:oak_sign[rotation=9,waterlogged=false]
+get 8 100 6 minecraft:oak_wall_sign[facing=south,waterlogged=false]
+get 10 100 6 minecraft:oak_log[axis=z]
+get 10 100 8 minecraft:furnace[facing=north,lit=false]
+get 8 100 8 minecraft:white_banner[rotation=8]
+get 6 100 8 minecraft:skeleton_skull[powered=false,rotation=2]
+get 4 100 8 minecraft:piston[extended=false,facing=up]
+get 4 100 10 minecraft:hopper[enabled=true,facing=down]
+get 2 100 11 minecraft:lantern[hanging=false,waterlogged=false]
+placed Success
+get 0 100 8 minecraft:poppy
+placed Success
+get 2 100 9 minecraft:tall_grass[half=lower]
+get 2 101 9 minecraft:tall_grass[half=upper]
+get 2 100 2 minecraft:air
+get 4 100 2 minecraft:air
+get 6 100 2 minecraft:air
+get 8 100 2 minecraft:air
+get 0 100 8 minecraft:air
+get 2 100 9 minecraft:air
+reset
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+placed Success
+get 2 100 5 minecraft:redstone_wire[east=side,north=side,power=0,south=side,west=side]
+placed Success
+placed Success
+placed Success
+placed Success
+get 2 100 2 minecraft:snow[layers=3]
+get 4 100 2 minecraft:candle[candles=2,lit=false,waterlogged=false]
+get 6 100 2 minecraft:sea_pickle[pickles=2,waterlogged=false]
+get 8 100 2 minecraft:turtle_egg[eggs=2,hatch=0]
+get 2 100 5 minecraft:redstone_wire[east=side,north=none,power=0,south=side,west=none]
+get 3 100 5 minecraft:redstone_wire[east=side,north=none,power=0,south=none,west=side]
+get 2 100 6 minecraft:redstone_wire[east=none,north=side,power=0,south=side,west=none]
+get 6 101 5 minecraft:redstone_wire[east=side,north=none,power=0,south=none,west=side]
+get 5 100 5 minecraft:redstone_wire[east=up,north=none,power=0,south=none,west=side]
+get 3 100 5 minecraft:redstone_wire[east=side,north=side,power=0,south=side,west=side]
+reset
+placed Success
+sound minecraft:block.wood.place BLOCKS 2.5 100.5 2.5 v=1.0 p=0.8
+update 8, 100, 2 minecraft:air
+update 6, 100, 5 minecraft:air
+update 2, 100, 6 minecraft:air
+update 3, 100, 5 minecraft:air
+update 2, 100, 5 minecraft:air
+update 4, 100, 2 minecraft:air
+update 6, 101, 5 minecraft:air
+update 2, 100, 2 minecraft:chest[facing=south,type=single,waterlogged=false]
+update 6, 100, 2 minecraft:air
+update 5, 100, 5 minecraft:air
+used Success menu=63
+screen minecraft:generic_9x3 translation{key='container.chest', args=[]}
+sound minecraft:block.chest.open BLOCKS 2.5 100.5 2.5 v=0.5 p=0.95207006
+blockevent 2, 100, 2 1 1 minecraft:chest
+sound minecraft:block.chest.close BLOCKS 2.5 100.5 2.5 v=0.5 p=0.95837957
+blockevent 2, 100, 2 1 0 minecraft:chest
+blockevent 2, 100, 2 1 0 minecraft:chest
+placed Success
+sound minecraft:block.wood.place BLOCKS 3.5 100.5 2.5 v=1.0 p=0.8
+update 3, 100, 2 minecraft:chest[facing=south,type=left,waterlogged=false]
+update 2, 100, 2 minecraft:chest[facing=south,type=right,waterlogged=false]
+used Success menu=90
+slot0 2, 100, 2
+screen minecraft:generic_9x6 translation{key='container.chestDouble', args=[]}
+sound minecraft:block.chest.open BLOCKS 3.0 100.5 2.5 v=0.5 p=0.9349253
+blockevent 2, 100, 2 1 1 minecraft:chest
+blockevent 3, 100, 2 1 1 minecraft:chest
+sound minecraft:block.chest.close BLOCKS 3.0 100.5 2.5 v=0.5 p=0.93274283
+blockevent 2, 100, 2 1 0 minecraft:chest
+blockevent 3, 100, 2 1 0 minecraft:chest
+blockevent 2, 100, 2 1 0 minecraft:chest
+blockevent 3, 100, 2 1 0 minecraft:chest
+placed Success
+sound minecraft:block.wood.place BLOCKS 6.5 100.5 2.5 v=1.0 p=0.8
+update 6, 100, 2 minecraft:barrel[facing=up,open=false]
+used Success menu=63
+screen minecraft:generic_9x3 translation{key='container.barrel', args=[]}
+sound minecraft:block.barrel.open BLOCKS 6.5 101.0 2.5 v=0.5 p=0.9804076
+update 6, 100, 2 minecraft:barrel[facing=up,open=true]
+sound minecraft:block.barrel.close BLOCKS 6.5 101.0 2.5 v=0.5 p=0.940036
+update 6, 100, 2 minecraft:barrel[facing=up,open=false]
+get 6 100 2 minecraft:barrel[facing=up,open=false]
+get 6 100 2 minecraft:barrel[facing=up,open=false]
+placed Success
+sound minecraft:block.stone.place BLOCKS 8.5 100.5 2.5 v=1.0 p=0.8
+update 8, 100, 2 minecraft:ender_chest[facing=north,waterlogged=false]
+used Success menu=63
+screen minecraft:generic_9x3 translation{key='container.enderchest', args=[]}
+sound minecraft:block.ender_chest.open BLOCKS 8.5 100.5 2.5 v=0.5 p=0.9934684
+blockevent 8, 100, 2 1 1 minecraft:ender_chest
+sound minecraft:block.ender_chest.close BLOCKS 8.5 100.5 2.5 v=0.5 p=0.98345256
+blockevent 8, 100, 2 1 0 minecraft:ender_chest
+blockevent 8, 100, 2 1 0 minecraft:ender_chest
+placed Success
+sound minecraft:block.stone.place BLOCKS 8.5 100.5 5.5 v=1.0 p=0.8
+update 8, 100, 5 minecraft:shulker_box[facing=up]
+used Success menu=63
+screen minecraft:shulker_box translation{key='container.shulkerBox', args=[]}
+sound minecraft:block.shulker_box.open BLOCKS 8.5 100.5 5.5 v=0.5 p=0.9635753
+blockevent 8, 100, 5 1 1 minecraft:shulker_box
+sound minecraft:block.shulker_box.close BLOCKS 8.5 100.5 5.5 v=0.5 p=0.9101902
+blockevent 8, 100, 5 1 0 minecraft:shulker_box

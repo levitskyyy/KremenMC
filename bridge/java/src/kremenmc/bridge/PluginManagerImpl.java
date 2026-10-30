@@ -183,9 +183,6 @@ final class PluginManagerImpl implements PluginManager {
         if (plugin.isEnabled()) return;
         List<Command> cmds = PluginCommandYamlParser.parse(plugin);
         if (!cmds.isEmpty()) b.commandMap.registerAll(plugin.getName().toLowerCase(Locale.ROOT), cmds);
-        for (Command c : cmds) {
-            b.conn.notify(Wire.OP_REGISTER_COMMAND, plugin.getName(), c.getName(), c.getAliases(), c.getDescription(), c.getUsage(), c.getPermission() == null ? "" : c.getPermission());
-        }
         for (Permission p : plugin.getDescription().getPermissions()) {
             if (!permissions.containsKey(p.getName().toLowerCase(Locale.ROOT))) addPermission(p);
         }
@@ -214,6 +211,7 @@ final class PluginManagerImpl implements PluginManager {
             state(plugin, "disabled");
         }
         b.scheduler.cancelTasks(plugin);
+        b.brigadier.unregister(plugin);
         b.services.unregisterAll(plugin);
         b.messenger.unregisterIncomingPluginChannel(plugin);
         b.messenger.unregisterOutgoingPluginChannel(plugin);

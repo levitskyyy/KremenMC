@@ -146,6 +146,12 @@ func (d *Dispatcher) Dispatch(sender api.CommandSender, line string) (int, error
 }
 
 func (d *Dispatcher) execute(sender api.CommandSender, line string) (n int, err error) {
+	if c, ok := d.foreignFor(line); ok {
+		if !d.canUse(c.node, sender) {
+			return 0, (&reader{s: line}).errf(msgUnknownCommand)
+		}
+		return c.foreign.Run(sender, line)
+	}
 	res := d.parse(d.tree.Load(), sender, line)
 	if res.r.canRead() {
 		if len(res.errs) == 1 {

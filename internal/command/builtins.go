@@ -109,7 +109,7 @@ func RegisterBuiltins(d *Dispatcher, server api.Server) {
 		perm = c.node.Permission
 		perms[c.level] = append(perms[c.level], perm)
 		b.declare(perm, fmt.Sprintf("/%s (vanilla op level %d)", c.node.Name, c.level), c.level)
-		_ = d.register("", ns, c.node, c.alias)
+		_ = d.registerWith("", ns, c.node, c.alias, nil)
 	}
 	perms[2] = append(perms[2], SelectorPermission, FeedbackPermission)
 	b.declare(SelectorPermission, "Use @-selectors in commands", 2)

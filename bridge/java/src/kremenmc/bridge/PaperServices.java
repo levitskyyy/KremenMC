@@ -88,7 +88,7 @@ final class PaperServices {
         @Override
         @SuppressWarnings("unchecked")
         public LifecycleEventManager<Plugin> createPluginLifecycleEventManager(JavaPlugin plugin, BooleanSupplier registrationCheck) {
-            return Stubs.proxy(LifecycleEventManager.class, new LifecycleImpl(plugin));
+            return Bridge.get().brigadier.manager(plugin);
         }
 
         @Override public Biome constructLegacyCustomBiome() { throw unsupported("custom biomes"); }
@@ -109,7 +109,7 @@ final class PaperServices {
         @Override public boolean hasDefaultEntityAttributes(NamespacedKey k) { return false; }
         @Override public Attributable getDefaultEntityAttributes(NamespacedKey k) { throw unsupported("entity attributes"); }
         @Override public String getStatisticCriteriaKey(Statistic s) { return s.name().toLowerCase(java.util.Locale.ROOT); }
-        @Override public ItemStack createEmptyStack() { throw unsupported("item stacks"); }
+        @Override public ItemStack createEmptyStack() { return Items.empty(); }
         @Override public Component resolveWithContext(Component c, CommandSender s, Entity e, boolean b) { return c; }
         @Override public ComponentFlattener componentFlattener() { return ComponentFlattener.basic(); }
         @Override public <C> PersistentDataKey<C> createPersistentDataKey(Key k, PersistentDataType<?, C> t) { throw unsupported("persistent data"); }
@@ -170,14 +170,5 @@ final class PaperServices {
 
         @Override public void enablePlugin(Plugin p) { pm().enablePlugin(p); }
         @Override public void disablePlugin(Plugin p) { pm().disablePlugin(p); }
-    }
-
-    public static final class LifecycleImpl {
-        private final JavaPlugin plugin;
-        LifecycleImpl(JavaPlugin plugin) { this.plugin = plugin; }
-
-        public void registerEventHandler(io.papermc.paper.plugin.lifecycle.event.handler.configuration.LifecycleEventHandlerConfiguration<?> cfg) {
-            Logger.getLogger("kremenmc-bridge").warning(plugin.getName() + " registered a Paper lifecycle handler (e.g. Brigadier commands); lifecycle events are not supported by the kremenmc bridge");
-        }
     }
 }

@@ -203,6 +203,7 @@ func (s *supervisor) runOnce() (connected bool, err error) {
 	}
 	s.b.conn.Store(conn)
 	s.signalReady(nil)
+	defer s.b.detachPipes(conn)
 	defer s.b.conn.CompareAndSwap(conn, nil)
 
 	select {

@@ -389,3 +389,17 @@ func ArgStrings(args []any, i int) []string {
 	}
 	return out
 }
+
+// Fields is a decoded map value with the same zero-on-mismatch accessors.
+type Fields map[string]any
+
+func (f Fields) one(k string) []any { return []any{f[k]} }
+
+func (f Fields) Has(k string) bool          { return f[k] != nil }
+func (f Fields) String(k string) string     { return ArgString(f.one(k), 0) }
+func (f Fields) Int(k string) int64         { return ArgInt(f.one(k), 0) }
+func (f Fields) Bool(k string) bool         { return ArgBool(f.one(k), 0) }
+func (f Fields) Float(k string) float64     { return ArgFloat(f.one(k), 0) }
+func (f Fields) List(k string) []any        { return ArgList(f.one(k), 0) }
+func (f Fields) Map(k string) Fields        { return Fields(ArgMap(f.one(k), 0)) }
+func (f Fields) UUID(k string) (UUID, bool) { return ArgUUID(f.one(k), 0) }

@@ -26,7 +26,7 @@ import (
 //
 // Spawned mobs have no AI: they keep generic physics, so they stand, fall
 // and sink. finalizeSpawn results (baby, variants, colors, handedness) are
-// kept in Mob.sp.attrs but not sent as entity metadata yet.
+// applied to the server Mob and sent as entity metadata (mob_life.go).
 
 // mobSpawn is the spawn-engine state of a Mob; touched only by the tick
 // goroutine after the mob is published.
@@ -369,6 +369,7 @@ func (ws *worldSpawn) add(w *World, sm *spawn.Mob) {
 	m := newMob(w, dt, api.Location{World: w.name, Pos: api.Vec3{X: sm.X, Y: sm.Y, Z: sm.Z}, Yaw: sm.Yaw, Pitch: sm.Pitch})
 	m.sp = &mobSpawn{typ: sm.Type, reason: sm.Reason, managed: true, persistent: sm.Persistent,
 		rnd: rng.NewLegacy(int64(ws.seeds.Uint64())), attrs: sm.Attrs, leftHanded: sm.LeftHanded}
+	m.applySpawnAttrs(sm.Attrs, sm.LeftHanded)
 	if w.s.bus.HasHandlers(api.KindEntitySpawn) {
 		r, ok := spawnReasons[sm.Reason]
 		if !ok {
@@ -379,8 +380,11 @@ func (ws *worldSpawn) add(w *World, sm *spawn.Mob) {
 			return
 		}
 	}
+	if !w.bridgeSpawn(m, bridgeSpawnReason(sm.Reason)) {
+		return
+	}
 	w.mobsMu.Lock()
-	w.mobs[m.e.ID] = m
+	w.addMobLocked(m)
 	w.mobsMu.Unlock()
 	ws.mobs = append(ws.mobs, m)
 	box := m.e.Box()

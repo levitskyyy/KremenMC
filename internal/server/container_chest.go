@@ -25,24 +25,31 @@ var chestBlocks = map[string]string{
 	"chest": "minecraft:chest", "trapped_chest": "minecraft:trapped_chest", "barrel": "minecraft:barrel",
 }
 
-var generic9x3 = func() int32 {
+var generic9x3, generic9x6 = menuID("minecraft:generic_9x3"), menuID("minecraft:generic_9x6")
+
+func menuID(name string) int32 {
 	if p, err := wgdata.Load(); err == nil {
 		l, _ := p.Builtin("menu")
 		for i, id := range l {
-			if id == "minecraft:generic_9x3" {
+			if id == name {
 				return int32(i)
 			}
 		}
 	}
 	return -1
-}()
+}
 
 type openChest struct {
-	id   int32
-	w    *World
-	pos  api.BlockPos
-	m    *menu.Menu
-	sync menu.Sync
+	id  int32
+	w   *World
+	pos api.BlockPos
+	// parts are the block entities behind the window, 27 slots each (two
+	// for a double chest, the first holding the top half).
+	parts []api.BlockPos
+	m     *menu.Menu
+	sync  menu.Sync
+	// custom is set for a Java plugin inventory (bridgeinv.go); w is nil then.
+	custom *customInv
 }
 
 // blockEntityAt returns the chunk holding pos and the index of its block
@@ -259,7 +266,7 @@ func (w *World) setContainerItems(pos api.BlockPos, items *[chestSlots]item.Stac
 }
 
 // openChest opens the chest-like container at pos; false when pos holds
-// none.
+// none. A blocked chest consumes the click without opening.
 func (p *Player) openChest(w *World, pos api.BlockPos) bool {
 	st := w.w.Block(pos.X, pos.Y, pos.Z)
 	b := data.BlockOf(st)
@@ -270,20 +277,41 @@ func (p *Player) openChest(w *World, pos api.BlockPos) bool {
 	if !ok {
 		return false
 	}
-	c := w.chunkAt(pos)
-	if c == nil {
-		return false
+	parts := []api.BlockPos{pos}
+	if d := chestConnected(st); d >= 0 && infoOf(st).kind == kChest {
+		o := faceOffsets[d]
+		q := pos.Add(o[0], 0, o[2])
+		if n := w.w.Block(q.X, q.Y, q.Z); sameBlock(n, st) && chestConnected(n) == dirOpp[d] {
+			// the right half holds the top rows
+			if prop(st, "type") == "left" {
+				parts = []api.BlockPos{q, pos}
+			} else {
+				parts = append(parts, q)
+			}
+		}
 	}
-	c.Lock()
-	if blockEntityAt(c, pos) < 0 {
-		c.BlockEntities = append(c.BlockEntities, world.BlockEntity{
-			X: uint8(pos.X & 15), Y: int32(pos.Y), Z: uint8(pos.Z & 15), NetType: world.BlockEntityNetType(id), ID: id, Data: nbt.Compound{},
-		})
-		c.MarkDirty()
+	if infoOf(st).kind == kChest {
+		for _, q := range parts {
+			if conductor(w.w.Block(q.X, q.Y+1, q.Z)) {
+				return true
+			}
+		}
 	}
-	c.Unlock()
-	w.unpackLoot(pos, p)
-	items, _ := w.containerItems(pos)
+	for _, q := range parts {
+		c := w.chunkAt(q)
+		if c == nil {
+			return false
+		}
+		c.Lock()
+		if blockEntityAt(c, q) < 0 {
+			c.BlockEntities = append(c.BlockEntities, world.BlockEntity{
+				X: uint8(q.X & 15), Y: int32(q.Y), Z: uint8(q.Z & 15), NetType: world.BlockEntityNetType(id), ID: id, Data: nbt.Compound{},
+			})
+			c.MarkDirty()
+		}
+		c.Unlock()
+		w.unpackLoot(q, p)
+	}
 
 	s := p.inv
 	s.mu.Lock()
@@ -292,30 +320,57 @@ func (p *Player) openChest(w *World, pos api.BlockPos) bool {
 		p.closeChestLocked(false)
 	}
 	s.chestSeq = s.chestSeq%100 + 1
-	oc := &openChest{id: s.chestSeq, w: w, pos: pos, m: menu.NewChest(3)}
+	oc := &openChest{id: s.chestSeq, w: w, pos: pos, parts: parts, m: menu.NewChest(3 * len(parts))}
 	oc.sync.Container = oc.id
-	copy(oc.m.Items, items[:])
+	if !oc.load() {
+		return false
+	}
 	p.copyInvToChest(oc)
 	s.chest = oc
 	title := proto.Text{Translate: "container.chest"}
-	if b.Name == "barrel" {
+	kind := generic9x3
+	switch {
+	case b.Name == "barrel":
 		title.Translate = "container.barrel"
+	case len(parts) == 2:
+		title.Translate, kind = "container.chestDouble", generic9x6
 	}
-	p.send(&packets.ClientboundOpenScreen{WindowID: oc.id, InventoryType: generic9x3, WindowTitle: title})
+	p.send(&packets.ClientboundOpenScreen{WindowID: oc.id, InventoryType: kind, WindowTitle: title})
 	oc.sync.SendAll(oc.m, invSender{p})
+	w.containerViewers(parts, st, 1)
 	return true
+}
+
+// load reads the parts' items into the menu; false when one is gone.
+func (oc *openChest) load() bool {
+	for i, q := range oc.parts {
+		items, ok := oc.w.containerItems(q)
+		if !ok {
+			return false
+		}
+		copy(oc.m.Items[i*chestSlots:], items[:])
+	}
+	return true
+}
+
+func (oc *openChest) store() {
+	for i, q := range oc.parts {
+		var items [chestSlots]item.Stack
+		copy(items[:], oc.m.Items[i*chestSlots:(i+1)*chestSlots])
+		oc.w.setContainerItems(q, &items)
+	}
 }
 
 func (p *Player) copyInvToChest(oc *openChest) {
 	pm := p.inv.m
-	for i := chestSlots; i < len(oc.m.Items); i++ {
+	for i := oc.m.Container; i < len(oc.m.Items); i++ {
 		oc.m.Items[i] = pm.Items[p.inv.slotOf(oc.m.Slots[i].Inv)]
 	}
 }
 
 func (p *Player) copyChestToInv(oc *openChest) {
 	pm := p.inv.m
-	for i := chestSlots; i < len(oc.m.Items); i++ {
+	for i := oc.m.Container; i < len(oc.m.Items); i++ {
 		pm.Items[p.inv.slotOf(oc.m.Slots[i].Inv)] = oc.m.Items[i]
 	}
 }
@@ -323,19 +378,16 @@ func (p *Player) copyChestToInv(oc *openChest) {
 // chestClick handles a click in the open container window. Holds inv.mu.
 func (p *Player) chestClick(m *packets.ServerboundContainerClick, changed map[int]item.Hashed, carried item.Hashed) {
 	oc := p.inv.chest
-	if oc == nil || oc.id != m.WindowID {
+	if oc == nil || oc.id != m.WindowID || oc.custom != nil {
 		return
 	}
-	items, ok := oc.w.containerItems(oc.pos)
-	if !ok {
+	if !oc.load() {
 		p.closeChestLocked(true)
 		return
 	}
-	copy(oc.m.Items, items[:])
 	p.copyInvToChest(oc)
 	oc.sync.Click(oc.m, m.StateID, int(m.Slot), int32(m.MouseButton), m.Mode, changed, carried, menuPlayer{p}, p.GameMode() == api.Spectator, invSender{p})
-	copy(items[:], oc.m.Items[:chestSlots])
-	oc.w.setContainerItems(oc.pos, &items)
+	oc.store()
 	p.copyChestToInv(oc)
 }
 
@@ -347,6 +399,10 @@ func (p *Player) closeChestLocked(notify bool) {
 		return
 	}
 	p.inv.chest = nil
+	oc.leaveCustom(p)
+	if oc.w != nil && len(oc.parts) > 0 {
+		oc.w.containerViewers(oc.parts, oc.w.w.Block(oc.pos.X, oc.pos.Y, oc.pos.Z), -1)
+	}
 	if c := oc.m.Carried; !c.IsEmpty() {
 		if rest := p.placeBack(c); !rest.IsEmpty() {
 			p.dropItem(rest, false)

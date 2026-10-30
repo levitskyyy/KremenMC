@@ -10,6 +10,7 @@ import (
 	"github.com/levitskyyy/KremenMC/internal/item"
 	"github.com/levitskyyy/KremenMC/internal/proto"
 	"github.com/levitskyyy/KremenMC/internal/proto/packets"
+	"github.com/levitskyyy/KremenMC/internal/world"
 	"github.com/levitskyyy/KremenMC/internal/world/worldgen/rng"
 )
 
@@ -35,7 +36,9 @@ func (w *World) explode(o explodeOpts) *explosion {
 		center: o.center, radius: o.power, fire: o.fire, interaction: w.blockInteraction(o.kind),
 		direct: o.direct, causing: causing, rnd: w.levelRandom(), calc: o.calc,
 	}
-	ex.run(&worldExLevel{w: w, ex: ex})
+	lv := &worldExLevel{w: w, ex: ex}
+	ex.run(lv)
+	lv.release()
 	w.sendExplode(ex)
 	return ex
 }
@@ -216,13 +219,70 @@ type worldExLevel struct {
 	w       *World
 	ex      *explosion
 	written map[api.BlockPos]data.StateID
+	rd      world.BlockReader
+
+	// cache holds state+1 for the cube of half-size r around (ox, oy, oz).
+	// The level is unchanged until the first write, so reads by the ray
+	// and exposure passes are cached until then.
+	cache      []uint32
+	ox, oy, oz int
+	r, side    int
+}
+
+var exCachePool sync.Pool
+
+func (l *worldExLevel) initCache() {
+	r := int(l.ex.radius*2) + 4
+	side := 2*r + 1
+	if side > 96 {
+		return
+	}
+	n := side * side * side
+	buf, _ := exCachePool.Get().([]uint32)
+	if cap(buf) < n {
+		buf = make([]uint32, n)
+	} else {
+		buf = buf[:n]
+		clear(buf)
+	}
+	c := l.ex.center
+	l.cache, l.r, l.side = buf, r, side
+	l.ox, l.oy, l.oz = exFloor(c.X), exFloor(c.Y), exFloor(c.Z)
+}
+
+func (l *worldExLevel) release() {
+	if l.cache != nil {
+		exCachePool.Put(l.cache[:0])
+		l.cache = nil
+	}
 }
 
 func (l *worldExLevel) Block(x, y, z int) data.StateID {
-	if s, ok := l.written[api.BlockPos{X: x, Y: y, Z: z}]; ok {
-		return s
+	if len(l.written) > 0 {
+		l.release()
+		if s, ok := l.written[api.BlockPos{X: x, Y: y, Z: z}]; ok {
+			return s
+		}
 	}
-	return l.w.w.Block(x, y, z)
+	if l.rd == (world.BlockReader{}) {
+		l.rd = l.w.w.Reader()
+		if len(l.written) == 0 {
+			l.initCache()
+		}
+	}
+	if l.cache != nil {
+		dx, dy, dz := x-l.ox+l.r, y-l.oy+l.r, z-l.oz+l.r
+		if uint(dx) < uint(l.side) && uint(dy) < uint(l.side) && uint(dz) < uint(l.side) {
+			i := (dx*l.side+dy)*l.side + dz
+			if v := l.cache[i]; v != 0 {
+				return data.StateID(v - 1)
+			}
+			st := l.rd.Block(x, y, z)
+			l.cache[i] = uint32(st) + 1
+			return st
+		}
+	}
+	return l.rd.Block(x, y, z)
 }
 
 func (l *worldExLevel) worldBounds() (int, int) { return l.w.MinY(), l.w.MaxY() }
@@ -230,6 +290,7 @@ func (l *worldExLevel) worldBounds() (int, int) { return l.w.MinY(), l.w.MaxY() 
 func (l *worldExLevel) setBlock(p api.BlockPos, s data.StateID) {
 	if l.written == nil {
 		l.written = map[api.BlockPos]data.StateID{}
+		l.release()
 	}
 	l.written[p] = s
 	l.w.w.SetBlock(p.X, p.Y, p.Z, s)
@@ -247,7 +308,7 @@ func (l *worldExLevel) targets(box entity.AABB) []exTarget {
 			out = append(out, exPlayer{p})
 		}
 	}
-	for _, m := range l.w.mobList() {
+	for _, m := range l.w.mobsIn(box, nil) {
 		if m == l.ex.direct || !m.IsValid() {
 			continue
 		}

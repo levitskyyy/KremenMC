@@ -162,6 +162,39 @@ final class Conn {
         }
     }
 
+    private final java.util.concurrent.atomic.AtomicBoolean flushPending = new java.util.concurrent.atomic.AtomicBoolean();
+    private final ExecutorService flusher = Executors.newSingleThreadExecutor(r -> Thread.ofPlatform().daemon().name("kremenmc-ipc-flush").unstarted(r));
+
+    /** Like notify, but coalesces the flush with other buffered notifications sent around the same time. */
+    void notifyBuffered(int op, Object... args) {
+        byte[] frame = Wire.encode(Wire.KIND_NOTIFY, 0, op, args);
+        try {
+            synchronized (writeLock) {
+                if (closed) return;
+                out.write(frame);
+            }
+        } catch (IOException e) {
+            close();
+            return;
+        }
+        if (flushPending.compareAndSet(false, true)) {
+            try {
+                flusher.execute(() -> {
+                    flushPending.set(false);
+                    try {
+                        synchronized (writeLock) {
+                            if (!closed) out.flush();
+                        }
+                    } catch (IOException e) {
+                        close();
+                    }
+                });
+            } catch (java.util.concurrent.RejectedExecutionException ignored) {
+                // closed
+            }
+        }
+    }
+
     void notify(int op, Object... args) {
         try {
             write(Wire.encode(Wire.KIND_NOTIFY, 0, op, args));
@@ -182,5 +215,6 @@ final class Conn {
         for (CompletableFuture<Wire.Frame> p : pending.values()) p.completeExceptionally(new IOException("closed"));
         pending.clear();
         callExecutor.shutdownNow();
+        flusher.shutdownNow();
     }
 }

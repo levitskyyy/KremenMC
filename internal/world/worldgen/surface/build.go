@@ -185,7 +185,9 @@ func (s *System) TopMaterial(ctx *Ctx, c *world.Chunk, b Biomes, x, y, z int32, 
 	}
 	ctx.minY, ctx.height = int32(c.Dim.MinY), int32(c.Dim.Height)
 	lx, lz := int(x&15), int(z&15)
-	h := func(x, z int) int32 { return int32(c.Height(world.WorldSurface, max(0, min(15, x)), max(0, min(15, z)))) }
+	h := func(x, z int) int32 {
+		return int32(c.Height(world.WorldSurface, max(0, min(15, x)), max(0, min(15, z))))
+	}
 	ctx.updateXZ(x, z, h(lx+1, lz)-h(lx-1, lz), h(lx, lz+1)-h(lx, lz-1))
 	water := int32(math.MinInt32)
 	if underFluid {

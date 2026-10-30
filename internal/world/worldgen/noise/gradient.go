@@ -24,6 +24,15 @@ var gradients = [16][3]int8{
 	{1, 1, 0}, {0, -1, 1}, {-1, 1, 0}, {0, -1, -1},
 }
 
+// gradientsF is gradients as float32 (int8 -> float32 is exact), sparing
+// the conversions on the hot path.
+var gradientsF = func() (t [16][3]float32) {
+	for i, g := range gradients {
+		t[i] = [3]float32{float32(g[0]), float32(g[1]), float32(g[2])}
+	}
+	return
+}()
+
 const roundOff = 33554432.0
 
 // gradientBase is the reference GradientNoise state: a 256-entry
@@ -55,8 +64,8 @@ func (g *gradientBase) Perm() [256]uint8 { return g.perm }
 func (g *gradientBase) p(i int32) int32 { return int32(g.perm[uint8(i)]) }
 
 func gradDot(h int32, x, y, z float32) float32 {
-	g := &gradients[h&15]
-	return float32(float32(float32(g[0])*x)+float32(float32(g[1])*y)) + float32(float32(g[2])*z)
+	g := &gradientsF[h&15]
+	return float32(float32(g[0]*x)+float32(g[1]*y)) + float32(g[2]*z)
 }
 
 // Wrap folds a coordinate into [-2^24, 2^24] to keep precision, like the

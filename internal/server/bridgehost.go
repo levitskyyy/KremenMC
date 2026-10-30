@@ -1,7 +1,6 @@
 package server
 
 import (
-	"context"
 	"strings"
 
 	"github.com/levitskyyy/KremenMC/api"
@@ -34,9 +33,14 @@ func (h BridgeHost) info(p *Player) bridge.PlayerInfo {
 	if c := p.DisplayName(); c.Text != p.prof.Name || len(c.Extra) > 0 {
 		dn = textJSON(c)
 	}
+	props := make([]bridge.ProfileProperty, len(p.prof.Properties))
+	for i, pr := range p.prof.Properties {
+		props[i] = bridge.ProfileProperty(pr)
+	}
 	return bridge.PlayerInfo{
-		UUID: bridge.UUID(p.prof.UUID), Name: p.prof.Name, DisplayName: dn, Location: bridgeLoc(l),
+		UUID: bridge.UUID(p.prof.UUID), EntityID: int(p.e.ID), Name: p.prof.Name, DisplayName: dn, Location: bridgeLoc(l),
 		Op: p.IsOp(), GameMode: gameModeName(p.GameMode()), Address: p.c.Addr().String(),
+		Ping: int(p.c.Ping().Milliseconds()), Properties: props,
 	}
 }
 
@@ -109,12 +113,18 @@ func (h BridgeHost) Teleport(id bridge.UUID, to bridge.Location) bool {
 	return true
 }
 
-func (h BridgeHost) HasPermission(id bridge.UUID, perm string) bool {
+func (h BridgeHost) HasPermission(id bridge.UUID, perm, def string) bool {
 	if id.IsZero() {
 		return true
 	}
 	p, ok := h.s.Player(api.UUID(id))
-	return ok && p.HasPermission(perm)
+	if !ok {
+		return false
+	}
+	if d, known := api.ParsePermissionDefault(def); known {
+		return p.(*Player).permissible.hasPermissionOr(perm, d)
+	}
+	return p.HasPermission(perm)
 }
 
 func (h BridgeHost) Worlds() []bridge.WorldInfo {
@@ -144,32 +154,6 @@ func (h BridgeHost) SetBlock(world string, x, y, z int, state string, _ bool) {
 	}
 	if st, ok := data.ParseState(state); ok && w.w.Dim().Contains(y) {
 		w.w.SetBlock(x, y, z, st)
-	}
-}
-
-func (h BridgeHost) RegisterCommand(spec bridge.CommandSpec) {
-	s := h.s
-	run := func(c api.CommandContext) (int, error) {
-		b := s.javaBridge()
-		if b == nil {
-			return 0, api.Errorf("Java plugins are not running")
-		}
-		var id bridge.UUID
-		if p, ok := c.Sender().(*Player); ok {
-			id = bridge.UUID(p.prof.UUID)
-		}
-		ok, err := b.Command(context.Background(), id, c.Input())
-		if err != nil || !ok {
-			return 0, err
-		}
-		return 1, nil
-	}
-	root := api.Literal(strings.ToLower(spec.Name)).Executes(run).RequiresPermission(spec.Permission).Describe(spec.Description).
-		Then(api.Argument("args", api.GreedyArg()).Executes(run))
-	owner := strings.ToLower(spec.Plugin)
-	s.cmds.Unregister(owner, root.Name)
-	if err := s.cmds.Register(owner, root, spec.Aliases...); err != nil {
-		s.log.Warn("bridge command not registered", "command", spec.Name, "err", err)
 	}
 }
 

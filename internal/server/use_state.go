@@ -31,8 +31,9 @@ type useState struct {
 	equipInit bool
 	seen      map[int32]bool // player entities whose equipment p was sent
 
-	prevGround bool
-	usingFlag  bool
+	prevGround  bool
+	usingFlag   bool
+	lastLevelUp int64
 }
 
 type activeEffect struct {
@@ -168,6 +169,9 @@ func (p *Player) onMoved(from, to api.Vec3, onGround bool) {
 		}
 	}
 	u.prevGround = onGround
+	if p.GameMode() != api.Spectator {
+		stepped(p, from, to, onGround, p)
+	}
 	if p.Sprinting() && !p.Flying() {
 		if cm := roundf(sqrt(dx*dx+dz*dz) * 100); cm > 0 {
 			p.exhaust(0.1 * float32(cm) * 0.01)

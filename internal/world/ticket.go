@@ -1,5 +1,7 @@
 package world
 
+import "math"
+
 type TicketID uint64
 
 type TicketKind uint8
@@ -29,6 +31,7 @@ func (w *World) AddTicket(center ChunkPos, radius int, kind TicketKind) TicketID
 	id := w.nextTicket
 	t := &ticket{kind: kind, center: center, radius: int32(max(radius, 0))}
 	w.tickets[id] = t
+	w.refocus()
 	var need []ChunkPos
 	forRing(center, t.radius, func(p ChunkPos) {
 		if w.ref(p, 1) {
@@ -63,6 +66,7 @@ func (w *World) MoveTicket(id TicketID, center ChunkPos) {
 		}
 	})
 	t.center = center
+	w.refocus()
 	w.ticketMu.Unlock()
 	for _, p := range need {
 		w.request(p, false)
@@ -77,7 +81,34 @@ func (w *World) RemoveTicket(id TicketID) {
 		return
 	}
 	delete(w.tickets, id)
+	w.refocus()
 	forRing(t.center, t.radius, func(p ChunkPos) { w.ref(p, -1) })
+}
+
+// refocus republishes the ticket centres that rank pending loads;
+// ticketMu must be held.
+func (w *World) refocus() {
+	cs := make([]ChunkPos, 0, len(w.tickets))
+	for _, t := range w.tickets {
+		cs = append(cs, t.center)
+	}
+	w.centres.Store(&cs)
+	w.ticketEpoch.Add(1)
+}
+
+// loadRank orders pending loads: squared distance to the nearest ticket
+// centre, so chunks around players' current positions load first.
+func (w *World) loadRank(p ChunkPos) int64 {
+	cs := w.centres.Load()
+	if cs == nil || len(*cs) == 0 {
+		return 0
+	}
+	best := int64(math.MaxInt64)
+	for _, c := range *cs {
+		dx, dz := int64(p.X)-int64(c.X), int64(p.Z)-int64(c.Z)
+		best = min(best, dx*dx+dz*dz)
+	}
+	return best
 }
 
 // ref adjusts a chunk's ticket count; it returns true on 0 -> 1.

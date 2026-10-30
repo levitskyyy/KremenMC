@@ -25,6 +25,10 @@ type Storage struct {
 
 	mu      sync.Mutex
 	regions map[[2]int32]*regionRef
+	// missing remembers region files found absent, so loads of ungenerated
+	// chunks skip the open syscall. Only this Storage creates files in a
+	// writable Dir; read-only storage never caches absence.
+	missing map[[2]int32]struct{}
 	ents    *Storage
 	clock   uint64
 	maxOpen int
@@ -50,6 +54,9 @@ func (s *Storage) acquire(rx, rz int32, create bool) (*Region, error) {
 		ref.used = s.clock
 		return ref.r, nil
 	}
+	if _, ok := s.missing[k]; ok && !create {
+		return nil, os.ErrNotExist
+	}
 	if create {
 		if err := os.MkdirAll(s.Dir, 0o755); err != nil {
 			return nil, err
@@ -63,8 +70,15 @@ func (s *Storage) acquire(rx, rz int32, create bool) (*Region, error) {
 		r, err = OpenRegion(s.Dir, rx, rz, create)
 	}
 	if err != nil {
+		if !create && !s.ReadOnly && errors.Is(err, os.ErrNotExist) {
+			if s.missing == nil {
+				s.missing = map[[2]int32]struct{}{}
+			}
+			s.missing[k] = struct{}{}
+		}
 		return nil, err
 	}
+	delete(s.missing, k)
 	s.evict()
 	s.regions[k] = &regionRef{r: r, refs: 1, used: s.clock}
 	return r, nil

@@ -166,7 +166,7 @@ type living struct {
 	equip     [numSlots]item.Stack // mobs only
 	applied   [numSlots]item.Stack // equipment whose modifiers are in attrs
 	fx        map[int32]int32      // active effect id -> amplifier
-	fxLeft    map[int32]int32      // mobs: remaining ticks (-1 infinite)
+	fxLeft    map[int32]int32      // mobs: remaining ticks; players: end tick (-1 infinite)
 	killer    *Player
 	lastBy    api.Entity
 	lastByAt  int64
@@ -177,6 +177,7 @@ type living struct {
 	synced    bool // full attribute set sent
 	shownFire bool
 	shownAir  int32
+	snd       soundState
 }
 
 func (l *living) init(typeName string) {
@@ -463,6 +464,9 @@ func hurt(t combatant, src DamageSource, amount float32) bool {
 		}
 		amount = float32(ev.Damage)
 	}
+	if !w.bridgeDamage(t, src, &amount) {
+		return false
+	}
 	l.mu.Lock()
 	if l.dead || t.curHealth() <= 0 {
 		l.mu.Unlock()
@@ -534,8 +538,11 @@ func hurt(t combatant, src DamageSource, amount float32) bool {
 	}
 	if dead {
 		if !tryTotem(t, dt) {
+			playHurtSound(t, dt, true)
 			die(t, src)
 		}
+	} else if fresh {
+		playHurtSound(t, dt, false)
 	}
 	if p, ok := t.(*Player); ok {
 		p.sendHealthNow()

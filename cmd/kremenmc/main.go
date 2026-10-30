@@ -90,14 +90,14 @@ func run(dir, pprofAddr string, log *slog.Logger) error {
 		Seed:      seed,
 		Flat:      strings.Contains(strings.ToLower(props.LevelType), "flat"),
 		FlatSpec:  "",
-		Workers:   eng.Workers.ChunkIO,
+		Workers:   eng.Workers.ChunkIOWorkers(),
 		TickProcs: eng.Workers.Tick,
 	})
 	if err != nil {
 		return err
 	}
 	srv.AddWorld(w)
-	if err := srv.OpenDimensions(w, eng.Workers.ChunkIO, eng.Workers.Tick); err != nil {
+	if err := srv.OpenDimensions(w, eng.Workers.ChunkIOWorkers(), eng.Workers.Tick); err != nil {
 		return err
 	}
 	log.Info("world ready", "name", props.LevelName, "seed", w.Seed(), "spawn", w.Spawn().Pos, "took", time.Since(start).Round(time.Millisecond))
@@ -150,6 +150,15 @@ func run(dir, pprofAddr string, log *slog.Logger) error {
 			log.Error("java bridge disabled", "err", err)
 			srv.SetBridge(nil)
 			jb = nil
+		}
+		if jb != nil && mgr != nil {
+			mgr.SetExternal(func() []plugin.ExternalPlugin {
+				var out []plugin.ExternalPlugin
+				for _, p := range jb.Plugins() {
+					out = append(out, plugin.ExternalPlugin{Name: p.Name, Enabled: p.State == "enabled"})
+				}
+				return out
+			})
 		}
 	}
 

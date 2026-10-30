@@ -7,6 +7,7 @@ import (
 	"net"
 	"os"
 	"path/filepath"
+	"runtime"
 	"strings"
 	"time"
 
@@ -41,9 +42,18 @@ type Engine struct {
 
 type Workers struct {
 	Tick    int `toml:"tick" comment:"Region tick workers; 0 = GOMAXPROCS"`
-	ChunkIO int `toml:"chunk-io" comment:"Chunk load/generate/save workers; 0 = GOMAXPROCS"`
+	ChunkIO int `toml:"chunk-io" comment:"Chunk load/generate/save workers; 0 = GOMAXPROCS-1 (min 1)"`
 	Network int `toml:"network" comment:"Packet encode/compress workers; 0 = GOMAXPROCS/2"`
 	Async   int `toml:"async" comment:"Plugin async scheduler pool size"`
+}
+
+// ChunkIOWorkers is the effective chunk worker count. The default leaves
+// one core free so generation cannot starve the tick and network goroutines.
+func (w Workers) ChunkIOWorkers() int {
+	if w.ChunkIO > 0 {
+		return w.ChunkIO
+	}
+	return max(1, runtime.GOMAXPROCS(0)-1)
 }
 
 type World struct {

@@ -18,6 +18,9 @@ type structureProbe struct {
 	mu    sync.Mutex
 	cache map[world.ChunkPos]*world.Chunk
 	order []world.ChunkPos
+	// ctxs reuses sampling contexts (and their corner tables); they carry
+	// no hooks, so cached values stay valid across probes.
+	ctxs sync.Pool
 }
 
 func newStructureProbe(t *Terrain) *structureProbe {
@@ -42,8 +45,13 @@ func (p *structureProbe) chunk(cp world.ChunkPos) *world.Chunk {
 	}
 	plains, _ := data.Canonical().BiomeByName("plains")
 	c = world.NewChunk(cp.X, cp.Z, p.dim, plains)
-	var ctx density.Ctx
-	if err := p.t.st.GenerateStageCtx(&ctx, c, "noise"); err != nil {
+	ctx, _ := p.ctxs.Get().(*density.Ctx)
+	if ctx == nil {
+		ctx = &density.Ctx{}
+	}
+	err := p.t.st.GenerateStageCtx(ctx, c, "noise")
+	p.ctxs.Put(ctx)
+	if err != nil {
 		return nil
 	}
 	c.Finish()

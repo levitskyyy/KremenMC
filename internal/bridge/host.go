@@ -18,7 +18,10 @@ type Host interface {
 	Broadcast(componentJSON, permission string) int
 	Kick(id UUID, reasonJSON string)
 	Teleport(id UUID, to Location) bool
-	HasPermission(id UUID, permission string) bool
+	// HasPermission decides like Bukkit: explicit grants first, then the
+	// permission's default. def is the default a Java plugin registered for
+	// it ("true", "false", "op", "notop"), or "" if no plugin did.
+	HasPermission(id UUID, permission, def string) bool
 	Worlds() []WorldInfo
 	// Block returns a block state such as "minecraft:oak_log[axis=y]".
 	Block(world string, x, y, z int) (state string, ok bool)
@@ -29,6 +32,18 @@ type Host interface {
 	RegisterCommand(cmd CommandSpec)
 	// DispatchCommand runs a command line (no leading slash) as sender (zero UUID = console).
 	DispatchCommand(sender UUID, line string) bool
+	// SendPacket sends a clientbound packet built by a Java plugin to one
+	// player; kind is one of the Packet* constants. It must not block.
+	SendPacket(to UUID, kind string, f Fields)
+	// SendRawPacket sends a packet body (VarInt ID + payload, protocol 777)
+	// from a player's Java pipeline when the player is not routed. body is
+	// not modified afterwards. It must not block.
+	SendRawPacket(to UUID, body []byte)
+	// Query answers an OpQuery of the given kind; the result must be
+	// encodable (see AppendValue).
+	Query(kind string, f Fields) (any, error)
+	// Action applies an OpAction. It must not block on the tick goroutine.
+	Action(kind string, f Fields)
 }
 
 type ServerInfo struct {
@@ -64,20 +79,31 @@ func LocationFromMap(m map[string]any) Location {
 
 type PlayerInfo struct {
 	UUID        UUID
+	EntityID    int
 	Name        string
 	DisplayName string // component JSON; empty means the plain name
 	Location    Location
 	Op          bool
 	GameMode    string // SURVIVAL, CREATIVE, ADVENTURE, SPECTATOR
 	Address     string // host:port
+	Ping        int    // milliseconds
+	Properties  []ProfileProperty
+}
+
+type ProfileProperty struct {
+	Name, Value, Signature string
 }
 
 func (p PlayerInfo) Map() map[string]any {
 	l := p.Location
+	props := make([]any, len(p.Properties))
+	for i, pr := range p.Properties {
+		props[i] = map[string]any{"name": pr.Name, "value": pr.Value, "signature": pr.Signature}
+	}
 	return map[string]any{
-		"uuid": p.UUID, "name": p.Name, "displayName": p.DisplayName,
+		"uuid": p.UUID, "entityId": p.EntityID, "name": p.Name, "displayName": p.DisplayName,
 		"world": l.World, "x": l.X, "y": l.Y, "z": l.Z, "yaw": float64(l.Yaw), "pitch": float64(l.Pitch),
-		"op": p.Op, "gameMode": p.GameMode, "address": p.Address,
+		"op": p.Op, "gameMode": p.GameMode, "address": p.Address, "ping": p.Ping, "properties": props,
 	}
 }
 
@@ -104,6 +130,9 @@ type CommandSpec struct {
 	Description string
 	Usage       string
 	Permission  string
+	// Tree is the brigadier node of the command (see protocol.go), nil for a
+	// Bukkit command that takes free-form arguments.
+	Tree Fields
 }
 
 // Event is a server event forwarded to Java plugins. Fields follow the

@@ -72,6 +72,14 @@ func (d *Dispatcher) Suggest(sender api.CommandSender, text string) Completion {
 		offset = 1
 	}
 	input := text[offset:]
+	if c, ok := d.foreignFor(input); ok && strings.Contains(input, " ") {
+		if c.foreign.Suggest == nil || !d.canUse(c.node, sender) {
+			return Completion{Start: len(text)}
+		}
+		comp := c.foreign.Suggest(sender, input)
+		comp.Start += offset
+		return comp
+	}
 	res := d.parse(d.tree.Load(), sender, input)
 	ctx, parent, start := findSuggestionContext(res.ctx, len(input))
 	start = min(start, len(input))

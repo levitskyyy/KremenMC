@@ -11,6 +11,7 @@ import (
 	"github.com/levitskyyy/KremenMC/internal/entity"
 	"github.com/levitskyyy/KremenMC/internal/item"
 	"github.com/levitskyyy/KremenMC/internal/proto/packets"
+	"github.com/levitskyyy/KremenMC/internal/world"
 )
 
 // Item entity constants (ItemEntity).
@@ -73,7 +74,7 @@ func (w *World) addItemEntity(it *itemEnt) {
 	}
 	dropped.mu.Unlock()
 	w.mobsMu.Lock()
-	w.mobs[it.m.e.ID] = it.m
+	w.addMobLocked(it.m)
 	w.mobsMu.Unlock()
 }
 
@@ -260,7 +261,12 @@ func fluidHeight(src entity.BlockSource, box entity.AABB, kind string) float64 {
 
 // tick is ItemEntity.tick, preceded by the tickNonPassenger bookkeeping.
 func (it *itemEnt) tick(w *World) {
-	it.step(w.w, w.MinY(), w.mobList)
+	it.step(w.w, w.MinY(), func() []*Mob {
+		it.m.mu.Lock()
+		box := it.m.e.Box().Grow(0.5, 0, 0.5)
+		it.m.mu.Unlock()
+		return w.mobsIn(box, nil)
+	})
 }
 
 // step is one item entity tick against src; neighbours lists merge
@@ -287,6 +293,7 @@ func (it *itemEnt) step(src entity.BlockSource, minY int, neighbours func() []*M
 	lh := fluidHeight(src, box, "lava")
 	switch {
 	case wh > 0.1:
+		it.waterPush(src, box)
 		it.fluidMovement(float64(float32(0.99)))
 	case lh > 0.1:
 		it.fluidMovement(float64(float32(0.95)))
@@ -371,6 +378,30 @@ func (it *itemEnt) remove() {
 	dropped.mu.Lock()
 	delete(dropped.items, it.m.e.ID)
 	dropped.mu.Unlock()
+}
+
+// itemWaterPush is the per-tick push of flowing water on an item, measured
+// on the reference (item in a level 2..5 channel: +0.02843 blocks/tick
+// before drag).
+const itemWaterPush = 0.02843
+
+// waterPush adds the flow of the water blocks the item's box is in.
+func (it *itemEnt) waterPush(src entity.BlockSource, box entity.AABB) {
+	var fx, fz float64
+	for x := floorInt(box.MinX); x <= floorInt(box.MaxX-1e-7); x++ {
+		for y := floorInt(box.MinY); y <= floorInt(box.MaxY-1e-7); y++ {
+			for z := floorInt(box.MinZ); z <= floorInt(box.MaxZ-1e-7); z++ {
+				if k, _ := world.FluidOf(src.Block(x, y, z)); k == world.FluidWater {
+					dx, dz := world.FluidFlow(src, x, y, z)
+					fx, fz = fx+dx, fz+dz
+				}
+			}
+		}
+	}
+	if l := math.Hypot(fx, fz); l > 0 {
+		it.m.e.Vel.X += fx / l * itemWaterPush
+		it.m.e.Vel.Z += fz / l * itemWaterPush
+	}
 }
 
 func (it *itemEnt) fluidMovement(mul float64) {

@@ -2,6 +2,11 @@ package kremenmc.bridge;
 
 import com.destroystokyo.paper.profile.PlayerProfile;
 import com.destroystokyo.paper.profile.ProfileProperty;
+import com.google.common.collect.LinkedHashMultimap;
+import com.google.common.collect.Multimap;
+import com.mojang.authlib.GameProfile;
+import com.mojang.authlib.properties.Property;
+import com.mojang.authlib.properties.PropertyMap;
 import io.papermc.paper.threadedregions.scheduler.EntityScheduler;
 import java.net.InetSocketAddress;
 import java.util.ArrayList;
@@ -17,6 +22,7 @@ import net.kyori.adventure.chat.ChatType;
 import net.kyori.adventure.text.Component;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.BaseComponent;
+import net.minecraft.server.level.ServerPlayer;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
@@ -137,10 +143,12 @@ final class Players {
         @Override public String toString() { return "ConsoleCommandSender"; }
     }
 
-    public static final class PlayerImpl extends SenderImpl {
+    public static final class PlayerImpl extends PlayerExtras {
         final UUID id;
         final String name;
         volatile Map<String, Object> snapshot = Map.of();
+        volatile ServerPlayer handle;
+        volatile Nms.Out out;
 
         PlayerImpl(Bridge b, UUID id, String name) {
             super(b);
@@ -149,6 +157,7 @@ final class Players {
         }
 
         @Override UUID target() { return id; }
+        @Override String playerName() { return name; }
 
         private Player self() { return b.players.cached(id); }
 
@@ -162,7 +171,10 @@ final class Players {
         public UUID getUniqueId() { return id; }
         public Component name() { return Component.text(name); }
         public EntityType getType() { return EntityType.PLAYER; }
-        public int getEntityId() { return id.hashCode() & 0x7fffffff; }
+        public int getEntityId() {
+            Map<String, Object> m = snapshot.containsKey("entityId") ? snapshot : fresh();
+            return (int) Wire.lng(m, "entityId");
+        }
 
         public Component displayName() {
             Component c = Text.component(Wire.str(snapshot, "displayName"));
@@ -173,7 +185,33 @@ final class Players {
         public Component playerListName() { return displayName(); }
         public String getPlayerListName() { return getDisplayName(); }
 
-        public PlayerProfile getPlayerProfile() { return profile(id, name); }
+        public PlayerProfile getPlayerProfile() {
+            PlayerProfile p = profile(id, name);
+            for (Property pr : getProfile().properties().values()) p.setProperty(new ProfileProperty(pr.name(), pr.value(), pr.signature()));
+            return p;
+        }
+
+        public GameProfile getProfile() {
+            Map<String, Object> m = snapshot.containsKey("properties") ? snapshot : fresh();
+            Multimap<String, Property> props = LinkedHashMultimap.create();
+            for (Object o : Wire.list(m.get("properties"))) {
+                Map<String, Object> pm = Wire.map(o);
+                String n = Wire.str(pm, "name");
+                props.put(n, new Property(n, Wire.str(pm, "value"), pm.get("signature") instanceof String s && !s.isEmpty() ? s : null));
+            }
+            return new GameProfile(id, name, new PropertyMap(props));
+        }
+
+        public ServerPlayer getHandle() {
+            ServerPlayer h = handle;
+            if (h == null) {
+                synchronized (this) {
+                    h = handle;
+                    if (h == null) handle = h = Nms.newHandle(b, this);
+                }
+            }
+            return h;
+        }
 
         public boolean isOnline() { return b.players.cached(id) != null; }
         public boolean isConnected() { return isOnline(); }
@@ -183,7 +221,14 @@ final class Players {
 
         @Override
         public boolean hasPermission(String perm) {
-            return Wire.bool(b.call(Wire.OP_HAS_PERMISSION, id, perm), 0);
+            org.bukkit.permissions.Permission p = b.pluginManager.getPermission(perm);
+            String def = p == null ? "" : switch (p.getDefault()) {
+                case TRUE -> "true";
+                case FALSE -> "false";
+                case OP -> "op";
+                case NOT_OP -> "notop";
+            };
+            return Wire.bool(b.call(Wire.OP_HAS_PERMISSION, id, perm, def), 0);
         }
 
         public GameMode getGameMode() {
@@ -216,11 +261,14 @@ final class Players {
 
         public World getWorld() { return b.worlds.get(Wire.str(fresh(), "world")); }
 
-        public boolean teleport(Location l) {
-            return Wire.bool(b.call(Wire.OP_TELEPORT, id, locationMap(l)), 0);
-        }
+        public boolean teleport(Location l) { return teleport(l, PlayerTeleportEvent.TeleportCause.PLUGIN); }
 
-        public boolean teleport(Location l, PlayerTeleportEvent.TeleportCause cause) { return teleport(l); }
+        public boolean teleport(Location l, PlayerTeleportEvent.TeleportCause cause) {
+            PlayerTeleportEvent e = new PlayerTeleportEvent(self(), getLocation(), l.clone(), cause);
+            b.pluginManager.callEvent(e);
+            if (e.isCancelled() || e.getTo() == null) return false;
+            return Wire.bool(b.call(Wire.OP_TELEPORT, id, locationMap(e.getTo())), 0);
+        }
         public boolean teleport(Entity e) { return teleport(e.getLocation()); }
         public boolean teleport(Entity e, PlayerTeleportEvent.TeleportCause cause) { return teleport(e.getLocation()); }
         public CompletableFuture<Boolean> teleportAsync(Location l) { return CompletableFuture.completedFuture(teleport(l)); }
@@ -232,13 +280,87 @@ final class Players {
 
         public boolean performCommand(String cmd) { return Bukkit.dispatchCommand(self(), cmd); }
 
-        public double getHealth() { return 20; }
-        public int getFoodLevel() { return 20; }
+        Map<String, Object> state() { return Wire.map(b.query("player_state", "player", id)); }
+        private void set(String field, Object... kv) {
+            Object[] a = new Object[kv.length + 4];
+            a[0] = "player"; a[1] = id; a[2] = "field"; a[3] = field;
+            System.arraycopy(kv, 0, a, 4, kv.length);
+            b.action("player_set", a);
+        }
+
+        public double getHealth() { return Wire.dbl(state(), "health"); }
+        public void setHealth(double v) {
+            if (v < 0 || v > getMaxHealth()) throw new IllegalArgumentException("Health value (" + v + ") must be between 0 and " + getMaxHealth());
+            set("health", "value", v);
+        }
+        public double getMaxHealth() { return Wire.dbl(state(), "maxHealth"); }
+        public int getFoodLevel() { return (int) Wire.lng(state(), "food"); }
+        public void setFoodLevel(int v) { set("food", "value", v); }
+        public float getSaturation() { return (float) Wire.dbl(state(), "saturation"); }
+        public void setSaturation(float v) { set("saturation", "value", (double) v); }
+        public float getExp() { return (float) Wire.dbl(state(), "exp"); }
+        public int getLevel() { return (int) Wire.lng(state(), "level"); }
+        public void setExp(float v) { set("exp", "level", getLevel(), "progress", (double) v); }
+        public void setLevel(int v) { set("exp", "level", v, "progress", (double) getExp()); }
+        public void giveExpLevels(int n) { setLevel(Math.max(0, getLevel() + n)); }
+        public boolean isFlying() { return Wire.bool(state(), "flying"); }
+        public void setFlying(boolean v) { set("flying", "value", v); }
+        public boolean getAllowFlight() { return Wire.bool(state(), "allowFlight"); }
+        public void setAllowFlight(boolean v) { set("allowFlight", "value", v); }
+        public void setGameMode(GameMode g) { set("gameMode", "value", g.name()); }
+        public boolean isHealthScaled() { return false; }
+
+        public void sendActionBar(Component c) { b.action("action_bar", "player", id, "text", Text.json(c)); }
+        public void sendActionBar(String s) { b.action("action_bar", "player", id, "text", Text.jsonLegacy(s)); }
+        public void showTitle(net.kyori.adventure.title.Title t) {
+            net.kyori.adventure.title.Title.Times tm = t.times();
+            long in = tm == null ? 10 : tm.fadeIn().toMillis() / 50, stay = tm == null ? 70 : tm.stay().toMillis() / 50, out = tm == null ? 20 : tm.fadeOut().toMillis() / 50;
+            b.action("title", "player", id, "title", Text.json(t.title()), "subtitle", Text.json(t.subtitle()), "fadeIn", in, "stay", stay, "fadeOut", out);
+        }
+        public void sendTitle(String title, String subtitle) { sendTitle(title, subtitle, 10, 70, 20); }
+        public void sendTitle(String title, String subtitle, int in, int stay, int out) {
+            b.action("title", "player", id, "title", Text.jsonLegacy(title == null ? "" : title), "subtitle", Text.jsonLegacy(subtitle == null ? "" : subtitle), "fadeIn", in, "stay", stay, "fadeOut", out);
+        }
+        public void clearTitle() { b.action("title", "player", id, "clear", true); }
+        public void resetTitle() { clearTitle(); }
+        public void playSound(net.kyori.adventure.sound.Sound s) {
+            b.action("sound", "player", id, "name", s.name().asString(), "category", s.source().name().toLowerCase(Locale.ROOT), "volume", (double) s.volume(), "pitch", (double) s.pitch(), "seed", s.seed().orElse(0L));
+        }
+        public void playSound(net.kyori.adventure.sound.Sound s, double x, double y, double z) {
+            b.action("sound", "player", id, "name", s.name().asString(), "category", s.source().name().toLowerCase(Locale.ROOT), "volume", (double) s.volume(), "pitch", (double) s.pitch(), "seed", s.seed().orElse(0L), "x", x, "y", y, "z", z);
+        }
+        public void playSound(Location l, String sound, float volume, float pitch) {
+            b.action("sound", "player", id, "name", sound.contains(":") ? sound : "minecraft:" + sound, "category", "master", "volume", (double) volume, "pitch", (double) pitch, "seed", 0L, "x", l.getX(), "y", l.getY(), "z", l.getZ());
+        }
+        public void playSound(Location l, org.bukkit.Sound sound, float volume, float pitch) {
+            playSound(l, sound.key().asString(), volume, pitch);
+        }
         public String getLocale() { return "en_us"; }
         public Locale locale() { return Locale.US; }
-        public int getPing() { return 0; }
+        public int getPing() { return (int) Wire.lng(fresh(), "ping"); }
 
         public EntityScheduler getScheduler() { return b.scheduler.entityScheduler(self()); }
+
+        public void sendPlayerListHeaderAndFooter(Component header, Component footer) {
+            b.conn.notify(Wire.OP_SEND_PACKET, id, "tab_list", Map.of("header", Text.json(header), "footer", Text.json(footer)));
+        }
+        public void sendPlayerListHeader(Component header) { sendPlayerListHeaderAndFooter(header, Component.empty()); }
+        public void sendPlayerListFooter(Component footer) { sendPlayerListHeaderAndFooter(Component.empty(), footer); }
+        public void setPlayerListHeaderFooter(String header, String footer) {
+            b.conn.notify(Wire.OP_SEND_PACKET, id, "tab_list", Map.of("header", Text.jsonLegacy(header == null ? "" : header), "footer", Text.jsonLegacy(footer == null ? "" : footer)));
+        }
+        public org.bukkit.inventory.PlayerInventory getInventory() { return Inventories.playerInventory(b, id); }
+        public org.bukkit.inventory.EntityEquipment getEquipment() { return Inventories.equipment(b, id); }
+        public org.bukkit.inventory.Inventory getEnderChest() { return Inventories.enderChest(b, id); }
+        public org.bukkit.inventory.InventoryView getOpenInventory() { return Inventories.openView(b, self()); }
+        public org.bukkit.inventory.InventoryView openInventory(org.bukkit.inventory.Inventory inv) { return Inventories.openInventory(b, self(), inv); }
+        public void openInventory(org.bukkit.inventory.InventoryView v) { if (v != null) Inventories.openInventory(b, self(), v.getTopInventory()); }
+        public void closeInventory() { Inventories.closeInventory(b, self(), org.bukkit.event.inventory.InventoryCloseEvent.Reason.PLUGIN); }
+        public void closeInventory(org.bukkit.event.inventory.InventoryCloseEvent.Reason r) { Inventories.closeInventory(b, self(), r); }
+        public org.bukkit.inventory.ItemStack getItemOnCursor() { return getOpenInventory().getCursor(); }
+        public void setItemOnCursor(org.bukkit.inventory.ItemStack s) { getOpenInventory().setCursor(s); }
+        public org.bukkit.inventory.ItemStack getItemInHand() { return getInventory().getItemInMainHand(); }
+        public void setItemInHand(org.bukkit.inventory.ItemStack s) { getInventory().setItemInMainHand(s); }
 
         public Player.Spigot spigot() {
             PlayerImpl me = this;
@@ -249,7 +371,7 @@ final class Players {
                 @Override public void sendMessage(ChatMessageType t, BaseComponent... cs) { me.sendMessage(cs); }
                 @Override public void sendMessage(ChatMessageType t, UUID s, BaseComponent c) { me.sendMessage(c); }
                 @Override public void sendMessage(ChatMessageType t, UUID s, BaseComponent... cs) { me.sendMessage(cs); }
-                @Override public int getPing() { return 0; }
+                @Override public int getPing() { return me.getPing(); }
             };
         }
 

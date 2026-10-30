@@ -32,7 +32,7 @@ func (w *World) spawnPrimedTNT(p api.BlockPos, owner api.Entity, rnd rng.Source)
 
 func (w *World) addPrimed(m *Mob) {
 	w.mobsMu.Lock()
-	w.mobs[m.e.ID] = m
+	w.addMobLocked(m)
 	w.mobsMu.Unlock()
 }
 

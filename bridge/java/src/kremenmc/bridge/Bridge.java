@@ -1,7 +1,6 @@
 package kremenmc.bridge;
 
 import java.io.File;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -32,7 +31,9 @@ final class Bridge {
     final StandardMessenger messenger = new StandardMessenger();
     final ConsoleCommandSender console;
     final Server server;
+    final Pipes pipes;
     final SimpleCommandMap commandMap;
+    final Brigadier brigadier = new Brigadier(this);
     volatile File pluginsDir = new File("plugins");
 
     Bridge(Conn conn, Map<String, Object> info) {
@@ -42,7 +43,15 @@ final class Bridge {
         this.console = Stubs.proxy(ConsoleCommandSender.class, new Players.ConsoleImpl(this));
         this.server = Stubs.proxy(Server.class, new ServerImpl(this));
         Bukkit.setServer(server);
-        this.commandMap = new SimpleCommandMap(server, new HashMap<>());
+        this.pipes = new Pipes(this);
+        this.commandMap = new Brigadier.CommandMapImpl(this);
+        Thread.ofPlatform().daemon().name("kremenmc-nms-warmup").start(() -> {
+            try {
+                Nms.warmUp();
+            } catch (RuntimeException | LinkageError e) {
+                log.log(java.util.logging.Level.WARNING, "kremenmc bridge: NMS layer warm-up failed", e);
+            }
+        });
     }
 
     String infoString(String k, String def) {
@@ -63,6 +72,23 @@ final class Bridge {
 
     void sendMessage(UUID target, String json) {
         if (json != null) conn.notify(Wire.OP_SEND_MESSAGE, target, json);
+    }
+
+    static Map<String, Object> fields(Object... kv) {
+        Map<String, Object> m = new java.util.LinkedHashMap<>();
+        for (int i = 0; i + 1 < kv.length; i += 2) m.put((String) kv[i], kv[i + 1]);
+        return m;
+    }
+
+    /** OP_QUERY with alternating key/value fields. */
+    Object query(String kind, Object... kv) {
+        List<Object> r = conn.call(Wire.OP_QUERY, kind, fields(kv));
+        return r.isEmpty() ? null : r.get(0);
+    }
+
+    /** OP_ACTION with alternating key/value fields. */
+    void action(String kind, Object... kv) {
+        conn.notify(Wire.OP_ACTION, kind, fields(kv));
     }
 
     List<Object> call(int op, Object... args) {

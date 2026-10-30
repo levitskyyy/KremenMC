@@ -33,9 +33,10 @@ type Conn struct {
 	nc net.Conn
 	h  Handlers
 
-	wmu  sync.Mutex
-	bw   *bufio.Writer
-	wbuf []byte
+	wmu   sync.Mutex
+	bw    *bufio.Writer
+	wbuf  []byte
+	flush chan struct{}
 
 	nextID  atomic.Uint32
 	pmu     sync.Mutex
@@ -54,6 +55,7 @@ func NewConn(c net.Conn, h Handlers) *Conn {
 		nc:      c,
 		h:       h,
 		bw:      bufio.NewWriterSize(c, 64<<10),
+		flush:   make(chan struct{}, 1),
 		pending: make(map[uint32]chan Frame),
 		ctx:     ctx,
 		cancel:  cancel,
@@ -64,6 +66,7 @@ func NewConn(c net.Conn, h Handlers) *Conn {
 // Serve reads frames until the connection fails or is closed.
 func (c *Conn) Serve() error {
 	defer close(c.done)
+	go c.flusher()
 	br := bufio.NewReaderSize(c.nc, 64<<10)
 	var buf []byte
 	for {
@@ -124,7 +127,9 @@ func (c *Conn) handleCall(f Frame) {
 	}
 }
 
-func (c *Conn) write(f Frame) error {
+func (c *Conn) write(f Frame) error { return c.writeFrame(f, true) }
+
+func (c *Conn) writeFrame(f Frame, flush bool) error {
 	c.wmu.Lock()
 	defer c.wmu.Unlock()
 	if c.ctx.Err() != nil {
@@ -135,7 +140,7 @@ func (c *Conn) write(f Frame) error {
 	if err != nil {
 		return fmt.Errorf("bridge: encode op %d: %w", f.Op, err)
 	}
-	if _, err = c.bw.Write(c.wbuf); err == nil {
+	if _, err = c.bw.Write(c.wbuf); err == nil && flush {
 		err = c.bw.Flush()
 	}
 	if cap(c.wbuf) > 1<<20 {
@@ -186,6 +191,37 @@ func (c *Conn) Call(ctx context.Context, op uint16, args ...any) ([]any, error) 
 
 func (c *Conn) Notify(op uint16, args ...any) error {
 	return c.write(Frame{Kind: KindNotify, Op: op, Args: args})
+}
+
+// NotifyBuffered is Notify for high-rate messages: the flush is left to a
+// background goroutine, so messages sent close together share one write.
+// The arguments are encoded before it returns.
+func (c *Conn) NotifyBuffered(op uint16, args ...any) error {
+	if err := c.writeFrame(Frame{Kind: KindNotify, Op: op, Args: args}, false); err != nil {
+		return err
+	}
+	select {
+	case c.flush <- struct{}{}:
+	default:
+	}
+	return nil
+}
+
+func (c *Conn) flusher() {
+	for {
+		select {
+		case <-c.ctx.Done():
+			return
+		case <-c.flush:
+		}
+		c.wmu.Lock()
+		err := c.bw.Flush()
+		c.wmu.Unlock()
+		if err != nil {
+			c.shutdown(fmt.Errorf("bridge: write: %w", err))
+			return
+		}
+	}
 }
 
 func (c *Conn) Close() error {

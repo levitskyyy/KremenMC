@@ -23,6 +23,7 @@ type command struct {
 	name      string
 	aliases   []string
 	node      *api.CommandNode
+	foreign   *Foreign
 }
 
 type tree struct {
@@ -85,10 +86,10 @@ func (d *Dispatcher) Register(owner string, root *api.CommandNode, aliases ...st
 	if ns == "" {
 		ns = "minecraft"
 	}
-	return d.register(owner, ns, root, aliases)
+	return d.registerWith(owner, ns, root, aliases, nil)
 }
 
-func (d *Dispatcher) register(owner, ns string, root *api.CommandNode, aliases []string) error {
+func (d *Dispatcher) registerWith(owner, ns string, root *api.CommandNode, aliases []string, f *Foreign) error {
 	if root == nil || root.Kind != api.NodeLiteral {
 		return fmt.Errorf("command: root of %q must be a literal", owner)
 	}
@@ -115,7 +116,7 @@ func (d *Dispatcher) register(owner, ns string, root *api.CommandNode, aliases [
 		}
 	}
 	d.mu.Lock()
-	c := &command{owner: owner, namespace: strings.ToLower(ns), name: name, aliases: als, node: root}
+	c := &command{owner: owner, namespace: strings.ToLower(ns), name: name, aliases: als, node: root, foreign: f}
 	if i := slices.IndexFunc(d.cmds, func(c *command) bool { return c.owner == owner && c.name == name }); i >= 0 {
 		d.cmds[i] = c
 	} else {

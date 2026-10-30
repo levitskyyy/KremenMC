@@ -47,6 +47,10 @@ type Entity struct {
 
 	InGround bool // stuck arrow
 
+	// Movement input of a living entity, set by its AI and consumed by the
+	// next Tick (zero for players and AI-less mobs).
+	Input MoveInput
+
 	supX, supZ int // last supporting block column while on ground
 	supOK      bool
 }

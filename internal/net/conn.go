@@ -41,6 +41,8 @@ type item struct {
 	state  packets.State
 	ctl    ctl
 	secret []byte
+	// direct items came back from the Tap and are written as they are.
+	direct bool
 }
 
 // Profile is an authenticated game profile.
@@ -77,6 +79,13 @@ type Conn struct {
 
 	out      chan item
 	outState atomic.Uint32
+
+	// ov holds items queued after out filled up, in order; the writer
+	// drains it whenever out is empty. kick wakes the writer for it.
+	ovMu  sync.Mutex
+	ov    []item
+	ovLen atomic.Int32
+	kick  chan struct{}
 	done     chan struct{}
 	closeErr error
 	once     sync.Once
@@ -86,6 +95,9 @@ type Conn struct {
 	profile Profile
 	brand   atomic.Pointer[string]
 	info    atomic.Pointer[ClientInfo]
+
+	hist atomic.Pointer[history]
+	tap  atomic.Pointer[tapState]
 
 	kaID     atomic.Int64
 	kaSent   atomic.Int64
@@ -100,6 +112,7 @@ func newConn(l *Listener, nc stdnet.Conn) *Conn {
 		l:    l,
 		nc:   nc,
 		out:  make(chan item, l.cfg.SendQueue),
+		kick: make(chan struct{}, 1),
 		done: make(chan struct{}),
 		log:  l.log,
 	}
@@ -183,18 +196,60 @@ func (c *Conn) enqueue(it item) bool {
 		return false
 	default:
 	}
-	select {
-	case c.out <- it:
-		return true
-	case <-c.done:
-		return false
-	default:
+	if c.ovLen.Load() == 0 {
+		select {
+		case c.out <- it:
+			return true
+		default:
+		}
+	}
+	c.ovMu.Lock()
+	if len(c.ov) >= maxOverflow {
+		c.ovMu.Unlock()
 		c.Close(ErrSlowClient)
 		return false
 	}
+	c.ov = append(c.ov, it)
+	c.ovLen.Store(int32(len(c.ov)))
+	c.ovMu.Unlock()
+	select {
+	case c.kick <- struct{}{}:
+	default:
+	}
+	return true
+}
+
+// maxOverflow bounds the burst buffer behind out; only a client that stops
+// reading for a long time reaches it.
+const maxOverflow = 1 << 20
+
+func (c *Conn) takeOverflow() []item {
+	if c.ovLen.Load() == 0 {
+		return nil
+	}
+	c.ovMu.Lock()
+	b := c.ov
+	c.ov = nil
+	c.ovLen.Store(0)
+	c.ovMu.Unlock()
+	return b
 }
 
 func (c *Conn) control(it item) {
+	if c.ovLen.Load() > 0 {
+		c.ovMu.Lock()
+		if len(c.ov) > 0 {
+			c.ov = append(c.ov, it)
+			c.ovLen.Store(int32(len(c.ov)))
+			c.ovMu.Unlock()
+			select {
+			case c.kick <- struct{}{}:
+			default:
+			}
+			return
+		}
+		c.ovMu.Unlock()
+	}
 	select {
 	case c.out <- it:
 	case <-c.done:
@@ -243,7 +298,7 @@ func (c *Conn) Close(err error) {
 func (c *Conn) writer() {
 	defer c.writerWG.Done()
 	fw := proto.NewFrameWriter(c.nc)
-	var w proto.Writer
+	var w, tw proto.Writer
 	ka := time.NewTicker(c.l.cfg.KeepAliveInterval)
 	defer ka.Stop()
 	closing := false
@@ -255,6 +310,9 @@ func (c *Conn) writer() {
 
 	var write func(it item) error
 	write = func(it item) error {
+		if c.tapOut(it, &tw) {
+			return nil
+		}
 		switch it.ctl {
 		case ctlCompress:
 			fw.SetCompression(c.l.cfg.CompressionThreshold, c.l.cfg.CompressionLevel)
@@ -272,6 +330,15 @@ func (c *Conn) writer() {
 				}
 			}
 			return nil
+		}
+		if h := c.hist.Load(); h != nil && it.state != packets.Play {
+			if it.raw != nil {
+				h.add(true, it.state, it.raw)
+			} else {
+				w.Reset()
+				packets.Marshal(&w, it.p)
+				h.add(true, it.state, w.B)
+			}
 		}
 		if c.codec == nil {
 			if it.raw != nil {
@@ -291,6 +358,11 @@ func (c *Conn) writer() {
 			}
 			var err error
 			if p, err = packets.Unmarshal(it.state, packets.Clientbound, body); err != nil {
+				if it.direct {
+					// A plugin wrote something this client's codec cannot translate.
+					c.log.Debug("dropping untranslatable routed packet", "addr", c.addr, "err", err)
+					return nil
+				}
 				return fmt.Errorf("translate: %w", err)
 			}
 		}
@@ -327,6 +399,7 @@ func (c *Conn) writer() {
 				c.Close(err)
 				return
 			}
+		case <-c.kick:
 		}
 	drain:
 		for n := 0; n < 512 && fw.Buffered() < 256<<10 && !closing; n++ {
@@ -338,6 +411,17 @@ func (c *Conn) writer() {
 				}
 			default:
 				break drain
+			}
+		}
+		if len(c.out) == 0 && !closing {
+			for _, it := range c.takeOverflow() {
+				if err := write(it); err != nil {
+					c.Close(err)
+					return
+				}
+				if fw.Buffered() >= 256<<10 && !flush() {
+					return
+				}
 			}
 		}
 		if !flush() {
@@ -431,12 +515,18 @@ func (c *Conn) readPackets(dst []packets.Packet) ([]packets.Packet, error) {
 		if err != nil {
 			return dst, fmt.Errorf("translate decode: %w", err)
 		}
+		if c.hist.Load() != nil {
+			for _, p := range ps {
+				c.recordIn(p)
+			}
+		}
 		return append(dst, ps...), nil
 	}
 	p, err := packets.Unmarshal(c.inState, packets.Serverbound, frame)
 	if err != nil {
 		return dst, err
 	}
+	c.recordIn(p)
 	return append(dst, p), nil
 }
 

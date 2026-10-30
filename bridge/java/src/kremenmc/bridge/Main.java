@@ -37,7 +37,21 @@ public final class Main {
             if (!ready.await(60, TimeUnit.SECONDS)) throw new IllegalStateException("bridge not initialised");
             return handle(holder[0], op, a);
         }, (op, a) -> {
-            if (op == Wire.OP_TICK && holder[0] != null) holder[0].scheduler.onTick(Wire.num(a, 0));
+            Bridge b = holder[0];
+            if (b == null) return;
+            switch (op) {
+                case Wire.OP_PIPE_OUT -> b.pipes.out(Wire.uuid(a, 0), a.size() > 1 && a.get(1) instanceof byte[] x ? x : null, Wire.num(a, 2));
+                case Wire.OP_PIPE_IN -> {
+                    if (a.size() > 1 && a.get(1) instanceof byte[] x) b.pipes.in(Wire.uuid(a, 0), x);
+                }
+                case Wire.OP_PIPE_CLOSE -> b.pipes.close(Wire.uuid(a, 0));
+                case Wire.OP_TICK -> {
+                    long tick = Wire.num(a, 0);
+                    b.scheduler.onTick(tick);
+                    if (tick % 20 == 0) b.pipes.checkActive();
+                }
+                default -> {}
+            }
         });
         Thread reader = new Thread(conn::serve, "kremenmc-ipc");
         reader.start();
@@ -63,6 +77,8 @@ public final class Main {
                 return new Object[] {b.main.call(() -> load(b, Wire.list(a.get(0)), Wire.str(a, 1)), LOAD_TIMEOUT_MS)};
             case Wire.OP_EVENT:
                 return Events.fire(b, Wire.str(a, 0), Wire.map(a.get(1)), Wire.bool(a, 2));
+            case Inventories.OP_EVENT:
+                return Inventories.event(b, Wire.str(a, 0), Wire.map(a.get(1)));
             case Wire.OP_COMMAND: {
                 CommandSender sender = b.sender(Wire.uuid(a, 0));
                 String line = Wire.str(a, 1);
@@ -74,6 +90,17 @@ public final class Main {
                 List<String> res = b.main.call(() -> b.commandMap.tabComplete(sender, line), CALL_TIMEOUT_MS);
                 return new Object[] {res == null ? List.of() : res};
             }
+            case Wire.OP_SUGGEST: {
+                CommandSender sender = b.sender(Wire.uuid(a, 0));
+                return b.brigadier.suggest(sender, Wire.str(a, 1));
+            }
+            case Wire.OP_CAN_USE: {
+                CommandSender sender = b.sender(Wire.uuid(a, 0));
+                String label = Wire.str(a, 1);
+                return new Object[] {b.main.call(() -> b.brigadier.canUse(sender, label), CALL_TIMEOUT_MS)};
+            }
+            case Wire.OP_PIPE_OPEN:
+                return new Object[] {b.pipes.open(Wire.uuid(a, 0), Wire.str(a, 2), Wire.list(a.size() > 3 ? a.get(3) : null))};
             case Wire.OP_SHUTDOWN: {
                 shutdown(b);
                 Thread t = new Thread(() -> {
@@ -103,7 +130,9 @@ public final class Main {
             }
         }
         for (Plugin p : b.pluginManager.all()) b.pluginManager.enablePlugin(p);
+        b.brigadier.fireCommands();
         b.pluginManager.listenersChanged();
+        b.pipes.checkActive();
         List<Object> out = new ArrayList<>();
         for (Plugin p : b.pluginManager.all()) {
             Map<String, Object> m = new LinkedHashMap<>();
@@ -117,6 +146,7 @@ public final class Main {
 
     private static boolean command(Bridge b, CommandSender sender, String line) {
         try {
+            if (b.brigadier.owns(line)) return b.brigadier.execute(sender, line);
             return b.commandMap.dispatch(sender, line);
         } catch (Throwable t) {
             LOG.log(Level.SEVERE, "command '" + line + "' failed", t);
@@ -140,5 +170,6 @@ public final class Main {
         }
         b.scheduler.shutdown();
         b.main.stop();
+        b.pipes.shutdown();
     }
 }

@@ -138,9 +138,10 @@ func (p *Player) destroyBlock(w *World, pos api.BlockPos) bool {
 	}
 	w.levelEvent(p, levelBreak, pos, int32(st))
 	contents := w.takeContainer(pos, p)
-	if q, o, ok := otherHalf(w, pos, st); ok {
-		w.levelEvent(p, levelBreak, q, int32(o))
-		w.w.SetBlock(q.X, q.Y, q.Z, data.Air)
+	if q, ok := counterpart(pos, st); ok && gm == api.Creative {
+		if o := w.w.Block(q.X, q.Y, q.Z); sameBlock(o, st) {
+			quietBreaks.Store(quietKey{w, q}, struct{}{})
+		}
 	}
 	w.w.SetBlock(pos.X, pos.Y, pos.Z, data.Air)
 	for _, c := range contents {

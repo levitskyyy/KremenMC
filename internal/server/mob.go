@@ -21,20 +21,19 @@ type Mob struct {
 	tasks   tickQueue
 	onTick  func(*Mob)
 
-	liv              living
-	proj             *projectile
-	lastHit          int64
-	wanderLeft       int
-	wanderX, wanderZ float64
-	ticks            int64
-	name             *api.Component
-	silent           bool
-	glowing          bool
-	invuln           bool
-	tags             []string
-	pdata            *dataContainer
-	sp               *mobSpawn // tick goroutine only
-	itm              *itemEnt  // item entities only (itement_entity.go)
+	liv     living
+	proj    *projectile
+	ticks   int64
+	ai      *mobBrain // mob_ai.go
+	name    *api.Component
+	silent  bool
+	glowing bool
+	invuln  bool
+	tags    []string
+	pdata   *dataContainer
+	sp      *mobSpawn // tick goroutine only
+	itm     *itemEnt  // item entities only (itement_entity.go)
+	life    mobLife   // mob_life.go
 }
 
 func newMob(w *World, t *data.EntityType, at api.Location) *Mob {

@@ -73,7 +73,10 @@ package spawn
 //   - Rules in other dimensions (nether ambient light 0.1 path is exercised
 //     only through the formula), spawner custom spawn rules, spawner NBT
 //     positions, trial spawners (stub), special spawners (stubs).
-//   - finalizeSpawn of zombies, skeletons, and every other type not listed
-//     above: Base only; their exact draw sequences are not implemented.
+//   - finalizeSpawn of zombies, skeletons, piglins, drowned, illagers,
+//     wolves, cats, frogs, rabbits, foxes, villagers and a few more
+//     (finalize_gear.go): outcome rates match the reference
+//     (TestFinalizeGearRates) but the draw sequences are not known. Other
+//     types not listed above: Base only.
 //   - Halloween is treated as October 31 (SpecialDates.HALLOWEEN = --10-31;
 //     isHalloween() false on 10-28).

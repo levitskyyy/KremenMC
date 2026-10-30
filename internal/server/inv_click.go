@@ -36,6 +36,9 @@ func (p *Player) handleContainerClick(m *packets.ServerboundContainerClick) {
 	if err != nil || m.Mode < 0 || m.Mode > menu.PickupAll {
 		return
 	}
+	if p.bridgeClick(m, changed, carried) {
+		return
+	}
 	s := p.inv
 	s.mu.Lock()
 	defer s.mu.Unlock()
@@ -49,6 +52,9 @@ func (p *Player) handleContainerClick(m *packets.ServerboundContainerClick) {
 // handleContainerClose returns the carried stack and the crafting grid to
 // the inventory (dropping what does not fit), as InventoryMenu.removed.
 func (p *Player) handleContainerClose(m *packets.ServerboundContainerClose) {
+	if m.WindowID != 0 && p.bridgeClose(m.WindowID) {
+		return
+	}
 	if m.WindowID != 0 {
 		p.inv.mu.Lock()
 		if c := p.inv.chest; c != nil && c.id == m.WindowID {

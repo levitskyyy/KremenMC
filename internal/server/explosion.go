@@ -66,6 +66,9 @@ func exResistance(s data.StateID) (float32, bool) {
 // (the order the reference shuffles from). minY/maxY bound the world.
 func explodedPositions(src exBlocks, minY, maxY int, c api.Vec3, radius float32, rnd rng.Source, calc *exCalc) []api.BlockPos {
 	set := newPosSet()
+	// A ray carries at most 1.3*radius and spends at least 0.225 per 0.3
+	// step, so it stays within 1.734*radius of the centre.
+	set.window(exFloor(c.X), exFloor(c.Y), exFloor(c.Z), int(float64(radius)*1.734)+2)
 	for i := 0; i < 16; i++ {
 		for j := 0; j < 16; j++ {
 			for k := 0; k < 16; k++ {
@@ -79,16 +82,26 @@ func explodedPositions(src exBlocks, minY, maxY int, c api.Vec3, radius float32,
 				dx, dy, dz = dx/l, dy/l, dz/l
 				h := radius * (0.7 + float32(rnd.NextFloat()*0.6))
 				x, y, z := c.X, c.Y, c.Z
+				px, py, pz, have := 0, 0, 0, false
+				var s data.StateID
+				var res float32
+				var hasRes, keep bool
 				for h > 0 {
 					bx, by, bz := exFloor(x), exFloor(y), exFloor(z)
 					if by < minY || by >= maxY {
 						break
 					}
-					s := src.Block(bx, by, bz)
-					if r, ok := exResistance(s); ok {
-						h -= float32((r + 0.3) * 0.3)
+					if !have || bx != px || by != py || bz != pz {
+						s = src.Block(bx, by, bz)
+						r, ok := exResistance(s)
+						res, hasRes = float32((r+0.3)*0.3), ok
+						keep = calc != nil && calc.keep != nil && calc.keep(s)
+						px, py, pz, have = bx, by, bz, true
 					}
-					if h > 0 && (calc == nil || calc.keep == nil || !calc.keep(s)) {
+					if hasRes {
+						h -= res
+					}
+					if h > 0 && !keep {
 						set.add(api.BlockPos{X: bx, Y: by, Z: bz})
 					}
 					x += float64(dx * 0.3)
@@ -286,11 +299,39 @@ func explosionDamage(c api.Vec3, radius float32, pos api.Vec3, seen float32) flo
 type posSet struct {
 	seen map[api.BlockPos]struct{}
 	keys []api.BlockPos
+
+	// bits covers the cube of half-size r around (ox, oy, oz) when set.
+	bits       []uint64
+	ox, oy, oz int
+	r, side    int
 }
 
 func newPosSet() *posSet { return &posSet{seen: map[api.BlockPos]struct{}{}} }
 
+// window switches to a bitmap for positions within r of the origin; others
+// still go through the map.
+func (s *posSet) window(x, y, z, r int) {
+	side := 2*r + 1
+	if side > 128 {
+		return
+	}
+	s.ox, s.oy, s.oz, s.r, s.side = x, y, z, r, side
+	s.bits = make([]uint64, (side*side*side+63)/64)
+}
+
 func (s *posSet) add(p api.BlockPos) {
+	if s.bits != nil {
+		dx, dy, dz := p.X-s.ox+s.r, p.Y-s.oy+s.r, p.Z-s.oz+s.r
+		if uint(dx) < uint(s.side) && uint(dy) < uint(s.side) && uint(dz) < uint(s.side) {
+			i := (dx*s.side+dy)*s.side + dz
+			if s.bits[i>>6]&(1<<(i&63)) != 0 {
+				return
+			}
+			s.bits[i>>6] |= 1 << (i & 63)
+			s.keys = append(s.keys, p)
+			return
+		}
+	}
 	if _, ok := s.seen[p]; ok {
 		return
 	}

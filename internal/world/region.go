@@ -19,10 +19,20 @@ type Region struct {
 	stitch []*Chunk
 	ticks  tickHeap
 	seq    uint64
-	rng    *rand.Rand
+	// fluidPending dedups scheduled fluid ticks by position.
+	fluidPending map[uint64]struct{}
+	running      []scheduled
+	rng          *rand.Rand
 
 	inboxMu sync.Mutex
-	inbox   []func(*TickContext)
+	inbox   []inboxMsg
+}
+
+// inboxMsg is a queued change with the tick it was submitted at, so ticks
+// it schedules count from the moment of the request.
+type inboxMsg struct {
+	fn func(*TickContext)
+	at int64
 }
 
 func (w *World) region(rp RegionPos, create bool) *Region {
@@ -52,7 +62,7 @@ func (w *World) Submit(x, z int, fn func(*TickContext)) {
 		w.regMu.RLock()
 		if r := w.regions[rp.Key()]; r != nil {
 			r.inboxMu.Lock()
-			r.inbox = append(r.inbox, fn)
+			r.inbox = append(r.inbox, inboxMsg{fn, w.tick.Load()})
 			r.inboxMu.Unlock()
 			w.regMu.RUnlock()
 			return
@@ -72,12 +82,22 @@ type TickContext struct {
 	w     *World
 	r     *Region
 	light *LightEngine
+	at    int64 // submission tick of the inbox message being applied, or 0
+	depth int
 }
 
 func (t *TickContext) World() *World    { return t.w }
 func (t *TickContext) Region() *Region  { return t.r }
 func (t *TickContext) Tick() int64      { return t.w.tick.Load() }
 func (t *TickContext) Rand() *rand.Rand { return t.r.rng }
+
+// schedNow is the tick scheduled delays count from.
+func (t *TickContext) schedNow() int64 {
+	if t.at != 0 {
+		return t.at
+	}
+	return t.Tick()
+}
 
 func (t *TickContext) near(rp RegionPos) bool {
 	dx, dz := rp.X-t.r.Pos.X, rp.Z-t.r.Pos.Z
@@ -123,6 +143,12 @@ func (t *TickContext) SetBlock(x, y, z int, s data.StateID) bool {
 	if f := t.w.cfg.Hooks.BlockChanged; f != nil {
 		f(x, y, z, old, s)
 	}
+	t.fluidChanged(x, y, z, s)
+	if f := t.w.cfg.Hooks.ShapeUpdate; f != nil && t.depth < MaxUpdateDepth {
+		t.depth++
+		f(t, x, y, z, old, s)
+		t.depth--
+	}
 	return true
 }
 
@@ -132,11 +158,11 @@ func (t *TickContext) ScheduleTick(x, y, z int, delay int) {
 	p := ChunkAt(x, z)
 	st := t.Block(x, y, z)
 	if p.Region() != t.r.Pos {
-		due := t.Tick() + int64(max(delay, 1))
+		due := t.schedNow() + int64(max(delay, 1))
 		t.w.Submit(x, z, func(o *TickContext) { o.r.schedule(x, y, z, due, data.Canonical().BlockID(st)) })
 		return
 	}
-	t.r.schedule(x, y, z, t.Tick()+int64(max(delay, 1)), data.Canonical().BlockID(st))
+	t.r.schedule(x, y, z, t.schedNow()+int64(max(delay, 1)), data.Canonical().BlockID(st))
 }
 
 func (r *Region) schedule(x, y, z int, due int64, b data.BlockID) {
@@ -149,6 +175,7 @@ type scheduled struct {
 	seq     uint64
 	x, y, z int32
 	block   data.BlockID
+	fluid   FluidKind // non-zero: a fluid tick, checked against the fluid kind
 }
 
 type tickHeap []scheduled
@@ -285,23 +312,39 @@ func (w *World) tickRegion(t *TickContext) {
 	r.inbox = nil
 	r.inboxMu.Unlock()
 	for _, m := range msgs {
-		m(t)
+		t.at = m.at
+		m.fn(t)
 	}
+	t.at = 0
 
 	now := w.tick.Load()
-	if bt := w.cfg.Hooks.BlockTick; bt != nil {
-		for r.ticks.Len() > 0 && r.ticks[0].due <= now {
-			s := heap.Pop(&r.ticks).(scheduled)
-			st := t.Block(int(s.x), int(s.y), int(s.z))
-			if data.Canonical().BlockID(st) == s.block {
+	// Due ticks are taken out first, so a position whose tick runs this
+	// tick can be scheduled again while the batch runs; block ticks run
+	// before fluid ticks.
+	run := r.running[:0]
+	for r.ticks.Len() > 0 && r.ticks[0].due <= now {
+		s := heap.Pop(&r.ticks).(scheduled)
+		if s.fluid != FluidNone {
+			delete(r.fluidPending, fluidKey(int(s.x), int(s.y), int(s.z)))
+		}
+		run = append(run, s)
+	}
+	bt := w.cfg.Hooks.BlockTick
+	for _, s := range run {
+		if s.fluid == FluidNone && bt != nil {
+			if st := t.Block(int(s.x), int(s.y), int(s.z)); data.Canonical().BlockID(st) == s.block {
 				bt(t, int(s.x), int(s.y), int(s.z), st)
 			}
 		}
-	} else {
-		for r.ticks.Len() > 0 && r.ticks[0].due <= now {
-			heap.Pop(&r.ticks)
+	}
+	for _, s := range run {
+		if s.fluid != FluidNone {
+			if st := t.Block(int(s.x), int(s.y), int(s.z)); fluidData().of(st).kind() == s.fluid {
+				t.fluidTick(int(s.x), int(s.y), int(s.z), st)
+			}
 		}
 	}
+	r.running = run[:0]
 
 	if rt := w.cfg.Hooks.RandomTick; rt != nil && w.cfg.RandomTickSpeed > 0 {
 		for _, c := range r.chunks {

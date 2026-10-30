@@ -21,6 +21,7 @@ type Ctx struct {
 	Beardifier   func(x, y, z int32) float32
 	BlendDensity func(x, y, z int32, v float32) float32
 	cache        []cacheCell
+	flat         []*[flatSlots]flatCell
 	corners      *cornerTable
 }
 
@@ -141,7 +142,7 @@ type unaryS struct {
 	k    float32
 }
 
-func (s unaryS) Value(c *Ctx, x, y, z int32) float32 {
+func (s *unaryS) Value(c *Ctx, x, y, z int32) float32 {
 	return unary(s.kind, s.k, s.in.Value(c, x, y, z))
 }
 
@@ -187,7 +188,7 @@ type binS struct {
 	rb   float32 // right bound for min/max shortcuts
 }
 
-func (s binS) Value(c *Ctx, x, y, z int32) float32 {
+func (s *binS) Value(c *Ctx, x, y, z int32) float32 {
 	a := s.l.Value(c, x, y, z)
 	switch s.kind {
 	case KAdd:
@@ -219,7 +220,7 @@ type constBinS struct {
 	k    float32
 }
 
-func (s constBinS) Value(c *Ctx, x, y, z int32) float32 {
+func (s *constBinS) Value(c *Ctx, x, y, z int32) float32 {
 	v := s.in.Value(c, x, y, z)
 	switch s.kind {
 	case KAdd:
@@ -299,7 +300,7 @@ type rangeS struct {
 	yes, no Sampler
 }
 
-func (s rangeS) Value(c *Ctx, x, y, z int32) float32 {
+func (s *rangeS) Value(c *Ctx, x, y, z int32) float32 {
 	v := s.in.Value(c, x, y, z)
 	if v >= s.lo && v < s.hi {
 		return s.yes.Value(c, x, y, z)
@@ -325,11 +326,17 @@ func (s intervalS) Value(c *Ctx, x, y, z int32) float32 {
 type cacheS struct {
 	id int
 	in Sampler
+	// flat: the input ignores y, so entries are keyed by (x, z) in a small
+	// direct-mapped table that survives y changes (cell corners stacked in y).
+	flat bool
 }
 
-func (s cacheS) Value(c *Ctx, x, y, z int32) float32 {
+func (s *cacheS) Value(c *Ctx, x, y, z int32) float32 {
 	if c == nil {
 		return s.in.Value(c, x, y, z)
+	}
+	if s.flat && c.BlendAlpha == nil && c.BlendOffset == nil {
+		return s.flatValue(c, x, y, z)
 	}
 	if s.id >= len(c.cache) {
 		c.cache = append(c.cache, make([]cacheCell, s.id+1-len(c.cache))...)
@@ -340,6 +347,32 @@ func (s cacheS) Value(c *Ctx, x, y, z int32) float32 {
 	}
 	v := s.in.Value(c, x, y, z)
 	c.cache[s.id] = cacheCell{x, y, z, true, v}
+	return v
+}
+
+const flatSlots = 64
+
+type flatCell struct {
+	x, z int32
+	ok   bool
+	v    float32
+}
+
+func (s *cacheS) flatValue(c *Ctx, x, y, z int32) float32 {
+	if s.id >= len(c.flat) {
+		c.flat = append(c.flat, make([]*[flatSlots]flatCell, s.id+1-len(c.flat))...)
+	}
+	t := c.flat[s.id]
+	if t == nil {
+		t = new([flatSlots]flatCell)
+		c.flat[s.id] = t
+	}
+	i := (uint32(x)*0x9E3779B1 ^ uint32(z)*0x85EBCA77) >> 26
+	if e := &t[i]; e.ok && e.x == x && e.z == z {
+		return e.v
+	}
+	v := s.in.Value(c, x, y, z)
+	t[i] = flatCell{x, z, true, v}
 	return v
 }
 

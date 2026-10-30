@@ -232,6 +232,9 @@ func decompress(typ byte, p []byte) ([]byte, error) {
 	return out, nil
 }
 
+// Compressors are large (~1 MB of flate state); reuse them across writes.
+var gzipWriters, zlibWriters sync.Pool
+
 func compress(typ byte, p []byte) ([]byte, error) {
 	var b bytes.Buffer
 	switch typ {
@@ -240,19 +243,33 @@ func compress(typ byte, p []byte) ([]byte, error) {
 	case CompressionLZ4:
 		return lz4Compress(nil, p), nil
 	case CompressionGzip:
-		w := gzip.NewWriter(&b)
-		if _, err := w.Write(p); err != nil {
-			return nil, err
+		w, _ := gzipWriters.Get().(*gzip.Writer)
+		if w == nil {
+			w = gzip.NewWriter(&b)
+		} else {
+			w.Reset(&b)
 		}
-		if err := w.Close(); err != nil {
+		_, err := w.Write(p)
+		if err == nil {
+			err = w.Close()
+		}
+		gzipWriters.Put(w)
+		if err != nil {
 			return nil, err
 		}
 	case CompressionZlib:
-		w := zlib.NewWriter(&b)
-		if _, err := w.Write(p); err != nil {
-			return nil, err
+		w, _ := zlibWriters.Get().(*zlib.Writer)
+		if w == nil {
+			w = zlib.NewWriter(&b)
+		} else {
+			w.Reset(&b)
 		}
-		if err := w.Close(); err != nil {
+		_, err := w.Write(p)
+		if err == nil {
+			err = w.Close()
+		}
+		zlibWriters.Put(w)
+		if err != nil {
 			return nil, err
 		}
 	default:

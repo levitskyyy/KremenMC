@@ -120,6 +120,8 @@ func (p *Player) useStack(st item.Stack, hand api.Hand) (useResult, item.Stack, 
 		return useConsume, item.Stack{}, false
 	}
 	switch item.NameOf(st.Item) {
+	case "minecraft:water_bucket", "minecraft:lava_bucket", "minecraft:bucket", "minecraft:powder_snow_bucket":
+		return p.useBucket(st, hand)
 	case "minecraft:bow", "minecraft:trident", "minecraft:spyglass":
 		p.startUsing(hand, st, useDuration(st))
 		return useConsume, item.Stack{}, false
@@ -127,8 +129,7 @@ func (p *Player) useStack(st item.Stack, hand api.Hand) (useResult, item.Stack, 
 		out, _ := p.throwItem(st)
 		return useSuccess, out, true
 	case "minecraft:splash_potion", "minecraft:lingering_potion", "minecraft:experience_bottle", "minecraft:wind_charge",
-		"minecraft:fishing_rod", "minecraft:crossbow", "minecraft:goat_horn", "minecraft:water_bucket", "minecraft:lava_bucket",
-		"minecraft:bucket", "minecraft:powder_snow_bucket":
+		"minecraft:fishing_rod", "minecraft:crossbow", "minecraft:goat_horn":
 		// Projectiles and fluids are not simulated yet: refuse the use and
 		// resync so the client's prediction is rolled back.
 		p.sendInventory()
@@ -427,6 +428,7 @@ func (p *Player) addEffect(e item.Effect) {
 	}
 	u.effects[e.ID] = &activeEffect{id: e.ID, amplifier: e.Amplifier, duration: e.Duration, ambient: e.Ambient, particles: e.ShowParticles, icon: e.ShowIcon}
 	p.onEffectChanged(e.ID, e.Amplifier, true)
+	p.noteEffectEnd(e.ID, e.Duration)
 	var flags uint8
 	if e.Ambient {
 		flags |= 1

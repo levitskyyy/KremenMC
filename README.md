@@ -27,13 +27,19 @@ Working:
 - Login, online mode and encryption
 - Chunk streaming
 - Survival basics: breaking and placing, inventory, combat, damage and death
+- Block placement states and neighbour updates (fences, walls, stairs, doors, beds, double chests)
+- Water and lava flow, buckets
+- Mob AI with pathfinding, mob variants, spawn equipment, breeding and taming
+- Explosions and TNT
+- Sounds for mobs, players and blocks
 - The Nether and the End, with portals
 - Commands
 - World saving in the Anvil format
+- Paper and Spigot plugins through the Java bridge, including plugins built on PacketEvents
 
 World generation follows vanilla. Terrain, biomes, caves, ores, most vegetation, villages, mineshafts, dungeons and several smaller structures are in. The remaining structures and features are being added one by one, each only after it matches vanilla.
 
-Missing or incomplete: redstone, mob AI, several structures, and parts of block interaction.
+Missing or incomplete: redstone, fire spread, villager trading, several structures, and parts of the plugin API.
 
 ## Downloads
 

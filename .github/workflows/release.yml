@@ -41,13 +41,9 @@ jobs:
           GOOS: ${{ matrix.goos }}
           GOARCH: ${{ matrix.goarch }}
           CGO_ENABLED: '0'
-        run: |
-          name=kremenmc-${{ github.event.release.tag_name }}-${GOOS}-${GOARCH}
-          mkdir -p dist/$name
-          go build -trimpath -ldflags "-s -w" -o dist/$name/kremenmc ./cmd/kremenmc
-          tar -C dist -czf dist/$name.tar.gz $name
+        run: go build -trimpath -ldflags "-s -w" -o dist/kremenmc-${{ github.event.release.tag_name }}-${GOOS}-${GOARCH} ./cmd/kremenmc
 
       - name: Upload
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release upload "${{ github.event.release.tag_name }}" dist/*.tar.gz --clobber
+        run: gh release upload "${{ github.event.release.tag_name }}" dist/* --clobber
