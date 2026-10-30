@@ -43,7 +43,9 @@ func (pf *Placed) place(lv *Level, r *Random, p Pos, top *Placed) bool {
 // noOp is a feature type kremenmc does not implement yet (or vanilla no_op).
 type noOp struct{ typ string }
 
-func (noOp) Place(*placeCtx, *Random, Pos) bool { return false }
+// Place: vanilla no_op reports success (coral/block_decoration and sculk
+// overlay probes); unimplemented types report failure.
+func (n noOp) Place(*placeCtx, *Random, Pos) bool { return n.typ == "no_op" }
 
 type simpleBlock struct {
 	state        StateProvider
@@ -54,6 +56,10 @@ func (s simpleBlock) Place(c *placeCtx, r *Random, p Pos) bool {
 	st := s.state.State(c.lv, r, p)
 	if !canSurvive(c.lv, st, p) {
 		return false
+	}
+	if blockName(st) == "pale_moss_carpet" {
+		placeMossyCarpet(c.lv, st, p)
+		return true
 	}
 	if isLowerHalf(st) {
 		up := p.Add(Pos{0, 1, 0})
@@ -123,14 +129,15 @@ func (s booleanSelector) Place(c *placeCtx, r *Random, p Pos) bool {
 
 type sequence []*Placed
 
+// Place stops at the first feature that fails (sculk_patch probes: the
+// catalyst draws nothing once the patch fails).
 func (s sequence) Place(c *placeCtx, r *Random, p Pos) bool {
-	ok := true
 	for _, f := range s {
 		if !f.place(c.lv, r, p, nil) {
-			ok = false
+			return false
 		}
 	}
-	return ok
+	return true
 }
 
 type columnLayer struct {

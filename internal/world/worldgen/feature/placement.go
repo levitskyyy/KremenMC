@@ -145,7 +145,7 @@ func (m modSurfaceRelative) Apply(c *placeCtx, _ *Random, p Pos, emit func(Pos))
 type modHeightRange struct{ h HeightProvider }
 
 func (m modHeightRange) Apply(c *placeCtx, r *Random, p Pos, emit func(Pos)) {
-	emit(Pos{p.X, m.h.Sample(r, c.lv.MinY(), c.lv.MaxY()-c.lv.MinY()), p.Z})
+	emit(Pos{p.X, m.h.Sample(r, c.lv.MinY(), c.lv.genHeight()), p.Z})
 }
 
 func parseHeightmap(s string) (world.Heightmap, error) {

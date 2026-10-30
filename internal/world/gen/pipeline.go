@@ -38,6 +38,9 @@ type Config struct {
 	// 0 means unbounded.
 	MaxRequests int
 	Logf        func(format string, args ...any)
+	// PostProcess, when set, updates the positions marked for
+	// post-processing as a full chunk is promoted to the world.
+	PostProcess PostProcessFunc
 }
 
 var ErrClosed = errors.New("gen: pipeline closed")

@@ -27,6 +27,7 @@ func TestOutpostReference(t *testing.T) {
 		t.Skip("slow")
 	}
 	const seed = int64(refSeed)
+	structure.EnableJigsaw("minecraft:pillager_outpost")
 	x0, z0, x1, z1 := int32(-88), int32(-10), int32(-86), int32(-8)
 	tr, err := vanilla.NewTerrain("overworld", seed)
 	if err != nil {
@@ -185,6 +186,9 @@ func TestJigsawLootSeeds(t *testing.T) {
 	var x0, z0, x1, z1 int32
 	fmt.Sscan(parts[0], &seed)
 	fmt.Sscanf(parts[1], "%d,%d,%d,%d", &x0, &z0, &x1, &z1)
+	if v := os.Getenv("KREMENMC_VEXTRA"); v != "" {
+		structure.EnableJigsaw(strings.Split(v, ",")...)
+	}
 	tr, err := vanilla.NewTerrain("overworld", seed)
 	if err != nil {
 		t.Fatal(err)
@@ -196,6 +200,14 @@ func TestJigsawLootSeeds(t *testing.T) {
 	p, err := gen.New(gen.Config{Seed: seed, Dim: world.Overworld, Stages: stages, Logf: t.Logf})
 	if err != nil {
 		t.Fatal(err)
+	}
+	if os.Getenv("KREMENMC_LOOTORDER") != "" {
+		structure.SetLootHook(func(tmpl string, x, y, z int32, seed int64) {
+			if x>>4 >= x0 && x>>4 <= x1 && z>>4 >= z0 && z>>4 <= z1 {
+				t.Logf("draw %s %d,%d,%d %d", tmpl, x, y, z, seed)
+			}
+		})
+		defer structure.SetLootHook(nil)
 	}
 	n, bad := 0, 0
 	for cz := z0; cz <= z1; cz++ {

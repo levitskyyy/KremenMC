@@ -300,6 +300,7 @@ func (w *World) applyInstalls() {
 func (w *World) tickRegion(t *TickContext) {
 	r := t.r
 	for _, c := range r.stitch {
+		r.adoptPendingTicks(c, w.tick.Load())
 		t.light.Stitch(c.X, c.Z)
 		if f := w.cfg.Hooks.ChunkLoaded; f != nil {
 			f(c)
@@ -402,6 +403,9 @@ func (w *World) applyUnloads() {
 					break
 				}
 			}
+		}
+		if w.cfg.Storage != nil {
+			w.stashPendingTicks(c)
 		}
 		if w.cfg.Storage != nil && c.clearDirty() {
 			o := &op{done: make(chan struct{}), c: c, save: true}

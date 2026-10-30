@@ -34,6 +34,7 @@ type Mob struct {
 	sp      *mobSpawn // tick goroutine only
 	itm     *itemEnt  // item entities only (itement_entity.go)
 	life    mobLife   // mob_life.go
+	ride    mobRide   // mount.go
 }
 
 func newMob(w *World, t *data.EntityType, at api.Location) *Mob {
@@ -116,11 +117,6 @@ func (m *Mob) Invulnerable() bool     { m.mu.Lock(); defer m.mu.Unlock(); return
 func (m *Mob) SetInvulnerable(v bool) { m.mu.Lock(); m.invuln = v; m.mu.Unlock() }
 func (m *Mob) Gravity() bool          { m.mu.Lock(); defer m.mu.Unlock(); return !m.e.NoGravity }
 func (m *Mob) SetGravity(v bool)      { m.mu.Lock(); m.e.NoGravity = !v; m.mu.Unlock() }
-
-func (m *Mob) Passengers() []api.Entity        { return nil }
-func (m *Mob) AddPassenger(api.Entity) bool    { return false }
-func (m *Mob) RemovePassenger(api.Entity) bool { return false }
-func (m *Mob) Vehicle() (api.Entity, bool)     { return nil, false }
 
 func (m *Mob) Tags() []string {
 	m.mu.Lock()

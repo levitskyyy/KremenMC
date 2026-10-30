@@ -65,6 +65,14 @@ func (t *Terrain) GenerateStage(c *world.Chunk, stage string) error {
 // GenerateStageBeard is GenerateStage with the structures' terrain
 // adaptation added to final_density (nil: none).
 func (t *Terrain) GenerateStageBeard(c *world.Chunk, stage string, beard func(x, y, z int32) float32) error {
+	return t.GenerateStageMarked(c, stage, beard, nil)
+}
+
+// GenerateStageMarked is GenerateStageBeard that reports through mark
+// (chunk-local x, z, absolute y; nil: none) the fluid positions the
+// aquifer flags in the noise fill and when carving, which vanilla marks for
+// post-processing.
+func (t *Terrain) GenerateStageMarked(c *world.Chunk, stage string, beard func(x, y, z int32) float32, mark func(x, y, z int)) error {
 	s, _ := t.pool.Get().(*terrainState)
 	if s == nil {
 		set := t.st.Noise.Router.Settings
@@ -85,7 +93,7 @@ func (t *Terrain) GenerateStageBeard(c *world.Chunk, stage string, beard func(x,
 	if err := t.biomes.fill(c); err != nil {
 		return err
 	}
-	t.st.Noise.Fill(&s.dctx, c)
+	t.st.Noise.FillMarked(&s.dctx, c, mark)
 	var b *surface.SourceBiomes
 	if int32(c.Dim.MinY)>>2 == t.biomes.minQ && int32(c.Dim.Height)>>2 == t.biomes.quarts {
 		b = surface.NewSharedSourceBiomes(int32(c.Dim.MinY), t.biomes.column)
@@ -103,7 +111,9 @@ func (t *Terrain) GenerateStageBeard(c *world.Chunk, stage string, beard func(x,
 	if stage == "terrain" {
 		s.mask.Reset()
 		t.carvers.CarveChunk(c.X, c.Z, func(qx, qz int32) string { return t.st.Biomes.Biome(&s.dctx, nil, qx, 0, qz) }, s.mask)
-		s.mask.ApplyTop(c.X, c.Z, t.aquifer(&s.dctx, c.X, c.Z), carveTarget{c}, func(x, y, z int, fluid bool) (data.StateID, bool) {
+		aq := t.aquifer(&s.dctx, c.X, c.Z)
+		aq.mark = mark
+		s.mask.ApplyTop(c.X, c.Z, aq, carveTarget{c}, func(x, y, z int, fluid bool) (data.StateID, bool) {
 			return t.surface.TopMaterial(s.sctx, c, b, int32(x), int32(y), int32(z), fluid)
 		})
 	}
@@ -111,20 +121,21 @@ func (t *Terrain) GenerateStageBeard(c *world.Chunk, stage string, beard func(x,
 	return nil
 }
 
-func (t *Terrain) aquifer(ctx *density.Ctx, cx, cz int32) carver.Aquifer {
+func (t *Terrain) aquifer(ctx *density.Ctx, cx, cz int32) aquiferAdapter {
 	g := t.st.Noise
 	var aq terrain.Aquifer = terrain.DisabledAquifer{Global: g.Global, Air: g.Air}
 	if g.NewAquifer != nil {
 		aq = g.NewAquifer(cx, cz)
 	}
 	set := g.Router.Settings
-	return aquiferAdapter{ctx, aq, int(set.MinY), int(set.MinY + set.Height)}
+	return aquiferAdapter{ctx: ctx, aq: aq, minY: int(set.MinY), maxY: int(set.MinY + set.Height)}
 }
 
 type aquiferAdapter struct {
 	ctx        *density.Ctx
 	aq         terrain.Aquifer
 	minY, maxY int
+	mark       func(x, y, z int) // chunk-local x, z; nil: none
 }
 
 // Substance leaves the bottom two and the top seven layers of the generation
@@ -133,7 +144,13 @@ func (a aquiferAdapter) Substance(x, y, z int) (data.StateID, bool) {
 	if y <= a.minY+1 || y >= a.maxY-7 {
 		return 0, false
 	}
-	return a.aq.ComputeSubstance(a.ctx, int32(x), int32(y), int32(z), 0)
+	st, ok := a.aq.ComputeSubstance(a.ctx, int32(x), int32(y), int32(z), 0)
+	if a.mark != nil && ok && data.Canonical().HasFluid(st) {
+		if s, is := a.aq.(interface{ ShouldScheduleFluidUpdate() bool }); is && s.ShouldScheduleFluidUpdate() {
+			a.mark(x&15, y, z&15)
+		}
+	}
+	return st, ok
 }
 
 // carveTarget keeps unbreakable blocks such as bedrock, which the reference

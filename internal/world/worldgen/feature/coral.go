@@ -72,13 +72,17 @@ func (t coralTree) Place(c *placeCtx, r *Random, p Pos) bool {
 // overlay places every feature at the origin in order.
 type overlay []*Placed
 
-// overlay places every feature at the origin in order; the reference
-// reports true even when nothing was placed.
+// overlay places every feature at the origin in order and reports whether
+// any of them placed (sculk_patch_ancient_city probes: false when neither
+// the catalyst nor a shrieker was placed).
 func (o overlay) Place(c *placeCtx, r *Random, p Pos) bool {
+	any := false
 	for _, f := range o {
-		f.place(c.lv, r, p, nil)
+		if f.place(c.lv, r, p, nil) {
+			any = true
+		}
 	}
-	return true
+	return any
 }
 
 // randomBlock picks a default state from an ordered block list.

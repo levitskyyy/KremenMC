@@ -1,0 +1,314 @@
+# kremenmc.probe.feat_geode.Geode carpet mode, R=4, FEAT_LOG=1 (level-random draws kept)
+C carpet 0 1 16 0 {"type":"minecraft:sim
+carpet 0 1 16 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=low,west=none] | -1033667707451936253
+C carpet 0 2 32 0 {"type":"minecraft:sim
+R 0 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+R 1 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 2 32 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=tall,north=none,south=tall,west=none] 0,1,0=pale_moss_carpet[bottom=false,east=low,north=none,south=low,west=none] | 5444897766169918639
+C carpet 0 3 48 0 {"type":"minecraft:sim
+R 0 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 3 48 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=tall,west=none] 0,1,0=pale_moss_carpet[bottom=false,east=none,north=none,south=low,west=none] | -926528791023417475
+C carpet 0 4 64 0 {"type":"minecraft:sim
+carpet 0 4 64 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=none] | 4349539423110160412
+C carpet 0 5 80 0 {"type":"minecraft:sim
+carpet 0 5 80 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=none] | 6940803083193134927
+C carpet 0 6 96 0 {"type":"minecraft:sim
+carpet 0 6 96 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=none] | 4007472133827740386
+C carpet 0 7 112 0 {"type":"minecraft:si
+carpet 0 7 112 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=none] | -427546227571816748
+C carpet 0 8 128 0 {"type":"minecraft:si
+carpet 0 8 128 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=low] | -6055291176555879871
+C carpet 0 9 144 0 {"type":"minecraft:si
+R 0 nextBoolean() = false @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 9 144 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=low,south=none,west=none] | 8980358161239134148
+C carpet 0 10 160 0 {"type":"minecraft:s
+carpet 0 10 160 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=low,south=none,west=low] | -8603757671059312406
+C carpet 0 11 176 0 {"type":"minecraft:s
+carpet 0 11 176 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=low,south=none,west=none] | -5761285586759010946
+C carpet 0 12 192 0 {"type":"minecraft:s
+carpet 0 12 192 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	false | 3629833552459704584
+C carpet 0 13 208 0 {"type":"minecraft:s
+R 0 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 13 208 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=low,north=tall,south=none,west=none] 0,1,0=pale_moss_carpet[bottom=false,east=none,north=low,south=none,west=none] | -1570004737596342600
+C carpet 0 14 224 0 {"type":"minecraft:s
+R 0 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 14 224 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=tall,north=low,south=low,west=low] 0,1,0=pale_moss_carpet[bottom=false,east=low,north=none,south=none,west=none] | -7388813611240966868
+C carpet 0 15 240 0 {"type":"minecraft:s
+carpet 0 15 240 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=none] | -2252179797430385741
+C carpet 0 16 256 0 {"type":"minecraft:s
+R 0 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+R 1 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 16 256 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=tall,north=none,south=tall,west=none] 0,1,0=pale_moss_carpet[bottom=false,east=low,north=none,south=low,west=none] | 8750077049715476044
+C carpet 0 17 272 0 {"type":"minecraft:s
+carpet 0 17 272 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	false | -7251943216229910200
+C carpet 0 18 288 0 {"type":"minecraft:s
+carpet 0 18 288 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=low,north=none,south=none,west=none] | 182904526523712303
+C carpet 0 19 304 0 {"type":"minecraft:s
+carpet 0 19 304 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=low,west=none] | -214080251857012643
+C carpet 0 20 320 0 {"type":"minecraft:s
+carpet 0 20 320 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=none] | 7701772313440886245
+C carpet 0 21 336 0 {"type":"minecraft:s
+carpet 0 21 336 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=none] | -2038834781649320518
+C carpet 0 22 352 0 {"type":"minecraft:s
+R 0 nextBoolean() = false @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 22 352 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=low,north=none,south=none,west=none] | -3562131165680066602
+C carpet 0 23 368 0 {"type":"minecraft:s
+carpet 0 23 368 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=none] | -1799055111192563314
+C carpet 0 24 384 0 {"type":"minecraft:s
+R 0 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+R 1 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 24 384 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=tall,south=none,west=tall] 0,1,0=pale_moss_carpet[bottom=false,east=none,north=low,south=none,west=low] | 8418350476395207906
+C carpet 0 25 400 0 {"type":"minecraft:s
+R 0 nextBoolean() = false @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 25 400 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=low,north=low,south=none,west=none] | 6290123837173918396
+C carpet 0 26 416 0 {"type":"minecraft:s
+carpet 0 26 416 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=low,south=none,west=none] | 7742620173012781649
+C carpet 0 27 432 0 {"type":"minecraft:s
+R 0 nextBoolean() = false @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 27 432 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=low,south=none,west=none] | -2623988809971480998
+C carpet 0 28 448 0 {"type":"minecraft:s
+carpet 0 28 448 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=low,north=low,south=low,west=low] | -2301713834670816382
+C carpet 0 29 464 0 {"type":"minecraft:s
+carpet 0 29 464 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=none] | 5981289099556299390
+C carpet 0 30 480 0 {"type":"minecraft:s
+carpet 0 30 480 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	false | 1103534000415568532
+C carpet 0 31 496 0 {"type":"minecraft:s
+carpet 0 31 496 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=low,west=none] | 5109938026642076449
+C carpet 0 32 512 0 {"type":"minecraft:s
+carpet 0 32 512 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=none] | 2022032154710227953
+C carpet 0 33 528 0 {"type":"minecraft:s
+carpet 0 33 528 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=low,west=none] | 1604297676329600062
+C carpet 0 34 544 0 {"type":"minecraft:s
+carpet 0 34 544 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=none] | -4482608235096334469
+C carpet 0 35 560 0 {"type":"minecraft:s
+carpet 0 35 560 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	false | -6849155183345559168
+C carpet 0 36 576 0 {"type":"minecraft:s
+R 0 nextBoolean() = false @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 36 576 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=low] | -8982377436950375773
+C carpet 0 37 592 0 {"type":"minecraft:s
+R 0 nextBoolean() = false @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 37 592 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=low] | 6102092407613780190
+C carpet 0 38 608 0 {"type":"minecraft:s
+carpet 0 38 608 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=none] | -5373815252213876090
+C carpet 0 39 624 0 {"type":"minecraft:s
+carpet 0 39 624 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=none] | 6624933193981971554
+C carpet 0 40 640 0 {"type":"minecraft:s
+carpet 0 40 640 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=low,north=low,south=none,west=none] | 7633153912541672844
+C carpet 0 41 656 0 {"type":"minecraft:s
+R 0 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 41 656 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=tall,north=low,south=none,west=none] 0,1,0=pale_moss_carpet[bottom=false,east=low,north=none,south=none,west=none] | -7519255039694170869
+C carpet 0 42 672 0 {"type":"minecraft:s
+carpet 0 42 672 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=low,north=low,south=none,west=low] | -4695948378802814517
+C carpet 0 43 688 0 {"type":"minecraft:s
+carpet 0 43 688 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=none] | 3709369312528506806
+C carpet 0 44 704 0 {"type":"minecraft:s
+carpet 0 44 704 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=low,west=none] | -5969858072411056617
+C carpet 0 45 720 0 {"type":"minecraft:s
+carpet 0 45 720 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=low,west=none] | -87436800966186422
+C carpet 0 46 736 0 {"type":"minecraft:s
+R 0 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+R 1 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 46 736 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=low,north=none,south=tall,west=tall] 0,1,0=pale_moss_carpet[bottom=false,east=none,north=none,south=low,west=low] | -2709816226951099989
+C carpet 0 47 752 0 {"type":"minecraft:s
+carpet 0 47 752 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=low,north=none,south=low,west=none] | 4386768568833007843
+C carpet 0 48 768 0 {"type":"minecraft:s
+carpet 0 48 768 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=none] | 5897931588386287907
+C carpet 0 49 784 0 {"type":"minecraft:s
+carpet 0 49 784 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=none] | -6866397777230269293
+C carpet 0 50 800 0 {"type":"minecraft:s
+carpet 0 50 800 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=none] | -6712738278154687120
+C carpet 0 51 816 0 {"type":"minecraft:s
+carpet 0 51 816 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=none] | -4891757767658160446
+C carpet 0 52 832 0 {"type":"minecraft:s
+R 0 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 52 832 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=low,south=none,west=tall] 0,1,0=pale_moss_carpet[bottom=false,east=none,north=none,south=none,west=low] | -7097224174380150421
+C carpet 0 53 848 0 {"type":"minecraft:s
+carpet 0 53 848 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=none] | -3264974007227982927
+C carpet 0 54 864 0 {"type":"minecraft:s
+carpet 0 54 864 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=low,south=none,west=none] | 8960651790034171977
+C carpet 0 55 880 0 {"type":"minecraft:s
+carpet 0 55 880 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=none] | -6209246879919950191
+C carpet 0 56 896 0 {"type":"minecraft:s
+R 0 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 56 896 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=low,north=low,south=none,west=tall] 0,1,0=pale_moss_carpet[bottom=false,east=none,north=none,south=none,west=low] | 6009218090788916475
+C carpet 0 57 912 0 {"type":"minecraft:s
+R 0 nextBoolean() = false @MossyCarpetBlock.createTopperWithSideChance
+R 1 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+R 2 nextBoolean() = false @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 57 912 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=low,south=tall,west=low] 0,1,0=pale_moss_carpet[bottom=false,east=none,north=none,south=low,west=none] | -679739636632406895
+C carpet 0 58 928 0 {"type":"minecraft:s
+R 0 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+R 1 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 58 928 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=tall,west=tall] 0,1,0=pale_moss_carpet[bottom=false,east=none,north=none,south=low,west=low] | -1804780131355059413
+C carpet 0 59 944 0 {"type":"minecraft:s
+R 0 nextBoolean() = false @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 59 944 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=low,west=none] | -3394884296192140573
+C carpet 0 60 960 0 {"type":"minecraft:s
+carpet 0 60 960 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=low,north=none,south=low,west=none] | -1730897473850803483
+C carpet 0 61 976 0 {"type":"minecraft:s
+R 0 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+R 1 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 61 976 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=tall,south=tall,west=low] 0,1,0=pale_moss_carpet[bottom=false,east=none,north=low,south=low,west=none] | 1662556369288742494
+C carpet 0 62 992 0 {"type":"minecraft:s
+carpet 0 62 992 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=low,north=none,south=none,west=none] | 5173873813688098992
+C carpet 0 63 1008 0 {"type":"minecraft:
+R 0 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+R 1 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 63 1008 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=tall,north=none,south=tall,west=none] 0,1,0=pale_moss_carpet[bottom=false,east=low,north=none,south=low,west=none] | 213573680054321932
+C carpet 0 64 1024 0 {"type":"minecraft:
+R 0 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 64 1024 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=tall,west=none] 0,1,0=pale_moss_carpet[bottom=false,east=none,north=none,south=low,west=none] | 86250727264554155
+C carpet 0 65 1040 0 {"type":"minecraft:
+carpet 0 65 1040 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=none] | -1537899474346173053
+C carpet 0 66 1056 0 {"type":"minecraft:
+carpet 0 66 1056 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=low,south=none,west=none] | -3602251927109597564
+C carpet 0 67 1072 0 {"type":"minecraft:
+carpet 0 67 1072 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=none] | 5123452475523439804
+C carpet 0 68 1088 0 {"type":"minecraft:
+carpet 0 68 1088 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=low,north=none,south=none,west=low] | -2850916949869648252
+C carpet 0 69 1104 0 {"type":"minecraft:
+carpet 0 69 1104 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=none] | -4076274686867067249
+C carpet 0 70 1120 0 {"type":"minecraft:
+carpet 0 70 1120 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=low,south=none,west=low] | -8019655100982801116
+C carpet 0 71 1136 0 {"type":"minecraft:
+R 0 nextBoolean() = false @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 71 1136 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=low,south=none,west=none] | 1262180473521693003
+C carpet 0 72 1152 0 {"type":"minecraft:
+R 0 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+R 1 nextBoolean() = false @MossyCarpetBlock.createTopperWithSideChance
+R 2 nextBoolean() = false @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 72 1152 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=low,north=tall,south=low,west=none] 0,1,0=pale_moss_carpet[bottom=false,east=none,north=low,south=none,west=none] | -6272106434642816897
+C carpet 0 73 1168 0 {"type":"minecraft:
+carpet 0 73 1168 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=low,north=none,south=none,west=none] | 2740116246250470143
+C carpet 0 74 1184 0 {"type":"minecraft:
+R 0 nextBoolean() = false @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 74 1184 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=low,north=none,south=low,west=none] | 2159253706868617351
+C carpet 0 75 1200 0 {"type":"minecraft:
+R 0 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+R 1 nextBoolean() = false @MossyCarpetBlock.createTopperWithSideChance
+R 2 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 75 1200 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=low,north=tall,south=low,west=tall] 0,1,0=pale_moss_carpet[bottom=false,east=none,north=low,south=none,west=low] | -7407145539229377653
+C carpet 0 76 1216 0 {"type":"minecraft:
+carpet 0 76 1216 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=low,west=none] | 5833906221827732836
+C carpet 0 77 1232 0 {"type":"minecraft:
+R 0 nextBoolean() = false @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 77 1232 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=low,west=none] | 3377058571643696462
+C carpet 0 78 1248 0 {"type":"minecraft:
+carpet 0 78 1248 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=none] | 7858749403070273406
+C carpet 0 79 1264 0 {"type":"minecraft:
+carpet 0 79 1264 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=low,north=none,south=low,west=none] | 2567443220710642619
+C carpet 0 80 1280 0 {"type":"minecraft:
+R 0 nextBoolean() = false @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 80 1280 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=low,south=none,west=none] | 4410355588466591102
+C carpet 0 81 1296 0 {"type":"minecraft:
+carpet 0 81 1296 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=none] | -4844991143503853391
+C carpet 0 82 1312 0 {"type":"minecraft:
+carpet 0 82 1312 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=none] | -9182983293165630019
+C carpet 0 83 1328 0 {"type":"minecraft:
+R 0 nextBoolean() = false @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 83 1328 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=low,south=none,west=none] | -7913804497751243205
+C carpet 0 84 1344 0 {"type":"minecraft:
+R 0 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+R 1 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 84 1344 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=tall,south=none,west=tall] 0,1,0=pale_moss_carpet[bottom=false,east=none,north=low,south=none,west=low] | -8796739458901519576
+C carpet 0 85 1360 0 {"type":"minecraft:
+carpet 0 85 1360 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	false | -1364842088792593327
+C carpet 0 86 1376 0 {"type":"minecraft:
+R 0 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 86 1376 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=tall,south=none,west=none] 0,1,0=pale_moss_carpet[bottom=false,east=none,north=low,south=none,west=none] | 7923690255342308103
+C carpet 0 87 1392 0 {"type":"minecraft:
+R 0 nextBoolean() = false @MossyCarpetBlock.createTopperWithSideChance
+R 1 nextBoolean() = false @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 87 1392 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=low,south=low,west=low] | -8895438404155535176
+C carpet 0 88 1408 0 {"type":"minecraft:
+carpet 0 88 1408 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=low,north=low,south=none,west=low] | 2647376605901343077
+C carpet 0 89 1424 0 {"type":"minecraft:
+R 0 nextBoolean() = false @MossyCarpetBlock.createTopperWithSideChance
+R 1 nextBoolean() = false @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 89 1424 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=low,north=none,south=low,west=none] | 2598553723158464606
+C carpet 0 90 1440 0 {"type":"minecraft:
+R 0 nextBoolean() = false @MossyCarpetBlock.createTopperWithSideChance
+R 1 nextBoolean() = false @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 90 1440 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=low,north=none,south=low,west=low] | -4332613773526529921
+C carpet 0 91 1456 0 {"type":"minecraft:
+carpet 0 91 1456 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=low,west=low] | -8253827800390094055
+C carpet 0 92 1472 0 {"type":"minecraft:
+carpet 0 92 1472 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=none] | 2718858275631120099
+C carpet 0 93 1488 0 {"type":"minecraft:
+R 0 nextBoolean() = false @MossyCarpetBlock.createTopperWithSideChance
+R 1 nextBoolean() = false @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 93 1488 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=low,north=none,south=low,west=none] | -5219882165621268339
+C carpet 0 94 1504 0 {"type":"minecraft:
+R 0 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+R 1 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 94 1504 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=tall,north=none,south=tall,west=none] 0,1,0=pale_moss_carpet[bottom=false,east=low,north=none,south=low,west=none] | -1036755421430495351
+C carpet 0 95 1520 0 {"type":"minecraft:
+R 0 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+R 1 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 95 1520 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=tall,north=none,south=tall,west=none] 0,1,0=pale_moss_carpet[bottom=false,east=low,north=none,south=low,west=none] | 2941373124094087272
+C carpet 0 96 1536 0 {"type":"minecraft:
+carpet 0 96 1536 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=low] | -6401911762124215906
+C carpet 0 97 1552 0 {"type":"minecraft:
+carpet 0 97 1552 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=low,south=none,west=none] | 702289844133845726
+C carpet 0 98 1568 0 {"type":"minecraft:
+R 0 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+R 1 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 98 1568 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=tall,south=none,west=tall] 0,1,0=pale_moss_carpet[bottom=false,east=none,north=low,south=none,west=low] | -4750699448953610720
+C carpet 0 99 1584 0 {"type":"minecraft:
+carpet 0 99 1584 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=none] | 1454447627323338212
+C carpet 0 100 1600 0 {"type":"minecraft
+carpet 0 100 1600 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=low,north=low,south=none,west=none] | -9002381697265658583
+C carpet 0 101 1616 0 {"type":"minecraft
+R 0 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+R 1 nextBoolean() = false @MossyCarpetBlock.createTopperWithSideChance
+R 2 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 101 1616 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=low,north=tall,south=none,west=tall] 0,1,0=pale_moss_carpet[bottom=false,east=none,north=low,south=none,west=low] | -4944998016523644731
+C carpet 0 102 1632 0 {"type":"minecraft
+carpet 0 102 1632 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=low,north=low,south=low,west=low] | 3687471446649774100
+C carpet 0 103 1648 0 {"type":"minecraft
+carpet 0 103 1648 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	false | -4971453877071376034
+C carpet 0 104 1664 0 {"type":"minecraft
+carpet 0 104 1664 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=low,west=none] | -634915266212687062
+C carpet 0 105 1680 0 {"type":"minecraft
+carpet 0 105 1680 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=low,north=none,south=low,west=none] | 3311835641640496010
+C carpet 0 106 1696 0 {"type":"minecraft
+R 0 nextBoolean() = false @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 106 1696 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=low,north=none,south=none,west=none] | -1327168666456531714
+C carpet 0 107 1712 0 {"type":"minecraft
+carpet 0 107 1712 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=low,north=none,south=low,west=low] | -2444288647302024218
+C carpet 0 108 1728 0 {"type":"minecraft
+carpet 0 108 1728 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=none] | 7527597361144877801
+C carpet 0 109 1744 0 {"type":"minecraft
+R 0 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 109 1744 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=tall,west=none] 0,1,0=pale_moss_carpet[bottom=false,east=none,north=none,south=low,west=none] | 5719166248828783684
+C carpet 0 110 1760 0 {"type":"minecraft
+carpet 0 110 1760 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=none] | -2583878971939141098
+C carpet 0 111 1776 0 {"type":"minecraft
+carpet 0 111 1776 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=none] | 17056844955822615
+C carpet 0 112 1792 0 {"type":"minecraft
+R 0 nextBoolean() = false @MossyCarpetBlock.createTopperWithSideChance
+R 1 nextBoolean() = false @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 112 1792 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=low,south=none,west=low] | 6607589449086206801
+C carpet 0 113 1808 0 {"type":"minecraft
+carpet 0 113 1808 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=none] | -6488944769089101288
+C carpet 0 114 1824 0 {"type":"minecraft
+carpet 0 114 1824 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=low,south=none,west=none] | 2525022604303791871
+C carpet 0 115 1840 0 {"type":"minecraft
+carpet 0 115 1840 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=none] | -8056227900298395599
+C carpet 0 116 1856 0 {"type":"minecraft
+R 0 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+R 1 nextBoolean() = false @MossyCarpetBlock.createTopperWithSideChance
+R 2 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+R 3 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 116 1856 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=low,north=tall,south=tall,west=tall] 0,1,0=pale_moss_carpet[bottom=false,east=none,north=low,south=low,west=low] | -7392921197206819565
+C carpet 0 117 1872 0 {"type":"minecraft
+carpet 0 117 1872 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=low] | -2985649394297076433
+C carpet 0 118 1888 0 {"type":"minecraft
+R 0 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 118 1888 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=none,west=tall] 0,1,0=pale_moss_carpet[bottom=false,east=none,north=none,south=none,west=low] | -849152528670258540
+C carpet 0 119 1904 0 {"type":"minecraft
+R 0 nextBoolean() = true @MossyCarpetBlock.createTopperWithSideChance
+R 1 nextBoolean() = false @MossyCarpetBlock.createTopperWithSideChance
+carpet 0 119 1904 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=tall,north=none,south=low,west=none] 0,1,0=pale_moss_carpet[bottom=false,east=low,north=none,south=none,west=none] | 5560682591236062036
+C carpet 0 120 1920 0 {"type":"minecraft
+carpet 0 120 1920 0 {"type":"minecraft:simple_block","to_place":{"id":"minecraft:pale_moss_carpet"}}	true 0,0,0=pale_moss_carpet[bottom=true,east=none,north=none,south=low,west=none] | 6845378670386780216

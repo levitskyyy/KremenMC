@@ -403,7 +403,7 @@ func (m *Mob) tickMob() {
 	w := m.w
 	if m.proj != nil {
 		m.tickProjectile()
-	} else {
+	} else if !m.tickRide() {
 		slow := false
 		if m.liv.attrs != nil {
 			m.liv.mu.Lock()

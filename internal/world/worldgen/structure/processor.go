@@ -122,6 +122,7 @@ type processor struct {
 	heightmap string
 	offset    int32
 	delegate  *processor
+	limit     int32 // capped (jigsaw_capped.go)
 }
 
 // ProcessorList is a worldgen/processor_list entry.
@@ -189,6 +190,7 @@ func parseProcessor(pk *wgdata.Pack, b []byte) (*processor, error) {
 		Heightmap string          `json:"heightmap"`
 		Offset    int32           `json:"offset"`
 		Delegate  json.RawMessage `json:"delegate"`
+		Limit     int32           `json:"limit"`
 		Rules     []struct {
 			Input    predJSON        `json:"input_predicate"`
 			Location predJSON        `json:"location_predicate"`
@@ -202,7 +204,7 @@ func parseProcessor(pk *wgdata.Pack, b []byte) (*processor, error) {
 	if err := json.Unmarshal(b, &j); err != nil {
 		return nil, err
 	}
-	p := &processor{typ: trimNS(j.Type), integrity: j.Integrity, heightmap: j.Heightmap, offset: j.Offset}
+	p := &processor{typ: trimNS(j.Type), integrity: j.Integrity, heightmap: j.Heightmap, offset: j.Offset, limit: j.Limit}
 	switch p.typ {
 	case "rule":
 		for _, r := range j.Rules {

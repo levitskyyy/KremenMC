@@ -159,6 +159,8 @@ type GenContext struct {
 	BiomeOK func(x, y, z int32) bool
 	// MinY, MaxY bound the dimension (both 0: the overworld, -64..320).
 	MinY, MaxY int32
+	// Column is the terrain-only block at x,y,z when the probe provides it.
+	Column func(x, y, z int32) data.StateID
 }
 
 // Type generates the starts of one worldgen/structure entry.

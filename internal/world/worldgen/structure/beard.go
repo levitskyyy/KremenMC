@@ -25,7 +25,13 @@ import (
 //   - the sum is accumulated in float, rigid pieces first, then junctions
 //     (50,653/50,653 on a mix of two pieces and two junctions), and is 0
 //     outside the affected box (inclusive).
-// beard_box, bury and encapsulate are NOT implemented.
+// beard_box, bury and encapsulate (BeardProbe, 46,512 + 59,040 samples
+// each and a 97,196-sample mix, bit-exact), with ground = minY +
+// ground_level_delta and dx, dz the distances to the box:
+//   - beard_box: beardTerm's factor at dy = y - ground, kernel at the
+//     distance to [ground, maxY];
+//   - bury: float 1 - |(dx, (y-ground)/2, dz)|/6, at least 0;
+//   - encapsulate: float 0.8·max(0, 1 - |d|/12), d the distance to the box.
 
 var beardKernel = func() (k [24 * 24 * 24]float32) {
 	for x := range 24 {
@@ -57,8 +63,45 @@ func beardTerm(dx, dy, dz int32) float32 {
 }
 
 type beardRigid struct {
-	box Box
-	gld int32
+	box   Box
+	gld   int32
+	adapt string // beard_thin, beard_box, bury, encapsulate
+}
+
+// beardBoxTerm is beardTerm with the kernel taken at a separate y distance
+// dk (beard_box: the distance to the box's span above its ground).
+func beardBoxTerm(dx, dy, dz, dk int32) float32 {
+	if dx < -12 || dx >= 12 || dk < -12 || dk >= 12 || dz < -12 || dz >= 12 {
+		return 0
+	}
+	yp := float64(dy) + 0.5
+	r2 := float64(dx*dx+dz*dz) + yp*yp
+	e := float32(-yp * float64(float32(fastInvSqrt(r2/2))) * 0.5)
+	return float32(e * beardKernel[((dx+12)*24+dz+12)*24+dk+12])
+}
+
+func (r *beardRigid) value(x, y, z int32) float32 {
+	b := r.box
+	dx := max(b.MinX-x, 0, x-b.MaxX)
+	dz := max(b.MinZ-z, 0, z-b.MaxZ)
+	ground := b.MinY + r.gld
+	switch r.adapt {
+	case "beard_box":
+		dk := max(ground-y, 0, y-b.MaxY)
+		return float32(beardBoxTerm(dx, y-ground, dz, dk) * 0.8)
+	case "bury":
+		h := float32(y-ground) / 2
+		d := float32(math.Sqrt(float64(float32(dx*dx+dz*dz) + h*h)))
+		return max(0, 1-d/6)
+	case "encapsulate":
+		dy := max(b.MinY-y, 0, y-b.MaxY)
+		d := float32(math.Sqrt(float64(float32(dx*dx + dy*dy + dz*dz))))
+		return 0.8 * max(0, 1-d/12)
+	}
+	if t := beardTerm(dx, y-ground, dz); t != 0 {
+		return float32(t * 0.8)
+	}
+	return 0
 }
 
 // Beard is the terrain adaptation density of one chunk. The zero value
@@ -75,11 +118,9 @@ func (b *Beard) Value(x, y, z int32) float32 {
 		return 0
 	}
 	var f float32
-	for _, r := range b.rigid {
-		dx := max(r.box.MinX-x, 0, x-r.box.MaxX)
-		dz := max(r.box.MinZ-z, 0, z-r.box.MaxZ)
-		if t := beardTerm(dx, y-(r.box.MinY+r.gld), dz); t != 0 {
-			f += float32(t * 0.8)
+	for i := range b.rigid {
+		if v := b.rigid[i].value(x, y, z); v != 0 {
+			f += v
 		}
 	}
 	for _, j := range b.junctions {
@@ -129,7 +170,13 @@ func (s *Stages) BeardFor(sc *gen.StageContext) *Beard {
 			continue
 		}
 		ta, ok := d.typ.(terrainAdapter)
-		if !ok || ta.terrainAdaptation() != "beard_thin" {
+		if !ok {
+			continue
+		}
+		adapt := trimNS(ta.terrainAdaptation())
+		switch adapt {
+		case "beard_thin", "beard_box", "bury", "encapsulate":
+		default:
 			continue
 		}
 		for _, k := range pc.Refs[key] {
@@ -144,12 +191,24 @@ func (s *Stages) BeardFor(sc *gen.StageContext) *Beard {
 			}
 			for _, p := range st.Pieces {
 				jp, ok := p.(*JigsawPiece)
-				if !ok || !jp.box.Intersects(near) {
+				if !ok {
+					// Other pieces adapt by their whole box, ground at its
+					// bottom (stronghold bury).
+					if p.Box().Intersects(near) {
+						b.rigid = append(b.rigid, beardRigid{p.Box(), 0, adapt})
+						grow(p.Box())
+					}
+					continue
+				}
+				if !jp.box.Intersects(near) {
 					continue
 				}
 				if jp.el.rigid {
-					b.rigid = append(b.rigid, beardRigid{jp.box, jp.GLD})
+					b.rigid = append(b.rigid, beardRigid{jp.box, jp.GLD, adapt})
 					grow(jp.box)
+				}
+				if beardNoJunctions && adapt != "beard_thin" {
+					continue
 				}
 				for _, j := range jp.Junctions {
 					if near.Contains(j.X, j.GroundY, j.Z) {
@@ -166,3 +225,5 @@ func (s *Stages) BeardFor(sc *gen.StageContext) *Beard {
 	b.aff = Box{b.aff.MinX - 12, b.aff.MinY - 12, b.aff.MinZ - 12, b.aff.MaxX + 12, b.aff.MaxY + 12, b.aff.MaxZ + 12}
 	return b
 }
+
+var beardNoJunctions = false

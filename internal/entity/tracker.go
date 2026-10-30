@@ -50,6 +50,16 @@ func (t *Tracked) Push(b []byte) {
 // (attributes, equipment) after Add Entity and metadata.
 func (t *Tracked) SetSpawnExtra(f func() [][]byte) { t.spawnX = f }
 
+// AddSpawnExtra appends f's bodies after the current spawn extras.
+func (t *Tracked) AddSpawnExtra(f func() [][]byte) {
+	prev := t.spawnX
+	if prev == nil {
+		t.spawnX = f
+		return
+	}
+	t.spawnX = func() [][]byte { return append(prev(), f()...) }
+}
+
 // SetMeta replaces the metadata (entries followed by the 0xFF terminator).
 func (t *Tracked) SetMeta(raw []byte) {
 	t.meta = raw

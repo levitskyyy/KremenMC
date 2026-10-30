@@ -115,13 +115,6 @@ func (p *iglooPiece) Save() nbt.Compound {
 func (p *iglooPiece) Place(lv Level, r *rng.WorldgenRandom, clip Box, cx, cz int32) error {
 	q := *p.TemplatePiece
 	q.Move(0, p.DY, 0)
-	if q.Template == "minecraft:igloo/bottom" {
-		// Two draws of the placement random precede the chest's
-		// LootTableSeed (both reference igloos); their source is not
-		// known (the bottom's two template entities are a guess).
-		r.NextInt()
-		r.NextInt()
-	}
 	if err := q.Place(lv, r, clip, cx, cz); err != nil {
 		return err
 	}

@@ -73,7 +73,7 @@ func (m *shiftedRegion) Biome(int, int, int) (data.BiomeID, bool) {
 // TestTreesAt replays raw kremenmc.probe.feat_tree.Draws output (lines with an
 // explicit block list; "at=Y" moves the origin): testdata/trees_at*.txt.
 func TestTreesAt(t *testing.T) {
-	files := []string{"testdata/trees_at.txt", "testdata/trees_jungle.txt", "testdata/trees_cherry.txt"}
+	files := []string{"testdata/trees_at.txt", "testdata/trees_jungle.txt", "testdata/trees_cherry.txt", "testdata/trees_poplar.txt"}
 	if f := os.Getenv("TREEAT"); f != "" {
 		files = strings.Split(f, ",")
 	}
@@ -81,9 +81,10 @@ func TestTreesAt(t *testing.T) {
 }
 
 // TestPaleOakAt replays pale_oak and pale_oak_creaking with the pale_moss
-// decorator enabled. pale_moss_carpet from the patch's simple_block gets wall
-// sides and sometimes a second layer in the reference (not implemented), so
-// carpets are compared by block only and the pass count is a floor.
+// decorator enabled. The probe's pale_moss_carpet toppers draw from the
+// ServerLevel random, which cannot be replayed, so carpets are compared by
+// block only and the pass count is a floor: every remaining mismatch is a
+// topper, or a hanging-moss column that a different topper cut short.
 func TestPaleOakAt(t *testing.T) {
 	paleMossWired = true
 	defer func() { paleMossWired = false }()
@@ -94,7 +95,7 @@ func TestPaleOakAt(t *testing.T) {
 		return s
 	}
 	pass := replayTreesAt(t, []string{"testdata/trees_pale.txt"}, norm, false)
-	if pass["minecraft:pale_oak"] < 16 || pass["minecraft:pale_oak_creaking"] < 5 {
+	if pass["minecraft:pale_oak"] < 15 || pass["minecraft:pale_oak_creaking"] < 6 {
 		t.Errorf("pale oak regressed: %v", pass)
 	}
 }

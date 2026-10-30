@@ -101,8 +101,8 @@ func (rg *registry) parsePredicate(b json.RawMessage) (Predicate, error) {
 		Tag        string            `json:"tag"`
 		Fluids     json.RawMessage   `json:"fluids"`
 		State      json.RawMessage   `json:"state"`
-		Min        int               `json:"min_inclusive"`
-		Max        int               `json:"max_inclusive"`
+		Min        json.RawMessage   `json:"min_inclusive"`
+		Max        json.RawMessage   `json:"max_inclusive"`
 	}
 	if err := json.Unmarshal(b, &p); err != nil {
 		return nil, fmt.Errorf("block predicate: %w", err)
@@ -161,7 +161,7 @@ func (rg *registry) parsePredicate(b json.RawMessage) (Predicate, error) {
 	case "inside_world_bounds":
 		return predInWorld{off}, nil
 	case "height_range":
-		return predHeightRange{off, p.Min, p.Max}, nil
+		return parseHeightRangePred(off, p.Min, p.Max)
 	}
 	if f, ok := predicateTypes[t]; ok {
 		return f(rg, b)

@@ -41,7 +41,8 @@ import net.minecraft.world.level.levelgen.Heightmap;
  * a "keep" token, every block, fluid and heightmap read) through a proxy
  * WorldGenLevel handed to the generator's own applyBiomeDecoration.
  *
- * Config lines: "out <file>", "chunk <cx> <cz>", "keep <substring>".
+ * Config lines: "out <file>", "chunk <cx> <cz>", "keep <substring>",
+ * "rrandom" (dump the region's getRandom() state and two longs first).
  * Output: "C cx cz", "F key", "S x y z state ok", "B x y z state",
  * "L x y z fluid", "H type x z value", "P type x y z -> x y z".
  */
@@ -50,6 +51,7 @@ public final class Region {
     static String cur = "";
     static boolean keep;
     static List<String> keeps = new ArrayList<>();
+    static boolean rrandom;
 
     static String state(BlockState s) {
         StringBuilder b = new StringBuilder(BuiltInRegistries.BLOCK.getKey(s.getBlock()).toString());
@@ -78,6 +80,7 @@ public final class Region {
                 case "out" -> outPath = Path.of(f[1]);
                 case "chunk" -> chunks.add(new int[] {Integer.parseInt(f[1]), Integer.parseInt(f[2])});
                 case "keep" -> keeps.add(f[1]);
+                case "rrandom" -> rrandom = true;
                 default -> {}
             }
         }
@@ -135,6 +138,31 @@ public final class Region {
         for (int y = minY; y <= maxY; y++)
             for (int x = 0; x < 48; x++)
                 for (int z = 0; z < 48; z++) before[i++] = region.getBlockState(mp.set(x0 + x, y, z0 + z));
+        if (rrandom) {
+            Object g = region.getRandom();
+            StringBuilder sb = new StringBuilder("G " + cx + " " + cz + " " + g.getClass().getName());
+            for (Class<?> k = g.getClass(); k != null && k != Object.class; k = k.getSuperclass())
+                for (Field fl : k.getDeclaredFields()) {
+                    if (java.lang.reflect.Modifier.isStatic(fl.getModifiers())) continue;
+                    try {
+                        fl.setAccessible(true);
+                        Object v = fl.get(g);
+                        sb.append(' ').append(fl.getName()).append('=').append(v);
+                        if (v != null && v.getClass().getName().contains("Xoroshiro")) {
+                            for (Field f2 : v.getClass().getDeclaredFields()) {
+                                if (java.lang.reflect.Modifier.isStatic(f2.getModifiers())) continue;
+                                f2.setAccessible(true);
+                                sb.append(' ').append(fl.getName()).append('.').append(f2.getName()).append('=').append(f2.get(v));
+                            }
+                        }
+                    } catch (Throwable t) {
+                        sb.append(' ').append(fl.getName()).append("=?");
+                    }
+                }
+            var rs = (net.minecraft.util.RandomSource) g;
+            sb.append(" next=").append(rs.nextLong()).append(',').append(rs.nextLong());
+            out.println(sb);
+        }
         level.getChunkSource().getGenerator().applyBiomeDecoration(proxy, center, sm);
         out.println("E");
         i = 0;

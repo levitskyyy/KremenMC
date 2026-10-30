@@ -171,6 +171,10 @@ func TestVillageBlocks(t *testing.T) {
 	if os.Getenv("KREMENMC_VNOJIG") == "" {
 		structure.EnableJigsaw(villageKeys...)
 	}
+	if v := os.Getenv("KREMENMC_VEXTRA"); v != "" {
+		structure.EnableJigsaw(strings.Split(v, ",")...)
+	}
+	structure.SetBeardNoJunctions(os.Getenv("KREMENMC_VNOJUNC") != "")
 	tr, err := vanilla.NewTerrain("overworld", seed)
 	if err != nil {
 		t.Fatal(err)
@@ -189,25 +193,47 @@ func TestVillageBlocks(t *testing.T) {
 	show := 0
 	// KREMENMC_VBOXONLY=1: only blocks inside the boxes of the jigsaw starts
 	// referenced by the compared chunks.
+	// KREMENMC_VTMPL=1: only positions a rigid piece's template writes.
 	var boxes []structure.Box
-	if os.Getenv("KREMENMC_VBOXONLY") != "" {
+	var tmplPos map[[3]int32]bool
+	if os.Getenv("KREMENMC_VBOXONLY") != "" || os.Getenv("KREMENMC_VTMPL") != "" {
 		ss, err := vanilla.StructureStagesForTest(tr, seed)
 		if err != nil {
 			t.Fatal(err)
 		}
+		want := map[string]bool{}
+		for _, k := range villageKeys {
+			want[k] = true
+		}
+		for _, k := range strings.Split(os.Getenv("KREMENMC_VEXTRA"), ",") {
+			want[k] = true
+		}
+		var pieces []structure.Piece
 		for cz := z0 - 8; cz <= z1+8; cz++ {
 			for cx := x0 - 8; cx <= x1+8; cx++ {
-				st, err := ss.StartAt(cx, cz)
-				if err != nil || st == nil || !strings.Contains(st.ID, "village") {
+				sts, err := ss.StartsAt(cx, cz)
+				if err != nil {
 					continue
 				}
-				for _, p := range st.Pieces {
-					boxes = append(boxes, p.Box())
+				for _, st := range sts {
+					if !want[st.ID] {
+						continue
+					}
+					for _, p := range st.Pieces {
+						boxes = append(boxes, p.Box())
+					}
+					pieces = append(pieces, st.Pieces...)
 				}
 			}
 		}
+		if os.Getenv("KREMENMC_VTMPL") != "" {
+			tmplPos = structure.TemplatePositions(pieces)
+		}
 	}
 	inBoxes := func(x, y, z int32) bool {
+		if tmplPos != nil {
+			return tmplPos[[3]int32{x, y, z}]
+		}
 		if boxes == nil {
 			return true
 		}
@@ -224,7 +250,55 @@ func TestVillageBlocks(t *testing.T) {
 			if err != nil {
 				t.Fatal(err)
 			}
-			rc, _ := refChunk(t, fmt.Sprintf("%d-overworld", seed), cx, cz)
+			rc, root := refChunk(t, fmt.Sprintf("%d-overworld", seed), cx, cz)
+			if os.Getenv("KREMENMC_VBE") != "" {
+				// Block entities at compared positions: id and NBT (keys
+				// sorted, x/y/z dropped).
+				beLine := func(id string, d nbt.Compound) string {
+					ks := []string{}
+					for k := range d {
+						switch k {
+						case "x", "y", "z", "id", "keepPacked", "components":
+						default:
+							ks = append(ks, k)
+						}
+					}
+					sort.Strings(ks)
+					var b strings.Builder
+					b.WriteString(strings.TrimPrefix(id, "minecraft:"))
+					for _, k := range ks {
+						fmt.Fprintf(&b, " %s=%v", k, d[k])
+					}
+					return b.String()
+				}
+				want := map[[3]int32]string{}
+				for _, it := range opCompounds(root["block_entities"]) {
+					x, _ := it["x"].(int32)
+					y, _ := it["y"].(int32)
+					z, _ := it["z"].(int32)
+					if inBoxes(x, y, z) {
+						want[[3]int32{x, y, z}] = beLine(fmt.Sprint(it["id"]), it)
+					}
+				}
+				for _, be := range pc.Chunk.BlockEntities {
+					k := [3]int32{cx<<4 + int32(be.X), int32(be.Y), cz<<4 + int32(be.Z)}
+					if !inBoxes(k[0], k[1], k[2]) {
+						continue
+					}
+					g := beLine(be.ID, be.Data)
+					if want[k] == g {
+						diff["BE same"]++
+					} else {
+						diff["BE diff"]++
+						t.Logf("BE %v\n ref      %s\n kremenmc %s", k, want[k], g)
+					}
+					delete(want, k)
+				}
+				for k, w := range want {
+					diff["BE missing"]++
+					t.Logf("BE %v missing: ref %s", k, w)
+				}
+			}
 			cs := 0
 			for y := -64; y < 320; y++ {
 				for z := 0; z < 16; z++ {
@@ -240,7 +314,7 @@ func TestVillageBlocks(t *testing.T) {
 							continue
 						}
 						diff[reg.BlockOf(gs).Name+" -> "+reg.BlockOf(ws).Name]++
-						if show < 40 && os.Getenv("KREMENMC_VSHOW") != "" {
+						if show < 40 && os.Getenv("KREMENMC_VSHOW") != "" && strings.Contains(reg.StateString(gs)+" "+reg.StateString(ws), os.Getenv("KREMENMC_VSHOWF")) {
 							show++
 							t.Logf("%d,%d,%d: kremenmc %s, ref %s", cx<<4+int32(x), y, cz<<4+int32(z), reg.StateString(gs), reg.StateString(ws))
 						}
@@ -296,6 +370,10 @@ func TestVillageTerrain(t *testing.T) {
 	if os.Getenv("KREMENMC_VNOJIG") == "" {
 		structure.EnableJigsaw(villageKeys...)
 	}
+	if v := os.Getenv("KREMENMC_VEXTRA"); v != "" {
+		structure.EnableJigsaw(strings.Split(v, ",")...)
+	}
+	structure.SetBeardNoJunctions(os.Getenv("KREMENMC_VNOJUNC") != "")
 	tr, err := vanilla.NewTerrain("overworld", seed)
 	if err != nil {
 		t.Fatal(err)

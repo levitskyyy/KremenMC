@@ -152,6 +152,7 @@ func (cfg *tree) Place(c *placeCtx, r *Random, p Pos) bool {
 	}
 	t.updateLeaves()
 	t.updateNeighbours()
+	t.scheduleLeafTicks()
 	return true
 }
 

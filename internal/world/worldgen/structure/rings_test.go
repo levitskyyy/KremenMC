@@ -6,6 +6,7 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/levitskyyy/KremenMC/internal/data"
 	"github.com/levitskyyy/KremenMC/internal/world/worldgen/structure"
 	"github.com/levitskyyy/KremenMC/internal/world/worldgen/vanilla"
 )
@@ -30,18 +31,17 @@ func TestRingPositions(t *testing.T) {
 	}
 	tr, _ := vanilla.NewTerrain("overworld", refSeed)
 	ss, _ := vanilla.StructureStagesForTest(tr, refSeed)
-	got := structure.RingPositions(p, refSeed, ss.TerrainProbe().Biome)
-	// Known misses: biome-source differences in the snap area (see
-	// docs/vanilla-parity.md, concentric rings).
-	known := map[int]bool{96: true, 124: true}
+	got := structure.RingPositions(p, refSeed, ss.TerrainProbe().(interface {
+		SearchBiome() func(x, y, z int32) data.BiomeID
+	}).SearchBiome())
+	// The snap search keeps one climate cursor (vanilla's per-thread last
+	// search result breaks ties); without it rings 96 and 124 differ.
 	ok := 0
 	for i, w := range want {
 		g := fmt.Sprintf("%d,%d", got[i].X, got[i].Z)
 		switch {
 		case g == w:
 			ok++
-		case known[i]:
-			t.Logf("ring %d: want %s got %s (known)", i, w, g)
 		default:
 			t.Errorf("ring %d: want %s got %s", i, w, g)
 		}

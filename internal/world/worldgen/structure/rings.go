@@ -3,6 +3,7 @@ package structure
 import (
 	"math"
 	"strings"
+	"sync"
 
 	"github.com/levitskyyy/KremenMC/internal/data"
 	"github.com/levitskyyy/KremenMC/internal/world/worldgen/rng"
@@ -106,4 +107,30 @@ func findBiomeHorizontal(x, z, radius int32, r *rng.Legacy, ok func(x, z int32) 
 		}
 	}
 	return bx, bz, n > 0
+}
+
+type ringCache struct {
+	once sync.Once
+	at   map[ChunkXZ]bool
+}
+
+// ringChunk reports whether chunk cx,cz is one of a concentric_rings set's
+// start chunks. The positions are computed once per set, with the probe's
+// shared-cursor biome search when it has one (vanilla's tie-breaking).
+func (s *Stages) ringChunk(set *Set, cx, cz int32) bool {
+	v, _ := s.rings.LoadOrStore(set.Key, &ringCache{})
+	rc := v.(*ringCache)
+	rc.once.Do(func() {
+		biome := s.probe.Biome
+		if sb, ok := s.probe.(interface {
+			SearchBiome() func(x, y, z int32) data.BiomeID
+		}); ok {
+			biome = sb.SearchBiome()
+		}
+		rc.at = map[ChunkXZ]bool{}
+		for _, p := range RingPositions(&set.Placement, s.seed, biome) {
+			rc.at[p] = true
+		}
+	})
+	return rc.at[ChunkXZ{X: cx, Z: cz}]
 }

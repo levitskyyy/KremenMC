@@ -36,7 +36,9 @@ import net.minecraft.world.level.storage.LevelStorageSource;
 //   <mode> <y0> <seed> <x> <z> <feature>
 // Modes: stone (all stone), holes (stone with hashed air, water, lava,
 // bedrock and ice cells: 1 in 16 each of air/water, 1 in 64 others),
-// cfg (prints the parsed configuration by reflection, places nothing).
+// snow (snow_block ground at y0-1, stone below, a few snow blocks above),
+// carpet (pale moss ground at y0-1 with hashed short walls, air at the
+// origin column), cfg (prints the parsed configuration by reflection, places nothing).
 // Mirrored by feature/geode_test.go.
 public final class Geode {
     static int R = 24;
@@ -69,6 +71,38 @@ public final class Geode {
             if (h == 11) return Blocks.DEEPSLATE.defaultBlockState();
             return Blocks.STONE.defaultBlockState();
         }
+        if (mode.equals("snow")) {
+            if (dy < -1) return Blocks.STONE.defaultBlockState();
+            if (dy == -1) return (hash(seed, dx, 3, dz) & 31) == 0 ? Blocks.STONE.defaultBlockState() : Blocks.SNOW_BLOCK.defaultBlockState();
+            if (dy <= 1 && (hash(seed, dx, dy, dz) & 63) == 0) return Blocks.SNOW_BLOCK.defaultBlockState();
+            return Blocks.AIR.defaultBlockState();
+        }
+        if (mode.equals("carpet")) {
+            if (dy < -1) return Blocks.STONE.defaultBlockState();
+            if (dy == -1) return (hash(seed, dx, 7, dz) & 15) == 0 ? Blocks.AIR.defaultBlockState() : Blocks.PALE_MOSS_BLOCK.defaultBlockState();
+            if (dx == 0 && dz == 0) {
+                if (dy == 1) {
+                    int u = hash(seed, 0, 9, 0) & 7;
+                    if (u == 0) return Blocks.STONE.defaultBlockState();
+                    if (u == 1) return Blocks.SHORT_GRASS.defaultBlockState();
+                    if (u == 2) return Blocks.PALE_OAK_LEAVES.defaultBlockState();
+                }
+                return Blocks.AIR.defaultBlockState();
+            }
+            int h = (hash(seed, dx, 0, dz) >>> 4) & 15;
+            int top = (hash(seed, dx, 1, dz) >>> 4) & 3;
+            if (dy > top) return Blocks.AIR.defaultBlockState();
+            return switch (h) {
+                case 0, 1 -> Blocks.STONE.defaultBlockState();
+                case 2 -> Blocks.PALE_OAK_LOG.defaultBlockState();
+                case 3 -> Blocks.PALE_OAK_LEAVES.defaultBlockState();
+                case 4 -> Blocks.GLASS.defaultBlockState();
+                case 5 -> Blocks.OAK_FENCE.defaultBlockState();
+                case 6 -> dy == 0 ? Blocks.PALE_MOSS_CARPET.defaultBlockState() : Blocks.AIR.defaultBlockState();
+                case 7 -> dy == 0 ? Blocks.SHORT_GRASS.defaultBlockState() : Blocks.AIR.defaultBlockState();
+                default -> Blocks.AIR.defaultBlockState();
+            };
+        }
         return Blocks.STONE.defaultBlockState();
     }
 
@@ -81,6 +115,15 @@ public final class Geode {
         public Object invoke(Object p, Method m, Object[] a) throws Throwable {
             String n = m.getName();
             if (log != null && !n.equals("getBlockState") && !n.equals("setBlock") && !n.equals("getFluidState")) log.println("M " + n);
+            if (n.equals("setBlock") && a != null && a.length >= 3 && a[2] instanceof Integer fl) {
+                if (log != null) log.println("M setBlock " + a[0] + " " + state((BlockState) a[1]) + " " + fl);
+                a[2] = fl | 16;
+            }
+            if (n.equals("getRandom") && log != null) {
+                LogRandom lr = new LogRandom(l.getRandom());
+                lr.on = true;
+                return lr;
+            }
             try {
                 return m.invoke(l, a);
             } catch (InvocationTargetException e) {

@@ -56,6 +56,7 @@ type ProtoChunk struct {
 	PostProcessing [][]int16
 	BlockTicks     []Tick
 	FluidTicks     []Tick
+	tickIdx        map[tickKey]struct{} // BlockTicks and FluidTicks, built on first schedule (ticks.go)
 	// Data is free-form persisted state owned by stages (e.g. blending,
 	// below-zero retrogen). Stages must namespace their keys.
 	Data nbt.Compound
@@ -127,7 +128,10 @@ func (c *ProtoChunk) MarkPostProcess(x, y, z int) {
 // Promote copies the generated content into dst, a fresh chunk at the same
 // position (as world.Generator receives it). dst does not share memory
 // with c afterwards.
-func (c *ProtoChunk) Promote(dst *world.Chunk) {
+func (c *ProtoChunk) Promote(dst *world.Chunk) { c.promote(dst, nil) }
+
+// promote is Promote that, with p set, also applies p's post-processing.
+func (c *ProtoChunk) promote(dst *world.Chunk, p *Pipeline) {
 	for i := range c.Sections {
 		dst.Sections[i].Blocks = c.Sections[i].Blocks.Clone()
 		dst.Sections[i].Biomes = c.Sections[i].Biomes.Clone()
@@ -142,6 +146,14 @@ func (c *ProtoChunk) Promote(dst *world.Chunk) {
 		dst.BlockEntities[i].Data = cloneCompound(dst.BlockEntities[i].Data)
 	}
 	dst.InhabitedTime = c.InhabitedTime
+	dst.PendingTicks = c.pendingTicks()
+	dst.GenEntities = nil
+	for _, e := range c.Entities {
+		dst.GenEntities = append(dst.GenEntities, cloneCompound(e))
+	}
+	if p != nil {
+		p.postProcess(c, dst)
+	}
 	dst.Finish()
 }
 

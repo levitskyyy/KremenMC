@@ -1,6 +1,20 @@
-# KremenMC
+<div align="center">
 
-KremenMC is a Minecraft: Java Edition server written from scratch in Go.
+<img src=".github/assets/banner.png" alt="KremenMC" width="100%">
+
+<h3>A Minecraft: Java Edition server written from scratch in Go</h3>
+
+[![Stars](https://img.shields.io/github/stars/levitskyyy/KremenMC?style=flat-square&color=orange)](https://github.com/levitskyyy/KremenMC/stargazers)
+[![Release](https://img.shields.io/github/v/release/levitskyyy/KremenMC?style=flat-square)](https://github.com/levitskyyy/KremenMC/releases/latest)
+[![Build](https://img.shields.io/github/actions/workflow/status/levitskyyy/KremenMC/build.yml?branch=main&style=flat-square&label=build)](https://github.com/levitskyyy/KremenMC/actions/workflows/build.yml)
+[![License](https://img.shields.io/github/license/levitskyyy/KremenMC?style=flat-square)](LICENSE)
+[![Discord](https://img.shields.io/discord/1565814990441807942?style=flat-square&logo=discord&logoColor=white&label=discord&color=5865F2)](https://discord.gg/sAUrDRuZGR)
+
+**[Download](https://github.com/levitskyyy/KremenMC/releases/latest)** · **[Discord](https://discord.gg/sAUrDRuZGR)** · **[Issues](https://github.com/levitskyyy/KremenMC/issues)**
+
+</div>
+
+## About
 
 The goal is a dependable server for real communities: stable under load, light on CPU and memory, and fully multithreaded. It should run well on large machines and still be usable on a weak single-core VPS with a small amount of RAM.
 
@@ -16,10 +30,10 @@ KremenMC is under active development and is not ready for production use yet.
 
 ## Supported versions
 
-| | |
+| Client | Support |
 | --- | --- |
-| Primary target | Java Edition 26.3 (protocol 777) |
-| Older clients | 1.20.5 and newer, through the built-in translation layer |
+| Java Edition 26.3 (protocol 777) | Primary target |
+| 1.20.5 to 26.2 | Through the built-in translation layer |
 
 ## Current state
 
@@ -37,9 +51,9 @@ Working:
 - World saving in the Anvil format
 - Paper and Spigot plugins through the Java bridge, including plugins built on PacketEvents
 
-World generation follows vanilla. Terrain, biomes, caves, ores, most vegetation, villages, mineshafts, dungeons and several smaller structures are in. The remaining structures and features are being added one by one, each only after it matches vanilla.
+World generation follows vanilla. Terrain and biomes match it exactly in all three dimensions. Most features and structures are in, from geodes and ancient cities to strongholds and trial chambers. The rest are added one by one, each only after it matches vanilla.
 
-Missing or incomplete: redstone, fire spread, villager trading, several structures, and parts of the plugin API.
+Missing or incomplete: redstone, fire spread, villager trading, ocean monuments, mansions, Nether fortresses, bastions, End cities, and parts of the plugin API.
 
 ## Downloads
 
@@ -91,6 +105,10 @@ The server directory holds `server.properties`, `kremenmc.toml`, worlds and plug
 | `internal/bridge`, `bridge/java` | Java plugin bridge |
 | `sdk/go` | SDK for writing plugins in Go |
 | `tools` | development tools, not used at runtime |
+
+## Community
+
+Questions, ideas and bug reports are welcome on [Discord](https://discord.gg/sAUrDRuZGR) and in [issues](https://github.com/levitskyyy/KremenMC/issues).
 
 ## Contributing
 

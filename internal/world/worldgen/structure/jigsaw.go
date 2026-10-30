@@ -3,6 +3,7 @@ package structure
 import (
 	"encoding/json"
 	"fmt"
+	"sort"
 	"strings"
 
 	"github.com/levitskyyy/KremenMC/internal/data"
@@ -131,6 +132,10 @@ type jigsawBlock struct {
 	aligned      bool
 	name, target string
 	pool         string
+	// selection_priority orders a piece's jigsaws (higher first, stable
+	// after the shuffle); placement_priority orders the processing of the
+	// piece a jigsaw attaches (higher first).
+	selPrio, placePrio int32
 }
 
 var dirVec = map[string][3]int32{
@@ -162,9 +167,16 @@ func templateJigsaws(t *Template) []jigsawBlock {
 		j.name, _ = b.NBT["name"].(string)
 		j.target, _ = b.NBT["target"].(string)
 		j.pool, _ = b.NBT["pool"].(string)
+		j.selPrio, _ = b.NBT["selection_priority"].(int32)
+		j.placePrio, _ = b.NBT["placement_priority"].(int32)
 		out = append(out, j)
 	}
 	return out
+}
+
+type queued struct {
+	idx  int
+	prio int32
 }
 
 type placedJigsaw struct {
@@ -187,6 +199,24 @@ type Assembler struct {
 	// StartY, if set, gives the start piece's y from the column at the
 	// centre of its box.
 	StartY func(x, z int32) int32
+	// StartJigsaw, if set, is the start template's jigsaw (by name) that
+	// is moved onto the start position.
+	StartJigsaw string
+	// Aliases maps alias pool names to their bound pools (pool_aliases).
+	Aliases map[string]string
+	// MinY and MaxY, if MaxY > MinY, clip the max-distance box vertically
+	// (world height less dimension_padding).
+	MinY, MaxY int32
+}
+
+// poolTemplate loads an element's template. A template the data pack
+// lacks (ancient_city/walls/intact_horizontal_wall_stairs_5) is empty: no
+// jigsaws, so it never connects.
+func poolTemplate(pk *wgdata.Pack, loc string) (*Template, error) {
+	if _, ok := pk.Template(qualify(loc)); !ok {
+		return &Template{}, nil
+	}
+	return LoadTemplate(loc)
 }
 
 func NewAssembler() (*Assembler, error) {
@@ -199,6 +229,9 @@ func NewAssembler() (*Assembler, error) {
 
 func (a *Assembler) pool(name string) (*pool, error) {
 	name = qualify(name)
+	if t, ok := a.Aliases[name]; ok {
+		name = t
+	}
 	if p, ok := a.pools[name]; ok {
 		return p, nil
 	}
@@ -267,6 +300,23 @@ func (a *Assembler) Assemble(r *rng.WorldgenRandom, startPool string, x, y, z in
 	if err != nil || first == nil {
 		return nil, err
 	}
+	if a.StartJigsaw != "" && first.primary() != nil {
+		// Ancient city (city_anchor at template y 24, start height -27,
+		// piece y -52): the anchor lands on the start position.
+		js := templateJigsaws(first.primary())
+		for i := len(js) - 1; i > 0; i-- {
+			k := jn(r, int32(i+1))
+			js[i], js[k] = js[k], js[i]
+		}
+		for _, j := range js {
+			if j.name == a.StartJigsaw {
+				jx, jz := TransformPos(j.x, j.z, MirrorNone, rot, 0, 0)
+				first.move(-jx, -j.y, -jz)
+				y = first.Y
+				break
+			}
+		}
+	}
 	fb := first.box
 	if a.StartY != nil {
 		// Observed: the projection samples the start piece's box centre
@@ -278,11 +328,22 @@ func (a *Assembler) Assemble(r *rng.WorldgenRandom, startPool string, x, y, z in
 		fb = first.box
 	}
 	cx, cz := (fb.MinX+fb.MaxX)/2, (fb.MinZ+fb.MaxZ)/2
-	outer := &space{bound: Box{cx - maxDist, y - maxDist, cz - maxDist, cx + maxDist + 1, y + maxDist + 1, cz + maxDist + 1},
-		occupied: []Box{fb}, raw: []rawBox{{fb, el.rigid}}}
+	bound := Box{cx - maxDist, y - maxDist, cz - maxDist, cx + maxDist, y + maxDist, cz + maxDist}
+	if a.MaxY > a.MinY {
+		bound.MinY, bound.MaxY = max(bound.MinY, a.MinY), min(bound.MaxY, a.MaxY)
+	}
+	outer := &space{bound: bound, occupied: []Box{fb}, raw: []rawBox{{fb, el.rigid}}}
 	placed := []*placedJigsaw{{jp: first, tmpl: first.primary(), rigid: el.rigid, outer: outer, inner: &space{bound: fb}}}
-	for qi := 0; qi < len(placed); qi++ {
-		cur := placed[qi]
+	queue := []queued{{0, 0}}
+	for len(queue) > 0 {
+		qi := 0
+		for i, q := range queue {
+			if q.prio > queue[qi].prio {
+				qi = i
+			}
+		}
+		cur := placed[queue[qi].idx]
+		queue = append(queue[:qi], queue[qi+1:]...)
 		if cur.depth > maxDepth || cur.tmpl == nil {
 			continue
 		}
@@ -291,6 +352,7 @@ func (a *Assembler) Assemble(r *rng.WorldgenRandom, startPool string, x, y, z in
 			k := jn(r, int32(i+1))
 			js[i], js[k] = js[k], js[i]
 		}
+		sort.SliceStable(js, func(i, k int) bool { return js[i].selPrio > js[k].selPrio })
 		for _, j := range js {
 			if j.pool == "" || j.pool == "minecraft:empty" {
 				continue
@@ -346,12 +408,16 @@ func (a *Assembler) Assemble(r *rng.WorldgenRandom, startPool string, x, y, z in
 			}
 			py, cy := ground, ground
 			if cur.rigid && child.rigid {
-				cy = ty - delta - 1 + cur.jp.GLD
+				// Trail ruins (road spacers with jigsaws at y 2, tower tops
+				// on up jigsaws): the parent's ground, one lower for an up
+				// connection.
+				cy = ground - d[1]
 			} else {
 				py = ground + d[1]
 			}
 			cur.jp.Junctions = append(cur.jp.Junctions, Junction{tx, py, tz, delta, child.rigid})
 			child.jp.Junctions = append([]Junction{{sx, cy, sz, -delta, cur.rigid}}, child.jp.Junctions...)
+			queue = append(queue, queued{len(placed), j.placePrio})
 			placed = append(placed, child)
 		}
 	}
@@ -448,7 +514,7 @@ func (a *Assembler) tryAttach(r *rng.WorldgenRandom, poolName, target, front, to
 		case c.primary() == "":
 			continue
 		default:
-			t, err := LoadTemplate(c.primary())
+			t, err := poolTemplate(a.pk, c.primary())
 			if err != nil {
 				return nil, err
 			}
@@ -542,6 +608,12 @@ type jigsawType struct {
 	startY    int32
 	heightmap string
 	adapt     string
+
+	startJigsaw string
+	height      heightProvider
+	aliases     []*aliasBinding
+	padding     int32
+	liquid      string
 }
 
 func (t *jigsawType) terrainAdaptation() string { return t.adapt }
@@ -555,6 +627,25 @@ var jigsawEnabled = map[string]bool{
 	"minecraft:village_savanna": true,
 	"minecraft:village_snowy":   true,
 	"minecraft:village_taiga":   true,
+	// Pillager outpost: starts 150/150 vs the Starts probe and 9/9 pieces
+	// vs the reference world; blocks in the boxes of -87,-9 identical but
+	// for short_grass placed by vegetation (feature pipeline).
+	"minecraft:pillager_outpost": true,
+	// Trial chambers: starts 64/64 vs JigNBT and 273/273 + 250/250 pieces
+	// vs the reference world; encapsulate terrain 100%; template positions
+	// identical but for other systems' blocks (glow_lichen, a dungeon,
+	// bubble columns from scheduled ticks); block entities 57/57.
+	"minecraft:trial_chambers": true,
+	// Trail ruins: starts 64/64 vs JigNBT and 17/17 pieces vs the
+	// reference world; bury terrain 100%; template positions identical
+	// but for 2 ore blocks; archaeology (capped) block entities 86/86.
+	"minecraft:trail_ruins": true,
+	// Ancient city: start 87/87 pieces vs the reference world, beard_box
+	// terrain 100%; the 7x7 full reference chunks of -33,82 differ at
+	// template positions only by sculk (feature pieces and deep dark
+	// patches), neighbour-chunk ores (tuff, gravel: decoration order) and
+	// 3 stairs vanilla waterlogs next to water; chests 20/20.
+	"minecraft:ancient_city": true,
 }
 
 func (t *jigsawType) Step() int { return t.step }
@@ -573,9 +664,24 @@ func (t *jigsawType) Generate(ctx *GenContext) ([]Piece, error) {
 		// Observed (flat ground only): y = surface height - 1.
 		a.StartY = func(x, z int32) int32 { return t.startY + ctx.Height(x, z, t.heightmap) - 1 }
 	}
-	ps, err := a.Assemble(ctx.Random, t.startPool, x, t.startY, z, t.size, t.maxDist)
+	a.StartJigsaw = t.startJigsaw
+	startY := t.height.sample(ctx.Random)
+	a.Aliases = resolveAliases(aliasRandom(ctx, x, startY, z), t.aliases)
+	if t.padding > 0 {
+		minY, maxY := ctx.MinY, ctx.MaxY
+		if minY == maxY {
+			minY, maxY = -64, 320
+		}
+		a.MinY, a.MaxY = minY+t.padding, maxY-1-t.padding
+	}
+	// Observed (trial chambers, ancient city): an unprojected start piece
+	// sits at start height - 1, like a projected one at surface - 1.
+	ps, err := a.Assemble(ctx.Random, t.startPool, x, startY-1, z, t.size, t.maxDist)
 	if err != nil || len(ps) == 0 {
 		return nil, err
+	}
+	for _, p := range ps {
+		p.(*JigsawPiece).liquid = t.liquid
 	}
 	// Black box (probe kremenmc.probe.outpost.Starts, findValidGenerationPoint
 	// with a logging biome resolver): the start is rejected unless some
@@ -589,13 +695,15 @@ func (t *jigsawType) Generate(ctx *GenContext) ([]Piece, error) {
 		if minY == maxY {
 			minY, maxY = -64, 320
 		}
-		ok := false
+		// Without a heightmap projection (ancient city, Starts probe) only
+		// the stub is tested, at the start height.
+		ok := t.heightmap == ""
 		for qy := minY >> 2; qy < maxY>>2 && !ok; qy++ {
 			ok = ctx.BiomeOK(cx, qy<<2, cz)
 		}
-		sy := ps[0].(*JigsawPiece).Y
+		sy := startY
 		if t.heightmap != "" {
-			sy++
+			sy = ps[0].(*JigsawPiece).Y + 1
 		}
 		if !ok || !ctx.BiomeOK(cx, sy, cz) {
 			return nil, nil
@@ -611,15 +719,17 @@ func init() {
 			return nil, nil
 		}
 		var j struct {
-			StartPool   string `json:"start_pool"`
-			Size        int    `json:"size"`
-			MaxDist     int32  `json:"max_distance_from_center"`
-			Heightmap   string `json:"project_start_to_heightmap"`
-			Step        string `json:"step"`
-			Adapt       string `json:"terrain_adaptation"`
-			StartHeight struct {
-				Absolute int32 `json:"absolute"`
-			} `json:"start_height"`
+			StartPool   string          `json:"start_pool"`
+			Size        int             `json:"size"`
+			MaxDist     int32           `json:"max_distance_from_center"`
+			Heightmap   string          `json:"project_start_to_heightmap"`
+			Step        string          `json:"step"`
+			Adapt       string          `json:"terrain_adaptation"`
+			StartJigsaw string          `json:"start_jigsaw_name"`
+			StartRaw    json.RawMessage `json:"start_height"`
+			Aliases     json.RawMessage `json:"pool_aliases"`
+			Padding     json.RawMessage `json:"dimension_padding"`
+			Liquid      string          `json:"liquid_settings"`
 		}
 		if err := json.Unmarshal(raw, &j); err != nil {
 			return nil, err
@@ -627,8 +737,36 @@ func init() {
 		if j.MaxDist == 0 {
 			j.MaxDist = 80
 		}
+		liquid := trimNS(j.Liquid)
+		if liquid == "apply_waterlogging" {
+			liquid = ""
+		}
+		h, err := parseHeightProvider(j.StartRaw)
+		if err != nil {
+			return nil, err
+		}
+		al, err := parseAliases(j.Aliases)
+		if err != nil {
+			return nil, err
+		}
+		var pad int32
+		if len(j.Padding) > 0 {
+			if err := json.Unmarshal(j.Padding, &pad); err != nil {
+				var pp struct {
+					Bottom int32 `json:"bottom"`
+					Top    int32 `json:"top"`
+				}
+				if err := json.Unmarshal(j.Padding, &pp); err != nil {
+					return nil, err
+				}
+				if pp.Bottom != pp.Top {
+					return nil, fmt.Errorf("dimension_padding %s: unequal padding not supported", j.Padding)
+				}
+				pad = pp.Bottom
+			}
+		}
 		return &jigsawType{step: stepIndex(j.Step), startPool: j.StartPool, size: j.Size, maxDist: j.MaxDist,
-			startY: j.StartHeight.Absolute, heightmap: j.Heightmap, adapt: j.Adapt}, nil
+			startY: h.min, heightmap: j.Heightmap, adapt: j.Adapt, startJigsaw: j.StartJigsaw, height: h, aliases: al, padding: pad, liquid: liquid}, nil
 	})
 }
 

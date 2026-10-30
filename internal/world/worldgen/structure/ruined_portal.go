@@ -15,9 +15,8 @@ import (
 // Ruined portal starts (minecraft:ruined_portal*), inferred from the
 // black-box probe tools/refprobe/java/kremenmc/probe/structlegacy/Starts.java
 // (findGenerationPoint of the real structure on the real noise generator
-// with a draw-logging start random; testdata/ruined_portal). Only the start
-// is implemented: the piece placement (processors, air pocket, netherrack
-// spread, loot) is not, so the type is NOT registered.
+// with a draw-logging start random; testdata/ruined_portal). Placement is in
+// ruined_portal_place.go.
 //
 // Draw order: [setup nextFloat when several setups] giant nextFloat (<0.05:
 // giant_portal_1..3 by nextInt(3), else portal_1..10 by nextInt(10)),
@@ -134,6 +133,15 @@ func (t *ruinedPortalType) start(r *rng.WorldgenRandom, cx, cz int32, height fun
 		y0 = ch - 1 - size
 		if y0 >= 70 {
 			y0 = r.NextIntBetweenInclusive(70, y0)
+		}
+	case "in_nether":
+		// Draws after the base height: nextFloat < 0.5 → 27 + nextInt(3),
+		// else 29 + nextInt(72) (NTStarts draw logs, 183 reference starts),
+		// then the corner scan below.
+		if r.NextFloat() < 0.5 {
+			y0 = 27 + r.NextIntn(3)
+		} else {
+			y0 = 29 + r.NextIntn(72)
 		}
 	default:
 		return nil, fmt.Errorf("ruined portal placement %s not implemented", su.Placement)

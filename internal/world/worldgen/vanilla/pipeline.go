@@ -54,7 +54,7 @@ func (t *Terrain) Stages(dim string, seed int64) ([]gen.Stage, error) {
 					beard = b.Value
 				}
 			}
-			if err := t.GenerateStageBeard(pc.Chunk, "terrain", beard); err != nil {
+			if err := t.GenerateStageMarked(pc.Chunk, "terrain", beard, pc.MarkPostProcess); err != nil {
 				return err
 			}
 			if pc.Data == nil {

@@ -78,9 +78,7 @@ func init() {
 		survival[n] = nether
 	}
 	survival["small_dripleaf"] = doublePlant(onTag("minecraft:supports_small_dripleaf"))
-	// Mushrooms also survive on full faces in the dark; worldgen surface
-	// patches only meet the tag rule.
-	mush := onTag("minecraft:overrides_mushroom_light_requirement")
+	mush := mushroomSurvival(onTag("minecraft:overrides_mushroom_light_requirement"))
 	survival["brown_mushroom"], survival["red_mushroom"] = mush, mush
 	cane := onTag("minecraft:supports_sugar_cane")
 	survival["sugar_cane"] = func(lv *Level, st data.StateID, p Pos) bool {

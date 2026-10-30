@@ -30,6 +30,8 @@ type JigsawPiece struct {
 
 	box   Box
 	parts []*TemplatePiece // single: 1, list: one per element, feature: none
+	// liquid is the structure's liquid_settings ("" = apply_waterlogging).
+	liquid string
 }
 
 func newJigsawPiece(e *poolElement, x, y, z int32, rot Rotation) (*JigsawPiece, error) {
@@ -125,11 +127,16 @@ func (p *JigsawPiece) Save() nbt.Compound {
 	}
 	var el any
 	_ = json.Unmarshal(p.el.raw, &el)
-	return nbt.Compound{
+	c := nbt.Compound{
 		"id": "minecraft:jigsaw", "GD": int32(0), "O": int32(-1), "BB": p.box.IntArray(),
 		"PosX": p.X, "PosY": p.Y, "PosZ": p.Z, "rotation": rotNames[p.Rot], "ground_level_delta": p.GLD,
 		"junctions": nbt.List{Type: nbt.TagCompound, Items: js}, "pool_element": jsonToNBT(el),
 	}
+	if p.liquid != "" {
+		// Reference trial chamber pieces: "liquid_settings":"ignore_waterlogging".
+		c["liquid_settings"] = p.liquid
+	}
+	return c
 }
 
 func loadJigsawPiece(c nbt.Compound) (Piece, error) {
@@ -162,6 +169,10 @@ func loadJigsawPiece(c nbt.Compound) (Piece, error) {
 		return nil, fmt.Errorf("structure: jigsaw piece %v: %w", c["pool_element"], err)
 	}
 	p.GLD, _ = c["ground_level_delta"].(int32)
+	p.liquid, _ = c["liquid_settings"].(string)
+	if p.liquid == "apply_waterlogging" {
+		p.liquid = ""
+	}
 	for _, it := range compounds(c["junctions"]) {
 		j := Junction{}
 		j.X, _ = it["source_x"].(int32)

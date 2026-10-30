@@ -3,6 +3,7 @@ package anvil
 import (
 	"fmt"
 	"math/bits"
+	"slices"
 
 	"github.com/levitskyyy/KremenMC/internal/data"
 	"github.com/levitskyyy/KremenMC/internal/nbt"
@@ -16,7 +17,12 @@ var handledKeys = map[string]bool{
 	"DataVersion": true, "xPos": true, "zPos": true, "yPos": true,
 	"Status": true, "status": true, "sections": true, "block_entities": true,
 	"Heightmaps": true, "isLightOn": true, "LastUpdate": true, "InhabitedTime": true,
+	"block_ticks": true, "fluid_ticks": true, genEntitiesKey: true,
 }
+
+// genEntitiesKey keeps world.Chunk.GenEntities (generated entities not yet
+// added to the live world) in a full chunk; vanilla ignores it.
+const genEntitiesKey = "kremenmc:gen_entities"
 
 // LoadStats reports lossy conversions while decoding a chunk.
 type LoadStats struct {
@@ -164,6 +170,14 @@ func decodeChunk(root nbt.Compound, dim world.Dimension, proto bool) (*world.Chu
 		})
 	}
 	c.InhabitedTime = asInt64(root["InhabitedTime"])
+	if !proto {
+		c.PendingTicks = pendingFromDisk(root)
+		for _, it := range listItems(root[genEntitiesKey]) {
+			if e, ok := it.(nbt.Compound); ok {
+				c.GenEntities = append(c.GenEntities, e)
+			}
+		}
+	}
 	for k, v := range root {
 		if !handledKeys[k] {
 			if c.Extra == nil {
@@ -378,7 +392,38 @@ func encodeChunk(c *world.Chunk, gameTime int64, status string) nbt.Compound {
 		bes = append(bes, e)
 	}
 	root["block_entities"] = bes
+	if full {
+		root["block_ticks"], root["fluid_ticks"] = pendingToDisk(append(slices.Clip(c.PendingTicks), c.SavedTicks...))
+		if len(c.GenEntities) > 0 {
+			root[genEntitiesKey] = slices.Clone(c.GenEntities)
+		}
+	}
 	return root
+}
+
+// pendingFromDisk reads the block_ticks and fluid_ticks of a full chunk;
+// the delays are relative to the save, as vanilla writes them.
+func pendingFromDisk(root nbt.Compound) []world.PendingTick {
+	var out []world.PendingTick
+	for _, k := range [...]string{"block_ticks", "fluid_ticks"} {
+		for _, t := range decodeTicks(root[k]) {
+			out = append(out, world.PendingTick{X: t.X, Y: t.Y, Z: t.Z, Type: t.Type, Delay: t.Delay, Priority: t.Priority, Fluid: k == "fluid_ticks"})
+		}
+	}
+	return out
+}
+
+func pendingToDisk(ts []world.PendingTick) (blocks, fluids nbt.List) {
+	var b, f []Tick
+	for _, t := range ts {
+		v := Tick{X: t.X, Y: t.Y, Z: t.Z, Type: t.Type, Delay: t.Delay, Priority: t.Priority}
+		if t.Fluid {
+			f = append(f, v)
+		} else {
+			b = append(b, v)
+		}
+	}
+	return encodeTicks(b), encodeTicks(f)
 }
 
 // skyNeeded reports whether a sky light array must be written. Lit full

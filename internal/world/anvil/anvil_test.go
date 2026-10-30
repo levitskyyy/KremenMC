@@ -274,7 +274,7 @@ func TestDecodeVanillaShaped(t *testing.T) {
 	if !c.SkyLight[len(c.SkyLight)-1].IsFull() || c.SkyLight[1].Get(5) != 7 {
 		t.Fatal("sky light inheritance")
 	}
-	if _, ok := c.Extra["block_ticks"]; !ok {
+	if _, ok := c.Extra["PostProcessing"]; !ok {
 		t.Fatal("unknown tags dropped")
 	}
 	proto := nbt.Compound{"xPos": int32(0), "zPos": int32(0), "Status": "minecraft:noise"}

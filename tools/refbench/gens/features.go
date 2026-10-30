@@ -1,6 +1,7 @@
 package gens
 
 import (
+	"github.com/levitskyyy/KremenMC/internal/server"
 	"github.com/levitskyyy/KremenMC/internal/world"
 	"github.com/levitskyyy/KremenMC/internal/world/gen"
 	"github.com/levitskyyy/KremenMC/internal/world/worldgen/vanilla"
@@ -22,7 +23,7 @@ func init() {
 		if err != nil {
 			return nil
 		}
-		p, err := gen.New(gen.Config{Seed: seed, Dim: d, Stages: stages})
+		p, err := gen.New(gen.Config{Seed: seed, Dim: d, Stages: stages, PostProcess: server.GenPostProcess})
 		if err != nil {
 			return nil
 		}

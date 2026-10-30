@@ -10,7 +10,8 @@ import (
 
 // springFeature is spring_feature: one fluid source in a wall whose
 // neighbours are the valid blocks except for the configured number of
-// air holes. No random draws (feat_env.Place).
+// air holes. No random draws (feat_env.Place). The placed source gets a
+// fluid tick with delay 0 (feat_nether.Place tick log).
 type springFeature struct {
 	state        data.StateID
 	valid        blockSet
@@ -44,6 +45,7 @@ func (s *springFeature) Place(c *placeCtx, _ *Random, p Pos) bool {
 		return false
 	}
 	lv.SetBlock(p, s.state)
+	lv.scheduleFluidTick(p, fluidID(s.state), 0)
 	return true
 }
 

@@ -266,12 +266,21 @@ type trapezoidHeight struct {
 	plateau int
 }
 
+// Sample is min + two uniform draws even for a symmetric range: the
+// difference form of trapezoidInt does not apply to heights (ore_lapis,
+// -32..32: vanilla's y is kremenmc's minus 32 - 2·second draw at the same
+// x, z, centre-only region traces of seed 8266389061079214669).
 func (t trapezoidHeight) Sample(r *Random, minY, height int) int {
 	a, b := t.lo.resolve(minY, height), t.hi.resolve(minY, height)
 	if a > b {
 		return a
 	}
-	return trapezoidInt{a, b, t.plateau}.Sample(r)
+	rg := b - a
+	if t.plateau >= rg {
+		return int(r.NextIntBetweenInclusive(int32(a), int32(b)))
+	}
+	k := (rg - t.plateau) / 2
+	return a + int(r.NextIntBetweenInclusive(0, int32(rg-k))) + int(r.NextIntBetweenInclusive(0, int32(k)))
 }
 
 func parseHeight(b json.RawMessage) (HeightProvider, error) {

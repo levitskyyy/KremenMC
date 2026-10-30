@@ -173,8 +173,11 @@ func EncodeProto(p *Proto, gameTime int64) nbt.Compound {
 		root[k] = v
 	}
 	if hm, ok := root["Heightmaps"].(nbt.Compound); ok {
+		// Before terrain vanilla saves the _WG maps (all zero) only on the
+		// proto-chunks that created them; keep what was decoded.
+		early := heightmapsFor(status) == nil
 		for name, l := range p.WG {
-			if _, want := hm[name]; want {
+			if _, want := hm[name]; want || early {
 				hm[name] = l
 			}
 		}

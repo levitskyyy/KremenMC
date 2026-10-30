@@ -43,17 +43,41 @@ func (f *fallenTree) Place(c *placeCtx, r *Random, p Pos) bool {
 	dir := horizontal4[r.NextIntn(4)]
 	n := f.length.Sample(r) - 2
 	gap := 2 + int(r.NextIntn(2))
+	// The log row starts at the first of seven positions from one above
+	// the stump down that a tree may take and that rests on a block a
+	// tree may not replace; none: no log. Every log position must be free,
+	// and at least half of them must rest on such a block. Fitted to
+	// centre-only region traces (seed 8266389061079214669, chunks 0,1 and
+	// 1,0: leaf litter under the row lets it sink, a row over stone scans
+	// seven blocks, a row resting on 1 of 4) and feat_nether.Place on
+	// uneven ground (60 cases: 1/2, 2/3, 3/5 placed, 1/5 not).
 	q := Pos{p.X + dir.X*gap, p.Y + 1, p.Z + dir.Z*gap}
-	for validTreePos(lv, q) && data.IsAir(lv.Block(q.Add(Pos{0, -1, 0}))) && q.Y > lv.MinY() {
+	rests := func(l Pos) bool { return !validTreePos(lv, l.Add(Pos{0, -1, 0})) }
+	found := false
+	for range 7 {
+		if validTreePos(lv, q) && rests(q) {
+			found = true
+			break
+		}
 		q.Y--
 	}
+	if !found {
+		return true
+	}
 	logs := make([]Pos, 0, max(n, 0))
+	held := 0
 	for i := range n {
 		l := q.Add(Pos{dir.X * i, 0, dir.Z * i})
 		if !validTreePos(lv, l) {
 			return true
 		}
+		if rests(l) {
+			held++
+		}
 		logs = append(logs, l)
+	}
+	if 2*held < len(logs) {
+		return true
 	}
 	axis := "x"
 	if dir.X == 0 {

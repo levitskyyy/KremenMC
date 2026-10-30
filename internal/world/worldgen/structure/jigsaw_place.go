@@ -52,6 +52,9 @@ func (p *JigsawPiece) placeTemplate(lv Level, r *rng.WorldgenRandom, t *Template
 		return
 	}
 	reg := data.Canonical()
+	capped := t.Processors.hasCapped()
+	var pending []cappedEntry
+	var placed []rpBlock
 	for _, b := range tm.Palettes[0] {
 		x, z := TransformPos(b.X, b.Z, MirrorNone, p.Rot, 0, 0)
 		wx, wy, wz := p.X+x, p.Y+b.Y, p.Z+z
@@ -59,7 +62,9 @@ func (p *JigsawPiece) placeTemplate(lv Level, r *rng.WorldgenRandom, t *Template
 		if !p.el.rigid {
 			fy = wgSurface(lv, wx, wz) - 1 + b.Y
 		}
-		if !clip.Contains(wx, fy, wz) || fy < lv.MinY() || fy >= lv.MaxY() {
+		// A capped list sees the whole template, not the chunk's part
+		// (trail ruins: limits are per piece).
+		if !capped && !clip.Contains(wx, fy, wz) || fy < lv.MinY() || fy >= lv.MaxY() {
 			continue
 		}
 		bl := reg.BlockOf(b.State)
@@ -98,31 +103,73 @@ func (p *JigsawPiece) placeTemplate(lv Level, r *rng.WorldgenRandom, t *Template
 		// Observed (plains streets): the element's processors see the
 		// unprojected position; terrain_matching moves the block after.
 		wy = fy
-		state = waterlog(reg, lv.Block(wx, wy, wz), state)
-		lv.SetBlock(wx, wy, wz, state)
-		if beNBT != nil {
-			if id, _ := beNBT["id"].(string); id != "" {
-				d := nbt.Compound{}
-				for k, v := range beNBT {
-					switch k {
-					case "id", "x", "y", "z":
-					default:
-						d[k] = v
-					}
-				}
-				// A container with a LootTable gets LootTableSeed = the
-				// placement random's next long (reference outpost chest
-				// -1383,91,-134: first draw of step 4 index 27).
-				if _, ok := d["LootTable"]; ok && r != nil {
-					if _, ok := d["LootTableSeed"]; !ok {
-						d["LootTableSeed"] = r.NextLong()
-					}
-				}
-				lv.SetBlockEntity(wx, wy, wz, id, d)
+		if capped {
+			pending = append(pending, cappedEntry{wx, wy, wz, state, beNBT})
+			continue
+		}
+		placed = append(placed, p.writeBlock(lv, r, reg, t, wx, wy, wz, state, beNBT))
+	}
+	if capped {
+		t.Processors.finalizeCapped(lv, reg, p.X, p.Y, p.Z, pending)
+		for _, e := range pending {
+			if !clip.Contains(e.x, e.y, e.z) {
+				continue
 			}
+			placed = append(placed, p.writeBlock(lv, r, reg, t, e.x, e.y, e.z, e.state, e.be))
 		}
 	}
+	// The template's waterlog pass, as verified for ocean ruins and
+	// ruined portals (same template placement): a written dry
+	// waterloggable block next to source water above or beside it becomes
+	// waterlogged.
+	if !p.ignoreWaterlogging() {
+		orWaterlogSpread(reg, lv, placed)
+	}
 	p.placeEntities(lv, t, clip)
+}
+
+func (p *JigsawPiece) writeBlock(lv Level, r *rng.WorldgenRandom, reg *data.Registry, t *TemplatePiece, wx, wy, wz int32, state data.StateID, beNBT nbt.Compound) rpBlock {
+	if !p.ignoreWaterlogging() {
+		state = waterlog(reg, lv.Block(wx, wy, wz), state)
+	}
+	lv.SetBlock(wx, wy, wz, state)
+	if beNBT != nil {
+		if id, _ := beNBT["id"].(string); id != "" {
+			d := nbt.Compound{}
+			for k, v := range beNBT {
+				switch k {
+				case "id", "x", "y", "z":
+				default:
+					d[k] = v
+				}
+			}
+			// A container with a LootTable gets LootTableSeed = the
+			// placement random's next long (reference outpost chest
+			// -1383,91,-134: first draw of step 4 index 27). Every
+			// randomizable container draws, with or without a loot
+			// table (trial chambers: a decorated pot holding string in
+			// intersection_2 shifts the seeds of the pots after it). The
+			// template rule's second draw (a DATA marker's chest) never
+			// applies here: no jigsaw pool template has DATA structure
+			// blocks (scan of all embedded templates, 2026-10-30).
+			if _, hasLT := d["LootTable"]; r != nil && (hasLT || lootContainers[trimNS(id)]) {
+				if _, ok := d["LootTableSeed"]; !ok {
+					v := r.NextLong()
+					if _, ok := d["LootTable"]; ok {
+						d["LootTableSeed"] = v
+					}
+					if debugLootHook != nil {
+						debugLootHook(t.Template+" "+id, wx, wy, wz, v)
+					}
+				}
+			}
+			if trimNS(id) == "vault" {
+				normalizeVault(d)
+			}
+			lv.SetBlockEntity(wx, wy, wz, id, d)
+		}
+	}
+	return rpBlock{x: wx, y: wy, z: wz, s: state}
 }
 
 // placeEntities adds the template's entities (villagers, golems, cats...)
@@ -224,3 +271,33 @@ func wgSurface(lv Level, x, z int32) int32 {
 }
 
 var debugFeatureHook func(p *JigsawPiece, r *rng.WorldgenRandom, lv Level)
+
+var debugLootHook func(tmpl string, x, y, z int32, seed int64)
+
+// lootContainers are the block entities that take a loot table seed when
+// placed from a template.
+var lootContainers = map[string]bool{
+	"chest": true, "trapped_chest": true, "barrel": true, "dispenser": true, "dropper": true, "hopper": true,
+	"shulker_box": true, "decorated_pot": true, "crafter": true,
+}
+
+// normalizeVault writes a template vault the way the reference world saves
+// it (trial chambers): config.loot_table is dropped when it is the default
+// minecraft:chests/trial_chambers/reward, and empty server_data and
+// shared_data compounds are added.
+func normalizeVault(d nbt.Compound) {
+	if c, ok := d["config"].(nbt.Compound); ok && c["loot_table"] == "minecraft:chests/trial_chambers/reward" {
+		cc := nbt.Compound{}
+		for k, v := range c {
+			if k != "loot_table" {
+				cc[k] = v
+			}
+		}
+		d["config"] = cc
+	}
+	for _, k := range []string{"server_data", "shared_data"} {
+		if _, ok := d[k]; !ok {
+			d[k] = nbt.Compound{}
+		}
+	}
+}

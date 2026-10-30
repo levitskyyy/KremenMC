@@ -68,10 +68,11 @@ func (paleMoss) hang(t *treeRun, r *Random, p Pos) {
 	}
 }
 
-// paleMossWired gates pale_moss (and so every pale oak) out of generation:
-// its draws and blocks match the reference except the pale_moss_carpet wall
-// sides and second layer set by the patch's simple_block (TestPaleOakAt).
-var paleMossWired = false
+// paleMossWired gates pale_moss (and so every pale oak) in generation. Its
+// draws and blocks match the reference (TestPaleOakAt); the probe's carpet
+// toppers come from the ServerLevel random, so those are compared by
+// placeMossyCarpet's own replay instead (TestMossyCarpet).
+var paleMossWired = true
 
 func shuffledCopy(r *Random, ps []Pos) []Pos {
 	s := append([]Pos(nil), ps...)
@@ -141,3 +142,5 @@ func registerPaleUnverified() {
 		return creakingHeart{p.P}, json.Unmarshal(b, &p)
 	}
 }
+
+func init() { registerPaleUnverified() }

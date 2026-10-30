@@ -203,6 +203,18 @@ func (p *TemplatePiece) Place(lv Level, r *rng.WorldgenRandom, clip Box, cx, cz 
 						d[k] = v
 					}
 				}
+				// A container written by the template draws its loot seed
+				// (nextLong) at its write, loot table or not (RPScene:
+				// shipwreck supply chest, igloo bottom, ruined portals;
+				// jigsaw: trial chamber pots); a DATA marker below draws
+				// again and wins. Legacy templates hold only chests and
+				// one mansion trapped chest.
+				if lootContainers[trimNS(id)] {
+					seed := r.NextLong()
+					if _, ok := d["LootTable"]; ok {
+						d["LootTableSeed"] = seed
+					}
+				}
 				lv.SetBlockEntity(wx, wy, wz, id, d)
 			}
 		}

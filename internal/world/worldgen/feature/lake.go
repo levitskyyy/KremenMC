@@ -80,6 +80,9 @@ func (f *lakeFeature) Place(c *placeCtx, r *Random, p Pos) bool {
 				if grid[lakeIdx(x, y, z)] && f.airFluid.Test(lv, q) {
 					if y >= 4 {
 						lv.SetBlock(q, caveAir)
+						// Observed (feat_nether.Place tick log): a cave_air
+						// block tick, delay 0, per cleared position.
+						lv.scheduleBlockTick(q, "minecraft:cave_air", 0)
 					} else {
 						lv.SetBlock(q, f.fluid)
 					}

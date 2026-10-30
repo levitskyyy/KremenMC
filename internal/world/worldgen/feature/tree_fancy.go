@@ -20,8 +20,9 @@ import (
 //     0.38*horizontal distance, truncated toward zero, and the attempt is
 //     dropped when that start is below (h+2)/5;
 //   - the attempt is also dropped when a block of the branch line or of
-//     the column from the cluster four blocks up is not free (obstacle
-//     probe, testdata/trees_obstacles.txt);
+//     the column from the cluster five blocks up is not free (obstacle
+//     probes, testdata/trees_obstacles.txt; tree_leaf_ticks.txt seed 6002
+//     has a stone exactly five above a cluster);
 //   - branch logs follow the 3D line from the start, stepped along the
 //     longest axis and rounded half up, with axis x unless |dz| > |dx|.
 type fancyTrunk struct{ trunkHeight }
@@ -49,7 +50,7 @@ func (f fancyTrunk) place(t *treeRun, r *Random, h int, p Pos) []attachment {
 		}
 		c := p.Add(Pos{x, y, z})
 		base := p.Add(Pos{0, yb, 0})
-		if !lineFree(t.lv, base, Pos{x, y - yb, z}) || !lineFree(t.lv, c, Pos{0, 4, 0}) {
+		if !lineFree(t.lv, base, Pos{x, y - yb, z}) || !lineFree(t.lv, c, Pos{0, 5, 0}) {
 			continue
 		}
 		f.branch(t, r, base, Pos{x, y - yb, z})

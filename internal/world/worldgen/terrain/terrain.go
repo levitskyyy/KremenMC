@@ -109,7 +109,12 @@ func New(settings string, seed int64) (*Generator, error) {
 // Fill writes the noise blocks of chunk c (blocks outside the noise height
 // range are left untouched) and recomputes its heightmaps. ctx is the
 // caller's per-goroutine context (nil allocates one).
-func (g *Generator) Fill(ctx *density.Ctx, c *world.Chunk) {
+func (g *Generator) Fill(ctx *density.Ctx, c *world.Chunk) { g.FillMarked(ctx, c, nil) }
+
+// FillMarked is Fill that also reports, through mark (chunk-local x, z and
+// absolute y; nil: none), each fluid block the aquifer flags for a fluid
+// update: vanilla marks those positions for post-processing.
+func (g *Generator) FillMarked(ctx *density.Ctx, c *world.Chunk, mark func(x, y, z int)) {
 	if ctx == nil {
 		ctx = &density.Ctx{}
 	}
@@ -118,6 +123,10 @@ func (g *Generator) Fill(ctx *density.Ctx, c *world.Chunk) {
 	var aq Aquifer = DisabledAquifer{g.Global, g.Air}
 	if g.NewAquifer != nil {
 		aq = g.NewAquifer(c.X, c.Z)
+	}
+	sched, _ := aq.(interface{ ShouldScheduleFluidUpdate() bool })
+	if mark == nil {
+		sched = nil
 	}
 	fd := g.Router.Fields["final_density"]
 	s := g.Router.Settings
@@ -138,6 +147,9 @@ func (g *Generator) Fill(ctx *density.Ctx, c *world.Chunk) {
 						}
 						if st != g.Air {
 							c.SetBlock(int(x), int(y), int(z), st)
+						}
+						if sched != nil && ok && sched.ShouldScheduleFluidUpdate() && data.Canonical().HasFluid(st) {
+							mark(int(x), int(y), int(z))
 						}
 					}
 				}

@@ -149,6 +149,17 @@ type Chunk struct {
 	// Extra keeps unrecognised top-level disk NBT for lossless rewrite.
 	Extra         nbt.Compound
 	InhabitedTime int64
+	// PendingTicks are scheduled ticks waiting for the chunk to be
+	// installed in a region (from generation or disk), or stashed from the
+	// scheduler when the chunk unloads. See pendingticks.go.
+	PendingTicks []PendingTick
+	// SavedTicks is the last copy of the scheduler's ticks for a live
+	// chunk, taken for a save (autosave, close); saved with PendingTicks.
+	SavedTicks []PendingTick
+	// GenEntities are entities generation created (end crystals, structure
+	// template entities) that have not been added to the live world yet,
+	// as entity NBT. See genentities.go.
+	GenEntities []nbt.Compound
 
 	dirty atomic.Bool
 }

@@ -65,8 +65,11 @@ type Stages struct {
 	all   map[string]*Set // every set by key (exclusion zones)
 	defs  map[string]*structDef
 	steps [][]*structDef
+	// weighted sets pick their structure by weight (NewDimStages).
+	weighted bool
 
 	decoded sync.Map // startKey -> *Start
+	rings   sync.Map // set key -> *ringCache (concentric_rings, lazy)
 
 	// Features places feature_pool_element features (set before use).
 	Features FeaturePlacer
@@ -140,7 +143,7 @@ func NewStages(seed int64, probe Probe) (*Stages, error) {
 		}
 	}
 	for _, set := range sets {
-		if set.Placement.Type != "random_spread" {
+		if set.Placement.Type != "random_spread" && set.Placement.Type != "concentric_rings" {
 			continue
 		}
 		ok := true
@@ -240,13 +243,20 @@ func (s *Stages) StartAt(cx, cz int32) (*Start, error) {
 }
 
 func (s *Stages) setStart(set *Set, cx, cz int32) (*Start, error) {
-	if !set.Placement.IsSpreadChunk(s.seed, cx, cz) {
+	if set.Placement.Type == "concentric_rings" {
+		if !s.ringChunk(set, cx, cz) {
+			return nil, nil
+		}
+	} else if !set.Placement.IsSpreadChunk(s.seed, cx, cz) {
 		return nil, nil
 	}
 	if ex := set.Placement.Exclusion; ex != nil {
 		if o := s.all[qualify(ex.OtherSet)]; o != nil && InExclusionRange(&o.Placement, s.seed, cx, cz, ex.ChunkCount) {
 			return nil, nil
 		}
+	}
+	if s.weighted {
+		return s.pickStart(set, cx, cz)
 	}
 	// Multi-structure sets (shipwreck + shipwreck_beached, ocean ruins)
 	// have disjoint biome lists: each structure is tried in list order
@@ -274,6 +284,14 @@ func (s *Stages) tryStructure(ws WeightedStructure, cx, cz int32) (*Start, error
 				b := s.probe.Biome(x, y, z)
 				return int(b) < len(d.biomes) && d.biomes[b]
 			},
+		}
+		if c, ok := s.probe.(interface {
+			Block(x, y, z int32) data.StateID
+		}); ok {
+			ctx.Column = c.Block
+		}
+		if b, ok := s.probe.(interface{ Bounds() (int32, int32) }); ok {
+			ctx.MinY, ctx.MaxY = b.Bounds()
 		}
 		pieces, err := d.typ.Generate(ctx)
 		if err != nil {

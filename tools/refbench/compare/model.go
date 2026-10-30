@@ -199,6 +199,26 @@ func FromWorld(c *world.Chunk, status string) *Chunk {
 			X: int(c.X)*16 + int(be.X), Y: int(be.Y), Z: int(c.Z)*16 + int(be.Z), ID: be.ID, Data: be.Data,
 		})
 	}
+	// Generated entities not yet in a live world stand for the reference's
+	// entities/ records of the chunk.
+	for _, e := range c.GenEntities {
+		id, _ := e["id"].(string)
+		var pos [3]float64
+		if l, ok := e["Pos"].(nbt.List); ok && len(l.Items) == 3 {
+			for i, v := range l.Items {
+				pos[i], _ = v.(float64)
+			}
+		}
+		d := nbt.Compound{}
+		for k, v := range e {
+			switch k {
+			case "UUID", "Pos", "id":
+			default:
+				d[k] = v
+			}
+		}
+		out.Entities = append(out.Entities, Entity{ID: id, Pos: pos, Data: d})
+	}
 	return out
 }
 

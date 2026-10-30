@@ -26,7 +26,7 @@ func (g WorldGenerator) GenerateContext(ctx context.Context, c *world.Chunk) err
 	if err != nil {
 		return err
 	}
-	pc.Promote(c)
+	pc.promote(c, g.P)
 	return nil
 }
 
@@ -44,6 +44,10 @@ func (g WorldGenerator) GenerateStage(c *world.Chunk, stage string) error {
 	if err != nil {
 		return err
 	}
-	pc.Promote(c)
+	if st == StatusFull {
+		pc.promote(c, g.P)
+	} else {
+		pc.Promote(c)
+	}
 	return nil
 }

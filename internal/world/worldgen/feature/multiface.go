@@ -96,9 +96,35 @@ func mfTrimNS(s string) string {
 
 func mfWaterSource(st data.StateID) bool { return fluidOf(st) == "water" }
 
+// mfWaterBlock: a water source block itself, not a waterlogged block.
+func mfWaterBlock(st data.StateID) bool { return fluidOf(st) == "water" && blockName(st) == "water" }
+
+// veinCanReplace: the blocks a sculk vein spreads into, besides veins.
+// Probe kremenmc.probe.feat_ow.Place, scenes cavezoo/cavezoo2 (first
+// writes in 30 cases): snow layers (1, 3, 8), short grass, glow lichen,
+// ferns, bushes, seagrass, vines, leaf litter, roots, light and resin
+// clumps are replaced; fire, flowing water, lava, stairs, slabs, glass,
+// leaves, fences, torches, poppies, carpets, cobwebs, trapdoors and moss
+// carpets are not. Fitted as air, or #replaceable but fire holding no
+// fluid or a water source. Soul fire (the probe's burnt out on deepslate)
+// is taken as fire: the reference ancient city keeps its soul fire next to
+// sculk, as it keeps a waterlogged stair (-512,-38,1267).
+func veinCanReplace(st data.StateID) bool {
+	if data.IsAir(st) {
+		return true
+	}
+	if n := blockName(st); n == "fire" || n == "soul_fire" || !replaceableBlocks().has(st) {
+		return false
+	}
+	f := fluidOf(st)
+	return f == "" || f == "water"
+}
+
 func (f *multifaceGrowth) Place(c *placeCtx, r *Random, p Pos) bool {
+	// The feature itself only grows into air or water (a snow layer origin
+	// fails for sculk_vein, cavemix probe); its spreading uses canReplace.
 	cur := c.lv.Block(p)
-	if !data.IsAir(cur) && !mfWaterSource(cur) {
+	if !data.IsAir(cur) && !mfWaterBlock(cur) {
 		return false
 	}
 	dirs := append([]int(nil), f.valid...)
@@ -121,7 +147,7 @@ func (f *multifaceGrowth) Place(c *placeCtx, r *Random, p Pos) bool {
 		for range min(f.searchMax, 1) {
 			q = q.Add(mfDirOff[d])
 			s := c.lv.Block(q)
-			if !data.IsAir(s) && !mfWaterSource(s) && blockName(s) != f.name {
+			if !data.IsAir(s) && !mfWaterBlock(s) && blockName(s) != f.name {
 				break
 			}
 			if f.placeAt(c.lv, r, q, s, ex) {
@@ -155,7 +181,7 @@ func (f *multifaceGrowth) withFace(lv *Level, p Pos, cur data.StateID, d int) (d
 	reg := data.Canonical()
 	base := cur
 	if blockName(cur) != f.name {
-		if !data.IsAir(cur) && !mfWaterSource(cur) {
+		if !f.canReplace(cur) {
 			return 0, false
 		}
 		base = f.block
@@ -175,6 +201,14 @@ func (f *multifaceGrowth) withFace(lv *Level, p Pos, cur data.StateID, d int) (d
 // spread grows one face from (p, face) toward the first shuffled direction
 // that accepts it: the same block, the neighbour in the same plane, or
 // around the supporting block's edge.
+// canReplace: the blocks f places into besides its own block.
+func (f *multifaceGrowth) canReplace(st data.StateID) bool {
+	if f.name == "sculk_vein" {
+		return veinCanReplace(st)
+	}
+	return data.IsAir(st) || mfWaterSource(st)
+}
+
 func (f *multifaceGrowth) spread(lv *Level, r *Random, p Pos, st data.StateID, face int) {
 	all := []int{0, 1, 2, 3, 4, 5}
 	shuffleFaces(r, all)

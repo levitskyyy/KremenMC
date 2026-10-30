@@ -88,6 +88,9 @@ type World struct {
 	added  []*Mob
 	ai     aiWorld // mob_ai.go; tick goroutine and region phases
 
+	genMu sync.Mutex
+	genQ  []*world.Chunk // chunks gone live with generated entities (genentities.go)
+
 	ticketsMu sync.Mutex
 	tickets   map[string]world.TicketID
 	spawnTkt  world.TicketID
@@ -221,6 +224,7 @@ func vanillaDimPipeline(dim string, seed int64, workers int, st *anvil.Storage, 
 	return gen.New(gen.Config{
 		Seed: seed, Dim: dimOfGen(dim).bounds(), Workers: workers, Stages: stages,
 		Storage: protoStorage{&gen.AnvilStorage{St: st}}, CacheSize: protoCacheSize, Logf: logf,
+		PostProcess: GenPostProcess,
 	})
 }
 
@@ -287,6 +291,7 @@ func (w *World) blockChanged(x, y, z int, old, s data.StateID) {
 }
 
 func (w *World) chunkLoaded(c *world.Chunk) {
+	w.queueGenEntities(c)
 	if w.s.bus.HasHandlers(api.KindChunkLoad) {
 		w.s.bus.Dispatch(&api.ChunkLoadEvent{World: w, X: int(c.X), Z: int(c.Z)})
 	}

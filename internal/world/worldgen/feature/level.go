@@ -5,6 +5,7 @@ import (
 	"github.com/levitskyyy/KremenMC/internal/nbt"
 	"github.com/levitskyyy/KremenMC/internal/world"
 	"github.com/levitskyyy/KremenMC/internal/world/gen"
+	"github.com/levitskyyy/KremenMC/internal/world/worldgen/rng"
 )
 
 // Pos is an absolute block position.
@@ -29,6 +30,7 @@ type Level struct {
 	sc *gen.StageContext // nil outside the pipeline
 	st *Stage
 	wg map[world.ChunkPos]*[2][256]int16
+	rr rng.Source // WorldGenRegion.getRandom, created on first use
 }
 
 func (lv *Level) MinY() int { return lv.rg.Dim().MinY }

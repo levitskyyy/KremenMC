@@ -38,10 +38,12 @@ type StageContext struct {
 	r      int
 	grid   []*ProtoChunk
 	worker int
+	rr     rng.Source // RegionRandom, created on first use
 }
 
 func (c *StageContext) reset(p *Pipeline, step *Step, pos world.ChunkPos, worker int) {
 	c.p, c.step, c.pos, c.worker = p, step, pos, worker
+	c.rr = nil
 	c.r = max(step.Radius(), 0)
 	n := 2*c.r + 1
 	if cap(c.grid) < n*n {

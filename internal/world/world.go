@@ -343,8 +343,22 @@ func (w *World) produce(ctx context.Context, p ChunkPos) (c *Chunk, err error) {
 	return c, nil
 }
 
-// SaveAll writes every dirty loaded chunk and waits for completion.
+// SaveAll writes every dirty loaded chunk, with the scheduled block and
+// fluid ticks of live chunks, and waits for completion. It must not be
+// called from the tick goroutine.
 func (w *World) SaveAll() error {
+	if w.cfg.Storage == nil {
+		return nil
+	}
+	w.tickMu.Lock()
+	if !w.closed.Load() {
+		w.snapshotPendingTicks()
+	}
+	w.tickMu.Unlock()
+	return w.saveDirty()
+}
+
+func (w *World) saveDirty() error {
 	if w.cfg.Storage == nil {
 		return nil
 	}
@@ -395,7 +409,8 @@ func (w *World) Close() error {
 		}
 	}
 	w.loadMu.Unlock()
-	err := w.SaveAll()
+	w.snapshotPendingTicks()
+	err := w.saveDirty()
 	w.io.close()
 	return err
 }
